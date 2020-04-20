@@ -1,0 +1,264 @@
+stages: 
+- sonar
+- build
+
+# Build Template
+.build-template:
+  stage: build
+  variables:
+    UNITY_ANDROID_KSTORE_FILE: "agate-release.keystore"
+    UNITY_ANDROID_KALIAS_NAME: "general"
+  tags:
+    - mac-testing
+  before_script:
+    - echo "executed base"
+    - export UNITY_ANDROID_KSTORE_PATH="$UNITY_ANDROID_KSTORE_DIR/$UNITY_ANDROID_KSTORE_FILE"
+    - export LC_ALL=en_US.UTF-8
+    - export LANG=en_US.UTF-8
+    - mkdir Builds && mkdir Builds/$UNITY_BUILD_PLATFORM
+  script:
+    - echo "Building Unity $UNITY_BUILD_PLATFORM Project ..."
+    - |
+      "/Applications/Unity$UNITY_MAC_VERSION/Unity.app/Contents/MacOS/Unity" \
+        -batchmode -nographics -quit $UNITY_BUILD_TARGET \
+        -projectPath "$(pwd)" \
+        -CacheServerIPAddress $UNITY_CACHE_SERVER \
+        -logFile Build_$UNITY_BUILD_PLATFORM.log \
+        -executeMethod Agate.Editor.UnityCI.AutoBuildScript.Build$UNITY_BUILD_PLATFORM \
+          -fileNameExt "${CI_COMMIT_REF_NAME:0:20}_$(date +%Y%m%d-%H%M)" \
+          $([ ! -z $DEFINE_SYMBOL ] && echo "\
+            -defineSymbol $DEFINE_SYMBOL") \
+          $([ $UNITY_BUILD_PLATFORM = "Android" ] && echo "\
+            -androidSdkPath $UNITY_ANDROID_SDK_PATH \
+            -androidJdkPath $UNITY_ANDROID_JDK_PATH \
+            -androidNdkPath $UNITY_ANDROID_NDK_PATH \
+            -androidKeyStorePath $UNITY_ANDROID_KSTORE_PATH \
+            -androidKeyStorePass $UNITY_ANDROID_KSTORE_PASS \
+            -androidKeyAliasName $UNITY_ANDROID_KALIAS_NAME \
+            -androidKeyAliasPass $UNITY_ANDROID_KALIAS_PASS ") \
+          $([ $UNITY_BUILD_PLATFORM = "UnityPackage" ] && echo "\
+            -assetPathNames "$UNITY_ASSETS_EXPORT"")
+    - |
+      if [ $UNITY_BUILD_PLATFORM = "iOS" ]
+      then
+        echo "Building Xcode Project ..."
+        cd Builds/$UNITY_BUILD_PLATFORM
+        xcodebuild -project Unity-iPhone.xcodeproj \
+          -scheme Unity-iPhone \
+          -configuration Release clean archive \
+          -archivePath Beta DEVELOPMENT_TEAM=ACW6MWTXS8 | xcpretty
+        xcodebuild -exportArchive \
+          -archivePath Beta.xcarchive \
+          -exportOptionsPlist Info.plist \
+          -exportPath Beta | xcpretty
+        echo "Build Xcode Finished!"
+      fi
+    - |
+      if [ $UNITY_BUILD_PLATFORM = "Windows" ] || [ $UNITY_BUILD_PLATFORM = "Linux" ]
+      then
+        printf "%s\n" \
+        "/api/v4/projects/$CI_PROJECT_ID/jobs/$CI_JOB_ID/artifacts" > API_Artifacts_$UNITY_BUILD_PLATFORM.txt
+      else
+        printf "%s\n" \
+        "/api/v4/projects/$CI_PROJECT_ID/jobs/$CI_JOB_ID/artifacts/Builds/$UNITY_BUILD_PLATFORM/$(ls Builds/$UNITY_BUILD_PLATFORM)" > API_Artifacts_$UNITY_BUILD_PLATFORM.txt
+      fi
+    - echo "Build Unity $UNITY_BUILD_PLATFORM Finished!"
+
+# Build Artifact Template
+.build-artifacts-template:
+  artifacts: &build-artifacts-definition
+    name: "build-$UNITY_BUILD_PLATFORM"
+    paths:
+      - "Builds/$UNITY_BUILD_PLATFORM"
+      - "Build_$UNITY_BUILD_PLATFORM.log"
+      - "API_Artifacts_$UNITY_BUILD_PLATFORM.txt"
+    when: always
+    expire_in: 1 week
+
+# Primay Branch Refs Template
+.primary-branch-refs-template:
+  only:
+    refs: &primary-branch-refss-definition
+      - 2-maturing-and-improvement-unity-ci-cd-repo-with-new-requirements
+      - develop
+      - sandbox
+      - staging
+      - master
+      - web
+
+#=================== Define Jobs ===================
+# Android Build Job
+.build-android:
+  extends: .build-template
+  variables:
+    UNITY_BUILD_PLATFORM: "Android"
+    UNITY_BUILD_TARGET: "-buildTarget Android"
+  when: manual
+  only:
+    refs: *primary-branch-refss-definition
+  artifacts: *build-artifacts-definition
+build-android-dev:
+  extends: .build-android
+  environment:
+    name: DEVELOPMENT
+build-android-prod:
+  extends: .build-android
+  environment:
+    name: PRODUCTION
+  only:
+    - tags
+
+# AAB Build Job
+.build-aab:
+  extends: .build-android
+  variables:
+    UNITY_BUILD_PLATFORM: "AAB"
+build-aab-dev:
+  extends: .build-aab
+  environment:
+    name: DEVELOPMENT
+build-aab-prod:
+  extends: .build-aab
+  environment:
+    name: PRODUCTION
+  only:
+    - tags
+
+# iOS Build Job
+build-iOS:
+  extends: .build-template
+  variables:
+    UNITY_BUILD_PLATFORM: "iOS"
+    UNITY_BUILD_TARGET: "-buildTarget iOS"
+  when: manual
+  only:
+    refs: *primary-branch-refss-definition
+  artifacts: *build-artifacts-definition
+
+# Windows Build Job
+.build-windows:
+  extends: .build-template
+  variables:
+    UNITY_BUILD_PLATFORM: "Windows"
+    UNITY_BUILD_TARGET: "-buildTarget Standalone"
+  when: manual
+  only:
+    refs: *primary-branch-refss-definition
+  artifacts: *build-artifacts-definition
+build-windows-prod:
+  extends: .build-windows
+  only:
+    - tags
+  environment:
+    name: PRODUCTION
+build-windows-dev:
+  extends: .build-windows
+  environment:
+    name: DEVELOPMENT
+
+# Linux Build Job
+build-linux:
+  extends: .build-template
+  variables:
+    UNITY_BUILD_PLATFORM: "Linux"
+    UNITY_BUILD_TARGET: "-buildTarget LinuxUniversal"
+  when: manual
+  only:
+    refs: *primary-branch-refss-definition
+  artifacts: *build-artifacts-definition
+
+# UnityPackage Build Job
+build-unitypackage:
+  extends: .build-template
+  variables:
+    UNITY_BUILD_PLATFORM: "UnityPackage"
+    UNITY_BUILD_TARGET: ""
+  when: manual
+  only:
+    refs: *primary-branch-refss-definition
+    variables:
+      - $UNITY_ASSETS_EXPORT
+  artifacts: *build-artifacts-definition
+
+
+#=================== Sonar Stage ===================
+.sonar-template: &sonar-definition
+  stage: sonar
+  tags:
+    - msbuild
+  when: always
+  before_script:
+    - |
+      IF %UNITY_SONAR_VER%==2017 (set GenerateSln=%Unity2017%) ^
+      ElSE (IF %UNITY_SONAR_VER%==2018 (set GenerateSln=%Unity2018%) ^
+      ELSE (set GenerateSln=%GenerateSln%))
+    - set SONAR_SCANNER_OPTS="%SONAR_SCANNER_OPTS%"
+    - |
+      set SONAR_SONARQUBE_REPORT=^
+        /k:"%CI_PROJECT_PATH_SLUG%" ^
+        /n:"%CI_PROJECT_PATH%" ^
+        /d:sonar.host.url="%SONAR_HOST_URL%" ^
+        /d:sonar.login="%SONAR_AUTH_TOKEN%" ^
+        /d:sonar.verbose=false ^
+        /d:sonar.gitlab.commit_sha="%CI_COMMIT_SHA%" ^
+        /d:sonar.gitlab.ref_name="%REPORT_REF_NAME%" ^
+        /d:sonar.gitlab.all_issues="%REPORT_ALLISSUE%" ^
+        /d:sonar.gitlab.project_id="%CI_PROJECT_ID%"
+    - |
+      set SONAR_GATEGIT_REPORT=^
+        /d:sonar.analysis.mode=preview ^
+        /d:sonar.gitlab.merge_request_discussion=true ^
+        /d:"%REPORT_DISABLE%"="true" ^
+        /d:sonar.gitlab.ci_merge_request_iid="%CI_MERGE_REQUEST_IID%"
+  script:
+    - |
+      "%GenerateSln%" -batchmode -nographics -quit ^
+        -projectPath %cd% ^
+        -CacheServerIPAddress "%UNITY_CACHE_SERVER%" ^
+        -logFile GenerateSln.log ^
+        -executeMethod Agate.Sonarqube.SonarScript.GenerateSln
+    - |
+      IF "%REPORT_ENV%"=="sonar-gategit-report" (
+        "%SONAR_MSBUILD_HOME%\%SONAR_MSBUILD_VER%\SonarScanner.MSBuild" begin %SONAR_SONARQUBE_REPORT% %SONAR_GATEGIT_REPORT%
+      )
+    - |
+      IF "%REPORT_ENV%"=="sonar-sonarqube-report" (
+        "%SONAR_MSBUILD_HOME%\%SONAR_MSBUILD_VER%\SonarScanner.MSBuild" begin %SONAR_SONARQUBE_REPORT%
+      )
+    - MSBuild "%CI_PROJECT_NAME%".sln /t:Rebuild
+    - |
+      "%SONAR_MSBUILD_HOME%\%SONAR_MSBUILD_VER%\SonarScanner.MSBuild" end ^
+        /d:sonar.login="%SONAR_AUTH_TOKEN%"
+    - echo "%REPORT_ENV% DONE"
+  after_script:
+    - rd /s /q .sonarqube
+
+.sonar-artifacts-template:
+  artifacts: &sonar-artifacts-definition
+    name: "sonar-GenerateSln-artifact"
+    paths:
+      - GenerateSln.log
+    when: always
+    expire_in: 1 week
+
+sonar-inline:
+  <<: *sonar-definition
+  variables:
+    REPORT_ENV: "sonar-gategit-report"
+    REPORT_DISABLE: "sonar.gitlab.disable_global_comment"
+    REPORT_ALLISSUE: "false"
+    REPORT_REF_NAME: "$CI_MERGE_REQUEST_REF_PATH"
+  only:
+    - merge_request
+  artifacts: *sonar-artifacts-definition
+
+sonar-global:
+  <<: *sonar-definition
+  variables:
+    REPORT_ENV: "sonar-sonarqube-report"
+    REPORT_ALLISSUE: "true"
+    REPORT_REF_NAME: "$CI_COMMIT_REF_NAME"
+  only:
+    - develop
+    - master
+  artifacts: *sonar-artifacts-definition
