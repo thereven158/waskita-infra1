@@ -88,9 +88,6 @@ namespace Agate.Editor.UnityCI
 			PlayerSettings.SplashScreen.showUnityLogo = false;
 			PlayerSettings.SetScriptingDefineSymbolsForGroup(buildTargetGroup,defineSymbol);
 
-			PlayerSettings.bundleVersion = "0.0.0.0";
-			PlayerSettings.Android.bundleVersionCode = 000000;
-
 			// Setup BuildPlayerOptions and BuildProject
 			BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions
 			{
