@@ -1,0 +1,15 @@
+{
+    "name": "Agate.WaskitaInfra1.Level.Unity",
+    "references": [
+        "Agate.WaskitaInfra1.Level",
+        "A3.CodePattern"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}
