@@ -1,0 +1,16 @@
+{
+    "name": "Agate.WaskitaInfra1.SceneControl",
+    "references": [
+        "Agate.WaskitaInfra1",
+        "Agate.WaskitaInfra1.PlayerAccount",
+        "Agate.WaskitaInfra1.UserInterface"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}
