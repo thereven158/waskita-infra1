@@ -116,10 +116,10 @@ namespace Github.ScriptableObjectExtension
             else
             {
                 EditorGUI.ObjectField(
-                    new Rect(position.x, position.y, position.width - 60, EditorGUIUtility.singleLineHeight), property);
+                    new Rect(position.x, position.y, position.width - 68, EditorGUIUtility.singleLineHeight), property);
                 if (GUI.Button(
-                    new Rect(position.x + position.width - 58, position.y, 58, EditorGUIUtility.singleLineHeight),
-                    "Create"))
+                    new Rect(position.x + position.width - 32, position.y, 32, EditorGUIUtility.singleLineHeight),
+                    "+ Out"))
                 {
                     string selectedAssetPath = "Assets";
                     if (property.serializedObject.targetObject is MonoBehaviour)
@@ -134,6 +134,31 @@ namespace Github.ScriptableObjectExtension
                     else if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(List<>))
                         type = type.GetGenericArguments()[0];
                     property.objectReferenceValue = CreateAssetWithSavePrompt(type, selectedAssetPath);
+                }
+                else if (GUI.Button(
+                    new Rect(position.x + position.width - 64, position.y, 32, EditorGUIUtility.singleLineHeight),
+                    "+ In"))
+                {
+                    string selectedAssetPath = "Assets";
+                    if (property.serializedObject.targetObject is MonoBehaviour)
+                    {
+                        MonoScript ms =
+                            MonoScript.FromMonoBehaviour((MonoBehaviour) property.serializedObject.targetObject);
+                        selectedAssetPath = System.IO.Path.GetDirectoryName(AssetDatabase.GetAssetPath(ms));
+                    }
+
+                    Type type = fieldInfo.FieldType;
+                    if (type.IsArray) type = type.GetElementType();
+                    else if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(List<>))
+                        type = type.GetGenericArguments()[0];
+                    ScriptableObject newAsset = ScriptableObject.CreateInstance(type);
+                    newAsset.name = property.name;
+                    AssetDatabase.AddObjectToAsset(newAsset, property.serializedObject.targetObject);
+
+                    // Reimport the asset after adding an object.
+                    // Otherwise the change only shows up when saving the project
+                    AssetDatabase.ImportAsset(AssetDatabase.GetAssetPath(newAsset));
+                    property.objectReferenceValue = newAsset;
                 }
             }
 

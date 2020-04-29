@@ -18,5 +18,5 @@ MonoBehaviour:
     keras. Durasi Proyek 60 hari
   DayDuration: 0
   Quizzes: []
-  SoilCondition: {fileID: 0}
-  WeatherForecast: {fileID: 0}
+  SoilCondition: {fileID: 11400000, guid: 35630f21c3d1b6947a286a2353e83768, type: 2}
+  WeatherForecast: {fileID: 11400000, guid: fe8e7f51e1f815f43bd4983a8eff352e, type: 2}
