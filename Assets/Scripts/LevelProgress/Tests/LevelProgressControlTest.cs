@@ -78,7 +78,7 @@ namespace Agate.WaskitaInfra1.LevelProgress.Test
         public void AnswerQuestion_Store_Answer_At_Specified_Index(
             [Range(0, 2)] int index)
         {
-            QuizAnswer testAnswer = new QuizAnswer();
+            string testAnswer = "answer";
             levelProgressCntrl.StartLevel(testLevel);
             levelProgressCntrl.AnswerQuestion(index, testAnswer);
             Assert.That(levelProgressCntrl.Data.Answers[index], Is.EqualTo(testAnswer));
@@ -120,7 +120,7 @@ namespace Agate.WaskitaInfra1.LevelProgress.Test
         public uint LastCheckpoint { get; }
         public uint CurrentDay { get; }
         public uint TryCount { get; }
-        public List<QuizAnswer> Answers { get; }
+        public List<object> Answers { get; }
         public DayCondition Condition { get; }
         public LevelData Level { get; }
 
@@ -129,7 +129,7 @@ namespace Agate.WaskitaInfra1.LevelProgress.Test
             CurrentDay = day;
             TryCount = tryCount;
             LastCheckpoint = checkPoint;
-            Answers = new List<QuizAnswer>(level.Quizzes.Count);
+            Answers = new List<object>(level.Quizzes.Count);
             Condition = new DayCondition();
             Level = level;
         }

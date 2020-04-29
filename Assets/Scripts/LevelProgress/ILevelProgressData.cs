@@ -8,7 +8,7 @@ namespace Agate.WaskitaInfra1.LevelProgress
         uint LastCheckpoint { get; }
         uint CurrentDay { get; }
         uint TryCount { get; }
-        List<QuizAnswer> Answers {get;}
+        List<object> Answers {get;}
         DayCondition Condition {get;}
         LevelData Level{get;}
         bool Equals(ILevelProgressData other);

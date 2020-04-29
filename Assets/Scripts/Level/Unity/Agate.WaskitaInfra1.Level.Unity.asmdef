@@ -1,8 +1,10 @@
 {
     "name": "Agate.WaskitaInfra1.Level.Unity",
     "references": [
+        "A3.DataDrivenEvent",
+        "A3.CodePattern",
         "Agate.WaskitaInfra1.Level",
-        "A3.CodePattern"
+        "as3mbus.Selfish.Source.Quiz"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],
