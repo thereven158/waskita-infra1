@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Agate.WaskitaInfra1.Level;
 
 public class ProjectScreenController : MonoBehaviour
 {
@@ -16,14 +17,15 @@ public class ProjectScreenController : MonoBehaviour
     [SerializeField]
     private int numberOfItems = 5;
 
-    public string[] itemNames;
+    [SerializeField]
+    private LevelDataScriptableObject[] levelData;
 
     ProjectScreenView _projectScreenView = new ProjectScreenView();
 
     // Start is called before the first frame update
     void Start()
     {
-        _projectScreenView.CreateContent(SpawnPoint, content, contentRect, numberOfItems, itemNames);
+        _projectScreenView.CreateContent(SpawnPoint, content, contentRect, levelData.Length, levelData);
     }
 
     // Update is called once per frame
@@ -32,8 +34,4 @@ public class ProjectScreenController : MonoBehaviour
         
     }
 
-    public void SelectProject()
-    {
-
-    }
 }
