@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using Agate.WaskitaInfra1.GameProgress;
+using Agate.WaskitaInfra1.LevelProgress;
+using Agate.WaskitaInfra1.PlayerAccount;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
@@ -8,7 +11,7 @@ using UnityEditor;
 
 #endif
 
-namespace Agate.SugiSuma
+namespace Agate.WaskitaInfra1
 {
     public class Main : MonoBehaviour
     {
@@ -33,6 +36,10 @@ namespace Agate.SugiSuma
         
         #region Game Component
 
+        private PlayerAccountControl _playerAccount;
+        private GameProgressControl _gameProgress;
+        private LevelProgressControl _levelProgress;
+        
         #endregion
 
         #region Fields / Attributes
@@ -54,13 +61,20 @@ namespace Agate.SugiSuma
 
         #region Game Setting
 
+        private IPlayerGameData GameData;
 
+
+        [SerializeField]
+        private ScriptablePlayerGameData _testPlayerData; 
+        
         [SerializeField]
         private int _targetFPS = 30;
 
         #endregion
 
 
+        private IPlayerGameData _gameData;
+        
         #endregion
 
         #region Unity Event Function
@@ -70,14 +84,25 @@ namespace Agate.SugiSuma
             if (!SetupInstance()) return;
 
             SetAppSystemSetting();
+
+            _playerAccount = new PlayerAccountControl();
+            _gameProgress = new GameProgressControl();
+            _levelProgress = new LevelProgressControl();
+            RegisterComponent(_playerAccount);
+            RegisterComponent(_gameProgress);
+            RegisterComponent(_levelProgress);
+            _playerAccount.OnDataChange += data => {_gameProgress.SetData(_gameData.GetProgressData()); };
+            _gameProgress.OnDataChange += data => {_levelProgress.LoadData(_gameData.LevelProgressData()); };
+            
+            _gameData = _testPlayerData;
+            _playerAccount.SetData(_gameData.GetAccountData());
+            
             if (!string.IsNullOrEmpty(_firstLoadedSceneName))
             {
                 SceneManager.LoadScene(_firstLoadedSceneName, LoadSceneMode.Single);
                 return;
             }
             
-            Assert.IsNotNull(_firstSceneToLoad, "Variable _firstSceneToLoad is null.");
-
             SceneManager.LoadScene(_firstSceneToLoad, LoadSceneMode.Single);
         }
 

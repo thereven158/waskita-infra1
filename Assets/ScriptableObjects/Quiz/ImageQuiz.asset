@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f44043bd569281419490332409679e1, type: 3}
-  m_Name: TextQuiz 1
+  m_Script: {fileID: 11500000, guid: 09053f3c55464d2cbdce633a1ca0aea4, type: 3}
+  m_Name: ImageQuiz
   m_EditorClassIdentifier: 
   _question:
-    QuestionText: 
-    Answer: 
+    QuestionText: asdasd
+    Answer: {fileID: 0}
     Options: []
