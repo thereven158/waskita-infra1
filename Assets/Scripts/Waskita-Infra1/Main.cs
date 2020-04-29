@@ -4,7 +4,6 @@ using Agate.WaskitaInfra1.GameProgress;
 using Agate.WaskitaInfra1.LevelProgress;
 using Agate.WaskitaInfra1.PlayerAccount;
 using UnityEngine;
-using UnityEngine.Assertions;
 using UnityEngine.SceneManagement;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -33,13 +32,13 @@ namespace Agate.WaskitaInfra1
         }
 
         #endregion
-        
+
         #region Game Component
 
         private PlayerAccountControl _playerAccount;
         private GameProgressControl _gameProgress;
         private LevelProgressControl _levelProgress;
-        
+
         #endregion
 
         #region Fields / Attributes
@@ -65,8 +64,8 @@ namespace Agate.WaskitaInfra1
 
 
         [SerializeField]
-        private ScriptablePlayerGameData _testPlayerData; 
-        
+        private ScriptablePlayerGameData _testPlayerData;
+
         [SerializeField]
         private int _targetFPS = 30;
 
@@ -74,7 +73,7 @@ namespace Agate.WaskitaInfra1
 
 
         private IPlayerGameData _gameData;
-        
+
         #endregion
 
         #region Unity Event Function
@@ -88,44 +87,46 @@ namespace Agate.WaskitaInfra1
             _playerAccount = new PlayerAccountControl();
             _gameProgress = new GameProgressControl();
             _levelProgress = new LevelProgressControl();
-            RegisterComponent(_playerAccount);
-            RegisterComponent(_gameProgress);
-            RegisterComponent(_levelProgress);
-            _playerAccount.OnDataChange += data => {_gameProgress.SetData(_gameData.GetProgressData()); };
-            _gameProgress.OnDataChange += data => {_levelProgress.LoadData(_gameData.LevelProgressData()); };
-            
+            RegisterComponents(_playerAccount, _gameProgress, _levelProgress);
+            _playerAccount.OnDataChange += data => { _gameProgress.SetData(_gameData.GetProgressData()); };
+            _gameProgress.OnDataChange += data => { _levelProgress.LoadData(_gameData.LevelProgressData()); };
+
             _gameData = _testPlayerData;
             _playerAccount.SetData(_gameData.GetAccountData());
-            
+
             if (!string.IsNullOrEmpty(_firstLoadedSceneName))
             {
                 SceneManager.LoadScene(_firstLoadedSceneName, LoadSceneMode.Single);
                 return;
             }
-            
+
             SceneManager.LoadScene(_firstSceneToLoad, LoadSceneMode.Single);
         }
-
 
         #endregion
 
         #region Setup Methods
-        
+
         private void SetAppSystemSetting()
         {
             Application.targetFrameRate = _targetFPS;
             QualitySettings.vSyncCount = 0;
         }
-        
+
         #endregion
 
         #region Public Function / Method
 
-        private static void Quit()
+        public static void Quit()
         {
             Application.Quit();
         }
-        
+
+        public static void StartGame()
+        {
+            SceneManager.LoadScene("ChecklistScene", LoadSceneMode.Single);
+        }
+
         #endregion
 
         #region Editor

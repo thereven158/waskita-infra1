@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main.unity
     guid: cbc7e21a512a5d445be552c4c8f7c0e9
   - enabled: 1
+    path: Assets/Scenes/Title.unity
+    guid: 573f6a3e6dc12a44381c2990ed637827
+  - enabled: 1
     path: Assets/Scenes/ChecklistScene.unity
     guid: 7309118caff979543b849ec245b4f2ec
   m_configObjects: {}
