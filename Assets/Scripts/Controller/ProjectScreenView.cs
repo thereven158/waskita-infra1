@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Agate.WaskitaInfra1.Level;
 
 public class ProjectScreenView : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class ProjectScreenView : MonoBehaviour
         
     }
 
-    public void CreateContent(Transform SpawnPoint, GameObject content, RectTransform contentRect, int numberOfItems, string[] itemNames)
+    public void CreateContent(Transform SpawnPoint, GameObject content, RectTransform contentRect, int numberOfItems, LevelDataScriptableObject[] levelData)
     {
         //setContent Holder Height;
         //contentRect.sizeDelta = new Vector2(0, numberOfItems * 60);
@@ -42,7 +43,7 @@ public class ProjectScreenView : MonoBehaviour
             ProjectDetail itemDetails = SpawnedItem.GetComponent<ProjectDetail>();
 
             //set name
-            itemDetails.text.text = itemNames[i];
+            itemDetails.text.text = levelData[i].name;
 
         }
     }
