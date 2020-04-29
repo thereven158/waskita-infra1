@@ -10,7 +10,7 @@ namespace Agate.WaskitaInfra1.LevelProgress
             CurrentDay = data.CurrentDay;
             LastCheckpoint = data.LastCheckpoint;
             TryCount = data.TryCount;
-            Answers = new List<QuizAnswer>(data.Answers);
+            Answers = new List<object>(data.Answers);
             Condition = data.Condition;
             Level = data.Level;
         }
@@ -20,7 +20,7 @@ namespace Agate.WaskitaInfra1.LevelProgress
             CurrentDay = 1;
             TryCount = 1;
             LastCheckpoint = CurrentDay;
-            Answers = new List<QuizAnswer>(level.Quizzes.Count);
+            Answers = new List<object>(level.Quizzes.Count);
             Condition = new DayCondition();
             Level = level;
             for (int i = 0; i < level.Quizzes.Count; i++)
@@ -30,7 +30,7 @@ namespace Agate.WaskitaInfra1.LevelProgress
         public uint LastCheckpoint { get; set; }
         public uint CurrentDay { get; set; }
         public uint TryCount { get; set; }
-        public List<QuizAnswer> Answers { get; }
+        public List<object> Answers { get; }
         public DayCondition Condition { get; }
         public LevelData Level { get; }
 

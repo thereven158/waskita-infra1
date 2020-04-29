@@ -9,7 +9,7 @@ namespace Agate.WaskitaInfra1.LevelProgress
         private LevelProgressData _data;
         public event Action<ILevelProgressData> OnDataChange;
         public event Action<uint> OnDayChange;
-        public event Action<int, QuizAnswer> OnAnswer;
+        public event Action<int, object> OnAnswer;
         public event Action<uint> OnCheckPointUpdate;
         public event Action<LevelEvaluationData> OnFinishLevel;
         
@@ -32,7 +32,7 @@ namespace Agate.WaskitaInfra1.LevelProgress
             OnDayChange?.Invoke(_data.CurrentDay);
         }
 
-        public void AnswerQuestion(int index, QuizAnswer answer)
+        public void AnswerQuestion(int index, object answer)
         {
             _data.Answers[index] = answer;
             OnAnswer?.Invoke(index, answer);
