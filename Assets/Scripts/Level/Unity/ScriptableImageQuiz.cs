@@ -32,7 +32,7 @@ namespace Agate.WaskitaInfra1.Level
         public List<Sprite> Options;
     }
 
-    internal class ImageQuiz : Quiz<ImagesQuestion, Sprite>
+    public class ImageQuiz : Quiz<ImagesQuestion, Sprite>
     {
         public override bool IsCorrect(Sprite answer)
         {
