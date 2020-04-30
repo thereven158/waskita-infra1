@@ -33,7 +33,7 @@ namespace Agate.WaskitaInfra1.Level
         public List<string> Options;
     }
 
-    internal class TextQuiz : Quiz<TextQuestion, string>
+    public class TextQuiz : Quiz<TextQuestion, string>
     {
         public override bool IsCorrect(string answer)
         {

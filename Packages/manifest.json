@@ -2,6 +2,7 @@
   "dependencies": {
     "com.a3.code-pattern": "http://gategit.agate.id/billy.firman/a3-upm.git#code-pattern",
     "com.a3.data-driven-event": "http://gategit.agate.id/billy.firman/a3-upm.git#data-driven-event",
+    "com.a3.interactive-data-display": "http://gategit.agate.id/billy.firman/a3-upm.git#interactive-data-display",
     "com.a3.quiz": "http://gategit.agate.id/billy.firman/a3-upm.git#quiz",
     "com.unity.ads": "2.0.8",
     "com.unity.analytics": "3.2.2",
@@ -52,6 +53,10 @@
     "com.a3.code-pattern": {
       "hash": "3eaf08445c3431a09388968558638d96f318b769",
       "revision": "code-pattern"
+    },
+    "com.a3.interactive-data-display": {
+      "hash": "f0218d2beaebde4d48b0198c9ca0a97f820ac065",
+      "revision": "interactive-data-display"
     }
   }
 }
