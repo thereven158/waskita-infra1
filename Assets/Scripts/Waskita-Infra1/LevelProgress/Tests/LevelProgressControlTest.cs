@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using Agate.WaskitaInfra1.Level;
-using as3mbus.Selfish.Source;
+using A3.Quiz;
 using NUnit.Framework;
 
 namespace Agate.WaskitaInfra1.LevelProgress.Test

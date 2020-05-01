@@ -3,7 +3,7 @@ using System.Linq;
 using A3.CodePattern.Unity;
 using A3.DataDrivenEvent;
 using Agate.SugiSuma.Quiz;
-using as3mbus.Selfish.Source;
+using A3.Quiz;
 using UnityEngine;
 
 namespace Agate.WaskitaInfra1.Level

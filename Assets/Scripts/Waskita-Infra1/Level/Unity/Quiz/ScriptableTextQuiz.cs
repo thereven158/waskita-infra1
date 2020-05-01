@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
+using A3.Quiz;
 using Agate.SugiSuma.Quiz;
-using as3mbus.Selfish.Source;
 using UnityEngine;
 
 namespace Agate.WaskitaInfra1.Level

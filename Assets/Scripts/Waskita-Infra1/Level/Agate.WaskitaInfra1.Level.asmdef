@@ -1,7 +1,7 @@
 {
     "name": "Agate.WaskitaInfra1.Level",
     "references": [
-        "as3mbus.Selfish.Source.Quiz",
+        "A3.Quiz",
         "A3.DataDrivenEvent"
     ],
     "optionalUnityReferences": [],

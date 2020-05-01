@@ -1,7 +1,6 @@
-using System;
 using System.Collections.Generic;
 using A3.DataDrivenEvent;
-using as3mbus.Selfish.Source;
+using A3.Quiz;
 
 namespace Agate.WaskitaInfra1.Level
 {
