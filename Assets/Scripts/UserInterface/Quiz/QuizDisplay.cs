@@ -15,16 +15,16 @@ namespace Agate.WaskitaInfra1.UserInterface.Quiz
         public Action OnCancel;
 
         [SerializeField]
-        private TMP_Text _questionText;
+        private TMP_Text _questionText = default;
 
         [SerializeField]
-        private ToggleSpritesDisplaySystem spriteOptionDisplaySystem;
+        private ToggleSpritesDisplaySystem spriteOptionDisplaySystem = default;
 
         [SerializeField]
-        private Button _confirmButton;
+        private Button _confirmButton = default;
 
         [SerializeField]
-        private Button _cancelButton;
+        private Button _cancelButton = default;
 
         public void Init()
         {
@@ -45,6 +45,7 @@ namespace Agate.WaskitaInfra1.UserInterface.Quiz
             _activeAnswer = null;
             _confirmButton.gameObject.SetActive(false);
             _activeQuiz = quiz;
+            spriteOptionDisplaySystem.Reset();
             switch (_activeQuiz.Question)
             {
                 case ImagesQuestion iQuestion:

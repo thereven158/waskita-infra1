@@ -7,11 +7,11 @@ namespace Agate.WaskitaInfra1
     public class ScriptableGameProgress: ScriptableObject, IGameProgressData
     {
         [SerializeField]
-        private short _maxCompletedLevelIndex;
+        private short _maxCompletedLevelIndex = default;
         [SerializeField]
-        private uint _completionCount;
+        private uint _completionCount = default;
         [SerializeField]
-        private double _playTime;
+        private double _playTime = default;
 
         public short MaxCompletedLevelIndex => _maxCompletedLevelIndex;
         public uint CompletionCount => _completionCount;

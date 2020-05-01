@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Agate.WaskitaInfra1.GameProgress;
 using Agate.WaskitaInfra1.LevelProgress;
 using Agate.WaskitaInfra1.PlayerAccount;
@@ -13,10 +12,10 @@ namespace Agate.WaskitaInfra1
         public string authToken;
 
         [SerializeField]
-        private ScriptableGameProgress _gameProgress;
+        private ScriptableGameProgress _gameProgress = default;
 
         [SerializeField]
-        private ScriptableLevelProgress _levelProgress;
+        private ScriptableLevelProgress _levelProgress = default;
         
         public PlayerAccountData GetAccountData()
         {

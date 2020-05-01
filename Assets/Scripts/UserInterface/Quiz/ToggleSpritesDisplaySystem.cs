@@ -11,7 +11,7 @@ namespace Agate.WaskitaInfra1.UserInterface.Quiz
         private ToggleSpriteDisplayPool _togglePool = default;
 
         [SerializeField]
-        private ToggleGroup _toggleGroup;
+        private ToggleGroup _toggleGroup = default;
         
         public event Action<Sprite> OnInteraction;
 

@@ -64,7 +64,7 @@ namespace Agate.WaskitaInfra1
 
 
         [SerializeField]
-        private ScriptablePlayerGameData _testPlayerData;
+        private ScriptablePlayerGameData _testPlayerData = default;
 
         [SerializeField]
         private int _targetFPS = 30;
