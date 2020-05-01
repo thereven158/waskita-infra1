@@ -3,7 +3,7 @@
     "references": [
         "Agate.WaskitaInfra1.LevelProgress",
         "Agate.WaskitaInfra1.Level",
-        "as3mbus.Selfish.Source.Quiz"
+        "A3.Quiz"
     ],
     "optionalUnityReferences": [
         "TestAssemblies"
