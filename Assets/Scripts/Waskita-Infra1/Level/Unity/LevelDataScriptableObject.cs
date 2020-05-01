@@ -18,6 +18,7 @@ namespace Agate.WaskitaInfra1.Level
         public List<IEventTriggerData<EventTriggerData>> Events;
         public SoilCondition SoilCondition;
         public Weather WeatherForecast;
+        public float WindStrength;
 
         private void OnValidate()
         {
@@ -39,6 +40,7 @@ namespace Agate.WaskitaInfra1.Level
                 Quizzes = new List<IQuiz>(Quizzes.Select(quiz => quiz.Quiz)),
                 WeatherForecast = WeatherForecast,
                 SoilCondition = SoilCondition,
+                WindStrength = WindStrength,
                 Events = Events,
             };
         }

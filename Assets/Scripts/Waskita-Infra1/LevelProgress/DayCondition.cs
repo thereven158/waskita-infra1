@@ -4,7 +4,7 @@ namespace Agate.WaskitaInfra1.LevelProgress
 {
     public struct DayCondition
     {
-        private Weather _weather;
-        private float _windStrength;
+        public Weather _weather;
+        public float _windStrength;
     }
 }
