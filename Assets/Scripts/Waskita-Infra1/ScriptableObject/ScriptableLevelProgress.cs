@@ -10,17 +10,17 @@ namespace Agate.WaskitaInfra1
     public class ScriptableLevelProgress : ScriptableObject, ILevelProgressData
     {
         [SerializeField]
-        private uint _lastCheckpoint;
+        private uint _lastCheckpoint = default;
         [SerializeField]
-        private uint _currentDay;
+        private uint _currentDay = default;
         [SerializeField]
-        private uint _tryCount;
+        private uint _tryCount = default;
         [SerializeField]
-        private List<Object> _answers;
+        private List<Object> _answers = default;
         [SerializeField]
-        private LevelDataScriptableObject _level;
+        private LevelDataScriptableObject _level = default;
         [SerializeField]
-        private DayCondition _dayCondition;
+        private DayCondition _dayCondition = default;
 
         public uint LastCheckpoint => _lastCheckpoint;
         public uint CurrentDay => _currentDay;
@@ -30,7 +30,7 @@ namespace Agate.WaskitaInfra1
         public LevelData Level => _level;
         public bool Equals(ILevelProgressData other)
         {
-            throw new System.NotImplementedException();
+            return base.Equals(other);
         }
     }
 }

@@ -7,9 +7,9 @@ namespace Experimental
     public class QuizTestSceneControl :MonoBehaviour
     {
         [SerializeField]
-        private QuizDisplay _quizDisplay;
+        private QuizDisplay _quizDisplay = default;
         [SerializeField]
-        private ScriptableQuiz quiz;
+        private ScriptableQuiz quiz = default;
 
         private void Start()
         {
