@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c92f589334274a9b884c8bd708d4dce0, type: 3}
   m_Name: ProyekCilalap
   m_EditorClassIdentifier: 
-  name: Proyek Jalan Tol Cilalap
   Description: Proyek kali ini mayoritas dalam keadaan berawan dan kemungkinan hujan
     yang cukup rendah. Intensitas angin umumnya sedang dengan tanah penanaman yang
     keras. Durasi Proyek 60 hari
-  DayDuration: 0
+  DayDuration: 20
   Quizzes: []
   SoilCondition: {fileID: 11400000, guid: 35630f21c3d1b6947a286a2353e83768, type: 2}
   WeatherForecast: {fileID: 11400000, guid: fe8e7f51e1f815f43bd4983a8eff352e, type: 2}
+  WindStrength: 20

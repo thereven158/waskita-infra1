@@ -14,5 +14,6 @@ namespace Agate.WaskitaInfra1.Level
         public List<IEventTriggerData<EventTriggerData>> Events;
         public Weather WeatherForecast;
         public SoilCondition SoilCondition;
+        public float WindStrength;
     }
 }
