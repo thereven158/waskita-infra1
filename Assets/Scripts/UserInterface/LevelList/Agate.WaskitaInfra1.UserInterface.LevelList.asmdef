@@ -1,0 +1,17 @@
+{
+    "name": "Agate.WaskitaInfra1.UserInterface.LevelList",
+    "references": [
+        "A3.InteractiveDataDisplay",
+        "A3.CodePattern",
+        "Agate.WaskitaInfra1.Level",
+        "Unity.TextMeshPro"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}
