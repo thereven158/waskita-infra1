@@ -16,7 +16,8 @@ MonoBehaviour:
     yang cukup rendah. Intensitas angin umumnya sedang dengan tanah penanaman yang
     keras. Durasi Proyek 60 hari
   DayDuration: 20
-  Quizzes: []
+  Quizzes:
+  - {fileID: 11400000, guid: a8176aa5f6c227048aec0b6b8846096b, type: 2}
   SoilCondition: {fileID: 11400000, guid: 35630f21c3d1b6947a286a2353e83768, type: 2}
   WeatherForecast: {fileID: 11400000, guid: fe8e7f51e1f815f43bd4983a8eff352e, type: 2}
   WindStrength: 20
