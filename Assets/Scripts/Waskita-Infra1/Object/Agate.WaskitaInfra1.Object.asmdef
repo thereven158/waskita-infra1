@@ -1,10 +1,6 @@
 {
-    "name": "Agate.WaskitaInfra1.UserInterface.LevelState",
-    "references": [
-        "Agate.WaskitaInfra1.Object",
-        "Unity.TextMeshPro",
-        "Agate.ValueConversion"
-    ],
+    "name": "Agate.WaskitaInfra1.Object",
+    "references": [],
     "optionalUnityReferences": [],
     "includePlatforms": [],
     "excludePlatforms": [],

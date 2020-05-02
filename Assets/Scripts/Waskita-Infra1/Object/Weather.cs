@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Agate.WaskitaInfra1.Level
+namespace Agate.WaskitaInfra1.Object
 {
     [CreateAssetMenu(fileName = "Weather", menuName = "WaskitaInfra1/Weather", order = 0)]
     public class Weather : ScriptableObject

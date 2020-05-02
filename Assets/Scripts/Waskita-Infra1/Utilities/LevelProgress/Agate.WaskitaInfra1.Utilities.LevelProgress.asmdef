@@ -1,9 +1,11 @@
 {
-    "name": "Agate.WaskitaInfra1.UserInterface.LevelState",
+    "name": "Agate.WaskitaInfra1.Utilities.LevelProgress",
     "references": [
         "Agate.WaskitaInfra1.Object",
-        "Unity.TextMeshPro",
-        "Agate.ValueConversion"
+        "Agate.WaskitaInfra1.UserInterface.LevelState",
+        "Agate.WaskitaInfra1.Level",
+        "Agate.WaskitaInfra1.LevelProgress",
+        "Agate.WaskitaInfra1.Utilities.LevelData"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],
