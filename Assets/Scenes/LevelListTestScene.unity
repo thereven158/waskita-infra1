@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -146,7 +146,7 @@ MonoBehaviour:
   _levelDisplay: {fileID: 2119215265}
   _levels:
   - {fileID: 11400000, guid: 7508d0c3b07a7014787ee315a01bb606, type: 2}
-  - {fileID: 11400000, guid: af3ba2a5953624f40923361e9116873c, type: 2}
+  - {fileID: 11400000, guid: 7508d0c3b07a7014787ee315a01bb606, type: 2}
 --- !u!114 &1316632208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +206,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ProjectCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198808326895181991, guid: ec94ef83fc188f247a49f741ba9e51b6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6198808326895181987, guid: ec94ef83fc188f247a49f741ba9e51b6,
         type: 3}
@@ -331,6 +336,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846031910766981709, guid: ec94ef83fc188f247a49f741ba9e51b6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.000008323293
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846031910766981709, guid: ec94ef83fc188f247a49f741ba9e51b6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.00013992604
       objectReference: {fileID: 0}
     - target: {fileID: 7313005080511612780, guid: ec94ef83fc188f247a49f741ba9e51b6,
         type: 3}
