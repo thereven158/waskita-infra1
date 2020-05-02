@@ -6,7 +6,6 @@
         "Agate.WaskitaInfra1.LevelProgress",
         "Agate.WaskitaInfra1.Level",
         "Agate.WaskitaInfra1.Level.Unity",
-        "Agate.WaskitaInfra1.UserInterface.LevelState",
         "A3.CodePattern"
     ],
     "optionalUnityReferences": [],

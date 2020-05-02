@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using A3.DataDrivenEvent;
 using A3.Quiz;
+using Agate.WaskitaInfra1.Object;
 
 namespace Agate.WaskitaInfra1.Level
 {

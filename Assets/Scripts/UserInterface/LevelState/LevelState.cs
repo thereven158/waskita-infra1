@@ -1,4 +1,4 @@
-using Agate.WaskitaInfra1.Level;
+using Agate.WaskitaInfra1.Object;
 
 namespace UserInterface.LevelState
 {

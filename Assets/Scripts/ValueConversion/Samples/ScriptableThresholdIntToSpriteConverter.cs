@@ -9,7 +9,7 @@ namespace ValueConversion
     public class ScriptableThresholdIntToSpriteConverter : ScriptableIntToSpriteConverter
     {
         [SerializeField]
-        private ThresholdDictionary _comparisonDictionary;
+        private ThresholdDictionary _comparisonDictionary = default;
 
         private ThresholdValueConverter<int, Sprite> _converter;
 

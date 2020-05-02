@@ -4,6 +4,7 @@ using A3.CodePattern.Unity;
 using A3.DataDrivenEvent;
 using Agate.SugiSuma.Quiz;
 using A3.Quiz;
+using Agate.WaskitaInfra1.Object;
 using UnityEngine;
 
 namespace Agate.WaskitaInfra1.Level

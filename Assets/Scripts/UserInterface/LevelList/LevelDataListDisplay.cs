@@ -19,11 +19,11 @@ namespace Agate.WaskitaInfra1.UserInterface.LevelList
 
         private void AddData(LevelData data, bool interactable = true )
         {
-            LevelDataDisplay display = _pool.GetPooledObject();
-            display.Button.interactable = interactable;
-            display.gameObject.SetActive(true);
-            display.Display(data);
-            display.OnInteraction = OnDataDisplayInteraction;
+            LevelDataListItemDisplay listItemDisplay = _pool.GetPooledObject();
+            listItemDisplay.Button.interactable = interactable;
+            listItemDisplay.gameObject.SetActive(true);
+            listItemDisplay.Display(data);
+            listItemDisplay.OnInteraction = OnDataDisplayInteraction;
         }
 
         private void PopulateLevelList(IEnumerable<LevelData> levels, int unlockedLevel = 0)

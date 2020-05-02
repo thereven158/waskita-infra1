@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace Agate.WaskitaInfra1.UserInterface.LevelList
 {
-    public class LevelDataDisplay: InteractiveDisplayBehavior<LevelData>
+    public class LevelDataListItemDisplay: InteractiveDisplayBehavior<LevelData>
     {
         [SerializeField]
         private Button _button = default;
