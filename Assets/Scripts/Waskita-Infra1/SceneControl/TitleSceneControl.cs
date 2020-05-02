@@ -40,7 +40,7 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
         {
             // if (Main.Instance.OfflineMode) Main.Instance.StartGame();
             // else StartCoroutine(_backendIntegration.LoginProcess(username, password, Main.Instance.StartGame, null));
-            Main.StartGame();
+            Main.Instance.StartGame();
         }
         private void OnLogoutButton()
         {
