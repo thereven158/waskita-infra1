@@ -3,7 +3,10 @@
     "references": [
         "Agate.WaskitaInfra1",
         "Agate.WaskitaInfra1.PlayerAccount",
-        "Agate.WaskitaInfra1.UserInterface"
+        "Agate.WaskitaInfra1.UserInterface",
+        "Agate.WaskitaInfra1.UserInterface.Quiz",
+        "Agate.WaskitaInfra1.UserInterface.LevelList",
+        "Agate.WaskitaInfra1.UserInterface.LevelState"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],

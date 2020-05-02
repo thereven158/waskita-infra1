@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Agate.WaskitaInfra1.GameProgress;
 using Agate.WaskitaInfra1.LevelProgress;
@@ -71,7 +72,9 @@ namespace Agate.WaskitaInfra1
 
         #endregion
 
-
+        [HideInInspector]
+        public bool UiLoaded; 
+        
         private IPlayerGameData _gameData;
 
         #endregion
@@ -90,17 +93,15 @@ namespace Agate.WaskitaInfra1
             RegisterComponents(_playerAccount, _gameProgress, _levelProgress);
             _playerAccount.OnDataChange += data => { _gameProgress.SetData(_gameData.GetProgressData()); };
             _gameProgress.OnDataChange += data => { _levelProgress.LoadData(_gameData.LevelProgressData()); };
+            SceneManager.LoadScene("UserInterface", LoadSceneMode.Additive);
+        }
 
+        private IEnumerator Start()
+        {
+            yield return new WaitUntil(() => UiLoaded);
             _gameData = _testPlayerData;
             _playerAccount.SetData(_gameData.GetAccountData());
-
-            if (!string.IsNullOrEmpty(_firstLoadedSceneName))
-            {
-                SceneManager.LoadScene(_firstLoadedSceneName, LoadSceneMode.Single);
-                return;
-            }
-
-            SceneManager.LoadScene(_firstSceneToLoad, LoadSceneMode.Single);
+            LoadFirstScene();
         }
 
         #endregion
@@ -122,7 +123,18 @@ namespace Agate.WaskitaInfra1
             Application.Quit();
         }
 
-        public static void StartGame()
+        private void LoadFirstScene()
+        {
+            if (!string.IsNullOrEmpty(_firstLoadedSceneName))
+            {
+                SceneManager.LoadScene(_firstLoadedSceneName, LoadSceneMode.Single);
+                return;
+            }
+
+            SceneManager.LoadScene(_firstSceneToLoad, LoadSceneMode.Single);
+        }
+
+        public void StartGame()
         {
             SceneManager.LoadScene("ChecklistScene", LoadSceneMode.Single);
         }

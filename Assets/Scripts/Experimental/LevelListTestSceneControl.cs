@@ -16,8 +16,7 @@ namespace Experimental
         private void Start()
         {
             _levelDisplay.Init();
-            _levelDisplay.OnDataInteraction += data => Debug.Log(data);
-            _levelDisplay.OpenList(_levels.Select(level => level.Object));
+            _levelDisplay.OpenList(_levels.Select(level => level.Object),  Debug.Log);
         }
     }
 }

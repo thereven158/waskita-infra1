@@ -10,7 +10,8 @@ namespace Agate.WaskitaInfra1.UserInterface.LevelList
         [SerializeField]
         private LevelDataDisplayPool _pool = default;
 
-        public event Action<LevelData> OnDataInteraction;
+        private Action<LevelData> _onDataInteraction;
+        public event Action OnInteraction;
 
         public void Init()
         {
@@ -36,21 +37,24 @@ namespace Agate.WaskitaInfra1.UserInterface.LevelList
             }
         }
 
-        public void OpenList(IEnumerable<LevelData> levels, int unlockedLevel = 0)
+        public void OpenList(IEnumerable<LevelData> levels, Action<LevelData> onDataInteraction, int unlockedLevel = 0)
         {
             gameObject.SetActive(true);
             _pool.ResetPool();
             PopulateLevelList(levels, unlockedLevel);
+            _onDataInteraction = onDataInteraction;
         }
 
         public void Close()
         {
             gameObject.SetActive(false);
+            _onDataInteraction = null;
         }
 
         private void OnDataDisplayInteraction(LevelData data)
         {
-            OnDataInteraction?.Invoke(data);
+            OnInteraction?.Invoke();
+            _onDataInteraction?.Invoke(data);
         }
     }
 }
