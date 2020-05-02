@@ -3,9 +3,10 @@
     "references": [
         "A3.InteractiveDataDisplay",
         "A3.CodePattern",
-        "Agate.WaskitaInfra1.Level",
+        "Agate.WaskitaInfra1",
         "Unity.TextMeshPro",
-        "as3mbus.Selfish.Source.Quiz"
+        "as3mbus.Selfish.Source.Quiz",
+        "Agate.WaskitaInfra1.Level"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],

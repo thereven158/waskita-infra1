@@ -1,9 +1,9 @@
 ﻿using A3.Unity;
-using Agate.WaskitaInfra1.Level;
 using as3mbus.Selfish.Source;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Agate.WaskitaInfra1.Level;
 
 namespace Agate.WaskitaInfra1.UserInterface.ChecklistList
 {
@@ -26,7 +26,6 @@ namespace Agate.WaskitaInfra1.UserInterface.ChecklistList
         protected override void ConfigureDisplay(IQuiz data)
         {
             _nameText.text = data.Question + "";
-            Debug.Log(data.Question + "apa elah");
         }
 
         private void Interaction()

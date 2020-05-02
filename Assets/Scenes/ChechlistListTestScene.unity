@@ -624,7 +624,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _checklistDisplay: {fileID: 363464002}
-  _checklists: {fileID: 11400000, guid: 7508d0c3b07a7014787ee315a01bb606, type: 2}
+  _checklistsProgress: {fileID: 11400000, guid: 8ae3068d40a1765418769ec5e668f905,
+    type: 2}
 --- !u!1 &855976383
 GameObject:
   m_ObjectHideFlags: 0
@@ -1659,8 +1660,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 419700774}
   m_HandleRect: {fileID: 419700773}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 0.99999994
+  m_Value: 1
+  m_Size: 0.9999998
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1945,7 +1946,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000000118808515, y: -0.000034921413}
+  m_AnchoredPosition: {x: 0.000000118808515, y: -0.00004722712}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2048431810
