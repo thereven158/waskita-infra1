@@ -1,3 +1,4 @@
+using System.Linq;
 using Agate.WaskitaInfra1.LevelProgress;
 using UserInterface.LevelState;
 
@@ -14,5 +15,7 @@ namespace Agate.WaskitaInfra1.Utilities
             state.WindStrength = progressData.Condition._windStrength;
             return state;
         }
+
+        
     }
 }

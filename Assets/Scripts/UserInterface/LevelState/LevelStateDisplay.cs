@@ -36,6 +36,7 @@ namespace UserInterface.LevelState
 
         public void OpenDisplay(LevelState levelState)
         {
+            gameObject.SetActive(true);
             _titleText.text = levelState.LevelName;
             _weatherImage.sprite = levelState.Weather.Image;
             _weatherText.text = levelState.Weather.name;
