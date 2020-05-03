@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -288,6 +288,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChecklistCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6612074800258456020, guid: 2b0efce8a7e09be4ea02a76ae7943668,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6612074800258455976, guid: 2b0efce8a7e09be4ea02a76ae7943668,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -396,17 +401,17 @@ PrefabInstance:
     - target: {fileID: 6612074800205345257, guid: 2b0efce8a7e09be4ea02a76ae7943668,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6612074800205345257, guid: 2b0efce8a7e09be4ea02a76ae7943668,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6612074800205345257, guid: 2b0efce8a7e09be4ea02a76ae7943668,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -46.6
       objectReference: {fileID: 0}
     - target: {fileID: 6612074801001728552, guid: 2b0efce8a7e09be4ea02a76ae7943668,
         type: 3}
@@ -416,7 +421,7 @@ PrefabInstance:
     - target: {fileID: 6612074801001728552, guid: 2b0efce8a7e09be4ea02a76ae7943668,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.00003688831
+      value: 0.0000018046765
       objectReference: {fileID: 0}
     - target: {fileID: 6612074801001728552, guid: 2b0efce8a7e09be4ea02a76ae7943668,
         type: 3}
@@ -447,6 +452,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.lineCount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6612074801207273127, guid: 2b0efce8a7e09be4ea02a76ae7943668,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.2998047
+      objectReference: {fileID: 0}
+    - target: {fileID: 6612074801207273127, guid: 2b0efce8a7e09be4ea02a76ae7943668,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -21.489
+      objectReference: {fileID: 0}
+    - target: {fileID: 6612074801207273127, guid: 2b0efce8a7e09be4ea02a76ae7943668,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -47.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6612074801207273127, guid: 2b0efce8a7e09be4ea02a76ae7943668,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -110.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 6612074800773327124, guid: 2b0efce8a7e09be4ea02a76ae7943668,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6612074801207273144, guid: 2b0efce8a7e09be4ea02a76ae7943668,
+        type: 3}
+      propertyPath: m_VerticalScrollbarVisibility
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6612074800773327126, guid: 2b0efce8a7e09be4ea02a76ae7943668,
         type: 3}
