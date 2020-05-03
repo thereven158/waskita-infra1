@@ -5,6 +5,7 @@
         "A3.CodePattern",
         "A3.Quiz",
         "Agate.WaskitaInfra1",
+        "Agate.WaskitaInfra1.LevelProgress",
         "Unity.TextMeshPro",
         "Agate.WaskitaInfra1.Level"
     ],

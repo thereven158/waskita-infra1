@@ -12,10 +12,11 @@ namespace Agate.WaskitaInfra1.LevelProgress
         public event Action<int, object> OnAnswer;
         public event Action<uint> OnCheckPointUpdate;
         public event Action<LevelEvaluationData> OnFinishLevel;
-        
+
 
         public void LoadData(ILevelProgressData data)
         {
+            if (data == null) return;
             _data = new LevelProgressData(data);
             OnDataChange?.Invoke(Data);
         }
@@ -30,6 +31,12 @@ namespace Agate.WaskitaInfra1.LevelProgress
         {
             _data.CurrentDay += delta;
             OnDayChange?.Invoke(_data.CurrentDay);
+        }
+
+        public void AnswerQuestion(IChecklistItem item, object answer)
+        {
+            int index = _data.Level.Quizzes.IndexOf(item);
+            if(index != -1) AnswerQuestion(index,answer);
         }
 
         public void AnswerQuestion(int index, object answer)

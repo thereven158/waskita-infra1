@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   username: 
   authToken: 
-  _gameProgress: {fileID: 0}
+  _gameProgress: {fileID: 114656688988709706}
   _levelProgress: {fileID: 0}
 --- !u!114 &114104906896360694
 MonoBehaviour:

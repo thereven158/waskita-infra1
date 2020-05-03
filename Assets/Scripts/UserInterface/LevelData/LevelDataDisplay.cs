@@ -25,10 +25,10 @@ namespace Agate.WaskitaInfra1.UserInterface
         
         private LevelData data;
 
-        public void Init()
+        private void Awake()
         {
             _yesButton.onClick.AddListener(YesAction);   
-            _yesButton.onClick.AddListener(NoAction);   
+            _noButton.onClick.AddListener(NoAction);   
         }
 
         public void OpenDisplay(Level.LevelData levelData, Action<LevelData> onYes, Action onNo)
@@ -54,7 +54,7 @@ namespace Agate.WaskitaInfra1.UserInterface
 
         private void NoAction()
         {
-            _onNo.Invoke();
+            _onNo?.Invoke();
             ToggleDisplay(false);
         }
     }

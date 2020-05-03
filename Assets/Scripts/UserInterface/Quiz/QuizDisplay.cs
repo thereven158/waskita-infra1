@@ -11,8 +11,8 @@ namespace Agate.WaskitaInfra1.UserInterface.Quiz
     {
         private IQuiz _activeQuiz;
         private object _activeAnswer;
-        public Action<IQuiz, object> OnAnswerConfirm;
-        public Action OnCancel;
+        private Action<IQuiz, object> _onConfirmAnswer;
+        private Action _onClose;
 
         [SerializeField]
         private TMP_Text _questionText = default;
@@ -26,7 +26,7 @@ namespace Agate.WaskitaInfra1.UserInterface.Quiz
         [SerializeField]
         private Button _cancelButton = default;
 
-        public void Init()
+        private void Awake()
         {
             spriteOptionDisplaySystem.Init();
             spriteOptionDisplaySystem.OnInteraction += sprite => _activeAnswer = sprite;
@@ -40,8 +40,11 @@ namespace Agate.WaskitaInfra1.UserInterface.Quiz
             gameObject.SetActive(toggle);
         }
 
-        public void DisplayQuiz(IQuiz quiz)
+        public void Display(IQuiz quiz, Action<IQuiz,object> onConfirmAnswer, Action onClose)
         {
+            ToggleDisplay(true);
+            _onConfirmAnswer = onConfirmAnswer;
+            _onClose = onClose;
             _activeAnswer = null;
             _confirmButton.gameObject.SetActive(false);
             _activeQuiz = quiz;
@@ -55,10 +58,16 @@ namespace Agate.WaskitaInfra1.UserInterface.Quiz
             }
         }
 
-        public void ConfirmAnswer()
+        private void ConfirmAnswer()
+        {
+            _onConfirmAnswer?.Invoke(_activeQuiz, _activeAnswer);
+            Close();
+        }
+
+        public void Close()
         {
             ToggleDisplay(false);
-            OnAnswerConfirm?.Invoke(_activeQuiz, _activeAnswer);
+            _onClose?.Invoke();
         }
     }
 }
