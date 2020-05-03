@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using as3mbus.Selfish.Source;
+using A3.Quiz;
 using UnityEngine;
-using Agate.WaskitaInfra1.Level;
 
 namespace Agate.WaskitaInfra1.UserInterface.ChecklistList
 {

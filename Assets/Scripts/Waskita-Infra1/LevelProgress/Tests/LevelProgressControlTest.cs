@@ -8,7 +8,7 @@ namespace Agate.WaskitaInfra1.LevelProgress.Test
     public class LevelProgressControlTest
     {
         private LevelProgressControl levelProgressCntrl;
-        private LevelData testLevel = new LevelData() {Quizzes = new List<IQuiz>() {null, null, null}};
+        private LevelData testLevel = new LevelData() {Quizzes = new List<IChecklistItem>() {null, null, null}};
 
 
         [SetUp]

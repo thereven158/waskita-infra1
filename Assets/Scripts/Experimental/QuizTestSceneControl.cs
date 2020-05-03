@@ -1,4 +1,5 @@
 using Agate.SugiSuma.Quiz;
+using Agate.WaskitaInfra1.Level;
 using Agate.WaskitaInfra1.UserInterface.Quiz;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ namespace Experimental
         [SerializeField]
         private QuizDisplay _quizDisplay = default;
         [SerializeField]
-        private ScriptableQuiz quiz = default;
+        private SerializableChecklistItem quiz = default;
 
         private void Start()
         {
