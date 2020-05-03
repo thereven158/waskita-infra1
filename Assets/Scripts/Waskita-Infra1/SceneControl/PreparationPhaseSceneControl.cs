@@ -1,3 +1,4 @@
+using A3.UserInterface;
 using Agate.WaskitaInfra1;
 using Agate.WaskitaInfra1.GameProgress;
 using Agate.WaskitaInfra1.Level;
@@ -8,6 +9,7 @@ using Agate.WaskitaInfra1.UserInterface.LevelList;
 using Agate.WaskitaInfra1.UserInterface.Quiz;
 using Agate.WaskitaInfra1.Utilities;
 using UnityEngine;
+using UserInterface.Display;
 using UserInterface.LevelState;
 
 namespace SceneControl
@@ -22,6 +24,9 @@ namespace SceneControl
         private LevelStateDisplay _levelStateDisplay;
         private LevelProgressCheckListDisplay _checklistDisplay;
         private QuizDisplay _quizDisplay;
+        private UiDisplaysSystem<GameObject> _displaySystem;
+        [SerializeField]
+        private ConfirmationPopUpDisplay _confirmationPopUp = default;
 
         private void Start()
         {
@@ -33,12 +38,11 @@ namespace SceneControl
             _checklistDisplay = Main.GetRegisteredComponent<LevelProgressCheckListDisplay>();
             _quizDisplay = Main.GetRegisteredComponent<QuizDisplay>();
             _levelStateDisplay = Main.GetRegisteredComponent<LevelStateDisplay>();
+            _displaySystem = Main.GetRegisteredComponent<UiDisplaysSystemBehavior>();
             if (_levelProgress.Data == null)
                 OpenProjectList();
-            else 
+            else
                 OpenCheckList();
-
-
         }
 
         private void OpenProjectList()
@@ -64,7 +68,6 @@ namespace SceneControl
 
         private void OpenCheckList()
         {
-            
             _levelStateDisplay.OpenDisplay(_levelProgress.Data.Level.State());
             _checklistDisplay.Open(_levelProgress.Data, OpenCheckListItem, SimulationConfirmation);
         }
@@ -77,6 +80,8 @@ namespace SceneControl
 
         private void SimulationConfirmation()
         {
+            _displaySystem.GetOrCreateDisplay<ConfirmationPopUpDisplay>(_confirmationPopUp)
+                .Open("anda yakin ?", () => Debug.Log("GO TO SIM SCENE"), null);
         }
     }
 }

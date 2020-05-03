@@ -3,6 +3,7 @@ guid: 910271b3a94bc5547a191f9a2b584d7e
 TextureImporter:
   fileIDToRecycleName:
     21300000: Avatar_0
+    21300002: Avatar_Pinggang
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -122,6 +123,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 9fb3c0d915e29d943ad199dc17623915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avatar_Pinggang
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 342
+        width: 446
+        height: 842
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84627bf7445e0b7478688ba33e1de37e
       vertices: []
       indices: 
       edges: []

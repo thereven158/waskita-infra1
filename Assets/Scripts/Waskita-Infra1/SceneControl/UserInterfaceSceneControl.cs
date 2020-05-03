@@ -1,3 +1,4 @@
+using A3.UserInterface;
 using Agate.WaskitaInfra1.UserInterface;
 using Agate.WaskitaInfra1.UserInterface.ChecklistList;
 using Agate.WaskitaInfra1.UserInterface.LevelList;
@@ -24,10 +25,14 @@ namespace Agate.WaskitaInfra1.SceneControl
         [SerializeField]
         private LevelProgressCheckListDisplay _checklistDisplay = default;
 
+        [SerializeField]
+        private UiDisplaysSystemBehavior _displaySystem = default;
+
         private void Start()
         {
             Main main = Main.Instance;
-            Main.RegisterComponents(_quizDisplay, _levelDataListDisplay, _levelStateDisplay, _levelDataDisplay, _checklistDisplay);
+            _displaySystem.Init();
+            Main.RegisterComponents(_quizDisplay, _levelDataListDisplay, _levelStateDisplay, _levelDataDisplay, _checklistDisplay, _displaySystem);
             _quizDisplay.Close();
             _levelStateDisplay.ToggleDisplay(false);
             _levelDataListDisplay.Close();

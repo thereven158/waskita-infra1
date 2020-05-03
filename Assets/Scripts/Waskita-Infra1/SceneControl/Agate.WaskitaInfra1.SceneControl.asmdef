@@ -2,6 +2,9 @@
     "name": "Agate.WaskitaInfra1.SceneControl",
     "references": [
         "A3.Quiz",
+        "A3.CodePattern",
+        "A3.UserInterface",
+        "Agate.WaskitaInfra1.UserInterface.Display",
         "Agate.WaskitaInfra1",
         "Agate.WaskitaInfra1.Level",
         "Agate.WaskitaInfra1.GameProgress",
