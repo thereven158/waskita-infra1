@@ -1,0 +1,15 @@
+{
+    "name": "Agate.WaskitaInfra1.UserInterface.Display",
+    "references": [
+        "A3.UserInterface",
+        "Unity.TextMeshPro"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

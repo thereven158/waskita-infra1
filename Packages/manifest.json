@@ -4,6 +4,8 @@
     "com.a3.data-driven-event": "http://gategit.agate.id/billy.firman/a3-upm.git#data-driven-event",
     "com.a3.interactive-data-display": "http://gategit.agate.id/billy.firman/a3-upm.git#interactive-data-display",
     "com.a3.quiz": "http://gategit.agate.id/billy.firman/a3-upm.git#quiz",
+    "com.a3.ugui-display": "http://gategit.agate.id/billy.firman/a3-upm.git#ugui-display",
+    "com.a3.utilities": "http://gategit.agate.id/billy.firman/a3-upm.git#utilities",
     "com.unity.analytics": "3.2.2",
     "com.unity.package-manager-ui": "2.0.8",
     "com.unity.textmeshpro": "1.4.1",
@@ -54,6 +56,14 @@
     "com.a3.quiz": {
       "hash": "d2f397800d188c8086bd01abb9ef1ee3c2e93a48",
       "revision": "quiz"
+    },
+    "com.a3.ugui-display": {
+      "hash": "c2055c9ae41a4a532d2610d3c812a945de368709",
+      "revision": "ugui-display"
+    },
+    "com.a3.utilities": {
+      "hash": "cdb01dc2e32053511c249ae9ce09fd117473e081",
+      "revision": "utilities"
     }
   }
 }
