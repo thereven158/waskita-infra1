@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Agate.WaskitaInfra1.GameProgress;
+using Agate.WaskitaInfra1.Level;
 using Agate.WaskitaInfra1.LevelProgress;
 using Agate.WaskitaInfra1.PlayerAccount;
 using UnityEngine;
@@ -39,6 +40,8 @@ namespace Agate.WaskitaInfra1
         private PlayerAccountControl _playerAccount;
         private GameProgressControl _gameProgress;
         private LevelProgressControl _levelProgress;
+        [SerializeField]
+        private LevelControl _levelControl;
 
         #endregion
 

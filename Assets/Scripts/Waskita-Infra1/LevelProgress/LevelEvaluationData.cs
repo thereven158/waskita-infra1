@@ -12,7 +12,7 @@ namespace Agate.WaskitaInfra1.LevelProgress
             DayFinished = progressData.CurrentDay;
             TryCount = progressData.TryCount;
             for (int i = 0; i < progressData.Level.Quizzes.Count; i++)
-                AnswerEvaluations.Add(progressData.Level.Quizzes[i].IsCorrect(progressData.Answers[i]));
+                AnswerEvaluations.Add(progressData.Level.Quizzes[i].Quiz.IsCorrect(progressData.Answers[i]));
         }
         public LevelData Level;
         public uint TryCount;

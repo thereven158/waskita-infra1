@@ -10,7 +10,7 @@ namespace Agate.WaskitaInfra1.Level
         public string Name;
         public string Description;
         public uint DayDuration;
-        public List<IQuiz> Quizzes = new List<IQuiz>();
+        public List<IChecklistItem> Quizzes = new List<IChecklistItem>();
         public List<IEventTriggerData<EventTriggerData>> Events;
         public Weather WeatherForecast;
         public SoilCondition SoilCondition;

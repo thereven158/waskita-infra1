@@ -1,9 +1,6 @@
 using System.Collections.Generic;
-using System.Linq;
 using A3.CodePattern.Unity;
 using A3.DataDrivenEvent;
-using Agate.SugiSuma.Quiz;
-using A3.Quiz;
 using Agate.WaskitaInfra1.Object;
 using UnityEngine;
 
@@ -15,7 +12,7 @@ namespace Agate.WaskitaInfra1.Level
         public string Description;
         public uint DayDuration;
 
-        public List<ScriptableQuiz> Quizzes;
+        public List<SerializableChecklistItem> Quizzes;
         public List<IEventTriggerData<EventTriggerData>> Events;
         public SoilCondition SoilCondition;
         public Weather WeatherForecast;
@@ -38,7 +35,7 @@ namespace Agate.WaskitaInfra1.Level
                 Name = name,
                 Description = Description,
                 DayDuration = DayDuration,
-                Quizzes = new List<IQuiz>(Quizzes.Select(quiz => quiz.Quiz)),
+                Quizzes = new List<IChecklistItem>(Quizzes),
                 WeatherForecast = WeatherForecast,
                 SoilCondition = SoilCondition,
                 WindStrength = WindStrength,
