@@ -32,7 +32,7 @@ namespace Agate.WaskitaInfra1.UserInterface.Quiz
             spriteOptionDisplaySystem.OnInteraction += sprite => _activeAnswer = sprite;
             spriteOptionDisplaySystem.OnInteraction += sprite => _confirmButton.gameObject.SetActive(true);
             _confirmButton.onClick.AddListener(ConfirmAnswer);
-            _cancelButton.onClick.AddListener(() => ToggleDisplay(false));
+            _cancelButton.onClick.AddListener(Close);
         }
 
         public void ToggleDisplay(bool toggle)

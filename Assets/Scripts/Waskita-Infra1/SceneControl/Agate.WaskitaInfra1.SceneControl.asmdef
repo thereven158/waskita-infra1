@@ -13,7 +13,9 @@
         "Agate.WaskitaInfra1.UserInterface.LevelData",
         "Agate.WaskitaInfra1.UserInterface.Quiz",
         "Agate.WaskitaInfra1.UserInterface.LevelList",
-        "Agate.WaskitaInfra1.UserInterface.LevelState"
+        "Agate.WaskitaInfra1.UserInterface.LevelState",
+        "Agate.WaskitaInfra1.Utilities.LevelData"
+
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],

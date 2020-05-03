@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Agate.WaskitaInfra1.Level;
 
 namespace Agate.WaskitaInfra1.LevelProgress
@@ -12,5 +13,13 @@ namespace Agate.WaskitaInfra1.LevelProgress
         DayCondition Condition {get;}
         LevelData Level{get;}
         bool Equals(ILevelProgressData other);
+    }
+
+    public static class ProgressExtension
+    {
+        public static bool IsChecklistDone(this ILevelProgressData progressData)
+        {
+            return progressData.Answers.All(o => o != null);
+        }
     }
 }

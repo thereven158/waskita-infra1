@@ -6,7 +6,9 @@ using Agate.WaskitaInfra1.UserInterface;
 using Agate.WaskitaInfra1.UserInterface.ChecklistList;
 using Agate.WaskitaInfra1.UserInterface.LevelList;
 using Agate.WaskitaInfra1.UserInterface.Quiz;
+using Agate.WaskitaInfra1.Utilities;
 using UnityEngine;
+using UserInterface.LevelState;
 
 namespace SceneControl
 {
@@ -17,9 +19,10 @@ namespace SceneControl
         private LevelControl _levelControl;
         private LevelDataListDisplay _levelListDisplay;
         private LevelDataDisplay _levelDataDisplay;
+        private LevelStateDisplay _levelStateDisplay;
         private LevelProgressCheckListDisplay _checklistDisplay;
         private QuizDisplay _quizDisplay;
-        
+
         private void Start()
         {
             _gameProgress = Main.GetRegisteredComponent<GameProgressControl>();
@@ -29,10 +32,13 @@ namespace SceneControl
             _levelDataDisplay = Main.GetRegisteredComponent<LevelDataDisplay>();
             _checklistDisplay = Main.GetRegisteredComponent<LevelProgressCheckListDisplay>();
             _quizDisplay = Main.GetRegisteredComponent<QuizDisplay>();
+            _levelStateDisplay = Main.GetRegisteredComponent<LevelStateDisplay>();
             if (_levelProgress.Data == null)
-            {
                 OpenProjectList();
-            }
+            else 
+                OpenCheckList();
+
+
         }
 
         private void OpenProjectList()
@@ -47,24 +53,30 @@ namespace SceneControl
         {
             _levelListDisplay.Close();
             _levelDataDisplay.OpenDisplay(
-                data, 
+                data,
                 levelData =>
                 {
                     _levelProgress.StartLevel(levelData);
                     OpenCheckList();
-                }, 
+                },
                 OpenProjectList);
         }
 
         private void OpenCheckList()
         {
-            _checklistDisplay.Open(_levelProgress.Data, OpenCheckListItem);
+            
+            _levelStateDisplay.OpenDisplay(_levelProgress.Data.Level.State());
+            _checklistDisplay.Open(_levelProgress.Data, OpenCheckListItem, SimulationConfirmation);
         }
 
         private void OpenCheckListItem(IChecklistItem item)
         {
             _checklistDisplay.Close();
-            _quizDisplay.Display(item.Quiz,(quiz, o) => _levelProgress.AnswerQuestion(item,o), OpenCheckList);
+            _quizDisplay.Display(item.Quiz, (quiz, o) => _levelProgress.AnswerQuestion(item, o), OpenCheckList);
+        }
+
+        private void SimulationConfirmation()
+        {
         }
     }
 }
