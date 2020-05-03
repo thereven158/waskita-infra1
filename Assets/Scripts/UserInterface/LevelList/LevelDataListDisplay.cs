@@ -13,7 +13,7 @@ namespace Agate.WaskitaInfra1.UserInterface.LevelList
         private Action<LevelData> _onDataInteraction;
         public event Action OnInteraction;
 
-        public void Init()
+        private void Awake()
         {
             _pool.Init();
         }

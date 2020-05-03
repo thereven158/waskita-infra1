@@ -22,6 +22,8 @@ namespace Agate.WaskitaInfra1.UserInterface.Quiz
         {
             ToggleSpriteDataDisplay display = _togglePool.GetPooledObject();
             _toggleGroup.allowSwitchOff = true;
+            Debug.Log(display);
+            Debug.Log(display.Toggle);
             display.Toggle.group = _toggleGroup;
             display.gameObject.SetActive(true);
             display.Display(data);

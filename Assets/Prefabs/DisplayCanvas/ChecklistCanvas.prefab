@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 6612074800258455977}
   - component: {fileID: 6612074800258456022}
   - component: {fileID: 6612074800258456023}
-  - component: {fileID: 6612074800258455979}
+  - component: {fileID: 284100464974572184}
   m_Layer: 5
   m_Name: ChecklistCanvas
   m_TagString: Untagged
@@ -303,7 +303,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &6612074800258455979
+--- !u!114 &284100464974572184
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -312,10 +312,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6612074800258456020}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c750c49083076d84db715eed20763ddb, type: 3}
+  m_Script: {fileID: 11500000, guid: a1a53d44262c41729ec37c6bc7f3364a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pool: {fileID: 6612074801001728557}
+  _checklistDataListDisplay: {fileID: 2057217433312679465}
 --- !u!1 &6612074800449436877
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,6 +593,7 @@ GameObject:
   - component: {fileID: 6612074801001728554}
   - component: {fileID: 6612074801001728555}
   - component: {fileID: 6612074801001728557}
+  - component: {fileID: 2057217433312679465}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -673,6 +674,19 @@ MonoBehaviour:
     type: 3}
   initialPoolAmount: 2
   expandable: 1
+--- !u!114 &2057217433312679465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6612074801001728553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c750c49083076d84db715eed20763ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pool: {fileID: 6612074801001728557}
 --- !u!1 &6612074801050794589
 GameObject:
   m_ObjectHideFlags: 0

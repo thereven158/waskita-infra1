@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using A3.Quiz;
+using Agate.WaskitaInfra1.Level;
 using UnityEngine;
 
 namespace Agate.WaskitaInfra1.UserInterface.ChecklistList
@@ -10,14 +10,14 @@ namespace Agate.WaskitaInfra1.UserInterface.ChecklistList
         [SerializeField]
         private ChecklistDataDisplayPool _pool = default;
 
-        public event Action<IQuiz> OnDataInteraction;
+        public Action<IChecklistItem> OnDataInteraction;
 
         public void Init()
         {
             _pool.Init();
         }
 
-        private void AddData(IQuiz data, bool interactable = true)
+        public void AddData(CheckListViewData data, bool interactable = true)
         {
             ChecklistDataDisplay display = _pool.GetPooledObject();
             display.Button.interactable = interactable;
@@ -26,31 +26,14 @@ namespace Agate.WaskitaInfra1.UserInterface.ChecklistList
             display.OnInteraction = OnDataDisplayInteraction;
         }
 
-        private void PopulateLevelList(IEnumerable<IQuiz> checklists)
+        private void OnDataDisplayInteraction(CheckListViewData data)
         {
-            int i = 0;
-            foreach (IQuiz levelData in checklists)
-            {
-                AddData(levelData);
-                i++;
-            }
+            OnDataInteraction?.Invoke(data.Item);
         }
 
-        public void OpenList(IEnumerable<IQuiz> checklists)
+        public void Reset()
         {
-            gameObject.SetActive(true);
             _pool.ResetPool();
-            PopulateLevelList(checklists);
-        }
-
-        public void Close()
-        {
-            gameObject.SetActive(false);
-        }
-
-        private void OnDataDisplayInteraction(IQuiz data)
-        {
-            OnDataInteraction?.Invoke(data);
         }
     }
 }

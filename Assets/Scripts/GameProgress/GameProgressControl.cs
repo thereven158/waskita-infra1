@@ -12,6 +12,7 @@ namespace Agate.WaskitaInfra1.GameProgress
 
         public void SetData(IGameProgressData data)
         {
+            if (data == null) return;
             _data = new GameProgressData(data);
             OnDataChange?.Invoke(Data);
         }

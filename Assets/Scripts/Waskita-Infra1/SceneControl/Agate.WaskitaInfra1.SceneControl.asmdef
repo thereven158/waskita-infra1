@@ -1,9 +1,16 @@
 {
     "name": "Agate.WaskitaInfra1.SceneControl",
     "references": [
+        "A3.Quiz",
         "Agate.WaskitaInfra1",
+        "Agate.WaskitaInfra1.Level",
+        "Agate.WaskitaInfra1.GameProgress",
+        "Agate.WaskitaInfra1.Level.Unity",
+        "Agate.WaskitaInfra1.LevelProgress",
         "Agate.WaskitaInfra1.PlayerAccount",
         "Agate.WaskitaInfra1.UserInterface",
+        "Agate.WaskitaInfra1.UserInterface.ChecklistList",
+        "Agate.WaskitaInfra1.UserInterface.LevelData",
         "Agate.WaskitaInfra1.UserInterface.Quiz",
         "Agate.WaskitaInfra1.UserInterface.LevelList",
         "Agate.WaskitaInfra1.UserInterface.LevelState"

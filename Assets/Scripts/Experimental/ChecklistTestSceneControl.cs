@@ -6,14 +6,13 @@ using Agate.WaskitaInfra1;
 public class ChecklistTestSceneControl : MonoBehaviour
 {
     [SerializeField]
-    private ChecklistDataListDisplay _checklistDisplay;
+    private LevelProgressCheckListDisplay _checklistDisplay;
     [SerializeField]
     private ScriptableLevelProgress _checklistsProgress;
 
     private void Start()
     {
-        _checklistDisplay.Init();
-        _checklistDisplay.OpenList(_checklistsProgress.Level.Quizzes.Select(item => item.Quiz));
+        _checklistDisplay.Open(_checklistsProgress,Debug.Log);
         //Debug.Log(_checklistsProgress.Level.Quizzes);
     }
 }

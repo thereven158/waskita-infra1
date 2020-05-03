@@ -15,5 +15,7 @@ MonoBehaviour:
   _lastCheckpoint: 0
   _currentDay: 0
   _tryCount: 0
-  _answers: []
+  _answers:
+  - {fileID: 0}
+  - {fileID: 0}
   _level: {fileID: 11400000, guid: 7508d0c3b07a7014787ee315a01bb606, type: 2}

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Agate.GlSim.Scene.Control.Map.Loader;
 using Agate.WaskitaInfra1.GameProgress;
 using Agate.WaskitaInfra1.Level;
 using Agate.WaskitaInfra1.LevelProgress;
@@ -40,6 +41,8 @@ namespace Agate.WaskitaInfra1
         private PlayerAccountControl _playerAccount;
         private GameProgressControl _gameProgress;
         private LevelProgressControl _levelProgress;
+        [SerializeField]
+        private GameplaySceneLoadControl _sceneLoader;
         [SerializeField]
         private LevelControl _levelControl;
 
@@ -93,7 +96,7 @@ namespace Agate.WaskitaInfra1
             _playerAccount = new PlayerAccountControl();
             _gameProgress = new GameProgressControl();
             _levelProgress = new LevelProgressControl();
-            RegisterComponents(_playerAccount, _gameProgress, _levelProgress);
+            RegisterComponents(_playerAccount, _gameProgress, _levelProgress, _levelControl);
             _playerAccount.OnDataChange += data => { _gameProgress.SetData(_gameData.GetProgressData()); };
             _gameProgress.OnDataChange += data => { _levelProgress.LoadData(_gameData.LevelProgressData()); };
             SceneManager.LoadScene("UserInterface", LoadSceneMode.Additive);
@@ -130,16 +133,17 @@ namespace Agate.WaskitaInfra1
         {
             if (!string.IsNullOrEmpty(_firstLoadedSceneName))
             {
-                SceneManager.LoadScene(_firstLoadedSceneName, LoadSceneMode.Single);
+                _sceneLoader.ChangeScene(_firstLoadedSceneName);
+
                 return;
             }
 
-            SceneManager.LoadScene(_firstSceneToLoad, LoadSceneMode.Single);
+            _sceneLoader.ChangeScene(_firstSceneToLoad);
         }
 
         public void StartGame()
         {
-            SceneManager.LoadScene("ChecklistScene", LoadSceneMode.Single);
+            _sceneLoader.ChangeScene("PreparationPhase");
         }
 
         #endregion

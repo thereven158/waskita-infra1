@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Agate.WaskitaInfra1.Level
@@ -6,11 +7,13 @@ namespace Agate.WaskitaInfra1.Level
     public class LevelControl : MonoBehaviour
     {
         [SerializeField]
-        private List<LevelDataScriptableObject> _Levels;
+        private List<LevelDataScriptableObject> _levels;
 
         public LevelData GetLevel(int index)
         {
-            return _Levels[index].Object;
+            return _levels[index].Object;
         }
+
+        public IEnumerable<LevelData> Levels => _levels.Select(level => level.Object);
     }
 }
