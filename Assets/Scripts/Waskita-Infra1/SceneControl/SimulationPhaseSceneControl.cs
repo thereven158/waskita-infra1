@@ -17,6 +17,7 @@ namespace SceneControl
         private LevelStateDisplay _levelStateDisplay;
         private UiDisplaysSystem<GameObject> _displaysSystem;
         private GameplaySceneLoadControl _sceneLoader;
+
         [SerializeField]
         private PopUpDisplay _popUpDisplay = default;
 
@@ -68,7 +69,8 @@ namespace SceneControl
         private void OnLevelFinish(LevelEvaluationData data)
         {
             _displaysSystem.GetOrCreateDisplay<PopUpDisplay>(_popUpDisplay).Open(
-                "Project Telah selesai Evaluation Display Is Under Development",
+                "Proyek telah sukses dilaksanakan.\n" +
+                "[Evaluation display is under development]",
                 () => _sceneLoader.ChangeScene("PreparationPhase"));
         }
     }

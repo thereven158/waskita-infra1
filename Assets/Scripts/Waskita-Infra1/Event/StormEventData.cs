@@ -21,19 +21,26 @@ namespace Agate.WaskitaInfra1.Level
 
         public override bool IsSuitable(EventTriggerData data)
         {
-            Debug.Log($"suitable check {data.Day ==Day}");
+            Debug.Log($"suitable check {data.Day == Day}");
             return data.Day == Day;
         }
 
         public override void Trigger(EventTriggerData data)
         {
-            _displaysSystem.GetOrCreateDisplay<ConfirmationPopUpDisplay>(_confirmation)
-                .Open("ada badai lanjut ?", FailurePopUps, null);
+            _displaysSystem
+                .GetOrCreateDisplay<ConfirmationPopUpDisplay>(_confirmation)
+                .Open(new ConfirmationPopUpViewData()
+                {
+                    MessageText = "hari ini kelihatannya akan hujan deras!\n" +
+                                  "Lanjutkan proyek seperti biasa ?",
+                    CloseAction = null,
+                    CloseButtonText = "Tunda",
+                    ConfirmAction = FailurePopUps
+                });
         }
 
         public override void Init(IEventTriggerSystem<EventTriggerData> triggerSystem)
         {
-            Debug.Log("Init");
             _levelProgress = triggerSystem.GetEventComponent<LevelProgressControl>();
             _displaysSystem = triggerSystem.GetEventComponent<UiDisplaysSystem<GameObject>>();
         }
@@ -41,7 +48,7 @@ namespace Agate.WaskitaInfra1.Level
         private void FailurePopUps()
         {
             _displaysSystem.GetOrCreateDisplay<PopUpDisplay>(_information).Open(
-                "Projek gagal karena ada kendala  . . . . anda harus mengulangi projek",
+                "Proyek gagal karena tidak dijalankan seusai SOP. Silakan ulangi proyek untuk mencoba kembali!",
                 _levelProgress.RetryFromCheckPoint);
         }
 
