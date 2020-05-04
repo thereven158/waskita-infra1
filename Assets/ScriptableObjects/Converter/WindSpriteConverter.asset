@@ -38,7 +38,7 @@ MonoBehaviour:
     _keyValues: 0300000006000000090000000c000000
     _keys: 0300000006000000090000000c000000
     _values:
-    - {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-    - {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-    - {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-    - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+    - {fileID: 21300000, guid: e69010b4ca8da474bbf805f1ff2397db, type: 3}
+    - {fileID: 21300000, guid: e69010b4ca8da474bbf805f1ff2397db, type: 3}
+    - {fileID: 21300000, guid: e69010b4ca8da474bbf805f1ff2397db, type: 3}
+    - {fileID: 21300000, guid: e69010b4ca8da474bbf805f1ff2397db, type: 3}

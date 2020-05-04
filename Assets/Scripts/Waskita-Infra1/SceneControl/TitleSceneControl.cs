@@ -27,12 +27,12 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
             _logOutButton.gameObject.SetActive(loggedIn);
             _logOutButton.onClick.AddListener(OnLogoutButton);
             _startButton.onClick.AddListener(OnStartButtonPress);
-            
         }
 
         private void OnStartButtonPress()
         {
             // if (loggedIn) Main.Instance.StartGame();
+            _startButton.gameObject.SetActive(false);
             _loginForm.ToggleDisplay(true);
         }
 

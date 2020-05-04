@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a8f19587673433cbd08bbaad7db74c4, type: 3}
   m_Name: Storm
   m_EditorClassIdentifier: 
-  _image: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  _image: {fileID: 21300000, guid: 7457d2c058c7eba46b4fd59eea1fdaff, type: 3}
