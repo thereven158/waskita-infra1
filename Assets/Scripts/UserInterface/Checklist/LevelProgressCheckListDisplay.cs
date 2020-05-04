@@ -29,7 +29,7 @@ namespace Agate.WaskitaInfra1.UserInterface.ChecklistList
         {
             _onDataInteraction = onDataInteraction;
             _onFinishButton = onFinish;
-            _finishButton.gameObject.SetActive(progressData.IsChecklistDone());
+            _finishButton.interactable = progressData.IsChecklistDone();
             gameObject.SetActive(true);
             List<IChecklistItem> checklistItems = progressData.Level.Quizzes;
             for (int i = 0; i < checklistItems.Count; i++)

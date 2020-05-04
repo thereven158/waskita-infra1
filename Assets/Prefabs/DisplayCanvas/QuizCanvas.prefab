@@ -550,7 +550,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tidak
+  m_text: Batal
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -676,11 +676,11 @@ RectTransform:
   m_Father: {fileID: 1461538089356797044}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -349.6, y: 40.68004}
-  m_SizeDelta: {x: 206.1, y: 105.6}
-  m_Pivot: {x: 1, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 496, y: 32}
+  m_SizeDelta: {x: 192, y: 96}
+  m_Pivot: {x: 0, y: 0}
 --- !u!222 &386654559943774563
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1305,7 +1305,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ya
+  m_text: Simpan
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1374,7 +1374,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 386654561047604095}
-    characterCount: 2
+    characterCount: 6
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -1433,8 +1433,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -60.5, y: 40.68}
-  m_SizeDelta: {x: 200.23, y: 105.6}
+  m_AnchoredPosition: {x: -16, y: 32}
+  m_SizeDelta: {x: 192, y: 96}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &386654561208519465
 CanvasRenderer:
@@ -1667,6 +1667,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Footer
       objectReference: {fileID: 0}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_text
+      value: Simpan jawaban ?
+      objectReference: {fileID: 0}
     - target: {fileID: 2020986909790229143, guid: 43639c912091e044da5b01e798783372,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1771,36 +1806,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 31
-      objectReference: {fileID: 0}
-    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
-        type: 3}
-      propertyPath: m_firstOverflowCharacterIndex
-      value: 26
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43639c912091e044da5b01e798783372, type: 3}

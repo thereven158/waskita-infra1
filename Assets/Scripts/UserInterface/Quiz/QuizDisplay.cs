@@ -30,7 +30,7 @@ namespace Agate.WaskitaInfra1.UserInterface.Quiz
         {
             spriteOptionDisplaySystem.Init();
             spriteOptionDisplaySystem.OnInteraction += sprite => _activeAnswer = sprite;
-            spriteOptionDisplaySystem.OnInteraction += sprite => _confirmButton.gameObject.SetActive(true);
+            spriteOptionDisplaySystem.OnInteraction += sprite => _confirmButton.interactable = true;
             _confirmButton.onClick.AddListener(ConfirmAnswer);
             _cancelButton.onClick.AddListener(Close);
         }
@@ -46,7 +46,7 @@ namespace Agate.WaskitaInfra1.UserInterface.Quiz
             _onConfirmAnswer = onConfirmAnswer;
             _onClose = onClose;
             _activeAnswer = null;
-            _confirmButton.gameObject.SetActive(false);
+            _confirmButton.interactable = false;
             _activeQuiz = quiz;
             spriteOptionDisplaySystem.Reset();
             switch (_activeQuiz.Question)

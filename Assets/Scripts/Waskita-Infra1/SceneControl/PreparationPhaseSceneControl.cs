@@ -27,6 +27,7 @@ namespace SceneControl
         private QuizDisplay _quizDisplay;
         private UiDisplaysSystem<GameObject> _displaySystem;
         private GameplaySceneLoadControl _sceneLoader;
+
         [SerializeField]
         private ConfirmationPopUpDisplay _confirmationPopUp = default;
 
@@ -83,8 +84,13 @@ namespace SceneControl
 
         private void SimulationConfirmation()
         {
-            _displaySystem.GetOrCreateDisplay<ConfirmationPopUpDisplay>(_confirmationPopUp)
-                .Open("anda yakin ?", GoToSimulation, null);
+            _displaySystem
+                .GetOrCreateDisplay<ConfirmationPopUpDisplay>(_confirmationPopUp)
+                .Open(
+                    "PERINGATAN!\n" +
+                    "Checklist yang telah di simpan tidak dapat di ubah hingga projek selesai. lanjutkan ?",
+                    GoToSimulation,
+                    null);
         }
 
         private void GoToSimulation()
