@@ -1,19 +1,21 @@
-﻿using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 using Agate.WaskitaInfra1.UserInterface.ChecklistList;
 using Agate.WaskitaInfra1;
 
-public class ChecklistTestSceneControl : MonoBehaviour
+namespace Experimental
 {
-    [SerializeField]
-    private LevelProgressCheckListDisplay _checklistDisplay;
-
-    [SerializeField]
-    private ScriptableLevelProgress _checklistsProgress;
-
-    private void Start()
+    public class ChecklistTestSceneControl : MonoBehaviour
     {
-        _checklistDisplay.Open(_checklistsProgress, Debug.Log, () => Debug.Log("Finish"));
-        //Debug.Log(_checklistsProgress.Level.Quizzes);
+        [SerializeField]
+        private LevelProgressCheckListDisplay _checklistDisplay;
+
+        [SerializeField]
+        private ScriptableLevelProgress _checklistsProgress;
+
+        private void Start()
+        {
+            _checklistDisplay.Open(_checklistsProgress, Debug.Log, () => Debug.Log("Finish"));
+            //Debug.Log(_checklistsProgress.Level.Quizzes);
+        }
     }
 }

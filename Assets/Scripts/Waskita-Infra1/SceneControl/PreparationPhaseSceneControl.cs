@@ -1,4 +1,5 @@
 using A3.UserInterface;
+using Agate.GlSim.Scene.Control.Map.Loader;
 using Agate.WaskitaInfra1;
 using Agate.WaskitaInfra1.GameProgress;
 using Agate.WaskitaInfra1.Level;
@@ -25,6 +26,7 @@ namespace SceneControl
         private LevelProgressCheckListDisplay _checklistDisplay;
         private QuizDisplay _quizDisplay;
         private UiDisplaysSystem<GameObject> _displaySystem;
+        private GameplaySceneLoadControl _sceneLoader;
         [SerializeField]
         private ConfirmationPopUpDisplay _confirmationPopUp = default;
 
@@ -39,6 +41,7 @@ namespace SceneControl
             _quizDisplay = Main.GetRegisteredComponent<QuizDisplay>();
             _levelStateDisplay = Main.GetRegisteredComponent<LevelStateDisplay>();
             _displaySystem = Main.GetRegisteredComponent<UiDisplaysSystemBehavior>();
+            _sceneLoader = Main.GetRegisteredComponent<GameplaySceneLoadControl>();
             if (_levelProgress.Data == null)
                 OpenProjectList();
             else
@@ -81,7 +84,16 @@ namespace SceneControl
         private void SimulationConfirmation()
         {
             _displaySystem.GetOrCreateDisplay<ConfirmationPopUpDisplay>(_confirmationPopUp)
-                .Open("anda yakin ?", () => Debug.Log("GO TO SIM SCENE"), null);
+                .Open("anda yakin ?", GoToSimulation, null);
+        }
+
+        private void GoToSimulation()
+        {
+            _quizDisplay.Close();
+            _levelStateDisplay.ToggleDisplay(false);
+            _levelDataDisplay.ToggleDisplay(false);
+            _checklistDisplay.Close();
+            _sceneLoader.ChangeScene("SimulationPhase");
         }
     }
 }

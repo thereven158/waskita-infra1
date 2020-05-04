@@ -96,7 +96,7 @@ namespace Agate.WaskitaInfra1
             _playerAccount = new PlayerAccountControl();
             _gameProgress = new GameProgressControl();
             _levelProgress = new LevelProgressControl();
-            RegisterComponents(_playerAccount, _gameProgress, _levelProgress, _levelControl);
+            RegisterComponents(_playerAccount, _gameProgress, _levelProgress, _levelControl, _sceneLoader);
             _playerAccount.OnDataChange += data => { _gameProgress.SetData(_gameData.GetProgressData()); };
             _gameProgress.OnDataChange += data => { _levelProgress.LoadData(_gameData.LevelProgressData()); };
             SceneManager.LoadScene("UserInterface", LoadSceneMode.Additive);

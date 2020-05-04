@@ -4,6 +4,7 @@
         "A3.DataDrivenEvent",
         "A3.CodePattern",
         "Agate.WaskitaInfra1.Level",
+        "Agate.WaskitaInfra1.Event",
         "Agate.WaskitaInfra1.Object",
         "A3.Quiz"
     ],

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using A3.CodePattern.Unity;
 using A3.DataDrivenEvent;
 using Agate.WaskitaInfra1.Object;
@@ -13,7 +14,7 @@ namespace Agate.WaskitaInfra1.Level
         public uint DayDuration;
 
         public List<SerializableChecklistItem> Quizzes;
-        public List<IEventTriggerData<EventTriggerData>> Events;
+        public List<ScriptableDayEventData> Events;
         public SoilCondition SoilCondition;
         public Weather WeatherForecast;
         public float WindStrength;
@@ -39,7 +40,7 @@ namespace Agate.WaskitaInfra1.Level
                 WeatherForecast = WeatherForecast,
                 SoilCondition = SoilCondition,
                 WindStrength = WindStrength,
-                Events = Events,
+                Events = Events.ToList<IEventTriggerData<EventTriggerData>>(),
             };
         }
     }
