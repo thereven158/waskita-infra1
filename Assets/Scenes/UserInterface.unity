@@ -324,6 +324,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 386654560731550767, guid: 07f26dd467556854084688bd4eb8f4e8,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07f26dd467556854084688bd4eb8f4e8, type: 3}
 --- !u!114 &792489261 stripped
@@ -604,6 +609,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6612074800258455977, guid: 2b0efce8a7e09be4ea02a76ae7943668,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b0efce8a7e09be4ea02a76ae7943668, type: 3}
@@ -1260,6 +1270,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 386654560731550767, guid: 97429bd68eda39f45b874453ccb7643b,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97429bd68eda39f45b874453ccb7643b, type: 3}
@@ -2139,6 +2154,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 324.8
       objectReference: {fileID: 0}
+    - target: {fileID: 1936216102220830811, guid: 5b78c0fa135917c418417f56e24177ef,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b78c0fa135917c418417f56e24177ef, type: 3}
 --- !u!114 &1787464565 stripped
@@ -2288,6 +2308,11 @@ PrefabInstance:
     - target: {fileID: 2718282856585093390, guid: ec94ef83fc188f247a49f741ba9e51b6,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6198808326895181986, guid: ec94ef83fc188f247a49f741ba9e51b6,
+        type: 3}
+      propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

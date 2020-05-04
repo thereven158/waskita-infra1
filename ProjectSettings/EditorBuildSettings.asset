@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PreparationPhase.unity
     guid: aef917033f51a7e499b72d02a67250a5
+  - enabled: 1
+    path: Assets/Scenes/SimulationPhase.unity
+    guid: b4a5e142b9be3434bb23462fc0c053bd
   m_configObjects: {}

@@ -12,6 +12,7 @@ namespace Agate.WaskitaInfra1.LevelProgress
         public event Action<int, object> OnAnswer;
         public event Action<uint> OnCheckPointUpdate;
         public event Action<LevelEvaluationData> OnFinishLevel;
+        public event Action OnRetryToCheckpoint;
 
 
         public void LoadData(ILevelProgressData data)
@@ -30,7 +31,10 @@ namespace Agate.WaskitaInfra1.LevelProgress
         public void NextDay(uint delta)
         {
             _data.CurrentDay += delta;
+            
             OnDayChange?.Invoke(_data.CurrentDay);
+            if(_data.CurrentDay > _data.Level.DayDuration)
+                FinishLevel();
         }
 
         public void AnswerQuestion(IChecklistItem item, object answer)
@@ -53,6 +57,7 @@ namespace Agate.WaskitaInfra1.LevelProgress
 
         public void RetryFromCheckPoint()
         {
+            OnRetryToCheckpoint?.Invoke();
             _data.CurrentDay = _data.LastCheckpoint;
             OnDayChange?.Invoke(_data.CurrentDay);
             _data.TryCount++;
