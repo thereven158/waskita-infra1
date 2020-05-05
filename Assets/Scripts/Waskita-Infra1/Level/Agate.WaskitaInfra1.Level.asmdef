@@ -1,0 +1,16 @@
+{
+    "name": "Agate.WaskitaInfra1.Level",
+    "references": [
+        "A3.Quiz",
+        "A3.DataDrivenEvent",
+        "Agate.WaskitaInfra1.Object"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

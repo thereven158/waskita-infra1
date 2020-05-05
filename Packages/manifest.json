@@ -2,12 +2,12 @@
   "dependencies": {
     "com.a3.code-pattern": "http://gategit.agate.id/billy.firman/a3-upm.git#code-pattern",
     "com.a3.data-driven-event": "http://gategit.agate.id/billy.firman/a3-upm.git#data-driven-event",
+    "com.a3.interactive-data-display": "http://gategit.agate.id/billy.firman/a3-upm.git#interactive-data-display",
     "com.a3.quiz": "http://gategit.agate.id/billy.firman/a3-upm.git#quiz",
-    "com.unity.ads": "2.0.8",
+    "com.a3.ugui-display": "http://gategit.agate.id/billy.firman/a3-upm.git#ugui-display",
+    "com.a3.utilities": "http://gategit.agate.id/billy.firman/a3-upm.git#utilities",
     "com.unity.analytics": "3.2.2",
-    "com.unity.collab-proxy": "1.2.15",
-    "com.unity.package-manager-ui": "2.0.7",
-    "com.unity.purchasing": "2.0.3",
+    "com.unity.package-manager-ui": "2.0.8",
     "com.unity.textmeshpro": "1.4.1",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
@@ -41,17 +41,29 @@
     "com.unity.modules.xr": "1.0.0"
   },
   "lock": {
-    "com.a3.quiz": {
-      "hash": "f742c98be52d49580c20173602cae69dd8e8a33e",
-      "revision": "quiz"
+    "com.a3.code-pattern": {
+      "hash": "a6b3449bee3c00f44918aa2c3e9455ce92e018f0",
+      "revision": "code-pattern"
     },
     "com.a3.data-driven-event": {
       "hash": "0329c9d6a06f357a2b6ea11b92bd432ef15be49c",
       "revision": "data-driven-event"
     },
-    "com.a3.code-pattern": {
-      "hash": "3eaf08445c3431a09388968558638d96f318b769",
-      "revision": "code-pattern"
+    "com.a3.interactive-data-display": {
+      "hash": "f0218d2beaebde4d48b0198c9ca0a97f820ac065",
+      "revision": "interactive-data-display"
+    },
+    "com.a3.quiz": {
+      "hash": "d2f397800d188c8086bd01abb9ef1ee3c2e93a48",
+      "revision": "quiz"
+    },
+    "com.a3.ugui-display": {
+      "hash": "c2055c9ae41a4a532d2610d3c812a945de368709",
+      "revision": "ugui-display"
+    },
+    "com.a3.utilities": {
+      "hash": "cdb01dc2e32053511c249ae9ce09fd117473e081",
+      "revision": "utilities"
     }
   }
 }

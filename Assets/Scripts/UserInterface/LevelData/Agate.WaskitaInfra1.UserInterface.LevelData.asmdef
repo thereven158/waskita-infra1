@@ -1,0 +1,17 @@
+{
+    "name": "Agate.WaskitaInfra1.UserInterface.LevelData",
+    "references": [
+        "Unity.TextMeshPro",
+        "Agate.WaskitaInfra1.Level",
+        "Agate.WaskitaInfra1.Utilities.LevelData",
+        "Agate.WaskitaInfra1.UserInterface.LevelState"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

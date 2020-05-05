@@ -27,12 +27,12 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
             _logOutButton.gameObject.SetActive(loggedIn);
             _logOutButton.onClick.AddListener(OnLogoutButton);
             _startButton.onClick.AddListener(OnStartButtonPress);
-            
         }
 
         private void OnStartButtonPress()
         {
             // if (loggedIn) Main.Instance.StartGame();
+            _startButton.gameObject.SetActive(false);
             _loginForm.ToggleDisplay(true);
         }
 
@@ -40,7 +40,7 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
         {
             // if (Main.Instance.OfflineMode) Main.Instance.StartGame();
             // else StartCoroutine(_backendIntegration.LoginProcess(username, password, Main.Instance.StartGame, null));
-            Main.StartGame();
+            Main.Instance.StartGame();
         }
         private void OnLogoutButton()
         {

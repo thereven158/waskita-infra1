@@ -1,0 +1,20 @@
+{
+    "name": "Agate.WaskitaInfra1.UserInterface.ChecklistList",
+    "references": [
+        "A3.InteractiveDataDisplay",
+        "A3.CodePattern",
+        "A3.Quiz",
+        "Agate.WaskitaInfra1",
+        "Agate.WaskitaInfra1.LevelProgress",
+        "Unity.TextMeshPro",
+        "Agate.WaskitaInfra1.Level"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

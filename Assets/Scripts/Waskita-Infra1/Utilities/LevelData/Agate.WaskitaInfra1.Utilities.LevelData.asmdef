@@ -1,0 +1,16 @@
+{
+    "name": "Agate.WaskitaInfra1.Utilities.LevelData",
+    "references": [
+        "Agate.WaskitaInfra1.Object",
+        "Agate.WaskitaInfra1.UserInterface.LevelState",
+        "Agate.WaskitaInfra1.Level"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

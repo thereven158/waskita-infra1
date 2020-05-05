@@ -122,6 +122,8 @@ GameObject:
   m_Component:
   - component: {fileID: 113000443}
   - component: {fileID: 113000442}
+  - component: {fileID: 113000444}
+  - component: {fileID: 113000445}
   m_Layer: 0
   m_Name: Main
   m_TagString: Untagged
@@ -141,9 +143,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18e506a4fe437bc4399458c5894bda0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneLoader: {fileID: 113000445}
+  _levelControl: {fileID: 113000444}
   _firstSceneToLoad: Title
   _testPlayerData: {fileID: 11400000, guid: 2afdc919ebc8703429f05b73f27b5bd7, type: 2}
   _targetFPS: 30
+  UiLoaded: 0
   _firstSceneAssetToLoad: {fileID: 102900000, guid: 573f6a3e6dc12a44381c2990ed637827,
     type: 3}
 --- !u!4 &113000443
@@ -160,3 +165,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &113000444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113000441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b74dcc495c5c45e38cb13c677d3d0e61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _levels:
+  - {fileID: 11400000, guid: 7508d0c3b07a7014787ee315a01bb606, type: 2}
+  - {fileID: 11400000, guid: af3ba2a5953624f40923361e9116873c, type: 2}
+--- !u!114 &113000445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113000441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e911803634440b6b227b766d2efd397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _titleSceneName: Title
+  _titleScene: {fileID: 102900000, guid: 573f6a3e6dc12a44381c2990ed637827, type: 3}

@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c92f589334274a9b884c8bd708d4dce0, type: 3}
   m_Name: ProyekCiaci
   m_EditorClassIdentifier: 
-  name: Proyek Jalan Tol Ciaci
   Description: Proyek kali ini mayoritas dalam keadaan berawan dan kemungkinan hujan
     yang cukup rendah. Intensitas angin umumnya sedang dengan tanah penanaman yang
-    keras. Durasi Proyek 60 hari
+    keras. Durasi Proyek 30 hari
   DayDuration: 30
   Quizzes:
-  - {fileID: 11400000, guid: f6a41896183e2f84eb3ae926e20a90ce, type: 2}
-  - {fileID: 11400000, guid: 2cfc2dfe031222f4694a86395c387f38, type: 2}
+  - _quiz: {fileID: 11400000, guid: f6a41896183e2f84eb3ae926e20a90ce, type: 2}
+    _category: Test Item
+  - _quiz: {fileID: 11400000, guid: f6a41896183e2f84eb3ae926e20a90ce, type: 2}
+    _category: Test Item
+  Events:
+  - {fileID: 11400000, guid: 51335929932339946bae1a276ae76beb, type: 2}
   SoilCondition: {fileID: 11400000, guid: 35630f21c3d1b6947a286a2353e83768, type: 2}
   WeatherForecast: {fileID: 11400000, guid: fe8e7f51e1f815f43bd4983a8eff352e, type: 2}
+  WindStrength: 0

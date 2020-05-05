@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using Agate.GlSim.Scene.Control.Map.Loader;
 using Agate.WaskitaInfra1.GameProgress;
+using Agate.WaskitaInfra1.Level;
 using Agate.WaskitaInfra1.LevelProgress;
 using Agate.WaskitaInfra1.PlayerAccount;
 using UnityEngine;
@@ -38,6 +41,10 @@ namespace Agate.WaskitaInfra1
         private PlayerAccountControl _playerAccount;
         private GameProgressControl _gameProgress;
         private LevelProgressControl _levelProgress;
+        [SerializeField]
+        private GameplaySceneLoadControl _sceneLoader;
+        [SerializeField]
+        private LevelControl _levelControl;
 
         #endregion
 
@@ -64,14 +71,16 @@ namespace Agate.WaskitaInfra1
 
 
         [SerializeField]
-        private ScriptablePlayerGameData _testPlayerData;
+        private ScriptablePlayerGameData _testPlayerData = default;
 
         [SerializeField]
         private int _targetFPS = 30;
 
         #endregion
 
-
+        [HideInInspector]
+        public bool UiLoaded; 
+        
         private IPlayerGameData _gameData;
 
         #endregion
@@ -87,20 +96,18 @@ namespace Agate.WaskitaInfra1
             _playerAccount = new PlayerAccountControl();
             _gameProgress = new GameProgressControl();
             _levelProgress = new LevelProgressControl();
-            RegisterComponents(_playerAccount, _gameProgress, _levelProgress);
+            RegisterComponents(_playerAccount, _gameProgress, _levelProgress, _levelControl, _sceneLoader);
             _playerAccount.OnDataChange += data => { _gameProgress.SetData(_gameData.GetProgressData()); };
             _gameProgress.OnDataChange += data => { _levelProgress.LoadData(_gameData.LevelProgressData()); };
+            SceneManager.LoadScene("UserInterface", LoadSceneMode.Additive);
+        }
 
+        private IEnumerator Start()
+        {
+            yield return new WaitUntil(() => UiLoaded);
             _gameData = _testPlayerData;
             _playerAccount.SetData(_gameData.GetAccountData());
-
-            if (!string.IsNullOrEmpty(_firstLoadedSceneName))
-            {
-                SceneManager.LoadScene(_firstLoadedSceneName, LoadSceneMode.Single);
-                return;
-            }
-
-            SceneManager.LoadScene(_firstSceneToLoad, LoadSceneMode.Single);
+            LoadFirstScene();
         }
 
         #endregion
@@ -122,9 +129,21 @@ namespace Agate.WaskitaInfra1
             Application.Quit();
         }
 
-        public static void StartGame()
+        private void LoadFirstScene()
         {
-            SceneManager.LoadScene("ChecklistScene", LoadSceneMode.Single);
+            if (!string.IsNullOrEmpty(_firstLoadedSceneName))
+            {
+                _sceneLoader.ChangeScene(_firstLoadedSceneName);
+
+                return;
+            }
+
+            _sceneLoader.ChangeScene(_firstSceneToLoad);
+        }
+
+        public void StartGame()
+        {
+            _sceneLoader.ChangeScene("PreparationPhase");
         }
 
         #endregion
