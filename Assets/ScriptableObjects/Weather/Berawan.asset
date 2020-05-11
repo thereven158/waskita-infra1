@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3eab4a61f72a4340bb02fbd6806041f2, type: 3}
-  m_Name: Hard
+  m_Script: {fileID: 11500000, guid: 8a8f19587673433cbd08bbaad7db74c4, type: 3}
+  m_Name: Berawan
   m_EditorClassIdentifier: 
-  _image: {fileID: 21300000, guid: ec9f268752cb2724cbbc6409e4766e85, type: 3}
+  _image: {fileID: 21300000, guid: 7457d2c058c7eba46b4fd59eea1fdaff, type: 3}
+  _season: Hujan
+  _rainFall: Tinggi

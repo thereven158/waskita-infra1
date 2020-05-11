@@ -15,24 +15,7 @@ MonoBehaviour:
   username: 
   authToken: 
   _gameProgress: {fileID: 114656688988709706}
-  _levelProgress: {fileID: 114291021093632094}
---- !u!114 &114291021093632094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7511d38711c1452d8162fcd509f3eaea, type: 3}
-  m_Name: _levelProgress
-  m_EditorClassIdentifier: 
-  _lastCheckpoint: 0
-  _currentDay: 0
-  _tryCount: 0
-  _answers: []
-  _level: {fileID: 11400000, guid: 7508d0c3b07a7014787ee315a01bb606, type: 2}
+  _levelProgress: {fileID: 0}
 --- !u!114 &114656688988709706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45,6 +28,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a3cee245eb46bd90ae9eddbc5b6f75, type: 3}
   m_Name: _gameProgress
   m_EditorClassIdentifier: 
-  _maxCompletedLevelIndex: 0
+  _maxCompletedLevelIndex: -1
   _completionCount: 0
   _playTime: 0

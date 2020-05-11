@@ -8,6 +8,7 @@ namespace Agate.WaskitaInfra1.Level
     public class LevelData
     {
         public string Name;
+        public string Location;
         public string Description;
         public uint DayDuration;
         public List<IQuestion> Questions = new List<IQuestion>();

@@ -10,6 +10,7 @@ namespace Agate.WaskitaInfra1.Level
     [CreateAssetMenu(fileName = "LevelData", menuName = "WaskitaInfra1/LevelData", order = 0)]
     public class LevelDataScriptableObject : HumbleScriptableObject<LevelData>
     {
+        public string Location;
         public string Description;
         public uint DayDuration;
 
@@ -34,6 +35,7 @@ namespace Agate.WaskitaInfra1.Level
             return new LevelData()
             {
                 Name = name,
+                Location = Location,
                 Description = Description,
                 DayDuration = DayDuration,
                 Questions = new List<IQuestion>(Quizzes),
