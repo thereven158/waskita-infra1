@@ -54,7 +54,8 @@ namespace Github.ScriptableObjectExtension
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
             float totalHeight = singleLineHeight;
-            if (TypeOptions.Length > 1 && !IsThereAnyVisibileProperty(property)) return totalHeight * 2;
+            if ((TypeOptions.Length > 1 || GetPropertyType().IsAbstract) && !IsThereAnyVisibileProperty(property))
+                return totalHeight * 2;
             if (!IsThereAnyVisibileProperty(property)) return totalHeight;
             if (!property.isExpanded) return totalHeight;
             ScriptableObject data = property.objectReferenceValue as ScriptableObject;
@@ -199,10 +200,10 @@ namespace Github.ScriptableObjectExtension
 
             indentLevel--;
         }
-        
+
         private void DrawTypeSelectionDropdown(Rect position)
         {
-            if (typeOptions.Length <= 1) return;
+            if (typeOptions.Length <= 1 && !GetPropertyType().IsAbstract) return;
             Rect labelLayout = new Rect(
                 position.x + 14,
                 position.y + singleLineHeight + standardVerticalSpacing,
@@ -251,7 +252,7 @@ namespace Github.ScriptableObjectExtension
                 singleLineHeight);
             if (!GUI.Button(buttonLayout, "+ In")) return;
 
-            Type type = (TypeOptions.Length <= 1) ? GetPropertyType() : TypeOptions[index];
+            Type type = (TypeOptions.Length <= 1 && !GetPropertyType().IsAbstract) ? GetPropertyType() : TypeOptions[index];
             string assetPath = AssetDatabase.GetAssetPath(property.serializedObject.targetObject);
             string additionalName = "";
 
