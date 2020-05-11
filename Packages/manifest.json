@@ -53,10 +53,6 @@
       "hash": "f0218d2beaebde4d48b0198c9ca0a97f820ac065",
       "revision": "interactive-data-display"
     },
-    "com.a3.quiz": {
-      "hash": "d2f397800d188c8086bd01abb9ef1ee3c2e93a48",
-      "revision": "quiz"
-    },
     "com.a3.ugui-display": {
       "hash": "c2055c9ae41a4a532d2610d3c812a945de368709",
       "revision": "ugui-display"
@@ -64,6 +60,10 @@
     "com.a3.utilities": {
       "hash": "cdb01dc2e32053511c249ae9ce09fd117473e081",
       "revision": "utilities"
+    },
+    "com.a3.quiz": {
+      "hash": "8bd7242993d0d6ee63282c647b6dc79d4b3451a1",
+      "revision": "quiz"
     }
   }
 }
