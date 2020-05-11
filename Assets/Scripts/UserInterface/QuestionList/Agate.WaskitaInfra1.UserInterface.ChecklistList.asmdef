@@ -4,6 +4,7 @@
         "A3.InteractiveDataDisplay",
         "A3.CodePattern",
         "A3.Quiz",
+        "A3.UserInterface",
         "Agate.WaskitaInfra1",
         "Agate.WaskitaInfra1.LevelProgress",
         "Unity.TextMeshPro",

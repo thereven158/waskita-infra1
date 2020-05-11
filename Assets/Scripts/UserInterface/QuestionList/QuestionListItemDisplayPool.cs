@@ -2,6 +2,6 @@
 
 namespace Agate.WaskitaInfra1.UserInterface.ChecklistList
 {
-    public class ChecklistDataDisplayPool : ObjectPool<ChecklistDataDisplay>
+    public class QuestionListItemDisplayPool : ObjectPool<QuestionListItemDisplay>
     { }
 }

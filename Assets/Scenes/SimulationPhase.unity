@@ -467,6 +467,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c4755b79e9b4f4288baf55019b91554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _evaluationDisplay: {fileID: 2563918164256161039, guid: 0fea44af1e3f4794b8769b0532a4b127,
+    type: 3}
   _popUpDisplay: {fileID: 86249164618557688, guid: a902c1e47abfdd345a0863da912fb833,
     type: 3}
   _dayText: {fileID: 111375163}

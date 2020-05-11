@@ -13,7 +13,7 @@ namespace Agate.WaskitaInfra1.Level
         public string Description;
         public uint DayDuration;
 
-        public List<SerializableChecklistItem> Quizzes;
+        public List<SerializableQuestion> Quizzes;
         public List<ScriptableDayEventData> Events;
         public SoilCondition SoilCondition;
         public Weather WeatherForecast;
@@ -36,7 +36,7 @@ namespace Agate.WaskitaInfra1.Level
                 Name = name,
                 Description = Description,
                 DayDuration = DayDuration,
-                Quizzes = new List<IChecklistItem>(Quizzes),
+                Questions = new List<IQuestion>(Quizzes),
                 WeatherForecast = WeatherForecast,
                 SoilCondition = SoilCondition,
                 WindStrength = WindStrength,

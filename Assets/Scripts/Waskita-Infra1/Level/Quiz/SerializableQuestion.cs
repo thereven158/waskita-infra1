@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Agate.WaskitaInfra1.Level
 {
     [Serializable]
-    public class SerializableChecklistItem: IChecklistItem
+    public class SerializableQuestion: IQuestion
     {
         [SerializeField]
         private ScriptableQuiz _quiz;
@@ -14,6 +14,10 @@ namespace Agate.WaskitaInfra1.Level
         [SerializeField]
         private string _category;
 
+        [SerializeField]
+        private string _wrongExplanation;
+
+        public string WrongExplanation => _wrongExplanation;
         public string Category => _category;
         public IQuiz Quiz => _quiz.Quiz;
     }

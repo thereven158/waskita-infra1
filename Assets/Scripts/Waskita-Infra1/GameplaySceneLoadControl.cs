@@ -83,6 +83,7 @@ namespace Agate.GlSim.Scene.Control.Map.Loader
 
         public void ChangeScene(string sceneName)
         {
+            Debug.Log($"changeScene : {sceneName}");
             StartCoroutine(ChangeSceneProcess(sceneName));
         }
 
