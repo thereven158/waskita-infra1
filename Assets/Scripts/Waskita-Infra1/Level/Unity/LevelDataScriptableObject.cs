@@ -14,7 +14,7 @@ namespace Agate.WaskitaInfra1.Level
         public uint DayDuration;
 
         public List<SerializableQuestion> Quizzes;
-        public List<ScriptableDayEventData> Events;
+        public List<GameActionEvent> Events;
         public SoilCondition SoilCondition;
         public Weather WeatherForecast;
         public float WindStrength;

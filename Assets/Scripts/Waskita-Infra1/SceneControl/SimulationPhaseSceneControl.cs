@@ -7,6 +7,7 @@ using Agate.WaskitaInfra1.GameProgress;
 using Agate.WaskitaInfra1.Level;
 using Agate.WaskitaInfra1.LevelProgress;
 using Agate.WaskitaInfra1.UserInterface.ChecklistList;
+using GameAction;
 using UnityEngine;
 using UnityEngine.UI;
 using UserInterface.Display;
@@ -23,17 +24,22 @@ namespace SceneControl
         private UiDisplaysSystem<GameObject> _displaysSystem;
         private GameplaySceneLoadControl _sceneLoader;
 
+        private GameActionSystem _actionSystem;
+
         [SerializeField]
         private QuestionListInteractionDisplay _evaluationDisplay;
 
         [SerializeField]
-        private Text _dayText;
+        private Text _dayText = default;
 
         [SerializeField]
-        private Button _nextDayButton;
+        private Button _nextDayButton = default;
 
         [SerializeField]
-        private DayEventTriggerSystem _eventSystem;
+        private DayEventTriggerSystem _eventSystem = default;
+
+        [SerializeField]
+        private StormActionControl _stormControl = default;
 
         [SerializeField]
         private PopUpDisplay _popupDisplayPrefab;
@@ -55,6 +61,7 @@ namespace SceneControl
 
         private void Start()
         {
+            if (!Main.Instance.UiLoaded) return;
             _levelStateDisplay = Main.GetRegisteredComponent<LevelStateDisplay>();
             _levelStateDisplay.ToggleDisplay(true);
             _levelProgress = Main.GetRegisteredComponent<LevelProgressControl>();
@@ -62,8 +69,12 @@ namespace SceneControl
             _sceneLoader = Main.GetRegisteredComponent<GameplaySceneLoadControl>();
             _gameProgress = Main.GetRegisteredComponent<GameProgressControl>();
             _levelControl = Main.GetRegisteredComponent<LevelControl>();
+            _actionSystem = new GameActionSystem();
+            _stormControl.Init(_levelProgress,_displaysSystem);
+                _actionSystem = new GameActionSystem();
+            _actionSystem.Init(_stormControl);
 
-            _eventSystem.Init(_levelProgress, _displaysSystem);
+            _eventSystem.Init(_actionSystem);
             foreach (IEventTriggerData<EventTriggerData> eventData in _levelProgress.Data.Level.Events)
                 _eventSystem.RegisterEvent(eventData);
             _dayText.text = $"D-{_levelProgress.Data.CurrentDay:00}";
@@ -86,6 +97,8 @@ namespace SceneControl
 
         private void OnDestroy()
         {
+            if (Main.Instance == null) return;
+            if (!Main.Instance.UiLoaded) return;
             _levelProgress.OnRetryToCheckpoint -= OnRetry;
             _levelProgress.OnDayChange -= OnDayChange;
             _levelProgress.OnFinishLevel -= OnLevelFinish;
