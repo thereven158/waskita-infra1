@@ -23,7 +23,7 @@ namespace Agate.WaskitaInfra1.SceneControl
         private LevelDataDisplay _levelDataDisplay = default;
 
         [SerializeField]
-        private LevelProgressCheckListDisplay _checklistDisplay = default;
+        private QuestionListInteractionDisplay _checklistInteractionDisplay = default;
 
         [SerializeField]
         private UiDisplaysSystemBehavior _displaySystem = default;
@@ -32,12 +32,13 @@ namespace Agate.WaskitaInfra1.SceneControl
         {
             Main main = Main.Instance;
             _displaySystem.Init();
-            Main.RegisterComponents(_quizDisplay, _levelDataListDisplay, _levelStateDisplay, _levelDataDisplay, _checklistDisplay, _displaySystem);
+            _checklistInteractionDisplay.Init();
+            Main.RegisterComponents(_quizDisplay, _levelDataListDisplay, _levelStateDisplay, _levelDataDisplay, _checklistInteractionDisplay, _displaySystem);
             _quizDisplay.Close();
             _levelStateDisplay.ToggleDisplay(false);
             _levelDataListDisplay.Close();
             _levelDataDisplay.ToggleDisplay(false);
-            _checklistDisplay.Close();
+            _checklistInteractionDisplay.Close();
             main.UiLoaded = true;
         }
     }

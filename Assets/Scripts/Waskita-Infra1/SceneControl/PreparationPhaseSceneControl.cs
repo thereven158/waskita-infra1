@@ -23,7 +23,7 @@ namespace SceneControl
         private LevelDataListDisplay _levelListDisplay;
         private LevelDataDisplay _levelDataDisplay;
         private LevelStateDisplay _levelStateDisplay;
-        private LevelProgressCheckListDisplay _checklistDisplay;
+        private QuestionListInteractionDisplay _checklistInteractionDisplay;
         private QuizDisplay _quizDisplay;
         private UiDisplaysSystem<GameObject> _displaySystem;
         private GameplaySceneLoadControl _sceneLoader;
@@ -38,7 +38,7 @@ namespace SceneControl
             _levelControl = Main.GetRegisteredComponent<LevelControl>();
             _levelListDisplay = Main.GetRegisteredComponent<LevelDataListDisplay>();
             _levelDataDisplay = Main.GetRegisteredComponent<LevelDataDisplay>();
-            _checklistDisplay = Main.GetRegisteredComponent<LevelProgressCheckListDisplay>();
+            _checklistInteractionDisplay = Main.GetRegisteredComponent<QuestionListInteractionDisplay>();
             _quizDisplay = Main.GetRegisteredComponent<QuizDisplay>();
             _levelStateDisplay = Main.GetRegisteredComponent<LevelStateDisplay>();
             _displaySystem = Main.GetRegisteredComponent<UiDisplaysSystemBehavior>();
@@ -73,12 +73,12 @@ namespace SceneControl
         private void OpenCheckList()
         {
             _levelStateDisplay.OpenDisplay(_levelProgress.Data.Level.State());
-            _checklistDisplay.Open(_levelProgress.Data, OpenCheckListItem, SimulationConfirmation);
+            _checklistInteractionDisplay.Open(_levelProgress.Data, OpenCheckListItem, SimulationConfirmation);
         }
 
-        private void OpenCheckListItem(IChecklistItem item)
+        private void OpenCheckListItem(IQuestion item)
         {
-            _checklistDisplay.Close();
+            _checklistInteractionDisplay.Close();
             _quizDisplay.Display(item.Quiz, (quiz, o) => _levelProgress.AnswerQuestion(item, o), OpenCheckList);
         }
 
@@ -98,7 +98,7 @@ namespace SceneControl
             _quizDisplay.Close();
             _levelStateDisplay.ToggleDisplay(false);
             _levelDataDisplay.ToggleDisplay(false);
-            _checklistDisplay.Close();
+            _checklistInteractionDisplay.Close();
             _sceneLoader.ChangeScene("SimulationPhase");
         }
     }

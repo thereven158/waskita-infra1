@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Agate.WaskitaInfra1.Level;
-using A3.Quiz;
 using NUnit.Framework;
 
 namespace Agate.WaskitaInfra1.LevelProgress.Test
@@ -8,7 +7,7 @@ namespace Agate.WaskitaInfra1.LevelProgress.Test
     public class LevelProgressControlTest
     {
         private LevelProgressControl levelProgressCntrl;
-        private LevelData testLevel = new LevelData() {Quizzes = new List<IChecklistItem>() {null, null, null}};
+        private LevelData testLevel = new LevelData() {Questions = new List<IQuestion>() {null, null, null}};
 
 
         [SetUp]
@@ -59,7 +58,7 @@ namespace Agate.WaskitaInfra1.LevelProgress.Test
         public void StartLevel_Create_Base_Level_State()
         {
             levelProgressCntrl.StartLevel(testLevel);
-            Assert.That(levelProgressCntrl.Data.Answers.Capacity, Is.EqualTo(testLevel.Quizzes.Count));
+            Assert.That(levelProgressCntrl.Data.Answers.Capacity, Is.EqualTo(testLevel.Questions.Count));
             Assert.That(levelProgressCntrl.Data.Level, Is.EqualTo(testLevel));
             Assert.That(levelProgressCntrl.Data.CurrentDay, Is.EqualTo(1));
             Assert.That(levelProgressCntrl.Data.TryCount, Is.EqualTo(1));
@@ -129,7 +128,7 @@ namespace Agate.WaskitaInfra1.LevelProgress.Test
             CurrentDay = day;
             TryCount = tryCount;
             LastCheckpoint = checkPoint;
-            Answers = new List<object>(level.Quizzes.Count);
+            Answers = new List<object>(level.Questions.Count);
             Condition = new DayCondition();
             Level = level;
         }

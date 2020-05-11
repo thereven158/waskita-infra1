@@ -37,9 +37,9 @@ namespace Agate.WaskitaInfra1.LevelProgress
                 FinishLevel();
         }
 
-        public void AnswerQuestion(IChecklistItem item, object answer)
+        public void AnswerQuestion(IQuestion item, object answer)
         {
-            int index = _data.Level.Quizzes.IndexOf(item);
+            int index = _data.Level.Questions.IndexOf(item);
             if(index != -1) AnswerQuestion(index,answer);
         }
 

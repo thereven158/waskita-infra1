@@ -4,9 +4,9 @@ using Agate.GlSim.Scene.Control.Map.Loader;
 using Agate.WaskitaInfra1;
 using Agate.WaskitaInfra1.Level;
 using Agate.WaskitaInfra1.LevelProgress;
+using Agate.WaskitaInfra1.UserInterface.ChecklistList;
 using UnityEngine;
 using UnityEngine.UI;
-using UserInterface.Display;
 using UserInterface.LevelState;
 
 namespace SceneControl
@@ -19,7 +19,7 @@ namespace SceneControl
         private GameplaySceneLoadControl _sceneLoader;
 
         [SerializeField]
-        private PopUpDisplay _popUpDisplay = default;
+        private QuestionListInteractionDisplay _evaluationDisplay;
 
         [SerializeField]
         private Text _dayText;
@@ -68,10 +68,14 @@ namespace SceneControl
 
         private void OnLevelFinish(LevelEvaluationData data)
         {
-            _displaysSystem.GetOrCreateDisplay<PopUpDisplay>(_popUpDisplay).Open(
-                "Proyek telah sukses dilaksanakan.\n" +
-                "[Evaluation display is under development]",
-                () => _sceneLoader.ChangeScene("PreparationPhase"));
+            QuestionListInteractionDisplay display =
+                _displaysSystem.GetOrCreateDisplay<QuestionListInteractionDisplay>(_evaluationDisplay);
+            display.Open(data,
+                () =>
+                {
+                    _sceneLoader.ChangeScene("PreparationPhase");
+                    display.Close();
+                });
         }
     }
 }
