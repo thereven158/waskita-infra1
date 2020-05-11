@@ -19,8 +19,10 @@ MonoBehaviour:
   Quizzes:
   - _quiz: {fileID: 11400000, guid: f6a41896183e2f84eb3ae926e20a90ce, type: 2}
     _category: Test Item
+    _wrongExplanation: pilih knob aja tak bisa
   - _quiz: {fileID: 11400000, guid: f6a41896183e2f84eb3ae926e20a90ce, type: 2}
     _category: Test Item
+    _wrongExplanation: pilih knob bos
   Events:
   - {fileID: 11400000, guid: 51335929932339946bae1a276ae76beb, type: 2}
   SoilCondition: {fileID: 11400000, guid: 35630f21c3d1b6947a286a2353e83768, type: 2}

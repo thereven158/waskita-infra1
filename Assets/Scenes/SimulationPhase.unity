@@ -469,11 +469,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _evaluationDisplay: {fileID: 2563918164256161039, guid: 0fea44af1e3f4794b8769b0532a4b127,
     type: 3}
-  _popUpDisplay: {fileID: 86249164618557688, guid: a902c1e47abfdd345a0863da912fb833,
-    type: 3}
   _dayText: {fileID: 111375163}
   _nextDayButton: {fileID: 872175455}
   _eventSystem: {fileID: 881726612}
+  _popupDisplayPrefab: {fileID: 86249164618557688, guid: a902c1e47abfdd345a0863da912fb833,
+    type: 3}
 --- !u!1 &1455487873
 GameObject:
   m_ObjectHideFlags: 0
