@@ -3,6 +3,7 @@
     "references": [
         "Unity.TextMeshPro",
         "Agate.WaskitaInfra1.Level",
+        "Agate.WaskitaInfra1.Object",
         "Agate.WaskitaInfra1.Utilities.LevelData",
         "Agate.WaskitaInfra1.UserInterface.LevelState"
     ],

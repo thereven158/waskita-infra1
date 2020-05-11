@@ -15,6 +15,7 @@ namespace Agate.WaskitaInfra1.Level
         private string _category;
 
         [SerializeField]
+        [TextArea]
         private string _wrongExplanation;
 
         public string WrongExplanation => _wrongExplanation;
