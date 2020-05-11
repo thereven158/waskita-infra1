@@ -15,22 +15,7 @@ MonoBehaviour:
   username: 
   authToken: 
   _gameProgress: {fileID: 114656688988709706}
-  _levelProgress: {fileID: 0}
---- !u!114 &114104906896360694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07a3cee245eb46bd90ae9eddbc5b6f75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxCompletedLevelIndex: 0
-  _completionCount: 0
-  _playTime: 0
+  _levelProgress: {fileID: 114291021093632094}
 --- !u!114 &114291021093632094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48,21 +33,6 @@ MonoBehaviour:
   _tryCount: 0
   _answers: []
   _level: {fileID: 11400000, guid: 7508d0c3b07a7014787ee315a01bb606, type: 2}
---- !u!114 &114464021580905694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07a3cee245eb46bd90ae9eddbc5b6f75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxCompletedLevelIndex: 2
-  _completionCount: 3
-  _playTime: 1
 --- !u!114 &114656688988709706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,21 +44,6 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 07a3cee245eb46bd90ae9eddbc5b6f75, type: 3}
   m_Name: _gameProgress
-  m_EditorClassIdentifier: 
-  _maxCompletedLevelIndex: 0
-  _completionCount: 0
-  _playTime: 0
---- !u!114 &114740714531894898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07a3cee245eb46bd90ae9eddbc5b6f75, type: 3}
-  m_Name: 
   m_EditorClassIdentifier: 
   _maxCompletedLevelIndex: 0
   _completionCount: 0
