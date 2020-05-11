@@ -54,7 +54,7 @@ namespace SceneControl
             _levelListDisplay.OpenList(
                 _levelControl.Levels,
                 OpenProjectConfirmation,
-                _gameProgress.Data.MaxCompletedLevelIndex + 1);
+                _gameProgress.Data.MaxCompletedLevelIndex + 2);
         }
 
         private void OpenProjectConfirmation(LevelData data)
