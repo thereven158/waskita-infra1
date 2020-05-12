@@ -189,6 +189,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111375161}
   m_CullTransparentMesh: 0
+--- !u!1 &139312070
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 139312072}
+  - component: {fileID: 139312071}
+  m_Layer: 0
+  m_Name: ParticleSystemControl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &139312071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139312070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b2187342bc8e9d439209e6c8dc0a4f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RainParticle: {fileID: 1979267851}
+--- !u!4 &139312072
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139312070}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.917974, y: -9.706997, z: 12.8696995}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &454738563
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,16 +375,41 @@ PrefabInstance:
     - target: {fileID: 5958296536357173494, guid: 51fdbcad114b073409d893f3cb150847,
         type: 3}
       propertyPath: ShapeModule.m_Scale.x
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5958296536357173494, guid: 51fdbcad114b073409d893f3cb150847,
         type: 3}
       propertyPath: ShapeModule.m_Scale.y
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5958296536357173494, guid: 51fdbcad114b073409d893f3cb150847,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958296536357173494, guid: 51fdbcad114b073409d893f3cb150847,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958296536357173494, guid: 51fdbcad114b073409d893f3cb150847,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.1981132
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958296536357173494, guid: 51fdbcad114b073409d893f3cb150847,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.1981132
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958296536357173494, guid: 51fdbcad114b073409d893f3cb150847,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.1981132
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958296536357173494, guid: 51fdbcad114b073409d893f3cb150847,
+        type: 3}
+      propertyPath: InitialModule.startSize.minScalar
       value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -639,29 +708,50 @@ MonoBehaviour:
   _dayText: {fileID: 111375163}
   _nextDayButton: {fileID: 872175455}
   _eventSystem: {fileID: 881726612}
-  _stormControl: {fileID: 881726614}
-  _popupDisplayPrefab: {fileID: 86249164618557688, guid: a902c1e47abfdd345a0863da912fb833,
-    type: 3}
---- !u!114 &881726614
+--- !u!1 &1442954837
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1442954839}
+  - component: {fileID: 1442954838}
+  m_Layer: 0
+  m_Name: FloodSystemControl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1442954838
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 881726608}
+  m_GameObject: {fileID: 1442954837}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ed692b5275e4da4a16a64840950a6be, type: 3}
+  m_Script: {fileID: 11500000, guid: f926849ccf2411a489173f7ebb76fb93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _information: {fileID: 86249164618557688, guid: a902c1e47abfdd345a0863da912fb833,
-    type: 3}
-  _confirmation: {fileID: 3459654611352779794, guid: a22d783a7f8c4f64fb12fa6ae6a4a7ac,
-    type: 3}
-  _stormWarningMessage: "hari ini kelihatannya akan hujan deras!\nLanjutkan proyek\r
-    seperti biasa ?"
-  _retryFromCheckpointMessage: "Proyek gagal karena tidak dijalankan seusai SOP. Silakan\r
-    ulangi proyek untuk mencoba kembali!"
+  FloodMaterial: {fileID: 2100000, guid: c8df15ba091eedc468d59837ed263d57, type: 2}
+--- !u!4 &1442954839
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442954837}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13.509679, y: -10.56588, z: 12.700462}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1455487873
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,7 +938,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572856404}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.12, z: 0}
+  m_LocalPosition: {x: 0, y: 1.96, z: 0}
   m_LocalScale: {x: 3.502, y: 3.502, z: 3.502}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1073,6 +1163,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1974444325}
   m_CullTransparentMesh: 0
+--- !u!198 &1979267851 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8116329935394719749, guid: abd9a8b64bfd88c43b2edbc0a35154ab,
+    type: 3}
+  m_PrefabInstance: {fileID: 2027735113}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2027735113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1150,6 +1246,26 @@ PrefabInstance:
       propertyPath: ShapeModule.m_Scale.z
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8116329935394719749, guid: abd9a8b64bfd88c43b2edbc0a35154ab,
+        type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8116329935394719749, guid: abd9a8b64bfd88c43b2edbc0a35154ab,
+        type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8116329935394719749, guid: abd9a8b64bfd88c43b2edbc0a35154ab,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8116329935394719749, guid: abd9a8b64bfd88c43b2edbc0a35154ab,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abd9a8b64bfd88c43b2edbc0a35154ab, type: 3}
 --- !u!1001 &384539379158748242
@@ -1177,7 +1293,7 @@ PrefabInstance:
     - target: {fileID: 384539379954163478, guid: 59654c60b58dcd84bad62b0c862d57bc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.33
+      value: 1.97
       objectReference: {fileID: 0}
     - target: {fileID: 384539379954163478, guid: 59654c60b58dcd84bad62b0c862d57bc,
         type: 3}
@@ -1251,7 +1367,7 @@ PrefabInstance:
     - target: {fileID: 7085306812938400597, guid: de8cbbbc59dc3954aab940925311035d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.58
+      value: 2.36
       objectReference: {fileID: 0}
     - target: {fileID: 7085306812938400597, guid: de8cbbbc59dc3954aab940925311035d,
         type: 3}
