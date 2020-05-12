@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a8f19587673433cbd08bbaad7db74c4, type: 3}
   m_Name: Cerah
   m_EditorClassIdentifier: 
-  _image: {fileID: 21300000, guid: 7457d2c058c7eba46b4fd59eea1fdaff, type: 3}
+  _image: {fileID: 21300000, guid: 7c7a500cc8c443f488959aeed459a224, type: 3}
   _season: Kemarau
   _rainFall: Rendah

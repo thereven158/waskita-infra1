@@ -312,7 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f46414c3fb54f5a992fe3352fd4fb05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _confirmationPopUp: {fileID: 3459654611352779794, guid: a22d783a7f8c4f64fb12fa6ae6a4a7ac,
+  _confirmationPopUp: {fileID: 6700165356127211701, guid: a902c1e47abfdd345a0863da912fb833,
     type: 3}
 --- !u!4 &848682937
 Transform:

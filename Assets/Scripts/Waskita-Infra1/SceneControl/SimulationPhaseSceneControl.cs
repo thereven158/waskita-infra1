@@ -8,6 +8,7 @@ using Agate.WaskitaInfra1.Level;
 using Agate.WaskitaInfra1.LevelProgress;
 using Agate.WaskitaInfra1.UserInterface.ChecklistList;
 using GameAction;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UserInterface.Display;
@@ -20,7 +21,8 @@ namespace SceneControl
         private LevelControl _levelControl;
         private LevelProgressControl _levelProgress;
         private GameProgressControl _gameProgress;
-        private LevelStateDisplay _levelStateDisplay;
+        [SerializeField]
+        private LevelStateDisplay _levelStateDisplay = default;
         private UiDisplaysSystem<GameObject> _displaysSystem;
         private GameplaySceneLoadControl _sceneLoader;
 
@@ -30,7 +32,7 @@ namespace SceneControl
         private QuestionListInteractionDisplay _evaluationDisplay;
 
         [SerializeField]
-        private Text _dayText = default;
+        private TMP_Text _dayText = default;
 
         [SerializeField]
         private Button _nextDayButton = default;
@@ -62,8 +64,6 @@ namespace SceneControl
         private void Start()
         {
             if (!Main.Instance.UiLoaded) return;
-            _levelStateDisplay = Main.GetRegisteredComponent<LevelStateDisplay>();
-            _levelStateDisplay.ToggleDisplay(true);
             _levelProgress = Main.GetRegisteredComponent<LevelProgressControl>();
             _displaysSystem = Main.GetRegisteredComponent<UiDisplaysSystemBehavior>();
             _sceneLoader = Main.GetRegisteredComponent<GameplaySceneLoadControl>();
@@ -86,7 +86,7 @@ namespace SceneControl
 
         private void OnDayChange(uint day)
         {
-            _dayText.text = $"D-{day:00}";
+            _dayText.text = $"Hari ke {day:00}";
             _eventSystem.InvokeEvent(new EventTriggerData() {Day = day});
         }
 
