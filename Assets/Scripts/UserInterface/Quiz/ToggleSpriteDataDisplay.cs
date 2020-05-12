@@ -8,9 +8,9 @@ namespace Agate.WaskitaInfra1.UserInterface.Quiz
     public class ToggleSpriteDataDisplay : InteractiveDisplayBehavior<Sprite>
     {
         [SerializeField]
-        private Image _activeToggleImage = default;
+        private Image _image = default;
         [SerializeField]
-        private Image _inactiveToggleImage = default;
+        private GameObject toggleEffects = default;
         [SerializeField]
         private Toggle _toggle = default;
 
@@ -24,12 +24,12 @@ namespace Agate.WaskitaInfra1.UserInterface.Quiz
         protected override void ConfigureDisplay(Sprite data)
         {
             _toggle.isOn = false;
-            _activeToggleImage.sprite = data;
-            _inactiveToggleImage.sprite = data;
+            _image.sprite = data;
         }
 
         private void OnToggleValueChanged(bool value)
         {
+            toggleEffects.SetActive(!value);
             if (value) Interact();
         }
     }
