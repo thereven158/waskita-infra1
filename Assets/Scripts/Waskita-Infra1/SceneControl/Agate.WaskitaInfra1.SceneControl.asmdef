@@ -20,8 +20,8 @@
         "Agate.WaskitaInfra1.UserInterface.Quiz",
         "Agate.WaskitaInfra1.UserInterface.LevelList",
         "Agate.WaskitaInfra1.UserInterface.LevelState",
-        "Agate.WaskitaInfra1.Utilities.LevelData"
-
+        "Agate.WaskitaInfra1.Utilities.LevelData",
+        "Unity.TextMeshPro"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],

@@ -12,6 +12,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuestionEvaluationListItem
       objectReference: {fileID: 0}
+    - target: {fileID: 7005393474608986203, guid: 77fc161495af07b42b341de59ec4214c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 828ac06c55389fa4289523db2aa19ea5,
+        type: 3}
+    - target: {fileID: 236498757445277425, guid: 77fc161495af07b42b341de59ec4214c,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c60181a8140006644b779ee87cf07694,
+        type: 3}
     - target: {fileID: 270443772519211174, guid: 77fc161495af07b42b341de59ec4214c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -122,11 +134,5 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7005393474608986203, guid: 77fc161495af07b42b341de59ec4214c,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: cd2ac19145cf6804883060dbd7145a34,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77fc161495af07b42b341de59ec4214c, type: 3}
