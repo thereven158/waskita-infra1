@@ -12,30 +12,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c92f589334274a9b884c8bd708d4dce0, type: 3}
   m_Name: Lorem Ipsum Dolor Sit Amet
   m_EditorClassIdentifier: 
+  Location: Lorem Ipsum
   Description: Proyek kali ini mayoritas dalam keadaan berawan dan kemungkinan hujan
     yang cukup rendah. Intensitas angin umumnya sedang dengan tanah penanaman yang
     keras. Durasi Proyek 60 hari
   DayDuration: 30
   Quizzes:
   - _quiz: {fileID: 114529238551013314}
+    _displayName: Lorem Ipsum
     _category: Lorem Ipsum
     _wrongExplanation: Lorem Ipsum Dolor Sit Amet
   - _quiz: {fileID: 114529238551013314}
+    _displayName: Lorem Ipsum
     _category: Lorem Ipsum
     _wrongExplanation: Lorem Ipsum Dolor Sit Amet
   - _quiz: {fileID: 114529238551013314}
+    _displayName: Lorem Ipsum
     _category: Lorem Ipsum
     _wrongExplanation: Lorem Ipsum Dolor Sit Amet
   - _quiz: {fileID: 114529238551013314}
+    _displayName: Lorem Ipsum
     _category: Lorem Ipsum
     _wrongExplanation: Lorem Ipsum Dolor Sit Amet
   - _quiz: {fileID: 114529238551013314}
+    _displayName: Lorem Ipsum
     _category: Lorem Ipsum
     _wrongExplanation: Lorem Ipsum Dolor Sit Amet
   - _quiz: {fileID: 114529238551013314}
+    _displayName: Lorem Ipsum
     _category: Lorem Ipsum
     _wrongExplanation: Lorem Ipsum Dolor Sit Amet
   - _quiz: {fileID: 114529238551013314}
+    _displayName: Lorem Ipsum
     _category: Lorem Ipsum
     _wrongExplanation: Lorem Ipsum Dolor Sit Amet
   Events:

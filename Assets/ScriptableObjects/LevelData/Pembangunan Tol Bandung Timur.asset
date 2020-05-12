@@ -12,31 +12,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c92f589334274a9b884c8bd708d4dce0, type: 3}
   m_Name: Pembangunan Tol Bandung Timur
   m_EditorClassIdentifier: 
+  Location: Bandung Timur
   Description: Pembangunan Tol Bandung Timur
   DayDuration: 30
   Quizzes:
   - _quiz: {fileID: 114073847521474986}
+    _displayName: Penumpukan Tiang Pancang di Lapangan
     _category: Penyimpanan Material
     _wrongExplanation: Tiang Pancang diletakkan dengan cara yang tidak tepat, mengakibatkan
       sebagian terguling dari tempat penyimpanan dan mengalami keretakan
   - _quiz: {fileID: 114641903079315452}
+    _displayName: Penumpukan Material Fullslab
     _category: Penyimpanan Material
     _wrongExplanation: Penyimpanan yang kurang baik menyebabkan material rusak
   - _quiz: {fileID: 114786186665644570}
+    _displayName: Konfigurasi Tiang Pancang
     _category: 'Instalasi Tiang Pancang '
     _wrongExplanation: Penggunaan tiang pancang boros dan tidak efisien
   - _quiz: {fileID: 114966729774849844}
+    _displayName: Pengangkatan Tiang Pancang saat  Pemacangan
     _category: 'Instalasi Tiang Pancang '
     _wrongExplanation: Posisi yang tidak ideal berpotensi mematahkan tiang pancang
   - _quiz: {fileID: 114273487154044616}
+    _displayName: 'Pemancangan Tiang Pancang '
     _category: 'Instalasi Tiang Pancang '
     _wrongExplanation: Proses pemancangan yang tidak ideal menyebabkan alat berpotensi
       roboh
   - _quiz: {fileID: 114127618841110770}
+    _displayName: 'Penyambungan Tiang Pancang '
     _category: 'Instalasi Tiang Pancang '
     _wrongExplanation: Hasil pemasangan tiang pancang kurang baik, fondasi menjadi
       tidak sekokoh dan tahan lama seperti seharusnya
   - _quiz: {fileID: 114636201103160322}
+    _displayName: 'Erection Fullslab '
     _category: 'Instalasi Fullslab '
     _wrongExplanation: Fullslab terjatuh saat proses pengangkatan, menyebabkan kerusakan
       material dan membahayakan keselamatan kerja
@@ -60,7 +68,8 @@ MonoBehaviour:
   m_Name: _ProyekCiaci__quiz
   m_EditorClassIdentifier: 
   _question:
-    QuestionText: 'Penumpukan Tiang Pancang di  '
+    QuestionText: Penumpukan tiang pancang di lapangan sebaiknya dilakukan dengan
+      memenuhi kriteria seperti...
     Answer: {fileID: 21300000, guid: 0a64ed08a77d9e8438b6807da460c218, type: 3}
     Options:
     - {fileID: 21300000, guid: 0a64ed08a77d9e8438b6807da460c218, type: 3}
@@ -94,7 +103,7 @@ MonoBehaviour:
   m_Name: _Pembangunan Tol Bandung Timur__quiz
   m_EditorClassIdentifier: 
   _question:
-    QuestionText: 'Penyambungan Tiang Pancang '
+    QuestionText: 'Metode penyambungan tiang pancang yang benar adalah... '
     Answer: {fileID: 21300000, guid: 0a64ed08a77d9e8438b6807da460c218, type: 3}
     Options:
     - {fileID: 21300000, guid: 0a64ed08a77d9e8438b6807da460c218, type: 3}
@@ -128,7 +137,8 @@ MonoBehaviour:
   m_Name: _Pembangunan Tol Bandung Timur__quiz
   m_EditorClassIdentifier: 
   _question:
-    QuestionText: 'Pemancangan Tiang Pancang '
+    QuestionText: 'Di bawah ini, gambar mana yang menunjukkan kondisi ideal untuk
+      pemancangan tiang pancang? '
     Answer: {fileID: 21300000, guid: 0a64ed08a77d9e8438b6807da460c218, type: 3}
     Options:
     - {fileID: 21300000, guid: 0ef35a838db144e4894213ae3a7c4ef9, type: 3}
@@ -148,7 +158,7 @@ MonoBehaviour:
   m_Name: _Pembangunan Tol Bandung Timur__quiz
   m_EditorClassIdentifier: 
   _question:
-    QuestionText: 'Erection Fullslab '
+    QuestionText: 'Proses erection fullslab yang tepat adalah... '
     Answer: {fileID: 21300000, guid: 0a64ed08a77d9e8438b6807da460c218, type: 3}
     Options:
     - {fileID: 21300000, guid: cd2ac19145cf6804883060dbd7145a34, type: 3}
@@ -168,7 +178,8 @@ MonoBehaviour:
   m_Name: _Pembangunan Tol Bandung Timur__quiz
   m_EditorClassIdentifier: 
   _question:
-    QuestionText: Penumpukan Material Fullslab
+    QuestionText: Di bawah ini, yang merupakan kondisi dan metode yang tepat untuk
+      penumpukan material  fullslab adalah...
     Answer: {fileID: 21300000, guid: 0a64ed08a77d9e8438b6807da460c218, type: 3}
     Options:
     - {fileID: 21300000, guid: cd2ac19145cf6804883060dbd7145a34, type: 3}
@@ -202,9 +213,8 @@ MonoBehaviour:
   m_Name: _Pembangunan Tol Bandung Timur__quiz
   m_EditorClassIdentifier: 
   _question:
-    QuestionText: Pemilihan Konfigurasi Tiang Pancang Dengan soal bervariasi random,
-      diinfokan ke pemain bahwa dari data kedalaman tanah keras estimasi sedalam 30
-      m dan freestanding 3 m. Maka pilihan konfigurasi yang tepat adalah?
+    QuestionText: 'Proyek akan dilakukan di atas tanah keras dengan estimasi kedalaman
+      30m dan freestanding 3m. Konfigurasi tiang pancang yang tepat adalah... '
     Answer: {fileID: 21300000, guid: 0a64ed08a77d9e8438b6807da460c218, type: 3}
     Options:
     - {fileID: 21300000, guid: cd2ac19145cf6804883060dbd7145a34, type: 3}
@@ -224,7 +234,8 @@ MonoBehaviour:
   m_Name: _Pembangunan Tol Bandung Timur__quiz
   m_EditorClassIdentifier: 
   _question:
-    QuestionText: Pengakatan Tiang Pancang saat  Pemacangan"
+    QuestionText: 'Pengangkatan tiang pancang saat pemancangan harus dilakukan sesuai
+      dengan kriteria yang tepat, yaitu... '
     Answer: {fileID: 21300000, guid: 0a64ed08a77d9e8438b6807da460c218, type: 3}
     Options:
     - {fileID: 21300000, guid: cd2ac19145cf6804883060dbd7145a34, type: 3}

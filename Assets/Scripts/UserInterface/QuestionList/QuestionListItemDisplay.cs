@@ -25,7 +25,7 @@ namespace Agate.WaskitaInfra1.UserInterface.ChecklistList
 
         protected override void ConfigureDisplay(QuestionListItemViewData data)
         {
-            _nameText.text = data.Item.Category;
+            _nameText.text = data.Item.DisplayName;
             _toggle.isOn = data.State;
         }
 
