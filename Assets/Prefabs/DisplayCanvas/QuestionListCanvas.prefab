@@ -501,6 +501,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2304155555117226902, guid: 77379ebb0ab74064fb3193bc725e21ef,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2304155553491709298, guid: 77379ebb0ab74064fb3193bc725e21ef,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -666,7 +671,7 @@ PrefabInstance:
     - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
         type: 3}
@@ -676,7 +681,7 @@ PrefabInstance:
     - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
         type: 3}
       propertyPath: m_firstOverflowCharacterIndex
-      value: -1
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
         type: 3}

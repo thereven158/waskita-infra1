@@ -171,7 +171,7 @@ MonoBehaviour:
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
-  m_ChildControlHeight: 1
+  m_ChildControlHeight: 0
 --- !u!114 &7310885268651626482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,8 +254,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Project List
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a6b695a2c33f5504ea864c10c7737564, type: 2}
+  m_sharedMaterial: {fileID: 21917315771810620, guid: a6b695a2c33f5504ea864c10c7737564,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -280,13 +281,13 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 42.95
+  m_fontSize: 36.05
   m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_textAlignment: 513
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -544,6 +545,53 @@ PrefabInstance:
       propertyPath: m_Name
       value: Footer
       objectReference: {fileID: 0}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_text
+      value: Silahkan pilih proyek yang akan anda kerjakan.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a6b695a2c33f5504ea864c10c7737564,
+        type: 2}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 21917315771810620, guid: a6b695a2c33f5504ea864c10c7737564,
+        type: 2}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2020986909790229143, guid: 43639c912091e044da5b01e798783372,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -648,36 +696,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
-        type: 3}
-      propertyPath: m_text
-      value: Silahkan pilih proyek yang akan anda kerjakan.
-      objectReference: {fileID: 0}
-    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 46
-      objectReference: {fileID: 0}
-    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
-        type: 3}
-      propertyPath: m_firstOverflowCharacterIndex
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43639c912091e044da5b01e798783372, type: 3}

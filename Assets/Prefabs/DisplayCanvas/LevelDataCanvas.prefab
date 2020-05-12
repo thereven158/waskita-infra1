@@ -177,8 +177,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Tidak
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a6b695a2c33f5504ea864c10c7737564, type: 2}
+  m_sharedMaterial: {fileID: 21917315771810620, guid: a6b695a2c33f5504ea864c10c7737564,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -332,7 +333,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: eace837b8102e6641af71c6e39bfacb0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 27c209c01cf12044ab7386168a0e05cd, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -798,8 +799,9 @@ MonoBehaviour:
   m_text: 'lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor
     sit amet lorem ipsum dolor sit amet lorem ipsum '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a6b695a2c33f5504ea864c10c7737564, type: 2}
+  m_sharedMaterial: {fileID: 21917315771810620, guid: a6b695a2c33f5504ea864c10c7737564,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -870,7 +872,7 @@ MonoBehaviour:
     spaceCount: 22
     wordCount: 22
     linkCount: 0
-    lineCount: 5
+    lineCount: 6
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -953,8 +955,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Brief
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a6b695a2c33f5504ea864c10c7737564, type: 2}
+  m_sharedMaterial: {fileID: 21917315771810620, guid: a6b695a2c33f5504ea864c10c7737564,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1108,8 +1111,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Ya
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a6b695a2c33f5504ea864c10c7737564, type: 2}
+  m_sharedMaterial: {fileID: 21917315771810620, guid: a6b695a2c33f5504ea864c10c7737564,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

@@ -2099,11 +2099,6 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6846031910766981709, guid: ec94ef83fc188f247a49f741ba9e51b6,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 64
-      objectReference: {fileID: 0}
     - target: {fileID: 2718282856585093390, guid: ec94ef83fc188f247a49f741ba9e51b6,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -2112,6 +2107,46 @@ PrefabInstance:
     - target: {fileID: 2718282856585093390, guid: ec94ef83fc188f247a49f741ba9e51b6,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7437942045099204034, guid: ec94ef83fc188f247a49f741ba9e51b6,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -261.56415
+      objectReference: {fileID: 0}
+    - target: {fileID: 8999578374897020281, guid: ec94ef83fc188f247a49f741ba9e51b6,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8999578374897020281, guid: ec94ef83fc188f247a49f741ba9e51b6,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8999578374897020281, guid: ec94ef83fc188f247a49f741ba9e51b6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 231.80493
+      objectReference: {fileID: 0}
+    - target: {fileID: 8999578374897020281, guid: ec94ef83fc188f247a49f741ba9e51b6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8999578374897020281, guid: ec94ef83fc188f247a49f741ba9e51b6,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 399.60986
+      objectReference: {fileID: 0}
+    - target: {fileID: 8999578374897020281, guid: ec94ef83fc188f247a49f741ba9e51b6,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 9051957849314480058, guid: ec94ef83fc188f247a49f741ba9e51b6,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

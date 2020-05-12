@@ -1587,7 +1587,7 @@ MonoBehaviour:
   _titleText: {fileID: 7975822891700403631}
   _weatherImage: {fileID: 6865373886225570440}
   _weatherText: {fileID: 4169748785124333161}
-  _windImage: {fileID: 6865373886225570440}
+  _windImage: {fileID: 3485729815495486931}
   _windText: {fileID: 8907006305429436398}
   _soilImage: {fileID: 8103974337656636732}
   _soilText: {fileID: 6334260724984691522}

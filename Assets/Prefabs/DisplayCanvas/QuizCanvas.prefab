@@ -211,8 +211,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a6b695a2c33f5504ea864c10c7737564, type: 2}
+  m_sharedMaterial: {fileID: 21917315771810620, guid: a6b695a2c33f5504ea864c10c7737564,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -237,12 +238,12 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 50.6
+  m_fontSize: 56
   m_fontSizeBase: 50.6
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 32
+  m_fontSizeMax: 56
   m_fontStyle: 0
   m_textAlignment: 257
   m_characterSpacing: 0
@@ -1040,6 +1041,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Footer
       objectReference: {fileID: 0}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_text
+      value: Simpan jawaban ?
+      objectReference: {fileID: 0}
     - target: {fileID: 2020986909790229143, guid: 43639c912091e044da5b01e798783372,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1144,41 +1180,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
-        type: 3}
-      propertyPath: m_firstOverflowCharacterIndex
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
-        type: 3}
-      propertyPath: m_text
-      value: Simpan jawaban ?
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43639c912091e044da5b01e798783372, type: 3}
