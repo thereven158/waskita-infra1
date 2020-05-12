@@ -6,6 +6,7 @@ namespace Agate.WaskitaInfra1.Level
     {
         string WrongExplanation { get; }
         string Category { get; }
+        string DisplayName { get; }
         IQuiz Quiz { get; }
     }
 }

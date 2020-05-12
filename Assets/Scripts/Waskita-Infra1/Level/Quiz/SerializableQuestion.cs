@@ -9,17 +9,21 @@ namespace Agate.WaskitaInfra1.Level
     public class SerializableQuestion: IQuestion
     {
         [SerializeField]
-        private ScriptableQuiz _quiz;
+        private ScriptableQuiz _quiz = default;
 
         [SerializeField]
-        private string _category;
+        private string _displayName = default;
+        
+        [SerializeField]
+        private string _category = default;
 
         [SerializeField]
         [TextArea]
-        private string _wrongExplanation;
+        private string _wrongExplanation = default;
 
         public string WrongExplanation => _wrongExplanation;
         public string Category => _category;
+        public string DisplayName => _displayName;
         public IQuiz Quiz => _quiz.Quiz;
     }
 }
