@@ -5,8 +5,10 @@
         "A3.CodePattern",
         "A3.UserInterface",
         "A3.DataDrivenEvent",
+        "Agate.GameAction",
         "Agate.WaskitaInfra1",
         "Agate.WaskitaInfra1.Level",
+        "Agate.WaskitaInfra1.GameAction",
         "Agate.WaskitaInfra1.GameProgress",
         "Agate.WaskitaInfra1.Level.Unity",
         "Agate.WaskitaInfra1.LevelProgress",
@@ -18,8 +20,8 @@
         "Agate.WaskitaInfra1.UserInterface.Quiz",
         "Agate.WaskitaInfra1.UserInterface.LevelList",
         "Agate.WaskitaInfra1.UserInterface.LevelState",
-        "Agate.WaskitaInfra1.Utilities.LevelData"
-
+        "Agate.WaskitaInfra1.Utilities.LevelData",
+        "Unity.TextMeshPro"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],

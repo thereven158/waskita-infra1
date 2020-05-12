@@ -14,6 +14,11 @@ namespace Agate.WaskitaInfra1.Level
             return _levels[index].Object;
         }
 
+        public int IndexOf(LevelData level)
+        {
+            return _levels.FindIndex(lvl => lvl.Object == level);
+        }
+
         public IEnumerable<LevelData> Levels => _levels.Select(level => level.Object);
     }
 }

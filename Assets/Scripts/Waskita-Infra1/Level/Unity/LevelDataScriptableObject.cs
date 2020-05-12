@@ -10,11 +10,12 @@ namespace Agate.WaskitaInfra1.Level
     [CreateAssetMenu(fileName = "LevelData", menuName = "WaskitaInfra1/LevelData", order = 0)]
     public class LevelDataScriptableObject : HumbleScriptableObject<LevelData>
     {
+        public string Location;
         public string Description;
         public uint DayDuration;
 
-        public List<SerializableChecklistItem> Quizzes;
-        public List<ScriptableDayEventData> Events;
+        public List<SerializableQuestion> Quizzes;
+        public List<GameActionEvent> Events;
         public SoilCondition SoilCondition;
         public Weather WeatherForecast;
         public float WindStrength;
@@ -34,9 +35,10 @@ namespace Agate.WaskitaInfra1.Level
             return new LevelData()
             {
                 Name = name,
+                Location = Location,
                 Description = Description,
                 DayDuration = DayDuration,
-                Quizzes = new List<IChecklistItem>(Quizzes),
+                Questions = new List<IQuestion>(Quizzes),
                 WeatherForecast = WeatherForecast,
                 SoilCondition = SoilCondition,
                 WindStrength = WindStrength,

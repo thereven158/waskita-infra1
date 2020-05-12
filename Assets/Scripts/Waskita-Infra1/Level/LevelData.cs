@@ -8,9 +8,10 @@ namespace Agate.WaskitaInfra1.Level
     public class LevelData
     {
         public string Name;
+        public string Location;
         public string Description;
         public uint DayDuration;
-        public List<IChecklistItem> Quizzes = new List<IChecklistItem>();
+        public List<IQuestion> Questions = new List<IQuestion>();
         public List<IEventTriggerData<EventTriggerData>> Events;
         public Weather WeatherForecast;
         public SoilCondition SoilCondition;

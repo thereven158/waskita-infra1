@@ -11,13 +11,24 @@ namespace Agate.WaskitaInfra1.LevelProgress
             AnswerEvaluations = new List<bool>();
             DayFinished = progressData.CurrentDay;
             TryCount = progressData.TryCount;
-            for (int i = 0; i < progressData.Level.Quizzes.Count; i++)
-                AnswerEvaluations.Add(progressData.Level.Quizzes[i].Quiz.IsCorrect(progressData.Answers[i]));
+            for (int i = 0; i < progressData.Level.Questions.Count; i++)
+                AnswerEvaluations.Add(progressData.Level.Questions[i].Quiz.IsCorrect(progressData.Answers[i]));
         }
         public LevelData Level;
         public uint TryCount;
         public List<bool> AnswerEvaluations;
         public uint DayFinished;
 
+        public Queue<string> EvaluationMessages()
+        {
+            Queue<string> evalMessage = new Queue<string>();
+            for (int i =0; i< AnswerEvaluations.Count;i++)
+            {
+                if(AnswerEvaluations[i]) continue;
+                evalMessage.Enqueue(Level.Questions[i].WrongExplanation);
+            }
+
+            return evalMessage;
+        }
     }
 }

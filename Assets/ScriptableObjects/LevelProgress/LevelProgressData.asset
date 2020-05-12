@@ -13,9 +13,14 @@ MonoBehaviour:
   m_Name: LevelProgressData
   m_EditorClassIdentifier: 
   _lastCheckpoint: 0
-  _currentDay: 0
+  _currentDay: 30
   _tryCount: 0
   _answers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   _level: {fileID: 11400000, guid: 7508d0c3b07a7014787ee315a01bb606, type: 2}

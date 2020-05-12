@@ -20,10 +20,10 @@ namespace Agate.WaskitaInfra1.LevelProgress
             CurrentDay = 1;
             TryCount = 1;
             LastCheckpoint = CurrentDay;
-            Answers = new List<object>(level.Quizzes.Count);
+            Answers = new List<object>(level.Questions.Count);
             Condition = new DayCondition();
             Level = level;
-            for (int i = 0; i < level.Quizzes.Count; i++)
+            for (int i = 0; i < level.Questions.Count; i++)
                 Answers.Add(null);
         }
 
