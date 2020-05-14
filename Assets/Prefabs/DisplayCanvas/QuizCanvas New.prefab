@@ -816,6 +816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff2d6f453e1540f699ab9ec249464f74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _headerText: {fileID: 8311723692880777395}
   _questionText: {fileID: 386654559830064507}
   spriteOptionDisplaySystem: {fileID: 1612028702432093374}
   stringOptionsDisplaySystem: {fileID: 65410522662436813}

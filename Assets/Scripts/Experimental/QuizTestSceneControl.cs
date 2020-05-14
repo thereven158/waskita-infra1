@@ -14,7 +14,7 @@ namespace Experimental
 
         private void Start()
         {
-            _quizDisplay.Display(question.Quiz, (quiz1, o) => Debug.Log(o), null);
+            _quizDisplay.Display(question, (quiz1, o) => Debug.Log(o), null);
         }
 
     }

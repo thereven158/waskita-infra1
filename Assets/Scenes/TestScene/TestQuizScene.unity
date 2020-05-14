@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _quizDisplay: {fileID: 1134473481}
-  question: {fileID: 114551881140385090}
+  question: {fileID: 11400000, guid: 16c77c88dc2e9d04eae749e3a02940fa, type: 2}
 --- !u!4 &721983642
 Transform:
   m_ObjectHideFlags: 0
@@ -485,6 +485,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 386654561047604094, guid: c7cac7927ce5cfb4f95c2c306183581f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000030517578
+      objectReference: {fileID: 0}
     - target: {fileID: 8852097638751138147, guid: c7cac7927ce5cfb4f95c2c306183581f,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -589,67 +594,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff2d6f453e1540f699ab9ec249464f74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114004482944636540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c16c4fd801b4bbf9eca531138ed0572, type: 3}
-  m_Name: _TestQuizScene_GameObject_question__quiz
-  m_EditorClassIdentifier: 
-  _question:
-    _message: asgasdasfasf
-    _answer: {fileID: 114474101697502400}
-    _answerOptions:
-    - {fileID: 114749297816636374}
-    - {fileID: 114749297816636374}
-    - {fileID: 114749297816636374}
-    - {fileID: 114749297816636374}
---- !u!114 &114474101697502400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
-  m_Name: __TestQuizScene_GameObject_question__quiz__answer
-  m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 018ccc8d5efa9c840be693cbc49e6648, type: 3}
-  Text: sagfaggfd
---- !u!114 &114551881140385090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3caac20cc7fb4c5cb17d94f53e689c84, type: 3}
-  m_Name: TestQuizScene_GameObject_question
-  m_EditorClassIdentifier: 
-  _quiz: {fileID: 114004482944636540}
-  _displayName: 
-  _category: 
-  _wrongExplanation: 
---- !u!114 &114749297816636374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
-  m_Name: __TestQuizScene_GameObject_question__quiz_data
-  m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: cd2ac19145cf6804883060dbd7145a34, type: 3}
-  Text: dasfdasf
