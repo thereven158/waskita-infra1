@@ -4,16 +4,18 @@ using UnityEngine;
 
 namespace Experimental
 {
-    public class QuizTestSceneControl :MonoBehaviour
+    public class QuizTestSceneControl : MonoBehaviour
     {
         [SerializeField]
         private QuizDisplay _quizDisplay = default;
+
         [SerializeField]
-        private SerializableQuestion quiz = default;
+        private ScriptableQuestion question = default;
 
         private void Start()
         {
-            _quizDisplay.Display(quiz.Quiz, (quiz1, o) => Debug.Log(o), null);
+            _quizDisplay.Display(question.Quiz, (quiz1, o) => Debug.Log(o), null);
         }
+
     }
 }

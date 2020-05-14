@@ -185,10 +185,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolContainer: {fileID: 6846031910766981709}
-  objectToPool: {fileID: 8777350335699551823, guid: 6024a73872c645540a686e3cee716e4f,
-    type: 3}
   initialPoolAmount: 3
   expandable: 1
+  _objectToPool: {fileID: 8777350335699551823, guid: 6024a73872c645540a686e3cee716e4f,
+    type: 3}
 --- !u!1 &5028407048992926445
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,53 +545,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Footer
       objectReference: {fileID: 0}
-    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
-        type: 3}
-      propertyPath: m_text
-      value: Silahkan pilih proyek yang akan anda kerjakan.
-      objectReference: {fileID: 0}
-    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 46
-      objectReference: {fileID: 0}
-    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
-        type: 3}
-      propertyPath: m_firstOverflowCharacterIndex
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: a6b695a2c33f5504ea864c10c7737564,
-        type: 2}
-    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 21917315771810620, guid: a6b695a2c33f5504ea864c10c7737564,
-        type: 2}
-    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
-        type: 3}
-      propertyPath: m_fontStyle
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2020986909790229143, guid: 43639c912091e044da5b01e798783372,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -696,6 +649,53 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_text
+      value: Silahkan pilih proyek yang akan anda kerjakan.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a6b695a2c33f5504ea864c10c7737564,
+        type: 2}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 21917315771810620, guid: a6b695a2c33f5504ea864c10c7737564,
+        type: 2}
+    - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43639c912091e044da5b01e798783372, type: 3}

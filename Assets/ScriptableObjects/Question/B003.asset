@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3caac20cc7fb4c5cb17d94f53e689c84, type: 3}
+  m_Name: B003
+  m_EditorClassIdentifier: 
+  _quiz: {fileID: 114678717421947694}
+  _displayName: 'Pemancangan Tiang Pancang '
+  _category: 'Instalasi Tiang Pancang '
+  _wrongExplanation: Proses pemancangan yang tidak ideal menyebabkan alat berpotensi
+    roboh
+--- !u!114 &114678717421947694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6d0afb11504f65a3a9dd25c7433b53, type: 3}
+  m_Name: _B003__quiz
+  m_EditorClassIdentifier: 
+  _question:
+    _message: 'Di bawah ini, gambar mana yang menunjukkan kondisi ideal untuk pemancangan
+      tiang pancang? '
+    _answer: {fileID: 21300000, guid: 018ccc8d5efa9c840be693cbc49e6648, type: 3}
+    _answerOptions:
+    - {fileID: 21300000, guid: 018ccc8d5efa9c840be693cbc49e6648, type: 3}
+    - {fileID: 21300000, guid: 8105d54c8ab07b948a36916bf0fa0191, type: 3}
+    - {fileID: 21300000, guid: 8105d54c8ab07b948a36916bf0fa0191, type: 3}
+    - {fileID: 21300000, guid: 8105d54c8ab07b948a36916bf0fa0191, type: 3}

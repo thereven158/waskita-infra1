@@ -14,7 +14,7 @@ namespace Agate.WaskitaInfra1.Level
         public string Description;
         public uint DayDuration;
 
-        public List<SerializableQuestion> Quizzes;
+        public List<ScriptableQuestion> Questions;
         public List<GameActionEvent> Events;
         public SoilCondition SoilCondition;
         public Weather WeatherForecast;
@@ -38,12 +38,13 @@ namespace Agate.WaskitaInfra1.Level
                 Location = Location,
                 Description = Description,
                 DayDuration = DayDuration,
-                Questions = new List<IQuestion>(Quizzes),
+                Questions = new List<IQuestion>(Questions),
                 WeatherForecast = WeatherForecast,
                 SoilCondition = SoilCondition,
                 WindStrength = WindStrength,
                 Events = Events.ToList<IEventTriggerData<EventTriggerData>>(),
             };
         }
+
     }
 }
