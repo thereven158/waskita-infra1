@@ -7,6 +7,7 @@ using Agate.WaskitaInfra1.GameProgress;
 using Agate.WaskitaInfra1.Level;
 using Agate.WaskitaInfra1.LevelProgress;
 using Agate.WaskitaInfra1.UserInterface.ChecklistList;
+using Agate.WaskitaInfra1.Utilities;
 using GameAction;
 using TMPro;
 using UnityEngine;
@@ -77,7 +78,8 @@ namespace SceneControl
             _eventSystem.Init(_actionSystem);
             foreach (IEventTriggerData<EventTriggerData> eventData in _levelProgress.Data.Level.Events)
                 _eventSystem.RegisterEvent(eventData);
-            _dayText.text = $"D-{_levelProgress.Data.CurrentDay:00}";
+            _dayText.text = $"Hari ke {_levelProgress.Data.CurrentDay:00}";
+            _levelStateDisplay.OpenDisplay(_levelProgress.Data.State());
             _nextDayButton.onClick.AddListener(() => _levelProgress.NextDay(1));
             _levelProgress.OnDayChange += OnDayChange;
             _levelProgress.OnRetryToCheckpoint += OnRetry;

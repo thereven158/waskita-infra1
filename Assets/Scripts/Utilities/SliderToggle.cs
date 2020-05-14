@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Agate.GlSim.Util
+namespace Agate.Util
 {
     public class SliderToggle : MonoBehaviour
     {
