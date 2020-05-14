@@ -11,6 +11,15 @@ namespace Agate.WaskitaInfra1.UserInterface.ChecklistList
         private Button _button = default;
 
         [SerializeField]
+        private Image _buttonImage = default;
+
+        [SerializeField]
+        private Sprite _trueSprite;
+
+        [SerializeField]
+        private Sprite _falseSprite;
+
+        [SerializeField]
         private TMP_Text _nameText = default;
 
         [SerializeField]
@@ -25,6 +34,7 @@ namespace Agate.WaskitaInfra1.UserInterface.ChecklistList
 
         protected override void ConfigureDisplay(QuestionListItemViewData data)
         {
+            _buttonImage.sprite = data.State ? _trueSprite : _falseSprite;
             _nameText.text = data.Item.DisplayName;
             _toggle.isOn = data.State;
         }

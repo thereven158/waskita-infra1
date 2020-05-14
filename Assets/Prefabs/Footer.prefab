@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 336}
+  m_SizeDelta: {x: 0, y: 272}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &2020986909790229145
 CanvasRenderer:
@@ -109,7 +109,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 384, y: 144}
+  m_SizeDelta: {x: 304, y: 96}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &2020986909952585401
 CanvasRenderer:
@@ -180,8 +180,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 192, y: -32}
-  m_SizeDelta: {x: -416, y: 128}
+  m_AnchoredPosition: {x: 152, y: -32}
+  m_SizeDelta: {x: -336, y: 96}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &2020986909991186702
 CanvasRenderer:
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Anda yakin dengan jawaban anda?
+  m_text: Apakah anda yakin akan memulai proyek ini?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a6b695a2c33f5504ea864c10c7737564, type: 2}
   m_sharedMaterial: {fileID: 21917315771810620, guid: a6b695a2c33f5504ea864c10c7737564,
@@ -241,9 +241,9 @@ MonoBehaviour:
   m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 32
+  m_fontSizeMax: 36
   m_fontStyle: 0
   m_textAlignment: 257
   m_characterSpacing: 0
@@ -279,12 +279,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 2020986909991186701}
-    characterCount: 31
+    characterCount: 42
     spriteCount: 0
-    spaceCount: 4
-    wordCount: 5
+    spaceCount: 6
+    wordCount: 7
     linkCount: 0
-    lineCount: 2
+    lineCount: 1
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0

@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -222,7 +222,6 @@ GameObject:
   m_Component:
   - component: {fileID: 401608338}
   - component: {fileID: 401608341}
-  - component: {fileID: 401608340}
   - component: {fileID: 401608339}
   m_Layer: 5
   m_Name: Canvas
@@ -248,8 +247,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 357.25372, y: -592}
-  m_SizeDelta: {x: -714.50745, y: -1856}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &401608339
 MonoBehaviour:
@@ -268,28 +267,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &401608340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 401608337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
 --- !u!223 &401608341
 Canvas:
   m_ObjectHideFlags: 0
@@ -415,6 +392,8 @@ MonoBehaviour:
   _confirmationPopUp: {fileID: 6700165356127211701, guid: a902c1e47abfdd345a0863da912fb833,
     type: 3}
   _settingButton: {fileID: 1109784635}
+  _confirmationMessage: "Peringatan! \nChecklist yang telah disimpan tidak dapat diubah
+    hingga proyek selesai. Apakah anda sudah yakin dengan jawaban anda?"
 --- !u!4 &848682937
 Transform:
   m_ObjectHideFlags: 0
@@ -522,7 +501,7 @@ PrefabInstance:
     - target: {fileID: 6055964403660175694, guid: e81af6ae061235640b1ecd963ab1bb3c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 272
       objectReference: {fileID: 0}
     - target: {fileID: 6055964403660175694, guid: e81af6ae061235640b1ecd963ab1bb3c,
         type: 3}
@@ -532,7 +511,7 @@ PrefabInstance:
     - target: {fileID: 6055964403660175694, guid: e81af6ae061235640b1ecd963ab1bb3c,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 64
+      value: 96
       objectReference: {fileID: 0}
     - target: {fileID: 6055964403660175694, guid: e81af6ae061235640b1ecd963ab1bb3c,
         type: 3}
