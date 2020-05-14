@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea1ee8e0afb847b42ae6f403357ba440, type: 3}
-  m_Name: DataSprites
+  m_Name: Sample
   m_EditorClassIdentifier: 
-  _dataSprites:
+  _sprites:
   - {fileID: 21300000, guid: b58cdd04f80767c44addfd1ca3ebbf62, type: 3}
   - {fileID: 21300002, guid: b58cdd04f80767c44addfd1ca3ebbf62, type: 3}
   - {fileID: 21300004, guid: b58cdd04f80767c44addfd1ca3ebbf62, type: 3}
@@ -36,3 +36,5 @@ MonoBehaviour:
   - {fileID: 21300040, guid: b58cdd04f80767c44addfd1ca3ebbf62, type: 3}
   - {fileID: 21300042, guid: b58cdd04f80767c44addfd1ca3ebbf62, type: 3}
   - {fileID: 21300044, guid: b58cdd04f80767c44addfd1ca3ebbf62, type: 3}
+  _framerate: 30
+  _loop: 1
