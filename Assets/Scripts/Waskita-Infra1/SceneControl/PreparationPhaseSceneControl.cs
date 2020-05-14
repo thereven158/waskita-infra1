@@ -36,6 +36,10 @@ namespace SceneControl
 
         [SerializeField]
         private Button _settingButton = default;
+
+        [TextArea]
+        [SerializeField]
+        private string _confirmationMessage;
         
         private void Start()
         {
@@ -98,9 +102,7 @@ namespace SceneControl
         {
             _displaySystem
                 .GetOrCreateDisplay<ConfirmationPopUpDisplay>(_confirmationPopUp)
-                .Open(
-                    "PERINGATAN!\n" +
-                    "Checklist yang telah di simpan tidak dapat di ubah hingga projek selesai. lanjutkan ?",
+                .Open(_confirmationMessage,
                     GoToSimulation,
                     null);
         }

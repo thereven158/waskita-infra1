@@ -12,6 +12,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: QuestionEvaluationListItem
       objectReference: {fileID: 0}
+    - target: {fileID: 3013644105495095285, guid: 77fc161495af07b42b341de59ec4214c,
+        type: 3}
+      propertyPath: _trueSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6291ea8f709afb74dadefeb2684c6343,
+        type: 3}
+    - target: {fileID: 3013644105495095285, guid: 77fc161495af07b42b341de59ec4214c,
+        type: 3}
+      propertyPath: _falseSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cd3b8ca7d89a2cf42a0d9722671af292,
+        type: 3}
+    - target: {fileID: 3915632956083879662, guid: 77fc161495af07b42b341de59ec4214c,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3915632956083879662, guid: 77fc161495af07b42b341de59ec4214c,
+        type: 3}
+      propertyPath: m_Transition
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7005393474608986203, guid: 77fc161495af07b42b341de59ec4214c,
         type: 3}
       propertyPath: m_Sprite

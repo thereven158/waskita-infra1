@@ -189,7 +189,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 512, y: 128}
+  m_SizeDelta: {x: 512, y: 192}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &294803451732584995
 MonoBehaviour:
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_MinWidth: -1
   m_MinHeight: -1
   m_PreferredWidth: -1
-  m_PreferredHeight: 128
+  m_PreferredHeight: 192
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
@@ -224,6 +224,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 3915632956083879662}
+  _buttonImage: {fileID: 4905938940926995523}
+  _trueSprite: {fileID: 21300000, guid: 785841240734b8f4ca44925e7e43fde9, type: 3}
+  _falseSprite: {fileID: 21300000, guid: 785841240734b8f4ca44925e7e43fde9, type: 3}
   _nameText: {fileID: 3416110924577186029}
   _toggle: {fileID: 1899061263446748891}
 --- !u!1 &4856954281463742317
@@ -260,8 +263,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 40, y: 0}
-  m_SizeDelta: {x: -208, y: -32}
+  m_AnchoredPosition: {x: 72, y: 0}
+  m_SizeDelta: {x: -272, y: -32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4445861285437152093
 CanvasRenderer:
@@ -318,7 +321,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 43.85
+  m_fontSize: 34.6
   m_fontSizeBase: 50.9
   m_fontWeight: 400
   m_enableAutoSizing: 1
