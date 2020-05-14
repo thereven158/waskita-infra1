@@ -117,12 +117,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1714455857781652494, guid: f30d741208018c0459e31e493ebeb45f,
+    - target: {fileID: 6021767041765049986, guid: f30d741208018c0459e31e493ebeb45f,
         type: 3}
-      propertyPath: objectToPool
-      value: 
-      objectReference: {fileID: 8200362256997915538, guid: cf3d70e739fdd214ca5ea6b4c6d5e747,
+      propertyPath: m_AnchoredPosition.y
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021767041765049986, guid: f30d741208018c0459e31e493ebeb45f,
         type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -528
+      objectReference: {fileID: 0}
     - target: {fileID: 1714455856859579146, guid: f30d741208018c0459e31e493ebeb45f,
         type: 3}
       propertyPath: m_AnchorMin.x
@@ -163,6 +167,94 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6021767041422228835, guid: f30d741208018c0459e31e493ebeb45f,
+        type: 3}
+      propertyPath: objectToPool
+      value: 
+      objectReference: {fileID: 8200362256997915538, guid: cf3d70e739fdd214ca5ea6b4c6d5e747,
+        type: 3}
+    - target: {fileID: 6021767041422228835, guid: f30d741208018c0459e31e493ebeb45f,
+        type: 3}
+      propertyPath: _objectToPool
+      value: 
+      objectReference: {fileID: 8200362256997915538, guid: cf3d70e739fdd214ca5ea6b4c6d5e747,
+        type: 3}
+    - target: {fileID: 6021767041422228838, guid: f30d741208018c0459e31e493ebeb45f,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021767041422228838, guid: f30d741208018c0459e31e493ebeb45f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 846963049513103148, guid: f30d741208018c0459e31e493ebeb45f,
+        type: 3}
+      propertyPath: m_text
+      value: Berikut hasil evaluasi project
+      objectReference: {fileID: 0}
+    - target: {fileID: 846963049513103148, guid: f30d741208018c0459e31e493ebeb45f,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 846963049513103148, guid: f30d741208018c0459e31e493ebeb45f,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 846963049513103148, guid: f30d741208018c0459e31e493ebeb45f,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 846963049513103148, guid: f30d741208018c0459e31e493ebeb45f,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 846963049513103148, guid: f30d741208018c0459e31e493ebeb45f,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1714455857337934369, guid: f30d741208018c0459e31e493ebeb45f,
+        type: 3}
+      propertyPath: m_text
+      value: Lanjut
+      objectReference: {fileID: 0}
+    - target: {fileID: 1714455857337934369, guid: f30d741208018c0459e31e493ebeb45f,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1714455857337934369, guid: f30d741208018c0459e31e493ebeb45f,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1714455857337934369, guid: f30d741208018c0459e31e493ebeb45f,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021767042011286402, guid: f30d741208018c0459e31e493ebeb45f,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021767042011286402, guid: f30d741208018c0459e31e493ebeb45f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1714455857781652494, guid: f30d741208018c0459e31e493ebeb45f,
+        type: 3}
+      propertyPath: objectToPool
+      value: 
+      objectReference: {fileID: 8200362256997915538, guid: cf3d70e739fdd214ca5ea6b4c6d5e747,
+        type: 3}
     - target: {fileID: 638029398186868008, guid: f30d741208018c0459e31e493ebeb45f,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -203,93 +295,12 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 846963049513103148, guid: f30d741208018c0459e31e493ebeb45f,
-        type: 3}
-      propertyPath: m_text
-      value: Berikut hasil evaluasi project
-      objectReference: {fileID: 0}
-    - target: {fileID: 846963049513103148, guid: f30d741208018c0459e31e493ebeb45f,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 846963049513103148, guid: f30d741208018c0459e31e493ebeb45f,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 846963049513103148, guid: f30d741208018c0459e31e493ebeb45f,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 846963049513103148, guid: f30d741208018c0459e31e493ebeb45f,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1714455857337934369, guid: f30d741208018c0459e31e493ebeb45f,
-        type: 3}
-      propertyPath: m_text
-      value: Lanjut
-      objectReference: {fileID: 0}
-    - target: {fileID: 1714455857337934369, guid: f30d741208018c0459e31e493ebeb45f,
-        type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1714455857337934369, guid: f30d741208018c0459e31e493ebeb45f,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1714455857337934369, guid: f30d741208018c0459e31e493ebeb45f,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1714455856155003631, guid: f30d741208018c0459e31e493ebeb45f,
         type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1714455856155003631, guid: f30d741208018c0459e31e493ebeb45f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6021767041765049986, guid: f30d741208018c0459e31e493ebeb45f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 72
-      objectReference: {fileID: 0}
-    - target: {fileID: 6021767041765049986, guid: f30d741208018c0459e31e493ebeb45f,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -528
-      objectReference: {fileID: 0}
-    - target: {fileID: 6021767041422228835, guid: f30d741208018c0459e31e493ebeb45f,
-        type: 3}
-      propertyPath: objectToPool
-      value: 
-      objectReference: {fileID: 8200362256997915538, guid: cf3d70e739fdd214ca5ea6b4c6d5e747,
-        type: 3}
-    - target: {fileID: 6021767041422228838, guid: f30d741208018c0459e31e493ebeb45f,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6021767041422228838, guid: f30d741208018c0459e31e493ebeb45f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.000015266349
-      objectReference: {fileID: 0}
-    - target: {fileID: 6021767042011286402, guid: f30d741208018c0459e31e493ebeb45f,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6021767042011286402, guid: f30d741208018c0459e31e493ebeb45f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

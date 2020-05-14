@@ -507,10 +507,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolContainer: {fileID: 2304155555117226902}
-  objectToPool: {fileID: 3013644105495095285, guid: 77fc161495af07b42b341de59ec4214c,
-    type: 3}
   initialPoolAmount: 2
   expandable: 1
+  _objectToPool: {fileID: 3013644105495095285, guid: 77fc161495af07b42b341de59ec4214c,
+    type: 3}
 --- !u!114 &6391869973523040151
 MonoBehaviour:
   m_ObjectHideFlags: 0

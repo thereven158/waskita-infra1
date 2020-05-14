@@ -79,7 +79,11 @@ namespace SceneControl
         private void OpenCheckListItem(IQuestion item)
         {
             _checklistInteractionDisplay.Close();
-            _quizDisplay.Display(item.Quiz, (quiz, o) => _levelProgress.AnswerQuestion(item, o), OpenCheckList);
+            _quizDisplay.Display(
+                item.Quiz, 
+                (quiz, o) => _levelProgress.AnswerQuestion(item, o), 
+                OpenCheckList,
+                _levelProgress.Data.AnswerOf(item));
         }
 
         private void SimulationConfirmation()
