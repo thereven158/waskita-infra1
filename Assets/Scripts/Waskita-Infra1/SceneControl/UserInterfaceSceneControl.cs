@@ -5,6 +5,7 @@ using Agate.WaskitaInfra1.UserInterface.LevelList;
 using Agate.WaskitaInfra1.UserInterface.Quiz;
 using UserInterface.LevelState;
 using UnityEngine;
+using UserInterface;
 
 namespace Agate.WaskitaInfra1.SceneControl
 {
@@ -28,12 +29,16 @@ namespace Agate.WaskitaInfra1.SceneControl
         [SerializeField]
         private UiDisplaysSystemBehavior _displaySystem = default;
 
+        [SerializeField]
+        private SettingDisplay _settingDisplay = default;
+
         private void Start()
         {
             Main main = Main.Instance;
             _displaySystem.Init();
             _checklistInteractionDisplay.Init();
-            Main.RegisterComponents(_quizDisplay, _levelDataListDisplay, _levelStateDisplay, _levelDataDisplay, _checklistInteractionDisplay, _displaySystem);
+            Main.RegisterComponents(_quizDisplay, _levelDataListDisplay, _levelStateDisplay, _levelDataDisplay,
+                _checklistInteractionDisplay, _displaySystem, _settingDisplay);
             _quizDisplay.Close();
             _levelStateDisplay.ToggleDisplay(false);
             _levelDataListDisplay.Close();
