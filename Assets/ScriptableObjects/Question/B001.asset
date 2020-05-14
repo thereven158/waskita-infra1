@@ -31,9 +31,9 @@ MonoBehaviour:
   _question:
     _message: 'Proyek akan dilakukan di atas tanah keras dengan estimasi kedalaman
       30m dan freestanding 3m. Konfigurasi tiang pancang yang tepat adalah... '
-    _answer: 'Bottom : 12 m Middle : 12 m Upper : 10 m'
+    _answer: 'Bottom : 12 m<br>Middle : 12 m<br>Upper : 10 m'
     _answerOptions:
-    - 'Bottom : 15 m Middle : 15 m Upper : 15 m'
-    - 'Bottom : 15 m Middle : 12 m Upper : 12 m'
-    - 'Bottom : 12 m Middle : 12 m Upper : 10 m'
-    - 'Bottom : 12 m Middle : 12 m Upper : 12 m'
+    - 'Bottom : 15 m<br>Middle : 15 m<br>Upper : 15 m'
+    - 'Bottom : 15 m<br>Middle : 12 m<br>Upper : 12 m'
+    - 'Bottom : 12 m<br>Middle : 12 m<br>Upper : 10 m'
+    - 'Bottom : 12 m<br>Middle : 12 m<br>Upper : 12 m'
