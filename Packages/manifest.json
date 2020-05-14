@@ -43,17 +43,9 @@
     "com.unity.modules.xr": "1.0.0"
   },
   "lock": {
-    "com.a3.code-pattern": {
-      "hash": "a6b3449bee3c00f44918aa2c3e9455ce92e018f0",
-      "revision": "code-pattern"
-    },
     "com.a3.data-driven-event": {
       "hash": "0329c9d6a06f357a2b6ea11b92bd432ef15be49c",
       "revision": "data-driven-event"
-    },
-    "com.a3.interactive-data-display": {
-      "hash": "f0218d2beaebde4d48b0198c9ca0a97f820ac065",
-      "revision": "interactive-data-display"
     },
     "com.a3.ugui-display": {
       "hash": "c2055c9ae41a4a532d2610d3c812a945de368709",
@@ -66,6 +58,14 @@
     "com.a3.quiz": {
       "hash": "8bd7242993d0d6ee63282c647b6dc79d4b3451a1",
       "revision": "quiz"
+    },
+    "com.a3.code-pattern": {
+      "hash": "ae6b1030614a22ca019c8f35324f76eb074d5c0e",
+      "revision": "code-pattern"
+    },
+    "com.a3.interactive-data-display": {
+      "hash": "58e6c68e68570cf99b533c89d0e05f8d920f03b6",
+      "revision": "interactive-data-display"
     }
   }
 }

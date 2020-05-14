@@ -15,39 +15,14 @@ MonoBehaviour:
   Location: Bandung Timur
   Description: Pembangunan Tol Bandung Timur
   DayDuration: 30
-  Quizzes:
-  - _quiz: {fileID: 114073847521474986}
-    _displayName: Penumpukan Tiang Pancang di Lapangan
-    _category: Penyimpanan Material
-    _wrongExplanation: Tiang Pancang diletakkan dengan cara yang tidak tepat, mengakibatkan
-      sebagian terguling dari tempat penyimpanan dan mengalami keretakan
-  - _quiz: {fileID: 114641903079315452}
-    _displayName: Penumpukan Material Fullslab
-    _category: Penyimpanan Material
-    _wrongExplanation: Penyimpanan yang kurang baik menyebabkan material rusak
-  - _quiz: {fileID: 114786186665644570}
-    _displayName: Konfigurasi Tiang Pancang
-    _category: 'Instalasi Tiang Pancang '
-    _wrongExplanation: Penggunaan tiang pancang boros dan tidak efisien
-  - _quiz: {fileID: 114966729774849844}
-    _displayName: Pengangkatan Tiang Pancang saat  Pemacangan
-    _category: 'Instalasi Tiang Pancang '
-    _wrongExplanation: Posisi yang tidak ideal berpotensi mematahkan tiang pancang
-  - _quiz: {fileID: 114273487154044616}
-    _displayName: 'Pemancangan Tiang Pancang '
-    _category: 'Instalasi Tiang Pancang '
-    _wrongExplanation: Proses pemancangan yang tidak ideal menyebabkan alat berpotensi
-      roboh
-  - _quiz: {fileID: 114127618841110770}
-    _displayName: 'Penyambungan Tiang Pancang '
-    _category: 'Instalasi Tiang Pancang '
-    _wrongExplanation: Hasil pemasangan tiang pancang kurang baik, fondasi menjadi
-      tidak sekokoh dan tahan lama seperti seharusnya
-  - _quiz: {fileID: 114636201103160322}
-    _displayName: 'Erection Fullslab '
-    _category: 'Instalasi Fullslab '
-    _wrongExplanation: Fullslab terjatuh saat proses pengangkatan, menyebabkan kerusakan
-      material dan membahayakan keselamatan kerja
+  Questions:
+  - {fileID: 11400000, guid: 16c77c88dc2e9d04eae749e3a02940fa, type: 2}
+  - {fileID: 11400000, guid: 271d3ad4791f59145a0c2f053773fe02, type: 2}
+  - {fileID: 11400000, guid: 0089a6cfff6b8f149914975820cc3191, type: 2}
+  - {fileID: 11400000, guid: ce0cfd8168193814cb647120ac750968, type: 2}
+  - {fileID: 11400000, guid: 639636404297f944b942623a4d14a763, type: 2}
+  - {fileID: 11400000, guid: 647e3f5b1417cc643b02ee31d5e228c5, type: 2}
+  - {fileID: 11400000, guid: 3bf4669e2f85fe649962a83ff74c6527, type: 2}
   Events:
   - {fileID: 114126048985783266}
   - {fileID: 114134991451644346}
@@ -55,27 +30,6 @@ MonoBehaviour:
   SoilCondition: {fileID: 11400000, guid: 35630f21c3d1b6947a286a2353e83768, type: 2}
   WeatherForecast: {fileID: 11400000, guid: fe8e7f51e1f815f43bd4983a8eff352e, type: 2}
   WindStrength: 0
---- !u!114 &114073847521474986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09053f3c55464d2cbdce633a1ca0aea4, type: 3}
-  m_Name: _ProyekCiaci__quiz
-  m_EditorClassIdentifier: 
-  _question:
-    QuestionText: Penumpukan tiang pancang di lapangan sebaiknya dilakukan dengan
-      memenuhi kriteria seperti...
-    Answer: {fileID: 21300000, guid: 0a64ed08a77d9e8438b6807da460c218, type: 3}
-    Options:
-    - {fileID: 21300000, guid: 0a64ed08a77d9e8438b6807da460c218, type: 3}
-    - {fileID: 21300000, guid: cd2ac19145cf6804883060dbd7145a34, type: 3}
-    - {fileID: 21300000, guid: cd2ac19145cf6804883060dbd7145a34, type: 3}
-    - {fileID: 21300000, guid: cd2ac19145cf6804883060dbd7145a34, type: 3}
 --- !u!114 &114126048985783266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,26 +44,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _day: 10
   _action: {fileID: 11400000, guid: b62c714d4d0032143ad43ef65ad55a71, type: 2}
---- !u!114 &114127618841110770
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09053f3c55464d2cbdce633a1ca0aea4, type: 3}
-  m_Name: _Pembangunan Tol Bandung Timur__quiz
-  m_EditorClassIdentifier: 
-  _question:
-    QuestionText: 'Metode penyambungan tiang pancang yang benar adalah... '
-    Answer: {fileID: 21300000, guid: 0a64ed08a77d9e8438b6807da460c218, type: 3}
-    Options:
-    - {fileID: 21300000, guid: 0a64ed08a77d9e8438b6807da460c218, type: 3}
-    - {fileID: 21300000, guid: cd2ac19145cf6804883060dbd7145a34, type: 3}
-    - {fileID: 21300000, guid: cd2ac19145cf6804883060dbd7145a34, type: 3}
-    - {fileID: 21300000, guid: cd2ac19145cf6804883060dbd7145a34, type: 3}
 --- !u!114 &114134991451644346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,68 +58,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _day: 20
   _action: {fileID: 11400000, guid: b62c714d4d0032143ad43ef65ad55a71, type: 2}
---- !u!114 &114273487154044616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09053f3c55464d2cbdce633a1ca0aea4, type: 3}
-  m_Name: _Pembangunan Tol Bandung Timur__quiz
-  m_EditorClassIdentifier: 
-  _question:
-    QuestionText: 'Di bawah ini, gambar mana yang menunjukkan kondisi ideal untuk
-      pemancangan tiang pancang? '
-    Answer: {fileID: 21300000, guid: 0a64ed08a77d9e8438b6807da460c218, type: 3}
-    Options:
-    - {fileID: 21300000, guid: 0ef35a838db144e4894213ae3a7c4ef9, type: 3}
-    - {fileID: 21300000, guid: 0ef35a838db144e4894213ae3a7c4ef9, type: 3}
-    - {fileID: 21300000, guid: 0ef35a838db144e4894213ae3a7c4ef9, type: 3}
-    - {fileID: 21300000, guid: 0a64ed08a77d9e8438b6807da460c218, type: 3}
---- !u!114 &114636201103160322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09053f3c55464d2cbdce633a1ca0aea4, type: 3}
-  m_Name: _Pembangunan Tol Bandung Timur__quiz
-  m_EditorClassIdentifier: 
-  _question:
-    QuestionText: 'Proses erection fullslab yang tepat adalah... '
-    Answer: {fileID: 21300000, guid: 0a64ed08a77d9e8438b6807da460c218, type: 3}
-    Options:
-    - {fileID: 21300000, guid: cd2ac19145cf6804883060dbd7145a34, type: 3}
-    - {fileID: 21300000, guid: cd2ac19145cf6804883060dbd7145a34, type: 3}
-    - {fileID: 21300000, guid: 0a64ed08a77d9e8438b6807da460c218, type: 3}
-    - {fileID: 21300000, guid: cd2ac19145cf6804883060dbd7145a34, type: 3}
---- !u!114 &114641903079315452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09053f3c55464d2cbdce633a1ca0aea4, type: 3}
-  m_Name: _Pembangunan Tol Bandung Timur__quiz
-  m_EditorClassIdentifier: 
-  _question:
-    QuestionText: Di bawah ini, yang merupakan kondisi dan metode yang tepat untuk
-      penumpukan material  fullslab adalah...
-    Answer: {fileID: 21300000, guid: 0a64ed08a77d9e8438b6807da460c218, type: 3}
-    Options:
-    - {fileID: 21300000, guid: cd2ac19145cf6804883060dbd7145a34, type: 3}
-    - {fileID: 21300000, guid: cd2ac19145cf6804883060dbd7145a34, type: 3}
-    - {fileID: 21300000, guid: 0a64ed08a77d9e8438b6807da460c218, type: 3}
-    - {fileID: 21300000, guid: cd2ac19145cf6804883060dbd7145a34, type: 3}
 --- !u!114 &114771418730785078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,45 +72,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _day: 23
   _action: {fileID: 11400000, guid: b62c714d4d0032143ad43ef65ad55a71, type: 2}
---- !u!114 &114786186665644570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09053f3c55464d2cbdce633a1ca0aea4, type: 3}
-  m_Name: _Pembangunan Tol Bandung Timur__quiz
-  m_EditorClassIdentifier: 
-  _question:
-    QuestionText: 'Proyek akan dilakukan di atas tanah keras dengan estimasi kedalaman
-      30m dan freestanding 3m. Konfigurasi tiang pancang yang tepat adalah... '
-    Answer: {fileID: 21300000, guid: 0a64ed08a77d9e8438b6807da460c218, type: 3}
-    Options:
-    - {fileID: 21300000, guid: cd2ac19145cf6804883060dbd7145a34, type: 3}
-    - {fileID: 21300000, guid: 0a64ed08a77d9e8438b6807da460c218, type: 3}
-    - {fileID: 21300000, guid: cd2ac19145cf6804883060dbd7145a34, type: 3}
-    - {fileID: 21300000, guid: cd2ac19145cf6804883060dbd7145a34, type: 3}
---- !u!114 &114966729774849844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09053f3c55464d2cbdce633a1ca0aea4, type: 3}
-  m_Name: _Pembangunan Tol Bandung Timur__quiz
-  m_EditorClassIdentifier: 
-  _question:
-    QuestionText: 'Pengangkatan tiang pancang saat pemancangan harus dilakukan sesuai
-      dengan kriteria yang tepat, yaitu... '
-    Answer: {fileID: 21300000, guid: 0a64ed08a77d9e8438b6807da460c218, type: 3}
-    Options:
-    - {fileID: 21300000, guid: cd2ac19145cf6804883060dbd7145a34, type: 3}
-    - {fileID: 21300000, guid: cd2ac19145cf6804883060dbd7145a34, type: 3}
-    - {fileID: 21300000, guid: 0a64ed08a77d9e8438b6807da460c218, type: 3}
-    - {fileID: 21300000, guid: cd2ac19145cf6804883060dbd7145a34, type: 3}

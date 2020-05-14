@@ -9,9 +9,9 @@ namespace Agate.WaskitaInfra1.LevelProgress
         uint LastCheckpoint { get; }
         uint CurrentDay { get; }
         uint TryCount { get; }
-        List<object> Answers {get;}
-        DayCondition Condition {get;}
-        LevelData Level{get;}
+        List<object> Answers { get; }
+        DayCondition Condition { get; }
+        LevelData Level { get; }
         bool Equals(ILevelProgressData other);
     }
 
@@ -20,6 +20,12 @@ namespace Agate.WaskitaInfra1.LevelProgress
         public static bool IsChecklistDone(this ILevelProgressData progressData)
         {
             return progressData.Answers.All(o => o != null);
+        }
+
+        public static object AnswerOf(this ILevelProgressData progressData, IQuestion question)
+        {
+            int questionIndex = progressData.Level.Questions.IndexOf(question);
+            return questionIndex < 0 ? default : progressData.Answers[questionIndex];
         }
     }
 }

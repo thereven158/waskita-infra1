@@ -10,6 +10,8 @@ using Agate.WaskitaInfra1.UserInterface.LevelList;
 using Agate.WaskitaInfra1.UserInterface.Quiz;
 using Agate.WaskitaInfra1.Utilities;
 using UnityEngine;
+using UnityEngine.UI;
+using UserInterface;
 using UserInterface.Display;
 using UserInterface.LevelState;
 
@@ -27,10 +29,18 @@ namespace SceneControl
         private QuizDisplay _quizDisplay;
         private UiDisplaysSystem<GameObject> _displaySystem;
         private GameplaySceneLoadControl _sceneLoader;
+        private SettingDisplay _settingDisplay;
 
         [SerializeField]
         private ConfirmationPopUpDisplay _confirmationPopUp = default;
 
+        [SerializeField]
+        private Button _settingButton = default;
+
+        [TextArea]
+        [SerializeField]
+        private string _confirmationMessage;
+        
         private void Start()
         {
             _gameProgress = Main.GetRegisteredComponent<GameProgressControl>();
@@ -43,6 +53,8 @@ namespace SceneControl
             _levelStateDisplay = Main.GetRegisteredComponent<LevelStateDisplay>();
             _displaySystem = Main.GetRegisteredComponent<UiDisplaysSystemBehavior>();
             _sceneLoader = Main.GetRegisteredComponent<GameplaySceneLoadControl>();
+            _settingDisplay = Main.GetRegisteredComponent<SettingDisplay>();
+            _settingButton.onClick.AddListener(()=> _settingDisplay.gameObject.SetActive(true));
             if (_levelProgress.Data == null)
                 OpenProjectList();
             else
@@ -79,16 +91,18 @@ namespace SceneControl
         private void OpenCheckListItem(IQuestion item)
         {
             _checklistInteractionDisplay.Close();
-            _quizDisplay.Display(item.Quiz, (quiz, o) => _levelProgress.AnswerQuestion(item, o), OpenCheckList);
+            _quizDisplay.Display(
+                item, 
+                (quiz, o) => _levelProgress.AnswerQuestion(item, o), 
+                OpenCheckList,
+                _levelProgress.Data.AnswerOf(item));
         }
 
         private void SimulationConfirmation()
         {
             _displaySystem
                 .GetOrCreateDisplay<ConfirmationPopUpDisplay>(_confirmationPopUp)
-                .Open(
-                    "PERINGATAN!\n" +
-                    "Checklist yang telah di simpan tidak dapat di ubah hingga projek selesai. lanjutkan ?",
+                .Open(_confirmationMessage,
                     GoToSimulation,
                     null);
         }

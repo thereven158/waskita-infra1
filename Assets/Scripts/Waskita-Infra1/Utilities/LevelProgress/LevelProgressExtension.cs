@@ -1,4 +1,3 @@
-using System.Linq;
 using Agate.WaskitaInfra1.LevelProgress;
 using UserInterface.LevelState;
 

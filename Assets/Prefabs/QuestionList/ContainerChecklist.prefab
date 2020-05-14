@@ -145,7 +145,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -64, y: -144}
+  m_SizeDelta: {x: -48, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2304155553783963732
 MonoBehaviour:
@@ -507,10 +507,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolContainer: {fileID: 2304155555117226902}
-  objectToPool: {fileID: 3013644105495095285, guid: 77fc161495af07b42b341de59ec4214c,
-    type: 3}
   initialPoolAmount: 2
   expandable: 1
+  _objectToPool: {fileID: 3013644105495095285, guid: 77fc161495af07b42b341de59ec4214c,
+    type: 3}
 --- !u!114 &6391869973523040151
 MonoBehaviour:
   m_ObjectHideFlags: 0
