@@ -6,7 +6,7 @@ namespace Agate.Util
     public class SiblingTextIdentifier : MonoBehaviour
     {
         [SerializeField]
-        private TMP_Text _text;
+        private TMP_Text _text = default;
 
         private void OnEnable()
         {

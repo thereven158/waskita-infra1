@@ -406,8 +406,8 @@ MonoBehaviour:
   m_text: aaaaaaaaa aaaa aaaaaaaaa aaaaaaaaa aaaa aaaaaaaaaaaaaaa aaaaaaaaaaa aaaaaaa
     aaa aaaa aaaaa aaaa aaaaaa aaaa aaaaa aaaaa
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a6b695a2c33f5504ea864c10c7737564, type: 2}
-  m_sharedMaterial: {fileID: 21917315771810620, guid: a6b695a2c33f5504ea864c10c7737564,
+  m_fontAsset: {fileID: 11400000, guid: d1ab24c4bd592394c8646b8f75d1650c, type: 2}
+  m_sharedMaterial: {fileID: 21349351368415128, guid: d1ab24c4bd592394c8646b8f75d1650c,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -438,7 +438,7 @@ MonoBehaviour:
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 28
-  m_fontSizeMax: 56
+  m_fontSizeMax: 36
   m_fontStyle: 0
   m_textAlignment: 513
   m_characterSpacing: 0

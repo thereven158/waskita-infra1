@@ -11,10 +11,10 @@ namespace Agate.WaskitaInfra1.UserInterface.SpriteSheet
         private Sprite[] _sprites = default;
 
         [SerializeField]
-        private int _framerate;
+        private int _framerate = default;
 
         [SerializeField]
-        private bool _loop;
+        private bool _loop = default;
 
         public IEnumerable<Sprite> Sprites => _sprites;
         public int Framerate => _framerate;

@@ -6,7 +6,7 @@ using Agate.WaskitaInfra1;
 using Agate.WaskitaInfra1.GameProgress;
 using Agate.WaskitaInfra1.Level;
 using Agate.WaskitaInfra1.LevelProgress;
-using Agate.WaskitaInfra1.UserInterface.ChecklistList;
+using Agate.WaskitaInfra1.UserInterface.QuestionList;
 using Agate.WaskitaInfra1.Utilities;
 using GameAction;
 using TMPro;
@@ -23,6 +23,11 @@ namespace SceneControl
         private LevelControl _levelControl;
         private LevelProgressControl _levelProgress;
         private GameProgressControl _gameProgress;
+        private UiDisplaysSystem<GameObject> _displaysSystem;
+        private SettingDisplay _settingDisplay;
+        private GameplaySceneLoadControl _sceneLoader;
+        
+        private GameActionSystem _actionSystem;
 
         [SerializeField]
         private LevelStateDisplay _levelStateDisplay = default;
@@ -33,13 +38,8 @@ namespace SceneControl
         [SerializeField]
         private Button _settingButton = default;
 
-        private UiDisplaysSystem<GameObject> _displaysSystem;
-        private GameplaySceneLoadControl _sceneLoader;
-
-        private GameActionSystem _actionSystem;
-
         [SerializeField]
-        private QuestionListInteractionDisplay _evaluationDisplay;
+        private QuestionListInteractionDisplay _evaluationDisplay = default;
 
         [SerializeField]
         private TMP_Text _dayText = default;
@@ -54,16 +54,13 @@ namespace SceneControl
         private StormActionControl _stormControl = default;
 
         [SerializeField]
-        private PopUpDisplay _popupDisplayPrefab;
+        private PopUpDisplay _popupDisplayPrefab = default;
 
         [TextArea]
         [SerializeField]
         private string _finishProjectMessage = default;
 
         private PopUpDisplay _popupDisplay;
-
-        private SettingDisplay _settingDisplay;
-
         private PopUpDisplay PopUpDisplay
         {
             get
@@ -74,7 +71,6 @@ namespace SceneControl
                 return _popupDisplay;
             }
         }
-
         private Queue<string> _evaluationMessages;
 
         private void Start()
@@ -142,15 +138,23 @@ namespace SceneControl
                 _displaysSystem.GetOrCreateDisplay<QuestionListInteractionDisplay>(_evaluationDisplay);
 
             display.Open(
-                data,
-                () =>
+                data.QuestionListViewData(),
+                new QuestionListInteractionData()
                 {
-                    if (_evaluationMessages.Count > 0)
-                        CycleDisplayEvaluationMessage();
-                    else
-                        PopUpDisplay.Open("Project Success", LoadPrepScene);
-                    display.Close();
+                    OnFinishButton = () =>
+                    {
+                        OnFinishEvaluation();
+                        display.Close();
+                    }
                 });
+        }
+
+        private void OnFinishEvaluation()
+        {
+            if (_evaluationMessages.Count > 0)
+                CycleDisplayEvaluationMessage();
+            else
+                PopUpDisplay.Open("Project Success", LoadPrepScene);
         }
 
         private void CycleDisplayEvaluationMessage()
@@ -166,13 +170,10 @@ namespace SceneControl
                 CycleDisplayEvaluationMessage);
         }
 
-
         private void LoadPrepScene()
         {
             _sceneLoader.ChangeScene("PreparationPhase");
         }
-        
-        
     }
 
     public static class RectTransformExtension

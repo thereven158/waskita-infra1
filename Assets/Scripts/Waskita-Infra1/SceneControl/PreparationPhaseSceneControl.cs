@@ -5,7 +5,7 @@ using Agate.WaskitaInfra1.GameProgress;
 using Agate.WaskitaInfra1.Level;
 using Agate.WaskitaInfra1.LevelProgress;
 using Agate.WaskitaInfra1.UserInterface;
-using Agate.WaskitaInfra1.UserInterface.ChecklistList;
+using Agate.WaskitaInfra1.UserInterface.QuestionList;
 using Agate.WaskitaInfra1.UserInterface.LevelList;
 using Agate.WaskitaInfra1.UserInterface.Quiz;
 using Agate.WaskitaInfra1.Utilities;
@@ -39,8 +39,12 @@ namespace SceneControl
 
         [TextArea]
         [SerializeField]
-        private string _confirmationMessage;
-        
+        private string _abortConfirmationMessage = default;
+
+        [TextArea]
+        [SerializeField]
+        private string _finishConfirmationMessage = default;
+
         private void Start()
         {
             _gameProgress = Main.GetRegisteredComponent<GameProgressControl>();
@@ -54,7 +58,7 @@ namespace SceneControl
             _displaySystem = Main.GetRegisteredComponent<UiDisplaysSystemBehavior>();
             _sceneLoader = Main.GetRegisteredComponent<GameplaySceneLoadControl>();
             _settingDisplay = Main.GetRegisteredComponent<SettingDisplay>();
-            _settingButton.onClick.AddListener(()=> _settingDisplay.gameObject.SetActive(true));
+            _settingButton.onClick.AddListener(() => _settingDisplay.gameObject.SetActive(true));
             if (_levelProgress.Data == null)
                 OpenProjectList();
             else
@@ -63,6 +67,8 @@ namespace SceneControl
 
         private void OpenProjectList()
         {
+            _levelStateDisplay.ToggleDisplay(false);
+            _checklistInteractionDisplay.Close();
             _levelListDisplay.OpenList(
                 _levelControl.Levels,
                 OpenProjectConfirmation,
@@ -71,29 +77,38 @@ namespace SceneControl
 
         private void OpenProjectConfirmation(LevelData data)
         {
+            void OnConfirm(LevelData levelData)
+            {
+                _levelProgress.StartLevel(levelData);
+                OpenCheckList();
+            }
+
             _levelListDisplay.Close();
             _levelDataDisplay.OpenDisplay(
                 data,
-                levelData =>
-                {
-                    _levelProgress.StartLevel(levelData);
-                    OpenCheckList();
-                },
+                OnConfirm,
                 OpenProjectList);
         }
 
         private void OpenCheckList()
         {
             _levelStateDisplay.OpenDisplay(_levelProgress.Data.Level.State());
-            _checklistInteractionDisplay.Open(_levelProgress.Data, OpenCheckListItem, SimulationConfirmation);
+
+            _checklistInteractionDisplay.Open(
+                _levelProgress.Data.QuestionListViewData(),
+                new QuestionListInteractionData()
+                {
+                    OnDataInteraction = OpenCheckListItem,
+                    OnFinishButton = SimulationConfirmation,
+                    OnAbortButton = AbortConfirmation
+                });
         }
 
         private void OpenCheckListItem(IQuestion item)
         {
-            _checklistInteractionDisplay.Close();
             _quizDisplay.Display(
-                item, 
-                (quiz, o) => _levelProgress.AnswerQuestion(item, o), 
+                item,
+                (quiz, o) => _levelProgress.AnswerQuestion(item, o),
                 OpenCheckList,
                 _levelProgress.Data.AnswerOf(item));
         }
@@ -102,8 +117,23 @@ namespace SceneControl
         {
             _displaySystem
                 .GetOrCreateDisplay<ConfirmationPopUpDisplay>(_confirmationPopUp)
-                .Open(_confirmationMessage,
+                .Open(_finishConfirmationMessage,
                     GoToSimulation,
+                    null);
+        }
+
+        private void AbortConfirmation()
+        {
+            void OnConfirm()
+            {
+                _levelProgress.FinishLevel();
+                OpenProjectList();
+            }
+
+            _displaySystem
+                .GetOrCreateDisplay<ConfirmationPopUpDisplay>(_confirmationPopUp)
+                .Open(_abortConfirmationMessage,
+                    OnConfirm,
                     null);
         }
 
