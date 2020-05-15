@@ -1,8 +1,6 @@
-using System;
 using System.Collections.Generic;
 using A3.Quiz;
-using Agate.SugiSuma.Quiz;
-using UnityEngine;
+using A3.Quiz.Unity;
 
 namespace Agate.WaskitaInfra1.Level
 {
@@ -27,7 +25,7 @@ namespace Agate.WaskitaInfra1.Level
         TAnswer Answer { get; }
     }
 
-    public interface IMultipleChoiceQuestion<TAnswer>:ITAnswerQuestion<TAnswer>
+    public interface IMultipleChoiceQuestion<TAnswer> : ITAnswerQuestion<TAnswer>
     {
         List<TAnswer> AnswerOptions { get; }
     }
@@ -37,21 +35,11 @@ namespace Agate.WaskitaInfra1.Level
         string Message { get; }
     }
 
-    [Serializable]
-    public class BasicMultipleChoiceQuestion<TAnswer> : IMessageQuestion, IMultipleChoiceQuestion<TAnswer>
+    public abstract class BasicMultipleChoiceQuestion<TAnswer> : IMessageQuestion, IMultipleChoiceQuestion<TAnswer>
     {
-        [SerializeField]
-        private string _message;
-
-        [SerializeField]
-        private TAnswer _answer;
-
-        [SerializeField]
-        private List<TAnswer> _answerOptions;
-
-        public string Message => _message;
-        public TAnswer Answer => _answer;
-        public List<TAnswer> AnswerOptions => _answerOptions;
+        public abstract string Message { get; }
+        public abstract TAnswer Answer { get; }
+        public abstract List<TAnswer> AnswerOptions { get; }
     }
 
     public class BasicMultipleChoiceQuiz<TAnswer> : Quiz<BasicMultipleChoiceQuestion<TAnswer>, TAnswer>

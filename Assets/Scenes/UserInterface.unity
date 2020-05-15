@@ -1755,7 +1755,7 @@ PrefabInstance:
     - target: {fileID: 8780230689137047580, guid: 97429bd68eda39f45b874453ccb7643b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 114.58707
+      value: 114.586914
       objectReference: {fileID: 0}
     - target: {fileID: 8780230689137047580, guid: 97429bd68eda39f45b874453ccb7643b,
         type: 3}
@@ -1871,6 +1871,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2104163298}
     m_Modifications:
+    - target: {fileID: 8114996187396750881, guid: c7cac7927ce5cfb4f95c2c306183581f,
+        type: 3}
+      propertyPath: m_Name
+      value: SpriteSheetAnswerDisplay
+      objectReference: {fileID: 0}
     - target: {fileID: 386654560731550760, guid: c7cac7927ce5cfb4f95c2c306183581f,
         type: 3}
       propertyPath: m_Name
@@ -1985,11 +1990,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 386654560731550767, guid: c7cac7927ce5cfb4f95c2c306183581f,
-        type: 3}
-      propertyPath: m_OverrideSorting
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 386654559830064506, guid: c7cac7927ce5cfb4f95c2c306183581f,
         type: 3}
@@ -2810,7 +2810,7 @@ PrefabInstance:
     - target: {fileID: 8222475861458102282, guid: 5b78c0fa135917c418417f56e24177ef,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 114.58707
+      value: 114.586914
       objectReference: {fileID: 0}
     - target: {fileID: 8222475861458102282, guid: 5b78c0fa135917c418417f56e24177ef,
         type: 3}

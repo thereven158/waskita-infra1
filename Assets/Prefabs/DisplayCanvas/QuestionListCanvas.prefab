@@ -56,6 +56,7 @@ MonoBehaviour:
   _questionListDisplay: {fileID: 1504175461464449383}
   _finishButton: {fileID: 1714455856859579147}
   _abortButton: {fileID: 7876102299806622012}
+  _verticalScrollBar: {fileID: 6021767041659346520}
 --- !u!223 &3855638992119033414
 Canvas:
   m_ObjectHideFlags: 0
@@ -491,6 +492,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c750c49083076d84db715eed20763ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6021767041659346520 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2304155555023009960, guid: 77379ebb0ab74064fb3193bc725e21ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 5506667029171611376}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2061169968, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &9018167932456850241

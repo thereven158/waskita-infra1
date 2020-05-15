@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace Agate.WaskitaInfra1.Level
@@ -14,5 +13,20 @@ namespace Agate.WaskitaInfra1.Level
     }
 
     [Serializable]
-    public class SpriteChoiceQuestion : BasicMultipleChoiceQuestion<Sprite> { };
+    public class SpriteChoiceQuestion : BasicMultipleChoiceQuestion<Sprite>
+    {
+        [SerializeField]
+        [TextArea]
+        private string _message = default;
+
+        [SerializeField]
+        private Sprite _answer = default;
+
+        [SerializeField]
+        private List<Sprite> _answerOptions = default;
+
+        public override string Message => _message;
+        public override Sprite Answer => _answer;
+        public override List<Sprite> AnswerOptions => _answerOptions;
+    };
 }
