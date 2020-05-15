@@ -25,11 +25,6 @@ namespace Agate.ShaderGraph
             FloodMaterial.SetColor("_Color_TopWater", color);
         }
 
-        public void SetAlphaWater(float alphaWater)
-        {
-            FloodMaterial.SetFloat("_Vector1_FresnelPower", alphaWater);
-        }
-
         public void SetHeightWater(float heightWater)
         {
             FloodMaterial.SetFloat("_Vector1_WaterHeight", heightWater);
