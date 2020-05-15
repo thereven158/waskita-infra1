@@ -1,6 +1,6 @@
 using A3.UserInterface;
 using Agate.WaskitaInfra1.UserInterface;
-using Agate.WaskitaInfra1.UserInterface.ChecklistList;
+using Agate.WaskitaInfra1.UserInterface.QuestionList;
 using Agate.WaskitaInfra1.UserInterface.LevelList;
 using Agate.WaskitaInfra1.UserInterface.Quiz;
 using UserInterface.LevelState;
@@ -37,6 +37,7 @@ namespace Agate.WaskitaInfra1.SceneControl
             Main main = Main.Instance;
             _displaySystem.Init();
             _checklistInteractionDisplay.Init();
+            _quizDisplay.Init();
             Main.RegisterComponents(_quizDisplay, _levelDataListDisplay, _levelStateDisplay, _levelDataDisplay,
                 _checklistInteractionDisplay, _displaySystem, _settingDisplay);
             _quizDisplay.Close();

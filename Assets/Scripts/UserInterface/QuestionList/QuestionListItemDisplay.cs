@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Agate.WaskitaInfra1.UserInterface.ChecklistList
+namespace Agate.WaskitaInfra1.UserInterface.QuestionList
 {
     public class QuestionListItemDisplay : InteractiveDisplayBehavior<QuestionListItemViewData>
     {
@@ -14,10 +14,10 @@ namespace Agate.WaskitaInfra1.UserInterface.ChecklistList
         private Image _buttonImage = default;
 
         [SerializeField]
-        private Sprite _trueSprite;
+        private Sprite _trueSprite = default;
 
         [SerializeField]
-        private Sprite _falseSprite;
+        private Sprite _falseSprite = default;
 
         [SerializeField]
         private TMP_Text _nameText = default;

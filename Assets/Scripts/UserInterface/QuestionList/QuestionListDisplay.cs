@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using Agate.WaskitaInfra1.Level;
 using UnityEngine;
 
-namespace Agate.WaskitaInfra1.UserInterface.ChecklistList
+namespace Agate.WaskitaInfra1.UserInterface.QuestionList
 {
     public class QuestionListDisplay : MonoBehaviour
     {

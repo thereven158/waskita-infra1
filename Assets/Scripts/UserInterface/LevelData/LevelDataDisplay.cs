@@ -11,16 +11,16 @@ namespace Agate.WaskitaInfra1.UserInterface
     public class LevelDataDisplay : MonoBehaviour
     {
         [SerializeField]
-        private LevelStateDisplay _stateDisplay;
+        private LevelStateDisplay _stateDisplay = default;
 
         [SerializeField]
-        private TMP_Text _descriptionText;
+        private TMP_Text _descriptionText = default;
 
         [SerializeField]
-        private Button _yesButton;
+        private Button _yesButton = default;
 
         [SerializeField]
-        private Button _noButton;
+        private Button _noButton = default;
 
         private Action<LevelData> _onYes;
         private Action _onNo;

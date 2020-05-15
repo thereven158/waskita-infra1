@@ -42,9 +42,9 @@ namespace Agate.WaskitaInfra1
         private GameProgressControl _gameProgress;
         private LevelProgressControl _levelProgress;
         [SerializeField]
-        private GameplaySceneLoadControl _sceneLoader;
+        private GameplaySceneLoadControl _sceneLoader = default;
         [SerializeField]
-        private LevelControl _levelControl;
+        private LevelControl _levelControl = default;
 
         #endregion
 

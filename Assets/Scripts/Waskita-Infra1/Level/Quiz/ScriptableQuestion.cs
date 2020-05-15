@@ -1,5 +1,5 @@
 using A3.Quiz;
-using Agate.SugiSuma.Quiz;
+using A3.Quiz.Unity;
 using UnityEngine;
 
 namespace Agate.WaskitaInfra1.Level

@@ -7,7 +7,7 @@ namespace Agate.WaskitaInfra1.Level
     public class LevelControl : MonoBehaviour
     {
         [SerializeField]
-        private List<LevelDataScriptableObject> _levels;
+        private List<LevelDataScriptableObject> _levels = default;
 
         public LevelData GetLevel(int index)
         {

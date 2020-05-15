@@ -95,7 +95,7 @@ stages:
     UNITY_BUILD_TARGET: "-buildTarget Android"
   when: manual
   only:
-    refs: *primary-branch-refss-definition
+    - merge_request
   artifacts: *build-artifacts-definition
 build-android-dev:
   extends: .build-android

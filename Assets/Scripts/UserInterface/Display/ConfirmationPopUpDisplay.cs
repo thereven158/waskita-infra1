@@ -9,7 +9,7 @@ namespace UserInterface.Display
     public class ConfirmationPopUpDisplay : DisplayBehavior
     {
         [SerializeField]
-        private ConfirmationPopUpViewData defaultData;
+        private ConfirmationPopUpViewData defaultData = default;
 
         [SerializeField]
         private TMP_Text _titleText = default;

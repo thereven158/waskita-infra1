@@ -211,8 +211,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Apakah anda yakin akan memulai proyek ini?
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a6b695a2c33f5504ea864c10c7737564, type: 2}
-  m_sharedMaterial: {fileID: 21917315771810620, guid: a6b695a2c33f5504ea864c10c7737564,
+  m_fontAsset: {fileID: 11400000, guid: 7ce7874a610b1264b88c4f42a3e42dc2, type: 2}
+  m_sharedMaterial: {fileID: 21047043705393594, guid: 7ce7874a610b1264b88c4f42a3e42dc2,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
