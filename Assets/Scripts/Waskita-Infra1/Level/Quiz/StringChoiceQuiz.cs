@@ -20,9 +20,11 @@ namespace Agate.WaskitaInfra1.Level
         private string _message = default;
 
         [SerializeField]
+        [TextArea]
         private string _answer = default;
 
         [SerializeField]
+        [TextArea]
         private List<string> _answerOptions = default;
 
         public override string Message => _message;
