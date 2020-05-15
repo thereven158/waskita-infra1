@@ -94,6 +94,8 @@ stages:
     UNITY_BUILD_PLATFORM: "Android"
     UNITY_BUILD_TARGET: "-buildTarget Android"
   when: manual
+  only:
+    - merge_request
   artifacts: *build-artifacts-definition
 build-android-dev:
   extends: .build-android
