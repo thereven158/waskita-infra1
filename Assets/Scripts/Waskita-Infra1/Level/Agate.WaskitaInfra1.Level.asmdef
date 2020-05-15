@@ -3,6 +3,7 @@
     "references": [
         "A3.Quiz",
         "A3.DataDrivenEvent",
+        "Agate.SpriteSheet",
         "Agate.WaskitaInfra1.Object"
     ],
     "optionalUnityReferences": [],

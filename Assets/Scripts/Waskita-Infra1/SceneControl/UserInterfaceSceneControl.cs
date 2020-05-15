@@ -37,6 +37,7 @@ namespace Agate.WaskitaInfra1.SceneControl
             Main main = Main.Instance;
             _displaySystem.Init();
             _checklistInteractionDisplay.Init();
+            _quizDisplay.Init();
             Main.RegisterComponents(_quizDisplay, _levelDataListDisplay, _levelStateDisplay, _levelDataDisplay,
                 _checklistInteractionDisplay, _displaySystem, _settingDisplay);
             _quizDisplay.Close();

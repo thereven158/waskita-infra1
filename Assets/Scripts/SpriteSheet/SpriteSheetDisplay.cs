@@ -29,6 +29,13 @@ namespace Agate.SpriteSheet
             _loop = isLoop;
             _frameRate = framerate;
             _currentFrame = 0;
+            if (_sprites.Count < 1) return;
+            _image.sprite = _sprites[0];
+        }
+
+        public void Clear()
+        {
+            _sprites.Clear();
         }
 
         public void SetSpriteSheet(ISpriteSheet spriteSheet)
@@ -40,10 +47,10 @@ namespace Agate.SpriteSheet
         {
             if (_sprites == null || _sprites.Count < 1) return;
             if (_currentFrame >= _sprites.Count && !_loop) return;
-            
+
             _elapsedTime += Time.deltaTime;
             if (!(_elapsedTime >= 1f / _frameRate)) return;
-            
+
             CycleSprite();
             _elapsedTime = 0;
         }

@@ -6,7 +6,7 @@ namespace Agate.WaskitaInfra1.UserInterface.LevelList
     public class LevelDataDisplayPool : ObjectPool<LevelDataListItemDisplay>
     {
         [SerializeField]
-        private LevelDataListItemDisplay _objectToPool;
+        private LevelDataListItemDisplay _objectToPool = default;
 
         protected override LevelDataListItemDisplay ObjectToPool => _objectToPool;
     }

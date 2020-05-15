@@ -1,6 +1,7 @@
 using System;
 using Agate.WaskitaInfra1.Level;
 using A3.Quiz;
+using Agate.SpriteSheet;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -28,7 +29,13 @@ namespace Agate.WaskitaInfra1.UserInterface.Quiz
 
         [SerializeField]
         private ImgTextTogglesDisplaySystem imgTextOptionsDisplaySystem = default;
+        
+        [SerializeField]
+        private SpriteSheetTogglesDisplaySystem spriteSheetOptionsDisplaySystem = default;
 
+        [SerializeField]
+        private TextSpriteSheetTogglesDisplaySystem textSpriteSheetOptionsDisplaySystem = default;
+        
         private Toggle _activeToggle;
 
         [SerializeField]
@@ -37,9 +44,9 @@ namespace Agate.WaskitaInfra1.UserInterface.Quiz
         [SerializeField]
         private Button _cancelButton = default;
 
-        public TMP_Text HeaderText => _headerText;
+        private TMP_Text HeaderText => _headerText;
 
-        private void Awake()
+        public void Init()
         {
             spriteOptionDisplaySystem.Init();
             spriteOptionDisplaySystem.OnInteraction += sprite => _activeAnswer = sprite;
@@ -52,6 +59,14 @@ namespace Agate.WaskitaInfra1.UserInterface.Quiz
             imgTextOptionsDisplaySystem.Init();
             imgTextOptionsDisplaySystem.OnInteraction += imgText => _activeAnswer = imgText;
             imgTextOptionsDisplaySystem.OnInteraction += imgText => _confirmButton.interactable = true;
+            
+            spriteSheetOptionsDisplaySystem.Init();
+            spriteSheetOptionsDisplaySystem.OnInteraction += spriteSheet => _activeAnswer = spriteSheet;
+            spriteSheetOptionsDisplaySystem.OnInteraction += spriteSheet => _confirmButton.interactable = true;
+            
+            textSpriteSheetOptionsDisplaySystem.Init();
+            textSpriteSheetOptionsDisplaySystem.OnInteraction += textSpriteSheet => _activeAnswer = textSpriteSheet;
+            textSpriteSheetOptionsDisplaySystem.OnInteraction += textSpriteSheet => _confirmButton.interactable = true;
 
             _confirmButton.onClick.AddListener(ConfirmAnswer);
             _cancelButton.onClick.AddListener(Close);
@@ -66,22 +81,29 @@ namespace Agate.WaskitaInfra1.UserInterface.Quiz
             string header = "Quiz")
         {
             HeaderText.text = header;
-            ToggleDisplay(true);
+            
             _onConfirmAnswer = onConfirmAnswer;
             _onClose = onClose;
-            _activeAnswer = null;
             _confirmButton.interactable = false;
+
+            _activeAnswer = null;
             _activeQuiz = quiz;
             _activeToggle = null;
+            
             spriteOptionDisplaySystem.Reset();
             stringOptionsDisplaySystem.Reset();
             imgTextOptionsDisplaySystem.Reset();
+            spriteSheetOptionsDisplaySystem.Reset();
+            textSpriteSheetOptionsDisplaySystem.Reset();
+            
             imgTextOptionsDisplaySystem.gameObject.SetActive(false);
+            textSpriteSheetOptionsDisplaySystem.gameObject.SetActive(false);
             if (_activeQuiz.Question is IMessageQuestion msgQuestion)
                 _questionText.text = msgQuestion.Message;
 
             switch (_activeQuiz.Question)
             {
+                // how to abstract these thing
                 case IMultipleChoiceQuestion<Sprite> iQuestion:
                     spriteOptionDisplaySystem.PopulateDisplay(iQuestion.AnswerOptions);
                     _activeToggle = spriteOptionDisplaySystem.GetDisplayWith(answer)?.Toggle;
@@ -90,12 +112,23 @@ namespace Agate.WaskitaInfra1.UserInterface.Quiz
                     stringOptionsDisplaySystem.PopulateDisplay(txtQuestion.AnswerOptions);
                     _activeToggle = stringOptionsDisplaySystem.GetDisplayWith(answer)?.Toggle;
                     break;
-                case IMultipleChoiceQuestion<ScriptableImgText> txtQuestion:
+                case IMultipleChoiceQuestion<ScriptableImgText> imgTextQuestion:
                     imgTextOptionsDisplaySystem.gameObject.SetActive(true);
-                    imgTextOptionsDisplaySystem.PopulateDisplay(txtQuestion.AnswerOptions);
+                    imgTextOptionsDisplaySystem.PopulateDisplay(imgTextQuestion.AnswerOptions);
                     _activeToggle = imgTextOptionsDisplaySystem.GetDisplayWith(answer)?.Toggle;
                     break;
+                case IMultipleChoiceQuestion<ISpriteSheet> spritesQuestion:
+                    spriteSheetOptionsDisplaySystem.PopulateDisplay(spritesQuestion.AnswerOptions);
+                    _activeToggle = spriteSheetOptionsDisplaySystem.GetDisplayWith(answer)?.Toggle;
+                    break;
+                case IMultipleChoiceQuestion<ITextSpriteSheet> textSpriteSheetQuestion:
+                    textSpriteSheetOptionsDisplaySystem.gameObject.SetActive(true);
+                    textSpriteSheetOptionsDisplaySystem.PopulateDisplay(textSpriteSheetQuestion.AnswerOptions);
+                    _activeToggle = textSpriteSheetOptionsDisplaySystem.GetDisplayWith(answer)?.Toggle;
+                    break;
             }
+            
+            ToggleDisplay(true);
 
             if (_activeToggle == null) return;
             _activeToggle.isOn = true;

@@ -10,10 +10,10 @@ namespace Agate.WaskitaInfra1.Level
     public class StormEventData : ScriptableDayEventData
     {
         [SerializeField]
-        private PopUpDisplay _information;
+        private PopUpDisplay _information = default;
 
         [SerializeField]
-        private ConfirmationPopUpDisplay _confirmation;
+        private ConfirmationPopUpDisplay _confirmation = default;
 
         private UiDisplaysSystem<GameObject> _displaysSystem;
         private LevelProgressControl _levelProgress;

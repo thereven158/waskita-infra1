@@ -18,6 +18,9 @@ namespace Agate.WaskitaInfra1.UserInterface.QuestionList
         [SerializeField]
         private Button _abortButton = default;
 
+        [SerializeField]
+        private Scrollbar _verticalScrollBar = default;
+        
         private Action<IQuestion> _onDataInteraction;
         private Action _onFinishButton;
         private Action _onAbortButton;
@@ -50,6 +53,7 @@ namespace Agate.WaskitaInfra1.UserInterface.QuestionList
 
         public override void Close()
         {
+            _verticalScrollBar.value = 1;
             _onDataInteraction = null;
             gameObject.SetActive(false);
         }

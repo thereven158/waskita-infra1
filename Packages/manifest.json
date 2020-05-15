@@ -55,17 +55,17 @@
       "hash": "cdb01dc2e32053511c249ae9ce09fd117473e081",
       "revision": "utilities"
     },
-    "com.a3.quiz": {
-      "hash": "8bd7242993d0d6ee63282c647b6dc79d4b3451a1",
-      "revision": "quiz"
-    },
-    "com.a3.code-pattern": {
-      "hash": "ae6b1030614a22ca019c8f35324f76eb074d5c0e",
-      "revision": "code-pattern"
-    },
     "com.a3.interactive-data-display": {
       "hash": "58e6c68e68570cf99b533c89d0e05f8d920f03b6",
       "revision": "interactive-data-display"
+    },
+    "com.a3.code-pattern": {
+      "hash": "36bbd629d03dc73654ff86066ad89e4477998740",
+      "revision": "code-pattern"
+    },
+    "com.a3.quiz": {
+      "hash": "68ea97950215b44b3d9c7d1474e8d6a9f3f19fbf",
+      "revision": "quiz"
     }
   }
 }

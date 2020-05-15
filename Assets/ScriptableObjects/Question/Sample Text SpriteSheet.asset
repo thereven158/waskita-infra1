@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3caac20cc7fb4c5cb17d94f53e689c84, type: 3}
+  m_Name: Sample Text SpriteSheet
+  m_EditorClassIdentifier: 
+  _quiz: {fileID: 114143670957823320}
+  _displayName: 
+  _category: 
+  _wrongExplanation: 
+--- !u!114 &114143670957823320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152796e4c801448b9d9cc76c94908ba4, type: 3}
+  m_Name: _Sample Text SpriteSheet__quiz
+  m_EditorClassIdentifier: 
+  _question:
+    _message: test
+    _answer: {fileID: 114635402841259504}
+    _answerOptions:
+    - {fileID: 114594475162772768}
+    - {fileID: 114635402841259504}
+    - {fileID: 114594475162772768}
+    - {fileID: 114594475162772768}
+--- !u!114 &114594475162772768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
+  m_Name: __Sample Text SpriteSheet__quiz_data
+  m_EditorClassIdentifier: 
+  _text: Options
+  _spriteSheet: {fileID: 11400000, guid: 87d8581a82d7ef040abf6722251c3dfc, type: 2}
+--- !u!114 &114635402841259504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
+  m_Name: __Sample Text SpriteSheet__quiz__answer
+  m_EditorClassIdentifier: 
+  _text: answer
+  _spriteSheet: {fileID: 11400000, guid: 87d8581a82d7ef040abf6722251c3dfc, type: 2}
