@@ -2,51 +2,45 @@ using System;
 using System.Collections.Generic;
 using A3.UserInterface;
 using Agate.WaskitaInfra1.Level;
-using Agate.WaskitaInfra1.LevelProgress;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Agate.WaskitaInfra1.UserInterface.ChecklistList
+namespace Agate.WaskitaInfra1.UserInterface.QuestionList
 {
     public class QuestionListInteractionDisplay : DisplayBehavior
     {
         [SerializeField]
-        private QuestionListDisplay _questionListDisplay;
+        private QuestionListDisplay _questionListDisplay = default;
 
         [SerializeField]
         private Button _finishButton = default;
 
+        [SerializeField]
+        private Button _abortButton = default;
+
         private Action<IQuestion> _onDataInteraction;
         private Action _onFinishButton;
+        private Action _onAbortButton;
+        
 
-
-        public void Open(ILevelProgressData progressData, Action<IQuestion> onDataInteraction, Action onFinish)
+        public void Open(IQuestionListViewData viewData, IQuestionListInteractionData interaction)
         {
-            _onDataInteraction = onDataInteraction;
-            _onFinishButton = onFinish;
-            _finishButton.interactable = progressData.IsChecklistDone();
+            _questionListDisplay.Reset();
+            _onDataInteraction = interaction.OnDataInteraction;
+            _onFinishButton = interaction.OnFinishButton;
+            _onAbortButton = interaction.OnAbortButton;
+            _finishButton.interactable = viewData.FinishButtonInteractable;
             gameObject.SetActive(true);
-            List<IQuestion> checklistItems = progressData.Level.Questions;
-            for (int i = 0; i < checklistItems.Count; i++)
-                _questionListDisplay.AddData(progressData.CheckListViewAt(i));
-        }
-        public void Open(LevelEvaluationData evalData, Action onFinish)
-        {
-            _onDataInteraction = null;
-            _onFinishButton = onFinish;
-            _finishButton.interactable = true;
-            gameObject.SetActive(true);
-            List<IQuestion> checklistItems = evalData.Level.Questions;
-            for (int i = 0; i < checklistItems.Count; i++)
-                _questionListDisplay.AddData(evalData.CheckListViewAt(i));
+            foreach (QuestionListItemViewData itemViewData in viewData.ItemDatas)
+                _questionListDisplay.AddData(itemViewData);
         }
 
         public override void Init()
         {
-            Debug.Log("Init");
             _questionListDisplay.Init();
             _questionListDisplay.OnDataInteraction = OnDataInteraction;
             _finishButton.onClick.AddListener(OnFinishButton);
+            _abortButton.onClick.AddListener(OnAbortButton);
         }
 
         public override void Open()
@@ -56,7 +50,6 @@ namespace Agate.WaskitaInfra1.UserInterface.ChecklistList
 
         public override void Close()
         {
-            _questionListDisplay.Reset();
             _onDataInteraction = null;
             gameObject.SetActive(false);
         }
@@ -72,5 +65,36 @@ namespace Agate.WaskitaInfra1.UserInterface.ChecklistList
         {
             _onFinishButton?.Invoke();
         }
+
+        private void OnAbortButton()
+        {
+            _onAbortButton?.Invoke();
+        }
+    }
+
+    public interface IQuestionListViewData
+    {
+        IEnumerable<QuestionListItemViewData> ItemDatas { get; }
+        bool FinishButtonInteractable { get; }
+    }
+
+    public interface IQuestionListInteractionData
+    {
+        Action<IQuestion> OnDataInteraction { get; }
+        Action OnFinishButton { get; }
+        Action OnAbortButton { get; }
+    }
+
+    public struct QuestionListViewData : IQuestionListViewData
+    {
+        public IEnumerable<QuestionListItemViewData> ItemDatas { get; set; }
+        public bool FinishButtonInteractable { get; set; }
+    }
+
+    public struct QuestionListInteractionData : IQuestionListInteractionData
+    {
+        public Action<IQuestion> OnDataInteraction { get; set; }
+        public Action OnFinishButton { get; set; }
+        public Action OnAbortButton { get; set; }
     }
 }

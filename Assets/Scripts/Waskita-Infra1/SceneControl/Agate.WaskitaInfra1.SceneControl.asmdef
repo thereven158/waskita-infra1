@@ -14,7 +14,7 @@
         "Agate.WaskitaInfra1.LevelProgress",
         "Agate.WaskitaInfra1.PlayerAccount",
         "Agate.WaskitaInfra1.UserInterface",
-        "Agate.WaskitaInfra1.UserInterface.ChecklistList",
+        "Agate.WaskitaInfra1.UserInterface.QuestionList",
         "Agate.WaskitaInfra1.UserInterface.Display",
         "Agate.WaskitaInfra1.UserInterface.LevelData",
         "Agate.WaskitaInfra1.UserInterface.Quiz",

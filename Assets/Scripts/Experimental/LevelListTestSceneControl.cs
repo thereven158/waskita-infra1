@@ -9,9 +9,9 @@ namespace Experimental
     public class LevelListTestSceneControl: MonoBehaviour
     {
         [SerializeField]
-        private LevelDataListDisplay _levelDisplay;
+        private LevelDataListDisplay _levelDisplay = default;
         [SerializeField]
-        private List<LevelDataScriptableObject> _levels;
+        private List<LevelDataScriptableObject> _levels = default;
 
         private void Start()
         {
