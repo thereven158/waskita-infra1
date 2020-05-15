@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _quizDisplay: {fileID: 96294350}
-  question: {fileID: 11400000, guid: 0089a6cfff6b8f149914975820cc3191, type: 2}
+  question: {fileID: 11400000, guid: 3bf4669e2f85fe649962a83ff74c6527, type: 2}
 --- !u!4 &721983642
 Transform:
   m_ObjectHideFlags: 0
@@ -626,6 +626,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5097823575293415317, guid: c7cac7927ce5cfb4f95c2c306183581f,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4503267429709849827, guid: c7cac7927ce5cfb4f95c2c306183581f,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -684,6 +689,11 @@ PrefabInstance:
     - target: {fileID: 3017931945701381560, guid: c7cac7927ce5cfb4f95c2c306183581f,
         type: 3}
       propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418666991311104867, guid: c7cac7927ce5cfb4f95c2c306183581f,
+        type: 3}
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8724854716311760337, guid: c7cac7927ce5cfb4f95c2c306183581f,

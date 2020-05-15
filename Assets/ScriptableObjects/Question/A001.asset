@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3caac20cc7fb4c5cb17d94f53e689c84, type: 3}
   m_Name: A001
   m_EditorClassIdentifier: 
-  _quiz: {fileID: 114439047323235060}
+  _quiz: {fileID: 114087265720870164}
   _displayName: Penumpukan Tiang Pancang Di Lapangan
   _category: Penyimpanan Material
   _wrongExplanation: "Tiang Pancang diletakkan dengan cara yang tidak tepat, mengakibatkan
     sebagian terguling dari tempat penyimpanan dan mengalami keretakan\r\n"
---- !u!114 &114439047323235060
+--- !u!114 &114087265720870164
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -26,15 +26,75 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff6d0afb11504f65a3a9dd25c7433b53, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c16c4fd801b4bbf9eca531138ed0572, type: 3}
   m_Name: _A001__quiz
   m_EditorClassIdentifier: 
   _question:
-    _message: 'Penumpukan tiang pancang di lapangan sebaiknya dilakukan dengan memenuhi
-      kriteria seperti... '
-    _answer: {fileID: 21300000, guid: 018ccc8d5efa9c840be693cbc49e6648, type: 3}
+    _message: "Penumpukan tiang pancang di lapangan sebaiknya dilakukan dengan memenuhi
+      kriteria seperti...\r"
+    _answer: {fileID: 114870999856314070}
     _answerOptions:
-    - {fileID: 21300000, guid: 8105d54c8ab07b948a36916bf0fa0191, type: 3}
-    - {fileID: 21300000, guid: 018ccc8d5efa9c840be693cbc49e6648, type: 3}
-    - {fileID: 21300000, guid: 8105d54c8ab07b948a36916bf0fa0191, type: 3}
-    - {fileID: 21300000, guid: 8105d54c8ab07b948a36916bf0fa0191, type: 3}
+    - {fileID: 114482899899097970}
+    - {fileID: 114308917053166508}
+    - {fileID: 114759076893614560}
+    - {fileID: 114870999856314070}
+--- !u!114 &114308917053166508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: __A001__quiz_data
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: c21f617dd35b01f48ad52dfd70fce08c, type: 3}
+  Text: "Tanah: rata dan padat \nTumpukan maksimal: 2 lapis\nBantalan kayu: Di tepi
+    tumpukan"
+--- !u!114 &114482899899097970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: __A001__quiz_data
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 59f7c8959470a0640805262db9115d6d, type: 3}
+  Text: "Tanah: rata dan padat \nTumpukan maksimal: 2 lapis\nBantalan kayu: Di permukaan
+    tanah saja"
+--- !u!114 &114759076893614560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: __A001__quiz_data
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 75d6af165e2cdc242b7fbb83eeaaef07, type: 3}
+  Text: "Tanah: miring\r\nTumpukan maksimal: 2 lapis\r\nBantalan kayu: Di bawah tiap
+    lapisan"
+--- !u!114 &114870999856314070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: __A001__quiz__answer
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: a85cc055aed41674988df7270c17d09e, type: 3}
+  Text: "Tanah: rata dan padat \nTumpukan maksimal: 2 lapis\nBantalan kayu: Di bawah
+    tiap lapisan"

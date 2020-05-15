@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3caac20cc7fb4c5cb17d94f53e689c84, type: 3}
   m_Name: B002
   m_EditorClassIdentifier: 
-  _quiz: {fileID: 114087749850425178}
+  _quiz: {fileID: 114138844547283114}
   _displayName: Pengakatan Tiang Pancang saat  Pemacangan
   _category: 'Instalasi Tiang Pancang '
   _wrongExplanation: Posisi yang tidak ideal berpotensi mematahkan tiang pancang
---- !u!114 &114087749850425178
+--- !u!114 &114138844547283114
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -25,15 +25,71 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff6d0afb11504f65a3a9dd25c7433b53, type: 3}
+  m_Script: {fileID: 11500000, guid: 152796e4c801448b9d9cc76c94908ba4, type: 3}
   m_Name: _B002__quiz
   m_EditorClassIdentifier: 
   _question:
-    _message: 'Pengangkatan tiang pancang saat pemancangan harus dilakukan sesuai
-      dengan kriteria yang tepat, yaitu... '
-    _answer: {fileID: 21300000, guid: 018ccc8d5efa9c840be693cbc49e6648, type: 3}
+    _message: "Pengangkatan tiang pancang saat pemancangan harus dilakukan sesuai
+      dengan kriteria yang tepat, yaitu...\r"
+    _answer: {fileID: 114796231566915590}
     _answerOptions:
-    - {fileID: 21300000, guid: 018ccc8d5efa9c840be693cbc49e6648, type: 3}
-    - {fileID: 21300000, guid: 8105d54c8ab07b948a36916bf0fa0191, type: 3}
-    - {fileID: 21300000, guid: 8105d54c8ab07b948a36916bf0fa0191, type: 3}
-    - {fileID: 21300000, guid: 8105d54c8ab07b948a36916bf0fa0191, type: 3}
+    - {fileID: 114796231566915590}
+    - {fileID: 114177771705556774}
+    - {fileID: 114691182572022446}
+    - {fileID: 114636990398350530}
+--- !u!114 &114177771705556774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
+  m_Name: __B002__quiz_data
+  m_EditorClassIdentifier: 
+  _text: 'Posisi titik pengakatan tepat di titik 1/2L dari atas. '
+  _spriteSheet: {fileID: 11400000, guid: 7846ef3a47f1b20429106657e615a049, type: 2}
+--- !u!114 &114636990398350530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
+  m_Name: __B002__quiz_data
+  m_EditorClassIdentifier: 
+  _text: "Posisi titik pengakatan di ujung belakang tiang pancang.\r\n"
+  _spriteSheet: {fileID: 11400000, guid: e69930e77a9eee84babcb632c410ab9b, type: 2}
+--- !u!114 &114691182572022446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
+  m_Name: __B002__quiz_data
+  m_EditorClassIdentifier: 
+  _text: "Posisi titik pengakatan di ujung depan tiang pancang.\r"
+  _spriteSheet: {fileID: 11400000, guid: 58b9491d6b0836346bfb0ef3bbd5cbc8, type: 2}
+--- !u!114 &114796231566915590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
+  m_Name: __B002__quiz__answer
+  m_EditorClassIdentifier: 
+  _text: 'Posisi titik pengakatan tepat di titik 1/3L dari atas. '
+  _spriteSheet: {fileID: 11400000, guid: 16a85c517fa36fb47a5933affc23dd0b, type: 2}

@@ -926,6 +926,7 @@ GameObject:
   - component: {fileID: 5097823575293415317}
   - component: {fileID: 8951508060936075529}
   - component: {fileID: 4503267429709849827}
+  - component: {fileID: 8958766880717915377}
   m_Layer: 5
   m_Name: PlaceHolderText (TMP)
   m_TagString: Untagged
@@ -950,7 +951,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -96, y: -96}
+  m_SizeDelta: {x: 0, y: -96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8951508060936075529
 CanvasRenderer:
@@ -1007,7 +1008,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 72
+  m_fontSize: 32.2
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1071,6 +1072,20 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8958766880717915377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699810240892624399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1254083943, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 2
+  m_AspectRatio: 1
 --- !u!1 &842346317368520173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1137,7 +1152,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 35939759f2d36004f86179fa2737b13d, type: 3}
-  m_Type: 1
+  m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1247,8 +1262,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 231.99997}
-  m_SizeDelta: {x: 0, y: -464}
+  m_AnchoredPosition: {x: 0, y: 175.975}
+  m_SizeDelta: {x: 0, y: -352.05}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6724190756893376099
 MonoBehaviour:
@@ -1545,7 +1560,7 @@ MonoBehaviour:
   m_fontSizeMin: 32
   m_fontSizeMax: 40
   m_fontStyle: 0
-  m_textAlignment: 257
+  m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -2100,8 +2115,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 231.99997}
-  m_SizeDelta: {x: 0, y: -464}
+  m_AnchoredPosition: {x: 0, y: 175.975}
+  m_SizeDelta: {x: 0, y: -352.05}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3962007686752665494
 MonoBehaviour:
@@ -2410,6 +2425,7 @@ GameObject:
   - component: {fileID: 3418666991311104867}
   - component: {fileID: 6547422321351222367}
   - component: {fileID: 8724854716311760337}
+  - component: {fileID: 6168445991706815793}
   m_Layer: 5
   m_Name: PlaceHolderText (TMP)
   m_TagString: Untagged
@@ -2434,7 +2450,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -96, y: -96}
+  m_SizeDelta: {x: 0, y: -96}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6547422321351222367
 CanvasRenderer:
@@ -2491,7 +2507,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 72
+  m_fontSize: 32.2
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2555,6 +2571,20 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6168445991706815793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7662527874077680968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1254083943, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 2
+  m_AspectRatio: 1
 --- !u!1 &8114996187396750881
 GameObject:
   m_ObjectHideFlags: 0
@@ -2729,7 +2759,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 35939759f2d36004f86179fa2737b13d, type: 3}
-  m_Type: 1
+  m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
