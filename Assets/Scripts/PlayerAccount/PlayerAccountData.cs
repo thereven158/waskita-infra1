@@ -1,6 +1,8 @@
+using System;
 
 namespace Agate.WaskitaInfra1.PlayerAccount
 {
+    [Serializable]
     public struct PlayerAccountData
     {
         public string Username { get; set; }

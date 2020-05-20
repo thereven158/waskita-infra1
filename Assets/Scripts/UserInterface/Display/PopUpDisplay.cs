@@ -19,7 +19,7 @@ namespace UserInterface.Display
         public override void Init()
         {
             gameObject.SetActive(false);
-            _closeButton.onClick.AddListener(Close);
+            _closeButton.onClick.AddListener(OnCloseButton);
         }
 
         public override void Open()
@@ -37,6 +37,7 @@ namespace UserInterface.Display
         {
             gameObject.SetActive(false);
             _onClose?.Invoke();
+            _onClose = null;
         }
 
         public override bool IsOpen => gameObject.activeSelf;

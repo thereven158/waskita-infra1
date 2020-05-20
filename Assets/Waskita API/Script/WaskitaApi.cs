@@ -30,6 +30,17 @@ namespace Agate.Waskita.API
         
         #endregion
 
+        public static BasicRequest BaseData = new BasicRequest()
+        {
+            deviceId = SystemInfo.deviceUniqueIdentifier,
+            requestId = DateTime.Now.ToString("yyyy-MM-dd-hh-mm-ss-zzz")
+        };
+        public static ValidateRequest ValidateData = new ValidateRequest(BaseData)
+        {
+            gameVersion = 0,
+            clientID = "BmwzQACRCmddGbSXdUJIGw==",
+        };
+
 
         private UTF8Encoding _stringEncoder;
 
@@ -104,9 +115,9 @@ namespace Agate.Waskita.API
                 false);
         }
 
-        public UnityWebRequest ValidateRequest(ValidateRequest request)
+        public UnityWebRequest ValidateRequest()
         {
-            string param = JsonUtility.ToJson(request);
+            string param = JsonUtility.ToJson(ValidateData);
             return PostRequest(
                 _ipadd + _validate,
                 param,

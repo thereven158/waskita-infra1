@@ -135,7 +135,7 @@ public class ExampleCoroutine : MonoBehaviour
             requestId = Guid.NewGuid().ToString()
         };
 
-        UnityWebRequest webRequest = api.ValidateRequest(request);
+        UnityWebRequest webRequest = api.ValidateRequest();
 
         yield return webRequest.SendWebRequest();
         if (webRequest.isNetworkError || webRequest.isHttpError)

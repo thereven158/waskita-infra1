@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Agate.WaskitaInfra1.LevelProgress;
 
 namespace Agate.Waskita.Responses.Data
 {
@@ -11,5 +12,6 @@ namespace Agate.Waskita.Responses.Data
         public List<QuizAnswer> answer;
         public DayCondition dayCondition;
         public LevelData level;
+        
     }
 }

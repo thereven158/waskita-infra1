@@ -5,5 +5,19 @@
     {
         public string clientID;
         public int gameVersion;
+
+        public ValidateRequest()
+        {
+        }
+        
+        public ValidateRequest(BasicRequest request) :base(request)
+        {
+        }
+
+        public ValidateRequest(ValidateRequest request) : base(request)
+        {
+            clientID = request.clientID;
+            gameVersion = request.gameVersion;
+        }
     }
 }

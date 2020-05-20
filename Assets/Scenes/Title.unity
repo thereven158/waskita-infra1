@@ -1670,6 +1670,15 @@ MonoBehaviour:
   _loginForm: {fileID: 1788615697}
   _startButton: {fileID: 459869379}
   _logOutButton: {fileID: 1116648209}
+  _blockDisplayPrefab: {fileID: 8156409307791900421, guid: f428a72321bf3a546b843221448600e3,
+    type: 3}
+  _popUpDisplay: {fileID: 6066408058732217489, guid: 385285812351fb5418c2ecd7a3530503,
+    type: 3}
+  _confirmationDisplay: {fileID: 6700165356127211701, guid: 93391fdf2e534204884477c3305363a5,
+    type: 3}
+  _yesNoDisplay: {fileID: 116060631222838767, guid: a902c1e47abfdd345a0863da912fb833,
+    type: 3}
+  _requestFailedMessage: Request failed make sure you have stable internet connection
 --- !u!1 &1046886687
 GameObject:
   m_ObjectHideFlags: 0
