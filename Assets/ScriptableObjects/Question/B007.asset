@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3caac20cc7fb4c5cb17d94f53e689c84, type: 3}
+  m_Name: B007
+  m_EditorClassIdentifier: 
+  _quiz: {fileID: 114874148461045006}
+  _displayName: Pemilihan Tiang Pancang
+  _category: 'Instalasi Tiang Pancang '
+  _wrongExplanation: Hasil pemasangan tiang pancang kurang baik, fondasi menjadi tidak
+    sekokoh dan tahan lama seperti seharusnya
+--- !u!114 &114421735059092944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: __B007__quiz_data
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: f09744617c083924795cba0955bad6a5, type: 3}
+  Text: Pelat sambung bersih tapi berkarat.
+--- !u!114 &114711000064222140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: __B007__quiz_data
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 841c08ad86d3910468ec3c8e426d2621, type: 3}
+  Text: Pelat sambung bersih bebas karat tetapi terlapisi lumpur yang cukup tebal.
+--- !u!114 &114871916566071914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: __B007__quiz_data
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: e246c972e507dd946bea2c6a9ea8ef67, type: 3}
+  Text: "Pelat sambung sedikit berkarat dan \nberlumpur."
+--- !u!114 &114874148461045006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c16c4fd801b4bbf9eca531138ed0572, type: 3}
+  m_Name: _B007__quiz
+  m_EditorClassIdentifier: 
+  _question:
+    _message: "Tiang pancang yang layak dipakai adalah...\r"
+    _answer: {fileID: 114929455443129852}
+    _answerOptions:
+    - {fileID: 114711000064222140}
+    - {fileID: 114871916566071914}
+    - {fileID: 114929455443129852}
+    - {fileID: 114421735059092944}
+--- !u!114 &114929455443129852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: __B007__quiz__answer
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: e67c13ad018af484a81c2a67d8795c26, type: 3}
+  Text: "Pelat sambung bersih bebas karat dan \nlumpur."

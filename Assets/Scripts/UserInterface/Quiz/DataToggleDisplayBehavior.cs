@@ -21,11 +21,12 @@ namespace Agate.WaskitaInfra1.UserInterface.Quiz
         protected override void ConfigureDisplay(TData data)
         {
             Toggle.isOn = false;
+            
         }
 
         private void OnToggleValueChanged(bool value)
         {
-            toggleEffects.SetActive(!value);
+            toggleEffects.SetActive(value);
             if (value) Interact();
         }
 

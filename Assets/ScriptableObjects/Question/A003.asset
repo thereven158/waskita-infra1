@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3caac20cc7fb4c5cb17d94f53e689c84, type: 3}
+  m_Name: A003
+  m_EditorClassIdentifier: 
+  _quiz: {fileID: 114863016961669502}
+  _displayName: Pemilihan lokasi penyimpanan tiang pancang
+  _category: 'Penyimpanan Material '
+  _wrongExplanation: 'Tiang Pancang diletakkan dengan cara yang tidak tepat, mengakibatkan
+    sebagian terguling dari tempat penyimpanan dan mengalami keretakan
+
+'
+--- !u!114 &114023793727250812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: __A003__quiz__answer
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 541c8c0c55a8b264284f3a9eb7215758, type: 3}
+  Text: "Lahan memiliki tanah yang rata dan berlumpur.\r\n"
+--- !u!114 &114482538734964954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: __A003__quiz_data
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 9c80e4f993e2e524bb5715226faffe78, type: 3}
+  Text: Lahan penyimpanan berupa tanjakan.
+--- !u!114 &114846582203310670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: __A003__quiz_data
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 307cca16d3be5da42bdc00d58e206882, type: 3}
+  Text: Lahan memiliki tanah yang kering dan rata.
+--- !u!114 &114863016961669502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c16c4fd801b4bbf9eca531138ed0572, type: 3}
+  m_Name: _A003__quiz
+  m_EditorClassIdentifier: 
+  _question:
+    _message: "Penumpukan tiang pancang di lapangan sebaiknya dilakukan pada lahan
+      yang memenuhi kriteria seperti...\r"
+    _answer: {fileID: 114023793727250812}
+    _answerOptions:
+    - {fileID: 114906691537708770}
+    - {fileID: 114846582203310670}
+    - {fileID: 114482538734964954}
+    - {fileID: 114023793727250812}
+--- !u!114 &114906691537708770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: __A003__quiz_data
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 9b6e099752b279144b382fd60c6ec80c, type: 3}
+  Text: Lahan memiliki tanah yang tidak rata dan berlumpur.
