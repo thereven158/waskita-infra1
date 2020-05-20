@@ -30,12 +30,18 @@ namespace Agate.WaskitaInfra1.UserInterface.Login
             ToggleDisplay(false);
         }
 
-        private void SubmitLoginForm()
+        public void SubmitLoginForm()
         {
             ButtonInteractionAction?.Invoke();
             LoginAction?.Invoke(_usernameField.text, _passwordField.text);
-            _usernameField.text = "";
-            _passwordField.text = "";
+        }
+
+        public void ResetField(int bitFlag)
+        {
+            if (bitFlag % 1 == 0)
+                _usernameField.text = "";
+            if (bitFlag % 2 == 0)
+                _passwordField.text = "";
         }
 
     }

@@ -11,6 +11,7 @@ namespace Agate.Waskita.Request
         public int tryCount;
         public DayCondition dayCondition;
         public List<QuizAnswer> answer;
+
     }
 }
 

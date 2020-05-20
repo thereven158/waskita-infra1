@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using A3.Utilities;
 using Agate.GlSim.Scene.Control.Map.Loader;
+using Agate.Waskita.API;
 using Agate.WaskitaInfra1.GameProgress;
 using Agate.WaskitaInfra1.Level;
 using Agate.WaskitaInfra1.LevelProgress;
@@ -41,10 +44,19 @@ namespace Agate.WaskitaInfra1
         private PlayerAccountControl _playerAccount;
         private GameProgressControl _gameProgress;
         private LevelProgressControl _levelProgress;
+        private WaskitaApi _api;
+
         [SerializeField]
         private GameplaySceneLoadControl _sceneLoader = default;
+
         [SerializeField]
         private LevelControl _levelControl = default;
+
+        [SerializeField]
+        [Tooltip("Location is relative to Persistent Data Path")]
+        private string _playerDataFilepath;
+
+        public string PlayerDataFilepath => Path.Combine(Application.persistentDataPath, _playerDataFilepath);
 
         #endregion
 
@@ -79,8 +91,13 @@ namespace Agate.WaskitaInfra1
         #endregion
 
         [HideInInspector]
-        public bool UiLoaded; 
-        
+        public bool UiLoaded;
+
+        [SerializeField]
+        private bool _isOnline;
+
+        public bool IsOnline => _isOnline;
+
         private IPlayerGameData _gameData;
 
         #endregion
@@ -90,23 +107,28 @@ namespace Agate.WaskitaInfra1
         private void Awake()
         {
             if (!SetupInstance()) return;
-
             SetAppSystemSetting();
+
+            #if ONLINE
+                _isOnline = true;
+            #endif
 
             _playerAccount = new PlayerAccountControl();
             _gameProgress = new GameProgressControl();
             _levelProgress = new LevelProgressControl();
-            RegisterComponents(_playerAccount, _gameProgress, _levelProgress, _levelControl, _sceneLoader);
-            _playerAccount.OnDataChange += data => { _gameProgress.SetData(_gameData.GetProgressData()); };
-            _gameProgress.OnDataChange += data => { _levelProgress.LoadData(_gameData.LevelProgressData()); };
+            _api = new WaskitaApi();
+            RegisterComponents(_playerAccount, _gameProgress, _levelProgress, _levelControl, _sceneLoader, _api);
             SceneManager.LoadScene("UserInterface", LoadSceneMode.Additive);
         }
 
         private IEnumerator Start()
         {
             yield return new WaitUntil(() => UiLoaded);
-            _gameData = _testPlayerData;
-            _playerAccount.SetData(_gameData.GetAccountData());
+            if (!IsOnline)
+                LoadDummyData();
+            else
+                LoadAccountData();
+
             LoadFirstScene();
         }
 
@@ -120,13 +142,12 @@ namespace Agate.WaskitaInfra1
             QualitySettings.vSyncCount = 0;
         }
 
-        #endregion
-
-        #region Public Function / Method
-
-        public static void Quit()
+        private void LoadDummyData()
         {
-            Application.Quit();
+            _gameData = _testPlayerData;
+            _playerAccount.SetData(_gameData.GetAccountData());
+            _gameProgress.SetData(_gameData.GetProgressData());
+            _levelProgress.LoadData(_gameData.LevelProgressData());
         }
 
         private void LoadFirstScene()
@@ -141,11 +162,35 @@ namespace Agate.WaskitaInfra1
             _sceneLoader.ChangeScene(_firstSceneToLoad);
         }
 
+        #endregion
+
+        #region Public Function / Method
+
+        public static void Quit()
+        {
+            Application.Quit();
+        }
+
         public void StartGame()
         {
             _sceneLoader.ChangeScene("PreparationPhase");
         }
 
+        public void SaveAccountData()
+        {
+            FileOperation.WriteFile(PlayerDataFilepath, _playerAccount.Data);
+            SetAuthToken();
+        }
+        private void LoadAccountData()
+        {
+            _playerAccount.SetData(FileOperation.ReadFile<PlayerAccountData>(PlayerDataFilepath));
+            SetAuthToken();
+        }
+
+        private void SetAuthToken()
+        {
+            _api.SetToken(_playerAccount.Data.AuthenticationToken);
+        }
         #endregion
 
         #region Editor

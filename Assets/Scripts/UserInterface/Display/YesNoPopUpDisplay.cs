@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 namespace UserInterface.Display
 {
-    public class ConfirmationPopUpDisplay : DisplayBehavior
+    public class YesNoPopUpDisplay : DisplayBehavior
     {
         [SerializeField]
-        private ConfirmationPopUpViewData defaultData = default;
+        private YesNoPopUpViewData defaultData = default;
 
         [SerializeField]
         private TMP_Text _titleText = default;
@@ -18,25 +18,26 @@ namespace UserInterface.Display
         private TMP_Text _messageText = default;
 
         [SerializeField]
-        private TMP_Text _confirmText = default;
+        private TMP_Text _yesText = default;
 
         [SerializeField]
-        private Button _confirmButton = default;
+        private Button _yesButton = default;
 
         [SerializeField]
-        private TMP_Text _closeText = default;
+        private TMP_Text _noText = default;
 
         [SerializeField]
-        private Button _closeButton = default;
+        private Button _noButton = default;
 
+        private Action _onNo;
         private Action _onClose;
-        private Action _onConfirm;
+        private Action _onYes;
 
         public override void Init()
         {
             gameObject.SetActive(false);
-            _confirmButton.onClick.AddListener(Confirm);
-            _closeButton.onClick.AddListener(Close);
+            _yesButton.onClick.AddListener(Yes);
+            _noButton.onClick.AddListener(No);
         }
 
         public override void Open()
@@ -44,18 +45,19 @@ namespace UserInterface.Display
             gameObject.SetActive(true);
         }
 
-        public void Open(string text, Action onConfirm, Action onClose)
+        public void Open(string text, Action onYes, Action onNo, Action onClose = null)
         {
-            Open(new ConfirmationPopUpViewData()
+            Open(new YesNoPopUpViewData()
             {
                 MessageText = text,
                 CloseAction = onClose,
-                ConfirmAction = onConfirm
+                YesAction = onYes,
+                NoAction = onNo
             });
             Open();
         }
 
-        public void Open(ConfirmationPopUpViewData data)
+        public void Open(YesNoPopUpViewData data)
         {
             _titleText.text =  string.IsNullOrEmpty(data.TitleText)
                 ? defaultData.TitleText
@@ -63,14 +65,15 @@ namespace UserInterface.Display
             _messageText.text =  string.IsNullOrEmpty(data.MessageText)
                 ? defaultData.MessageText
                 : data.MessageText;
-            _closeText.text =  string.IsNullOrEmpty(data.CloseButtonText)
-                ? defaultData.CloseButtonText
-                : data.CloseButtonText;
-            _confirmText.text = string.IsNullOrEmpty(data.ConfirmButtonText)
-                ? defaultData.ConfirmButtonText
-                : data.ConfirmButtonText;
+            _noText.text =  string.IsNullOrEmpty(data.NoButtonText)
+                ? defaultData.NoButtonText
+                : data.NoButtonText;
+            _yesText.text = string.IsNullOrEmpty(data.YesButtonText)
+                ? defaultData.YesButtonText
+                : data.YesButtonText;
             _onClose = data.CloseAction;
-            _onConfirm = data.ConfirmAction;
+            _onYes = data.YesAction;
+            _onNo = data.NoAction;
             Open();
         }
 
@@ -79,14 +82,21 @@ namespace UserInterface.Display
             gameObject.SetActive(false);
             _onClose?.Invoke();
             _onClose = null;
-            _onConfirm = null;
+            _onYes = null;
+            _onNo = null;
         }
 
         public override bool IsOpen => gameObject.activeSelf;
 
-        private void Confirm()
+        private void Yes()
         {
-            _onConfirm?.Invoke();
+            _onYes?.Invoke();
+            Close();
+        }
+
+        private void No()
+        {
+            _onNo?.Invoke();
             Close();
         }
     }

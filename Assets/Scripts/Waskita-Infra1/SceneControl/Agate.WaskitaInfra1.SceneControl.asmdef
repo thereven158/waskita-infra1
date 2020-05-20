@@ -7,6 +7,7 @@
         "A3.DataDrivenEvent",
         "Agate.GameAction",
         "Agate.WaskitaInfra1",
+        "Agate.WaskitaInfra1.Backend.API",
         "Agate.WaskitaInfra1.Level",
         "Agate.WaskitaInfra1.GameAction",
         "Agate.WaskitaInfra1.GameProgress",

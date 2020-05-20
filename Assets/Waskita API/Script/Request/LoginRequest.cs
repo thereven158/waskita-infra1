@@ -1,11 +1,16 @@
 ﻿namespace Agate.Waskita.Request
 {
     [System.Serializable]
-    public class LoginRequest: BasicRequest
+    public class LoginRequest: ValidateRequest
     {
         public string userId;
         public string password;
-        public string clientID;
-        public int gameVersion;
+
+        public LoginRequest()
+        {
+        }
+        public LoginRequest(ValidateRequest request) : base(request)
+        {
+        }
     }
 }
