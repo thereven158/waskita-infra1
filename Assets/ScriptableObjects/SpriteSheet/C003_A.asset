@@ -12,6 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea1ee8e0afb847b42ae6f403357ba440, type: 3}
   m_Name: C003_A
   m_EditorClassIdentifier: 
-  _sprites: []
-  _framerate: 30
+  _sprites:
+  - {fileID: 21300000, guid: 44009d0b2538d484e9a590b4e72beb31, type: 3}
+  - {fileID: 21300002, guid: 44009d0b2538d484e9a590b4e72beb31, type: 3}
+  - {fileID: 21300004, guid: 44009d0b2538d484e9a590b4e72beb31, type: 3}
+  - {fileID: 21300006, guid: 44009d0b2538d484e9a590b4e72beb31, type: 3}
+  - {fileID: 21300008, guid: 44009d0b2538d484e9a590b4e72beb31, type: 3}
+  - {fileID: 21300010, guid: 44009d0b2538d484e9a590b4e72beb31, type: 3}
+  - {fileID: 21300012, guid: 44009d0b2538d484e9a590b4e72beb31, type: 3}
+  - {fileID: 21300014, guid: 44009d0b2538d484e9a590b4e72beb31, type: 3}
+  - {fileID: 21300016, guid: 44009d0b2538d484e9a590b4e72beb31, type: 3}
+  - {fileID: 21300018, guid: 44009d0b2538d484e9a590b4e72beb31, type: 3}
+  _framerate: 8
   _loop: 1

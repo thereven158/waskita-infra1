@@ -31,7 +31,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: "As tiang pancang tegak lurus dengan As \nhammer. Tanah Stabil dan area radius
     50m dari alat pancang steril."
-  _spriteSheet: {fileID: 11400000, guid: 16a85c517fa36fb47a5933affc23dd0b, type: 2}
+  _spriteSheet: {fileID: 11400000, guid: 2085b06b8954584438f1ba5561e15e8d, type: 2}
 --- !u!114 &114544976664344928
 MonoBehaviour:
   m_ObjectHideFlags: 0

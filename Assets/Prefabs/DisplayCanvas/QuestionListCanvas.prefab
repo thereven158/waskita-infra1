@@ -284,11 +284,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2020986909952585399, guid: 43639c912091e044da5b01e798783372,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 96
-      objectReference: {fileID: 0}
     - target: {fileID: 2020986909991186701, guid: 43639c912091e044da5b01e798783372,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -323,6 +318,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: Lengkapilah isi checklist di atas!
+      objectReference: {fileID: 0}
+    - target: {fileID: 2020986909952585399, guid: 43639c912091e044da5b01e798783372,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 96
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43639c912091e044da5b01e798783372, type: 3}
@@ -449,6 +449,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2304155555023009960, guid: 77379ebb0ab74064fb3193bc725e21ef,
+        type: 3}
+      propertyPath: m_Size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2304155553783963735, guid: 77379ebb0ab74064fb3193bc725e21ef,
         type: 3}
       propertyPath: m_SizeDelta.y
@@ -459,19 +464,9 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2304155555117226902, guid: 77379ebb0ab74064fb3193bc725e21ef,
+    - target: {fileID: 2304155554943928006, guid: 77379ebb0ab74064fb3193bc725e21ef,
         type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.000032687556
-      objectReference: {fileID: 0}
-    - target: {fileID: 2304155553491709298, guid: 77379ebb0ab74064fb3193bc725e21ef,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2304155553491709298, guid: 77379ebb0ab74064fb3193bc725e21ef,
-        type: 3}
-      propertyPath: m_AnchorMax.y
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

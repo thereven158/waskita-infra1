@@ -31,9 +31,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _question:
     _message: 'Pemotongan tiang pancang sebaiknya dilakukan dengan cara... '
-    _answer: {fileID: 21300000, guid: 018ccc8d5efa9c840be693cbc49e6648, type: 3}
+    _answer: {fileID: 21300000, guid: 91ce58ad62f2a5a419114b19f56abe80, type: 3}
     _answerOptions:
-    - {fileID: 21300000, guid: 8105d54c8ab07b948a36916bf0fa0191, type: 3}
-    - {fileID: 21300000, guid: 018ccc8d5efa9c840be693cbc49e6648, type: 3}
-    - {fileID: 21300000, guid: 8105d54c8ab07b948a36916bf0fa0191, type: 3}
-    - {fileID: 21300000, guid: 8105d54c8ab07b948a36916bf0fa0191, type: 3}
+    - {fileID: 21300000, guid: 7035cb24c4bfff54d82eb06f0e3b8c76, type: 3}
+    - {fileID: 21300000, guid: 91ce58ad62f2a5a419114b19f56abe80, type: 3}
+    - {fileID: 21300000, guid: 5292f6ca734824c439b44bde1aa6dbd5, type: 3}
+    - {fileID: 21300000, guid: 821c024ead633b14ebe352c76a5deddc, type: 3}

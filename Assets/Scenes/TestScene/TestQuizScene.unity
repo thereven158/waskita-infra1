@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -702,6 +702,66 @@ PrefabInstance:
     - target: {fileID: 3017931945701381560, guid: 39cd53363e7176e4a9da5d9fa1001da5,
         type: 3}
       propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4770767662840114454, guid: 39cd53363e7176e4a9da5d9fa1001da5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2641123390573292100, guid: 39cd53363e7176e4a9da5d9fa1001da5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -350
+      objectReference: {fileID: 0}
+    - target: {fileID: 2641123390573292100, guid: 39cd53363e7176e4a9da5d9fa1001da5,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -700
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021075698143739994, guid: 39cd53363e7176e4a9da5d9fa1001da5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 249.975
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021075698143739994, guid: 39cd53363e7176e4a9da5d9fa1001da5,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -500.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8001830236791666366, guid: 39cd53363e7176e4a9da5d9fa1001da5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8001830236791666366, guid: 39cd53363e7176e4a9da5d9fa1001da5,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -64
+      objectReference: {fileID: 0}
+    - target: {fileID: 8001830236791666366, guid: 39cd53363e7176e4a9da5d9fa1001da5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -350
+      objectReference: {fileID: 0}
+    - target: {fileID: 8001830236791666366, guid: 39cd53363e7176e4a9da5d9fa1001da5,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -700
+      objectReference: {fileID: 0}
+    - target: {fileID: 546517815998653384, guid: 39cd53363e7176e4a9da5d9fa1001da5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 249.975
+      objectReference: {fileID: 0}
+    - target: {fileID: 546517815998653384, guid: 39cd53363e7176e4a9da5d9fa1001da5,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -500.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6786303709014166947, guid: 39cd53363e7176e4a9da5d9fa1001da5,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
