@@ -29,7 +29,7 @@ MonoBehaviour:
   m_Name: __A002__quiz_data
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: eb94c1dd748d109438b64009e12f07cd, type: 3}
-  Text: "\"Lahan padat (CBR > 3%), tidak rata, dan kering.\nMenggunakan kayu ganjal
+  Text: "\"Lahan padat (CBR > 3%), tidak rata, dan kering. Menggunakan kayu ganjal
     dan slip kayu (SF \u2265 3)\"\r\n"
 --- !u!114 &114502289823463752
 MonoBehaviour:
@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Name: __A002__quiz_data
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: dd11412200e88694c9a7fdd316c132df, type: 3}
-  Text: "Lahan tidak padat (CBR < 3%), rata, dan kering.\nMenggunakan kayu ganjal
-    dan slip kayu (SF \u2265 3)"
+  Text: "Lahan tidak padat (CBR < 3%), rata, dan kering. Menggunakan kayu ganjal dan
+    slip kayu (SF \u2265 3)"
 --- !u!114 &114789760541019468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Name: __A002__quiz__answer
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 4bbc967d5705c434bbaad46f0bfd2470, type: 3}
-  Text: "Lahan padat (CBR > 3%), rata, dan Kering. \nMenggunakan kayu ganjal dan slip
+  Text: "Lahan padat (CBR > 3%), rata, dan Kering. Menggunakan kayu ganjal dan slip
     kayu (SF \u2265 3)\r"
 --- !u!114 &114962740791373636
 MonoBehaviour:
@@ -95,5 +95,5 @@ MonoBehaviour:
   m_Name: __A002__quiz_data
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 3e00dd93dce010f418a44e9e0a622559, type: 3}
-  Text: "Lahan padat (CBR > 3%), rata, dan terdapat genangan air. \nMenggunakan kayu
+  Text: "Lahan padat (CBR > 3%), rata, dan terdapat genangan air. Menggunakan kayu
     ganjal dan slip kayu (SF < 3)\r\n"
