@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3caac20cc7fb4c5cb17d94f53e689c84, type: 3}
-  m_Name: B005
+  m_Name: B007
   m_EditorClassIdentifier: 
-  _quiz: {fileID: 114729700327425828}
-  _displayName: 'Pemotongan Tiang Pancang '
+  _quiz: {fileID: 114874148461045006}
+  _displayName: Pemilihan Tiang Pancang
   _category: 'Instalasi Tiang Pancang '
-  _wrongExplanation: Proses pemotongan yang tidak sesuai SOP dapat membahayakan pekerja
-    yang berada di sekitar lokasi
---- !u!114 &114035782649447592
+  _wrongExplanation: Hasil pemasangan tiang pancang kurang baik, fondasi menjadi tidak
+    sekokoh dan tahan lama seperti seharusnya
+--- !u!114 &114421735059092944
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -27,12 +27,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
-  m_Name: __B005__quiz_data
+  m_Name: __B007__quiz_data
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 7035cb24c4bfff54d82eb06f0e3b8c76, type: 3}
-  Text: Potong tiang pada Cut of Pile dengan sisa tiang bagian atas tidak dipegangi
-    oleh crane.
---- !u!114 &114284970090557812
+  Image: {fileID: 21300000, guid: f09744617c083924795cba0955bad6a5, type: 3}
+  Text: Pelat sambung bersih tapi berkarat.
+--- !u!114 &114711000064222140
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,12 +41,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
-  m_Name: __B005__quiz__answer
+  m_Name: __B007__quiz_data
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 91ce58ad62f2a5a419114b19f56abe80, type: 3}
-  Text: Potong tiang pada Cut of Pile. Sisa tiang bagian atas dipegangi oleh crane
-    supaya tidak langsung jatuh.
---- !u!114 &114364052543527078
+  Image: {fileID: 21300000, guid: 841c08ad86d3910468ec3c8e426d2621, type: 3}
+  Text: Pelat sambung bersih bebas karat tetapi terlapisi lumpur yang cukup tebal.
+--- !u!114 &114871916566071914
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,12 +55,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
-  m_Name: __B005__quiz_data
+  m_Name: __B007__quiz_data
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 821c024ead633b14ebe352c76a5deddc, type: 3}
-  Text: Potong tiang pada Cut of Pile dengan sisa tiang bagian bawah dan tidak dipegangi
-    oleh crane.
---- !u!114 &114729700327425828
+  Image: {fileID: 21300000, guid: e246c972e507dd946bea2c6a9ea8ef67, type: 3}
+  Text: "Pelat sambung sedikit berkarat dan \nberlumpur."
+--- !u!114 &114874148461045006
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,18 +69,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c16c4fd801b4bbf9eca531138ed0572, type: 3}
-  m_Name: _B005__quiz
+  m_Name: _B007__quiz
   m_EditorClassIdentifier: 
   _question:
-    _message: "Pemotongan tiang pancang pada cut of pile sebaiknya dilakukan dengan
-      cara...\r"
-    _answer: {fileID: 114284970090557812}
+    _message: "Tiang pancang yang layak dipakai adalah...\r"
+    _answer: {fileID: 114929455443129852}
     _answerOptions:
-    - {fileID: 114035782649447592}
-    - {fileID: 114284970090557812}
-    - {fileID: 114854107320380736}
-    - {fileID: 114364052543527078}
---- !u!114 &114854107320380736
+    - {fileID: 114711000064222140}
+    - {fileID: 114871916566071914}
+    - {fileID: 114929455443129852}
+    - {fileID: 114421735059092944}
+--- !u!114 &114929455443129852
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,8 +89,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
-  m_Name: __B005__quiz_data
+  m_Name: __B007__quiz__answer
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 5292f6ca734824c439b44bde1aa6dbd5, type: 3}
-  Text: Potong tiang pada Cut of Pile dengan sisa tiang bagian atas tidak dipegangi
-    oleh crane.
+  Image: {fileID: 21300000, guid: e67c13ad018af484a81c2a67d8795c26, type: 3}
+  Text: "Pelat sambung bersih bebas karat dan \nlumpur."

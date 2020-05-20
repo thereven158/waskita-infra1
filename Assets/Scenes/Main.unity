@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -179,7 +179,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _levels:
   - {fileID: 11400000, guid: 7508d0c3b07a7014787ee315a01bb606, type: 2}
-  - {fileID: 11400000, guid: af3ba2a5953624f40923361e9116873c, type: 2}
+  - {fileID: 11400000, guid: f1a75c14dab170d48bfd90dfb8592ba9, type: 2}
+  - {fileID: 11400000, guid: 7807ee9cd26aa004fabf1ae7a00947e9, type: 2}
+  - {fileID: 11400000, guid: 1fbb9266ed2257b428ad2a5ef9f735d2, type: 2}
+  - {fileID: 11400000, guid: 9f8bf6416ab2a4a4ca6e07a2059d1a4f, type: 2}
 --- !u!114 &113000445
 MonoBehaviour:
   m_ObjectHideFlags: 0

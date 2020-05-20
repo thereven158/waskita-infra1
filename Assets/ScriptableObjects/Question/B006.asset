@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3caac20cc7fb4c5cb17d94f53e689c84, type: 3}
+  m_Name: B006
+  m_EditorClassIdentifier: 
+  _quiz: {fileID: 114909939993605722}
+  _displayName: Pengecoran Pilehead
+  _category: 'Instalasi Tiang Pancang '
+  _wrongExplanation: Hasil pemasangan tiang pancang kurang baik, fondasi menjadi tidak
+    sekokoh dan tahan lama seperti seharusnya
+--- !u!114 &114909939993605722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5513a841b9c34eebaedceb15de89531e, type: 3}
+  m_Name: _B006__quiz
+  m_EditorClassIdentifier: 
+  _question:
+    _message: "Metode pengecoran pilehead yang benar adalah...\r"
+    _answer: "Pasang clamp sesuai elevasi. Pasang bekisting bagian bawah. Pembesian
+      pilehead. Pasang bekisting samping Cor Beton\r."
+    _answerOptions:
+    - Pasang clamp sesuai elevasi. Pasang bekisting bagian bawah. Pembesian pilehead.
+      Pasang bekisting samping Cor Beton.
+    - Pasang clamp sesuai elevasi. Pasang bekisting bagian atas. Pilehad tidak menjalani
+      pembesian dan pasang bekisting samping cor beton.
+    - Pasang clamp tidak sesuai elevasi. Pasang bekisting bagian bawah. Pembesian
+      pilehead dan pasang bekisting jauh dari cor beton.
+    - Pasang clamp sesuai elevasi. Pasang bekisting bagian bawah. Pilehad tidak menjalani
+      pembesian dan pasang bekisting samping cor beton.
