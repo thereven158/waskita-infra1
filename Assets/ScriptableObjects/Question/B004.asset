@@ -30,15 +30,11 @@ MonoBehaviour:
   m_Name: _B004__quiz
   m_EditorClassIdentifier: 
   _question:
-    _message: 'Metode penyambungan tiang pancang yang benar adalah... '
-    _answer: Pelat sambung bersih bebas karat dan  lumpur. Posisi tiang lurus segaris,  permukaan
-      tiang 1 dan tiang 1 menempel sempurna.
+    _message: "Metode penyambungan tiang pancang yang benar adalah...\r"
+    _answer: Posisi tiang lurus segaris, permukaan tiang 1 dan tiang 1 menempel sempurna.
     _answerOptions:
-    - Pelat sambung bersih bebas karat dan  lumpur. Posisi tiang lurus segaris,  permukaan
-      tiang 1 dan tiang 1 menempel sempurna.
-    - Pelat sambung sedikit berkarat dan  berlumpur. Posisi tiang kurang lurus,  permukaan
-      tiang 1 dan tiang 1 menempel sempurna
-    - Pelat sambung bersih bebas karat dan  lumpur. Posisi tiang kurang lurus (ngeplin),
-      permukaan tiang 1 dan tiang 1 belum menempel sempurna
-    - Pelat sambung bersih bebas karat dan  lumpur. Posisi tiang lurus segaris,  permukaan
-      tiang 1 dan tiang 1  belum menempel sempurna
+    - Posisi tiang lurus segaris, permukaan tiang 1 dan tiang 1 menempel sempurna.
+    - Posisi tiang kurang lurus, permukaan tiang 1 dan tiang 1 menempel sempurna
+    - Posisi tiang kurang lurus (ngeplin), permukaan tiang 1 dan tiang 1 belum menempel
+      sempurna
+    - Posisi tiang lurus segaris, permukaan tiang 1 dan tiang 1  belum menempel sempurna

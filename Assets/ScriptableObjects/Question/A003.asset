@@ -10,14 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3caac20cc7fb4c5cb17d94f53e689c84, type: 3}
-  m_Name: B005
+  m_Name: A003
   m_EditorClassIdentifier: 
-  _quiz: {fileID: 114729700327425828}
-  _displayName: 'Pemotongan Tiang Pancang '
-  _category: 'Instalasi Tiang Pancang '
-  _wrongExplanation: Proses pemotongan yang tidak sesuai SOP dapat membahayakan pekerja
-    yang berada di sekitar lokasi
---- !u!114 &114035782649447592
+  _quiz: {fileID: 114863016961669502}
+  _displayName: Pemilihan lokasi penyimpanan tiang pancang
+  _category: 'Penyimpanan Material '
+  _wrongExplanation: 'Tiang Pancang diletakkan dengan cara yang tidak tepat, mengakibatkan
+    sebagian terguling dari tempat penyimpanan dan mengalami keretakan
+
+'
+--- !u!114 &114023793727250812
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -27,12 +29,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
-  m_Name: __B005__quiz_data
+  m_Name: __A003__quiz__answer
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 7035cb24c4bfff54d82eb06f0e3b8c76, type: 3}
-  Text: Potong tiang pada Cut of Pile dengan sisa tiang bagian atas tidak dipegangi
-    oleh crane.
---- !u!114 &114284970090557812
+  Image: {fileID: 21300000, guid: 541c8c0c55a8b264284f3a9eb7215758, type: 3}
+  Text: "Lahan memiliki tanah yang rata dan berlumpur.\r\n"
+--- !u!114 &114482538734964954
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,12 +43,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
-  m_Name: __B005__quiz__answer
+  m_Name: __A003__quiz_data
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 91ce58ad62f2a5a419114b19f56abe80, type: 3}
-  Text: Potong tiang pada Cut of Pile. Sisa tiang bagian atas dipegangi oleh crane
-    supaya tidak langsung jatuh.
---- !u!114 &114364052543527078
+  Image: {fileID: 21300000, guid: 9c80e4f993e2e524bb5715226faffe78, type: 3}
+  Text: Lahan penyimpanan berupa tanjakan.
+--- !u!114 &114846582203310670
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,12 +57,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
-  m_Name: __B005__quiz_data
+  m_Name: __A003__quiz_data
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 821c024ead633b14ebe352c76a5deddc, type: 3}
-  Text: Potong tiang pada Cut of Pile dengan sisa tiang bagian bawah dan tidak dipegangi
-    oleh crane.
---- !u!114 &114729700327425828
+  Image: {fileID: 21300000, guid: 307cca16d3be5da42bdc00d58e206882, type: 3}
+  Text: Lahan memiliki tanah yang kering dan rata.
+--- !u!114 &114863016961669502
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,18 +71,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c16c4fd801b4bbf9eca531138ed0572, type: 3}
-  m_Name: _B005__quiz
+  m_Name: _A003__quiz
   m_EditorClassIdentifier: 
   _question:
-    _message: "Pemotongan tiang pancang pada cut of pile sebaiknya dilakukan dengan
-      cara...\r"
-    _answer: {fileID: 114284970090557812}
+    _message: "Penumpukan tiang pancang di lapangan sebaiknya dilakukan pada lahan
+      yang memenuhi kriteria seperti...\r"
+    _answer: {fileID: 114023793727250812}
     _answerOptions:
-    - {fileID: 114035782649447592}
-    - {fileID: 114284970090557812}
-    - {fileID: 114854107320380736}
-    - {fileID: 114364052543527078}
---- !u!114 &114854107320380736
+    - {fileID: 114906691537708770}
+    - {fileID: 114846582203310670}
+    - {fileID: 114482538734964954}
+    - {fileID: 114023793727250812}
+--- !u!114 &114906691537708770
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,8 +92,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
-  m_Name: __B005__quiz_data
+  m_Name: __A003__quiz_data
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 5292f6ca734824c439b44bde1aa6dbd5, type: 3}
-  Text: Potong tiang pada Cut of Pile dengan sisa tiang bagian atas tidak dipegangi
-    oleh crane.
+  Image: {fileID: 21300000, guid: 9b6e099752b279144b382fd60c6ec80c, type: 3}
+  Text: Lahan memiliki tanah yang tidak rata dan berlumpur.

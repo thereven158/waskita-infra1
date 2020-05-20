@@ -12,7 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3caac20cc7fb4c5cb17d94f53e689c84, type: 3}
   m_Name: C001
   m_EditorClassIdentifier: 
-  _quiz: {fileID: 0}
+  _quiz: {fileID: 114910591647938686}
   _displayName: Pengecoran Joint Fullslab
   _category: Instalasi Fullslab
-  _wrongExplanation: 
+  _wrongExplanation: Pemasangan material dengan proses yang tidak tepat dapat menyebabkan
+    kerusakan
+--- !u!114 &114910591647938686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5513a841b9c34eebaedceb15de89531e, type: 3}
+  m_Name: _C001__quiz
+  m_EditorClassIdentifier: 
+  _question:
+    _message: Metode pengecoran joint fullslab yang tepat adalah...
+    _answer: Pasang besi pada joint fullslab Cor beton sesuai mutu
+    _answerOptions:
+    - Lakukan proses pengecoran tanpa memasang besi pada joint fullslab
+    - Pasang besi pada joint fullslab Cor beton sesuai mutu
+    - Pasang besi pada joint fullslab dan cor beton dengan kandungan air tinggi
+    - "Lakukan proses pengecoran tanpa memasang besi pada joint dan gunakan cor beton
+      dengan mutu tidak sesuai\r"

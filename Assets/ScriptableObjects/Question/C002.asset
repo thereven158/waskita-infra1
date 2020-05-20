@@ -12,7 +12,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3caac20cc7fb4c5cb17d94f53e689c84, type: 3}
   m_Name: C002
   m_EditorClassIdentifier: 
-  _quiz: {fileID: 0}
+  _quiz: {fileID: 114103190075222034}
   _displayName: Pengecoran parapet
   _category: Instalasi Fullslab
-  _wrongExplanation: 
+  _wrongExplanation: Pemasangan material dengan proses yang tidak tepat dapat menyebabkan
+    kerusakan
+--- !u!114 &114103190075222034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5513a841b9c34eebaedceb15de89531e, type: 3}
+  m_Name: _C002__quiz
+  m_EditorClassIdentifier: 
+  _question:
+    _message: Metode pengecoran parapet yang tepat adalah...
+    _answer: Pasang pembesian. Pasang bekisting, pastikan sudah lurus dan rata. Cor
+      beton sesuai mutu
+    _answerOptions:
+    - Pasang pembesian dan bekisting dengan tidak lurus dan tidak rata. Cor beton
+      dengan mutu bebas.
+    - Pasang pembesian dan bekisting dengan lurus dan rata. Cor beton dengan mutu
+      bebas.
+    - Pasang pembesian. Pasang bekisting, pastikan sudah lurus dan rata. Cor beton
+      sesuai mutu
+    - Tidak memasang pembesian dan bekisting. Cor dengan beton sesuai mutu

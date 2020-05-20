@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3caac20cc7fb4c5cb17d94f53e689c84, type: 3}
+  m_Name: B009
+  m_EditorClassIdentifier: 
+  _quiz: {fileID: 114060647558955350}
+  _displayName: Konfigurasi Tiang Pancang
+  _category: 'Instalasi Tiang Pancang '
+  _wrongExplanation: Penggunaan tiang pancang boros dan tidak efisien
+--- !u!114 &114060647558955350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5513a841b9c34eebaedceb15de89531e, type: 3}
+  m_Name: _B009__quiz
+  m_EditorClassIdentifier: 
+  _question:
+    _message: "Proyek akan dilakukan di atas tanah keras dengan estimasi kedalaman
+      35m dan freestanding 3m. Konfigurasi tiang pancang yang tepat adalah...\r"
+    _answer: 'Bottom : 15 m
+
+      Middle : 12 m
+
+      Upper : 12 m'
+    _answerOptions:
+    - 'Bottom : 15 m
+
+      Middle : 15 m
+
+      Upper : 15 m'
+    - 'Bottom : 15 m
+
+      Middle : 12 m
+
+      Upper : 12 m'
+    - 'Bottom : 12 m
+
+      Middle : 12 m
+
+      Upper : 10 m'
+    - 'Bottom : 12 m
+
+      Middle : 12 m
+
+      Upper : 12 m'
