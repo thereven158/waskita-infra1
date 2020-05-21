@@ -33,7 +33,6 @@ namespace Agate.Waskita.API.Example
         private void Awake()
         {
             api = new WaskitaApi();
-            //requestId = SystemInfo.deviceUniqueIdentifier;
             deviceId = SystemInfo.deviceUniqueIdentifier;
 
             #region Button Auth
@@ -58,7 +57,6 @@ namespace Agate.Waskita.API.Example
             #endregion
 
 
-            //api.SetAddress("https://gameiptex.waskita.co.id/");
             api.SetAddress("https://gameserver-api-waskitainfra1-dev.gf.agatedev.net/");
 
 
@@ -134,7 +132,7 @@ namespace Agate.Waskita.API.Example
         /// pada dasarnya fungsi ini akan melakukan update status isDone dan membuat status isSuccess failed bila user berpindah project
         /// </summary>
         /// <returns></returns>
-        public IEnumerator StartGame()
+        private IEnumerator StartGame()
         {
             bool isRequesting = true;
             Debug.Log("Melakukan request start game");
@@ -165,17 +163,11 @@ namespace Agate.Waskita.API.Example
         /// SaveGame request berfungsi untuk melakukan save data progress pada player
         /// </summary>
         /// <returns></returns>
-        public IEnumerator SaveGame()
+        private IEnumerator SaveGame()
         {
             bool isRequesting = true;
             Debug.Log("Melakukan request save game");
-            var answer = new List<QuizAnswer>();
-            answer.Add(new QuizAnswer
-            {
-                question = 0,
-                answer = 1,
-                isTrue = true,
-            });
+            List<QuizAnswer> answer = new List<QuizAnswer> {new QuizAnswer {question = 0, answer = 1, isTrue = true,}};
             SaveGameRequest request = new SaveGameRequest()
             {
                 lastCheckPoint = 1,
@@ -214,7 +206,7 @@ namespace Agate.Waskita.API.Example
         /// pada dasarnya fungsi ini akan melakukan update status isDone dan success pada project
         /// </summary>
         /// <returns></returns>
-        public IEnumerator EndGame()
+        private IEnumerator EndGame()
         {
             bool isRequesting = true;
             Debug.Log("Melakukan request End game");
@@ -246,10 +238,10 @@ namespace Agate.Waskita.API.Example
         #region Refresh Token EndPoint
 
         /// <summary>
-        /// Regresh Token request berfungsi untuk melakukan melakukan refresh pada token sebelum expire
+        /// Refresh Token request berfungsi untuk melakukan melakukan refresh pada token sebelum expire
         /// </summary>
         /// <returns></returns>
-        public IEnumerator RefreshToken()
+        private IEnumerator RefreshToken()
         {
             bool isRequesting = true;
             Debug.Log("Melakukan request Refresh Token");
@@ -286,14 +278,14 @@ namespace Agate.Waskita.API.Example
         /// </summary>
         /// <param name="error"></param>
         /// <param name="isRequesting"></param>
-        public void HandleError(BasicResponse error, out bool isRequesting)
+        private static void HandleError(BasicResponse error, out bool isRequesting)
         {
             Debug.Log(error.error.id);
             Debug.Log(error.error.code);
             isRequesting = false;
         }
-        
-        public void HandleError(BasicResponse error)
+
+        private static void HandleError(BasicResponse error)
         {
             Debug.Log(error.error.id);
             Debug.Log(error.error.code);

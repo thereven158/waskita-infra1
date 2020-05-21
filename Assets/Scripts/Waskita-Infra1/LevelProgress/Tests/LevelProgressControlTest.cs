@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using A3.Quiz;
 using Agate.WaskitaInfra1.Level;
 using NUnit.Framework;
 
@@ -6,8 +7,18 @@ namespace Agate.WaskitaInfra1.LevelProgress.Test
 {
     public class LevelProgressControlTest
     {
+        private static readonly TestQuestion TestQuestion = new TestQuestion()
+        {
+            Quiz = new TestQuiz()
+        };
+
         private LevelProgressControl levelProgressCntrl;
-        private LevelData testLevel = new LevelData() {Questions = new List<IQuestion>() {null, null, null}};
+
+        private readonly LevelData testLevel = new LevelData()
+        {
+            DayDuration = 50,
+            Questions = new List<IQuestion>() {TestQuestion, TestQuestion, TestQuestion}
+        };
 
 
         [SetUp]
@@ -35,7 +46,7 @@ namespace Agate.WaskitaInfra1.LevelProgress.Test
         {
             ILevelProgressData testData = new TestLevelProgressData(1, 0, 1, testLevel);
             levelProgressCntrl.LoadData(testData);
-            Assert.That(levelProgressCntrl.Data.Equals(testData));
+            Assert.That(levelProgressCntrl.CurrentDataEquality(testData));
         }
 
         [Test]
@@ -51,7 +62,7 @@ namespace Agate.WaskitaInfra1.LevelProgress.Test
             };
             levelProgressCntrl.LoadData(testData);
             Assert.That(eventInvoked);
-            Assert.That(invokedData.Equals(testData));
+            Assert.That(levelProgressCntrl.CurrentDataEquality(invokedData));
         }
 
         [Test]
@@ -71,6 +82,17 @@ namespace Agate.WaskitaInfra1.LevelProgress.Test
             levelProgressCntrl.StartLevel(testLevel);
             levelProgressCntrl.NextDay(deltaNum);
             Assert.That(levelProgressCntrl.Data.CurrentDay, Is.EqualTo(1 + deltaNum));
+        }
+
+        [Test]
+        public void Proceeding_Pass_Last_Day_Finishes_Level()
+        {
+            const uint deltaNum = 52;
+            bool eventInvoked = false;
+            levelProgressCntrl.StartLevel(testLevel);
+            levelProgressCntrl.OnFinishLevel += data => eventInvoked = true;
+            levelProgressCntrl.NextDay(deltaNum);
+            Assert.That(eventInvoked);
         }
 
         [Test]
@@ -95,7 +117,7 @@ namespace Agate.WaskitaInfra1.LevelProgress.Test
 
         [Test]
         public void RestartFromCheckPoint_Set_Day_To_LastCheckPoint(
-            [Random(2)] uint initialDay, [Random(2)]uint checkPoint)
+            [Random(2)] uint initialDay, [Random(2)] uint checkPoint)
         {
             ILevelProgressData testData = new TestLevelProgressData(initialDay, checkPoint, 0, testLevel);
             levelProgressCntrl.LoadData(testData);
@@ -132,10 +154,26 @@ namespace Agate.WaskitaInfra1.LevelProgress.Test
             Condition = new DayCondition();
             Level = level;
         }
+    }
 
-        public bool Equals(ILevelProgressData other)
+    public class TestQuiz : IQuiz
+    {
+        public bool IsCorrect(object answer)
         {
-            return base.Equals(other);
+            return true;
         }
+
+        public object Question => null;
+    }
+
+    public class TestQuestion : IQuestion
+    {
+        public string WrongExplanation => null;
+
+        public string Category => null;
+
+        public string DisplayName => null;
+
+        public IQuiz Quiz { get; set; }
     }
 }

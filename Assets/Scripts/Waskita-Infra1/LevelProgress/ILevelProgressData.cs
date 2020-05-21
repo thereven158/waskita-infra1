@@ -1,11 +1,10 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Agate.WaskitaInfra1.Level;
 
 namespace Agate.WaskitaInfra1.LevelProgress
 {
-    public interface ILevelProgressData: IEquatable<ILevelProgressData>
+    public interface ILevelProgressData
     {
         uint LastCheckpoint { get; }
         uint CurrentDay { get; }
