@@ -35,12 +35,11 @@ namespace BackendIntegration
         {
             return new LevelProgress()
             {
-                
             };
         }
-        
     }
-    public class LevelProgress: ILevelProgressData
+
+    public class LevelProgress : ILevelProgressData
     {
         public uint LastCheckpoint { get; set; }
         public uint CurrentDay { get; set; }
@@ -48,10 +47,6 @@ namespace BackendIntegration
         public List<object> Answers { get; set; }
         public DayCondition Condition { get; set; }
         public LevelData Level { get; set; }
-        public bool Equals(ILevelProgressData other)
-        {
-            throw new System.NotImplementedException();
-        }
 
         public LevelProgress()
         {
@@ -63,14 +58,11 @@ namespace BackendIntegration
             CurrentDay = data.CurrentDay;
         }
     }
-    public class GameProgress:IGameProgressData
+
+    public class GameProgress : IGameProgressData
     {
         public short MaxCompletedLevelIndex { get; set; }
         public uint CompletionCount { get; set; }
         public double PlayTime { get; set; }
-        public bool Equals(IGameProgressData data)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

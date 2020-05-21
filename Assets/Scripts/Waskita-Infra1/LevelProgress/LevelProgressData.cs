@@ -34,10 +34,5 @@ namespace Agate.WaskitaInfra1.LevelProgress
         public DayCondition Condition { get; }
         public LevelData Level { get; }
 
-        public bool Equals(ILevelProgressData other)
-        {
-            return other.CurrentDay == CurrentDay &&
-                   other.TryCount == TryCount;
-        }
     }
 }

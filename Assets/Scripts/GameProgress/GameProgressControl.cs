@@ -16,6 +16,7 @@ namespace Agate.WaskitaInfra1.GameProgress
             _data = new GameProgressData(data);
             OnDataChange?.Invoke(Data);
         }
+
         public void NewGame()
         {
             SetData(new GameProgressData());
@@ -31,9 +32,22 @@ namespace Agate.WaskitaInfra1.GameProgress
         {
             _data.PlayTime += delta;
         }
+
         public void UpdateCompletedLevelIndex(short index)
         {
             _data.MaxCompletedLevelIndex = Math.Max(index, _data.MaxCompletedLevelIndex);
         }
+
+        public static bool DataEquality(IGameProgressData data1, IGameProgressData data2)
+        {
+            return data1.MaxCompletedLevelIndex.Equals(data2.MaxCompletedLevelIndex) &&
+                   data1.CompletionCount.Equals(data2.CompletionCount) &&
+                   data1.PlayTime.Equals(data2.PlayTime);
+        }
+        public bool CurrentDataEquality(IGameProgressData data)
+        {
+            return DataEquality(_data, data);
+        }
+        
     }
 }

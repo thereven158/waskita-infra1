@@ -12,10 +12,5 @@ namespace Agate.Waskita.Responses.Data
         public short MaxCompletedLevelIndex => (short) maxCompleteLevelIndex;
         public uint CompletionCount => (uint) completionCount;
         public double PlayTime => playTime.TotalSeconds;
-
-        public bool Equals(IGameProgressData data)
-        {
-            return true;
-        }
     }
 }
