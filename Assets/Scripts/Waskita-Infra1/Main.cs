@@ -54,7 +54,7 @@ namespace Agate.WaskitaInfra1
 
         [SerializeField]
         [Tooltip("Location is relative to Persistent Data Path")]
-        private string _playerDataFilepath;
+        private string _playerDataFilepath = default;
 
         public string PlayerDataFilepath => Path.Combine(Application.persistentDataPath, _playerDataFilepath);
 
@@ -94,7 +94,7 @@ namespace Agate.WaskitaInfra1
         public bool UiLoaded;
 
         [SerializeField]
-        private bool _isOnline;
+        private bool _isOnline = default;
 
         public bool IsOnline => _isOnline;
 

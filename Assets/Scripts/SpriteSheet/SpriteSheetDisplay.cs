@@ -49,7 +49,7 @@ namespace Agate.SpriteSheet
             if (_currentFrame >= _sprites.Count && !_loop) return;
 
             _elapsedTime += Time.deltaTime;
-            if (!(_elapsedTime >= 1f / _frameRate)) return;
+            if (_elapsedTime < 1f / _frameRate) return;
 
             CycleSprite();
             _elapsedTime = 0;

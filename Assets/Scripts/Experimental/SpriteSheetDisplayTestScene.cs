@@ -13,7 +13,6 @@ namespace Experimental
 
         private void Start()
         {
-            //_levelDisplay.OpenDisplay(_level.Object, Debug.Log, null);
             _spritesDisplay.SetSpriteSheet(_spriteSheet);
         }
     }
