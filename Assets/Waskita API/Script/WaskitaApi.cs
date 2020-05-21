@@ -12,10 +12,10 @@ namespace Agate.Waskita.API
         private string _ipadd = "https://gameserver-api-waskitainfra1-dev.gf.agatedev.net/";
 
         //private string _ipadd = "https://game-waskita-iptex-stag.agatedev.net/";
-        private readonly string _waskitaAPI = "https://west.waskita.co.id/page/tlcc/apiwest/login.php?";
-        private string _token = String.Empty;
+        private const string WASKITA_API = "https://west.waskita.co.id/page/tlcc/apiwest/login.php?";
+        private string _token = string.Empty;
 
-        /* List Reqeust endpoint */
+        /* List Request endpoint */
 
         #region Endpoint
         
@@ -30,21 +30,21 @@ namespace Agate.Waskita.API
         
         #endregion
 
-        public static BasicRequest BaseData = new BasicRequest()
+        private static readonly BasicRequest BaseData = new BasicRequest()
         {
             deviceId = SystemInfo.deviceUniqueIdentifier,
             requestId = DateTime.Now.ToString("yyyy-MM-dd-hh-mm-ss-zzz")
         };
-        public static ValidateRequest ValidateData = new ValidateRequest(BaseData)
+        public static readonly ValidateRequest ValidateData = new ValidateRequest(BaseData)
         {
             gameVersion = 0,
             clientID = "BmwzQACRCmddGbSXdUJIGw==",
         };
 
 
-        private UTF8Encoding _stringEncoder;
+        private readonly UTF8Encoding _stringEncoder;
 
-        private const int _timeOut = 60;
+        private const int TIME_OUT = 60;
         /* End point */
 
         public WaskitaApi()
@@ -70,7 +70,7 @@ namespace Agate.Waskita.API
                 error = new Error
                 {
                     id = "3003",
-                    code = "Unknown error, please check your intenet connection"
+                    code = "Unknown error, please check your internet connection"
                 }
             };
             switch (error.responseCode)
@@ -186,18 +186,18 @@ namespace Agate.Waskita.API
                 uploadHandler = new UploadHandlerRaw(data),
                 downloadHandler = new DownloadHandlerBuffer(),
                 certificateHandler = new AcceptAllCertificatesSignedWithASpecificKeyPublicKey(),
-                timeout = _timeOut
+                timeout = TIME_OUT
             };
             uwr.uploadHandler.contentType = "application/json";
             if (requireauthentication) uwr.SetRequestHeader("Authorization", "Bearer " + _token);
             return uwr;
         }
 
-        private UnityWebRequest GetRequest(string param)
+        public UnityWebRequest GetRequest(string param)
         {
-            UnityWebRequest webRequest = UnityWebRequest.Get(_waskitaAPI + param);
+            UnityWebRequest webRequest = UnityWebRequest.Get(WASKITA_API + param);
             webRequest.certificateHandler = new AcceptAllCertificatesSignedWithASpecificKeyPublicKey();
-            webRequest.timeout = _timeOut;
+            webRequest.timeout = TIME_OUT;
             return webRequest;
         }
 
