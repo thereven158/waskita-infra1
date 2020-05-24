@@ -1,6 +1,7 @@
 // Developed by Tom Kail at Inkle
 // Modifications made by Luiz Wendt
 // Nested Scriptable Object Feature by as3mbus 
+// Code Clean Up by as3mbus
 // Released under the MIT Licence as held at https://opensource.org/licenses/MIT
 
 // Must be placed within a folder named "Editor"
@@ -8,6 +9,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using UnityEngine;
 using UnityEditor;
 using Object = UnityEngine.Object;
@@ -26,253 +28,18 @@ namespace Github.ScriptableObjectExtension
     [CustomPropertyDrawer(typeof(ScriptableObject), true)]
     public class ExtendedScriptableObjectDrawer : PropertyDrawer
     {
-        private const int CREATE_BUTTON_WIDTH = 48;
-        private int index;
-        private Type[] typeOptions;
-        private string[] stringOptions;
+        #region Constants
 
-        private Type[] TypeOptions
-        {
-            get
-            {
-                typeOptions = typeOptions ?? AvailableType();
-                return typeOptions;
-            }
-        }
+        private const int DELETE_BUTTON_WIDTH = 60;
+        private const int INDENT_WIDTH = 15;
+        private const int HORIZONTAL_SPACING = 4;
+        private const char HIERARCHY_SEPARATOR = '.';
 
-        private string[] StringOptions
-        {
-            get
-            {
-                stringOptions = stringOptions ?? TypeOptions
-                    .Select(type => type.ToString().Split('.').Last())
-                    .ToArray();
-                return stringOptions;
-            }
-        }
+        #endregion
 
-        public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
-        {
-            float totalHeight = singleLineHeight;
-            if ((TypeOptions.Length > 1 || GetPropertyType().IsAbstract) && !IsThereAnyVisibileProperty(property))
-                return totalHeight * 2;
-            if (!IsThereAnyVisibileProperty(property)) return totalHeight;
-            if (!property.isExpanded) return totalHeight;
-            ScriptableObject data = property.objectReferenceValue as ScriptableObject;
-            if (data == null) return singleLineHeight * 2;
-            SerializedObject serializedObject = new SerializedObject(data);
-            SerializedProperty prop = serializedObject.GetIterator();
-            totalHeight += standardVerticalSpacing;
-            if (!prop.NextVisible(true)) return totalHeight;
-            do
-            {
-                if (prop.name == "m_Script") continue;
-                SerializedProperty subProp = serializedObject.FindProperty(prop.name);
-                float height = EditorGUI.GetPropertyHeight(subProp, null, true) +
-                               standardVerticalSpacing;
-                totalHeight += height;
-            } while (prop.NextVisible(false));
+        #region Property Helper Method
 
-            // Add a tiny bit of height if open for the background
-
-            return totalHeight;
-        }
-
-        private Type[] AvailableType()
-        {
-            return
-            (
-                from domainAssembly in AppDomain.CurrentDomain.GetAssemblies()
-                from assemblyType in domainAssembly.GetTypes()
-                where GetPropertyType().IsAssignableFrom(assemblyType) && !assemblyType.IsAbstract
-                select assemblyType
-            ).ToArray();
-        }
-
-        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
-        {
-            BeginProperty(position, label, property);
-            if (property.objectReferenceValue != null)
-            {
-                DrawFoldOut(position, property);
-                DrawAssignedPropertyField(position, property);
-                if (GUI.changed) property.serializedObject.ApplyModifiedProperties();
-                if (property.objectReferenceValue == null) GUIUtility.ExitGUI();
-                if (property.isExpanded) DrawSerializedFields(position, property);
-            }
-            else
-            {
-                DrawTypeSelectionDropdown(position);
-
-                Rect fieldLayout = new Rect(
-                    position.x,
-                    position.y,
-                    position.width - 2 - CREATE_BUTTON_WIDTH * 2,
-                    singleLineHeight);
-
-                ObjectField(fieldLayout, property);
-
-                DrawCreateExternalButton(position, property);
-                DrawCreateInternalButton(position, property);
-            }
-
-            property.serializedObject.ApplyModifiedProperties();
-            EndProperty();
-        }
-
-        private static void DrawFoldOut(Rect position, SerializedProperty property)
-        {
-            Rect foldoutLayout = new Rect(position.x, position.y, labelWidth, singleLineHeight);
-            if (IsThereAnyVisibileProperty(property))
-            {
-                property.isExpanded = Foldout(
-                    foldoutLayout,
-                    property.isExpanded,
-                    property.displayName, true);
-            }
-            else
-            {
-                LabelField(
-                    foldoutLayout, property.displayName);
-                property.isExpanded = false;
-            }
-        }
-
-        private static void DrawAssignedPropertyField(Rect position, SerializedProperty property)
-        {
-            bool isNestedObject = (AssetDatabase.GetAssetPath(property.objectReferenceValue) ==
-                                   AssetDatabase.GetAssetPath(property.serializedObject.targetObject));
-
-            int buttonOffset = isNestedObject ? 60 : 0;
-
-            Rect fieldLayout = new Rect(
-                labelWidth + 14,
-                position.y,
-                position.width - labelWidth - buttonOffset,
-                singleLineHeight);
-
-            PropertyField(
-                fieldLayout,
-                property,
-                GUIContent.none,
-                true
-            );
-
-            if (!isNestedObject) return;
-            DrawDeleteInternalButton(position, property);
-        }
-
-        private static void DrawSerializedFields(Rect position, SerializedProperty property)
-        {
-            float boxPosY = position.y + singleLineHeight + standardVerticalSpacing - 1;
-            float boxHeight = position.height - singleLineHeight - standardVerticalSpacing;
-            // Draw a background that shows us clearly which fields are part of the ScriptableObject
-
-            Rect boxLayout = new Rect(0, boxPosY, Screen.width, boxHeight);
-            GUI.Box(boxLayout, "");
-
-            indentLevel++;
-            ScriptableObject data = (ScriptableObject) property.objectReferenceValue;
-            SerializedObject serializedObject = new SerializedObject(data);
-
-
-            // Iterate over all the values and draw them
-            SerializedProperty prop = serializedObject.GetIterator();
-            float y = position.y + singleLineHeight + standardVerticalSpacing;
-
-            if (!prop.NextVisible(true)) return;
-
-            do
-            {
-                // Don't bother drawing the class file
-                if (prop.name == "m_Script") continue;
-
-                float fieldHeight =
-                    EditorGUI.GetPropertyHeight(prop, new GUIContent(prop.displayName), true);
-
-                Rect fieldLayout = new Rect(position.x, y, position.width, fieldHeight);
-
-                PropertyField(fieldLayout, prop, true);
-                y += fieldHeight + standardVerticalSpacing;
-            } while (prop.NextVisible(false));
-
-            if (GUI.changed) serializedObject.ApplyModifiedProperties();
-
-            indentLevel--;
-        }
-
-        private void DrawTypeSelectionDropdown(Rect position)
-        {
-            if (typeOptions.Length <= 1 && !GetPropertyType().IsAbstract) return;
-            Rect labelLayout = new Rect(
-                position.x + 14,
-                position.y + singleLineHeight + standardVerticalSpacing,
-                labelWidth - 14,
-                singleLineHeight);
-
-            LabelField(labelLayout, "Add : ");
-
-            Rect popupLayout = new Rect(
-                labelWidth + 14 - (14 * (indentLevel - 1)),
-                position.y + singleLineHeight + standardVerticalSpacing,
-                position.width - labelWidth + (14 * (indentLevel - 1)),
-                singleLineHeight);
-
-            index = Popup(popupLayout, index, StringOptions);
-        }
-
-        private void DrawCreateExternalButton(Rect position, SerializedProperty property)
-        {
-            Rect buttonLayout = new Rect(
-                position.x + position.width - CREATE_BUTTON_WIDTH,
-                position.y,
-                CREATE_BUTTON_WIDTH,
-                singleLineHeight);
-
-            if (!GUI.Button(buttonLayout, "+ Out")) return;
-
-            string selectedAssetPath = "Assets";
-
-            if (property.serializedObject.targetObject is MonoBehaviour behaviour)
-            {
-                MonoScript ms = MonoScript.FromMonoBehaviour(behaviour);
-                selectedAssetPath = System.IO.Path.GetDirectoryName(AssetDatabase.GetAssetPath(ms));
-            }
-
-            Type type = (TypeOptions.Length <= 1) ? GetPropertyType() : TypeOptions[index];
-            property.objectReferenceValue = CreateAssetWithSavePrompt(type, selectedAssetPath);
-        }
-
-        private void DrawCreateInternalButton(Rect position, SerializedProperty property)
-        {
-            Rect buttonLayout = new Rect(
-                position.x + position.width - CREATE_BUTTON_WIDTH * 2,
-                position.y,
-                CREATE_BUTTON_WIDTH,
-                singleLineHeight);
-            if (!GUI.Button(buttonLayout, "+ In")) return;
-
-            Type type = (TypeOptions.Length <= 1 && !GetPropertyType().IsAbstract) ? GetPropertyType() : TypeOptions[index];
-            string assetPath = AssetDatabase.GetAssetPath(property.serializedObject.targetObject);
-            string additionalName = "";
-
-            if (string.IsNullOrEmpty(assetPath))
-                if (property.serializedObject.targetObject is MonoBehaviour mono)
-                {
-                    GameObject gameObject = mono.gameObject;
-                    assetPath = gameObject.scene.path;
-                    additionalName = gameObject.scene.name;
-                }
-                else if (Selection.activeObject is GameObject gameObject)
-                {
-                    assetPath = gameObject.scene.path;
-                    additionalName = gameObject.scene.name;
-                }
-                else throw new Exception("Unable to find persistent asset path");
-
-            string assetName = $"{additionalName}_{property.serializedObject.targetObject.name}_{property.name}";
-            property.objectReferenceValue = CreateInternalAsset(type, assetName, assetPath);
-        }
+        #region Property Type
 
         private Type GetPropertyType()
         {
@@ -283,16 +50,27 @@ namespace Github.ScriptableObjectExtension
             return type;
         }
 
-        private static void DrawDeleteInternalButton(Rect position, SerializedProperty property)
+        private Type[] AvailablePropertyType()
         {
-            Rect buttonLayout = new Rect(
-                position.x + position.width - 60,
-                position.y,
-                60,
-                singleLineHeight);
+            return
+            (
+                from domainAssembly in AppDomain.CurrentDomain.GetAssemblies()
+                from assemblyType in domainAssembly.GetTypes()
+                where GetPropertyType().IsAssignableFrom(assemblyType) && !assemblyType.IsAbstract
+                select assemblyType
+            ).ToArray();
+        }
 
-            if (!GUI.Button(buttonLayout, "Del")) return;
+        #endregion
 
+        #region Asset Management
+
+        /// <summary>
+        /// Destroy internal asset that assigned in property value
+        /// </summary>
+        /// <param name="property">specified property with value to be deleted</param>
+        private static void DestructInternalPropertyValue(SerializedProperty property)
+        {
             if (AssetDatabase.Contains(property.serializedObject.targetObject))
             {
                 AssetDatabase.RemoveObjectFromAsset(property.objectReferenceValue);
@@ -304,12 +82,18 @@ namespace Github.ScriptableObjectExtension
             property.objectReferenceValue = null;
         }
 
-        // Creates a new ScriptableObject via the default Save File window
-        private static ScriptableObject CreateAssetWithSavePrompt(Type type, string path)
+        /// <summary>
+        /// Creates a new ScriptableObject asset as a new asset file via the default Save File window
+        /// </summary>
+        /// <param name="type">object type</param>
+        /// <param name="name">default file name</param>
+        /// <param name="path">new assets file path</param>
+        /// <returns>constructed object</returns>
+        private static ScriptableObject CreateAssetWithSavePrompt(Type type, string name, string path)
         {
             path = EditorUtility.SaveFilePanelInProject(
                 "Save ScriptableObject",
-                "New " + type.Name + ".asset", "asset",
+                name + ".asset", "asset",
                 "Enter a file name for the ScriptableObject.", path);
             if (path == "") return null;
             ScriptableObject asset = ScriptableObject.CreateInstance(type);
@@ -321,6 +105,13 @@ namespace Github.ScriptableObjectExtension
             return asset;
         }
 
+        /// <summary>
+        /// Creates a new ScriptableObject inside an asset file within specified filepath
+        /// </summary>
+        /// <param name="type">object type</param>
+        /// <param name="name">scriptable object asset name</param>
+        /// <param name="path">assets file path where new object will be added to</param>
+        /// <returns>constructed object</returns>
         private static ScriptableObject CreateInternalAsset(Type type, string name, string path)
         {
             ScriptableObject newAsset = ScriptableObject.CreateInstance(type);
@@ -330,6 +121,48 @@ namespace Github.ScriptableObjectExtension
             AssetDatabase.ImportAsset(AssetDatabase.GetAssetPath(newAsset));
             return newAsset;
         }
+
+        /// <summary>
+        /// Get asset path of internal value that assigned to specified property
+        /// </summary>
+        /// <param name="property">specified property</param>
+        /// <returns>assets filepath</returns>
+        /// <exception cref="Exception">assets path not found which means it's not a persistent assets</exception>
+        private static string PropertyAssetPath(SerializedProperty property)
+        {
+            string assetPath = AssetDatabase.GetAssetPath(property.serializedObject.targetObject);
+
+            if (!string.IsNullOrEmpty(assetPath)) return assetPath;
+            if (property.serializedObject.targetObject is MonoBehaviour mono)
+                assetPath = mono.gameObject.scene.path;
+            else if (Selection.activeObject is GameObject gameObject)
+                assetPath = gameObject.scene.path;
+            else throw new Exception("Unable to find persistent asset path");
+
+            return assetPath;
+        }
+
+        private static void RenamePropertyReference(SerializedProperty property, string newName)
+        {
+            property.objectReferenceValue.name = newName;
+            if (AssetDatabase.IsMainAsset(property.objectReferenceValue))
+            {
+                string assetPath = AssetDatabase.GetAssetPath(property.objectReferenceValue);
+                Debug.Log(assetPath);
+                AssetDatabase.RenameAsset(assetPath, newName);
+                // AssetDatabase.ImportAsset(PropertyAssetPath(property));
+            }
+
+            AssetDatabase.SaveAssets();
+        }
+
+        private static bool IsNestedAsset(SerializedProperty property)
+        {
+            return (AssetDatabase.GetAssetPath(property.objectReferenceValue) ==
+                    AssetDatabase.GetAssetPath(property.serializedObject.targetObject));
+        }
+
+        #endregion
 
         private static bool IsThereAnyVisibileProperty(SerializedProperty property)
         {
@@ -342,9 +175,404 @@ namespace Github.ScriptableObjectExtension
 
             while (prop.NextVisible(true))
                 if (prop.name != "m_Script")
-                    return true; //if theres any visible property other than m_script
+                    return true; //if there's any visible property other than m_script
 
             return false;
         }
+
+        private string PropertyHierarchyName(SerializedProperty property)
+        {
+            List<string> hierarchyName = new List<string>();
+
+            // scene prefix
+            if (property.serializedObject.targetObject is MonoBehaviour mono)
+                hierarchyName.Add($"{mono.gameObject.scene.name}");
+
+            hierarchyName.Add(property.serializedObject.targetObject.name);
+
+            // List Item Detection
+            Type type = fieldInfo.FieldType;
+            string propertyName = property.displayName;
+            if (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(List<>))
+                propertyName = $"{fieldInfo.Name}-{property.displayName.Split(' ')[1]}";
+
+            hierarchyName.Add(propertyName);
+
+            return string.Join("" + HIERARCHY_SEPARATOR, hierarchyName);
+        }
+
+        public static FieldInfo FieldInfo(SerializedProperty property)
+        {
+            Type parentType = property.serializedObject.targetObject.GetType();
+            FieldInfo fi = parentType.GetField(property.propertyPath);
+            return fi;
+        }
+
+        #endregion
+
+        #region Properties
+
+        private Type[] _typeOptions;
+
+        private Type[] TypeOptions
+        {
+            get
+            {
+                _typeOptions = _typeOptions ?? AvailablePropertyType();
+                return _typeOptions;
+            }
+        }
+
+        private string[] _typeStringOptions;
+
+        private string[] TypeStringOptions
+        {
+            get
+            {
+                _typeStringOptions = _typeStringOptions ?? TypeOptions
+                    .Select(type => type.ToString().Split('.').Last())
+                    .ToArray();
+                return _typeStringOptions;
+            }
+        }
+
+        private bool HaveTypeOptions => TypeOptions.Length > 1 || GetPropertyType().IsAbstract;
+        private Type SelectedObjectType => HaveTypeOptions ? TypeOptions[typeSelectionIndex] : GetPropertyType();
+        private static int IndentOffset => (INDENT_WIDTH * indentLevel);
+
+        #endregion
+
+        #region Editor Variables
+
+        private string valueObjectName;
+        private int typeSelectionIndex;
+        private bool isDrawn;
+
+        #endregion
+
+        #region Unity Derivation Override
+
+        public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
+        {
+            float totalHeight = singleLineHeight + standardVerticalSpacing;
+            ScriptableObject data = property.objectReferenceValue as ScriptableObject;
+
+            if (data == null) return totalHeight + CreationPropertyHeight(property);
+            if (!IsThereAnyVisibileProperty(property)) return totalHeight;
+            if (!property.isExpanded) return totalHeight;
+
+            SerializedObject serializedObject = new SerializedObject(data);
+            SerializedProperty prop = serializedObject.GetIterator();
+            totalHeight += singleLineHeight + standardVerticalSpacing;
+            totalHeight += standardVerticalSpacing;
+
+            if (!prop.NextVisible(true)) return totalHeight;
+
+            do
+            {
+                if (prop.name == "m_Script") continue;
+                SerializedProperty subProp = serializedObject.FindProperty(prop.name);
+                float height = EditorGUI.GetPropertyHeight(subProp, null, true) +
+                               standardVerticalSpacing;
+                totalHeight += height;
+            } while (prop.NextVisible(false));
+
+            totalHeight += singleLineHeight + standardVerticalSpacing;
+            return totalHeight;
+        }
+
+        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+        {
+            InitStyles();
+            BeginProperty(position, label, property);
+            if (property.objectReferenceValue != null)
+            {
+                Rect foldoutLayout = new Rect(position.x, position.y, labelWidth, singleLineHeight);
+                DrawSerializationFoldOut(foldoutLayout, property);
+
+                float deleteButtonOffset = (IsNestedAsset(property) ? DELETE_BUTTON_WIDTH : 0);
+                Rect propertyFieldLayout = new Rect(position)
+                {
+                    x = position.x + labelWidth - IndentOffset,
+                    width = position.width - labelWidth - deleteButtonOffset - HORIZONTAL_SPACING +
+                            IndentOffset,
+                    height = singleLineHeight
+                };
+                DrawAssignedPropertyField(propertyFieldLayout, property);
+
+                Rect deletebuttonLayout = new Rect(propertyFieldLayout)
+                {
+                    x = position.x + position.width - DELETE_BUTTON_WIDTH,
+                    width = DELETE_BUTTON_WIDTH,
+                };
+                if (IsNestedAsset(property)) DrawDeleteButton(deletebuttonLayout, property);
+
+                if (GUI.changed) property.serializedObject.ApplyModifiedProperties();
+                if (property.objectReferenceValue == null) GUIUtility.ExitGUI();
+                if (!isDrawn) valueObjectName = property.objectReferenceValue.name;
+
+                Rect contentLayout = new Rect()
+                {
+                    x = position.x,
+                    y = position.y + singleLineHeight + standardVerticalSpacing,
+                    width = position.width,
+                    height = position.height - singleLineHeight - standardVerticalSpacing
+                };
+
+                if (property.isExpanded)
+                    DrawSerializationContent(contentLayout, property);
+            }
+            else
+            {
+                Rect fieldLayout = new Rect(
+                    position.x,
+                    position.y,
+                    position.width,
+                    singleLineHeight);
+                ObjectField(fieldLayout, property);
+
+                Rect boxLayout = new Rect(position)
+                {
+                    x = position.x + IndentOffset,
+                    y = position.y + singleLineHeight + standardVerticalSpacing,
+                    width = position.width - IndentOffset,
+                    height = position.height - singleLineHeight - standardVerticalSpacing
+                };
+                DrawBoundingBox(boxLayout);
+
+                indentLevel++;
+
+                Rect foldoutLayout = new Rect(
+                    position.x,
+                    position.y + singleLineHeight + standardVerticalSpacing + standardVerticalSpacing,
+                    labelWidth,
+                    singleLineHeight);
+                DrawCreationFoldOut(foldoutLayout, property);
+                
+                if (!isDrawn) valueObjectName = PropertyHierarchyName(property);
+
+                Rect creationContentLayout = new Rect()
+                {
+                    x = foldoutLayout.x + IndentOffset,
+                    y = foldoutLayout.y,
+                    width = position.width - IndentOffset,
+                    height = (singleLineHeight + standardVerticalSpacing) * 3
+                };
+                if (property.isExpanded) DrawCreationContent(creationContentLayout, property);
+
+                indentLevel--;
+            }
+
+            property.serializedObject.ApplyModifiedProperties();
+            isDrawn = true;
+            EndProperty();
+        }
+
+        #endregion
+
+        #region Object Serialization GUI Drawer
+
+        private static void DrawSerializationFoldOut(Rect position, SerializedProperty property)
+        {
+            if (IsThereAnyVisibileProperty(property))
+                property.isExpanded = Foldout(
+                    position,
+                    property.isExpanded,
+                    property.displayName,
+                    true);
+            else
+            {
+                LabelField(position, property.displayName);
+                property.isExpanded = false;
+            }
+        }
+
+        private static void DrawAssignedPropertyField(Rect position, SerializedProperty property)
+        {
+            PropertyField(position, property, GUIContent.none, true);
+        }
+
+        private static void DrawDeleteButton(Rect position, SerializedProperty property)
+        {
+            if (!GUI.Button(position, "Delete")) return;
+            DestructInternalPropertyValue(property);
+        }
+
+        private void DrawSerializationContent(Rect position, SerializedProperty property)
+        {
+            Rect boxLayout = new Rect(position)
+            {
+                x = position.x + IndentOffset,
+                width = position.width - IndentOffset,
+                height = position.height - standardVerticalSpacing
+            };
+            DrawBoundingBox(boxLayout);
+
+            indentLevel++;
+
+            Rect nameFieldLayout = new Rect(position)
+            {
+                y = position.y + standardVerticalSpacing,
+                width = position.width - HORIZONTAL_SPACING - DELETE_BUTTON_WIDTH,
+                height = singleLineHeight
+            };
+            valueObjectName = TextField(nameFieldLayout, "Name: ", valueObjectName);
+
+            Rect renameButtonRect = new Rect(nameFieldLayout)
+            {
+                x = nameFieldLayout.x + nameFieldLayout.width + HORIZONTAL_SPACING,
+                width = DELETE_BUTTON_WIDTH,
+            };
+            DrawRenameButton(renameButtonRect, property);
+
+            Rect serializeFieldLayout = new Rect(position)
+            {
+                y = position.y + singleLineHeight + standardVerticalSpacing + standardVerticalSpacing
+            };
+            DrawSerializedFields(serializeFieldLayout, property);
+
+            indentLevel--;
+        }
+        
+        private void DrawRenameButton(Rect position, SerializedProperty property)
+        {
+            if (!GUI.Button(position, "Rename")) return;
+
+            RenamePropertyReference(property, valueObjectName);
+        }
+        
+        private static void DrawSerializedFields(Rect position, SerializedProperty property)
+        {
+            ScriptableObject data = (ScriptableObject) property.objectReferenceValue;
+            SerializedObject serializedObject = new SerializedObject(data);
+
+            SerializedProperty prop = serializedObject.GetIterator();
+            float y = position.y;
+
+            if (!prop.NextVisible(true)) return; 
+            
+            // Iterate over all the values and draw them
+            do
+            {
+                // Don't bother drawing the class file
+                if (prop.name == "m_Script") continue;
+
+                float fieldHeight =
+                    EditorGUI.GetPropertyHeight(prop, new GUIContent(prop.displayName), true);
+                Rect fieldLayout = new Rect(position.x, y, position.width, fieldHeight);
+
+                PropertyField(fieldLayout, prop, true);
+                y += fieldHeight + standardVerticalSpacing;
+            } while (prop.NextVisible(false));
+
+            if (GUI.changed) serializedObject.ApplyModifiedProperties();
+        }
+
+        #endregion
+
+        #region New Object Creation GUI Drawer
+
+        private static float CreationPropertyHeight(SerializedProperty property)
+        {
+            float totalHeight = singleLineHeight + standardVerticalSpacing * 2;
+            if (!property.isExpanded) return totalHeight;
+            totalHeight += (singleLineHeight + standardVerticalSpacing) * 3 + singleLineHeight;
+            return totalHeight;
+        }
+
+        private static void DrawCreationFoldOut(Rect position, SerializedProperty property)
+        {
+            property.isExpanded = Foldout(
+                position,
+                property.isExpanded,
+                "Create",
+                true);
+        }
+
+        private void DrawCreationContent(Rect position, SerializedProperty property)
+        {
+            Rect typeSelectionRect = new Rect()
+            {
+                x = position.x + labelWidth - INDENT_WIDTH * indentLevel * 2,
+                y = position.y,
+                width = position.width - labelWidth + INDENT_WIDTH * indentLevel * 2,
+                height = singleLineHeight,
+            };
+            DrawTypeSelectionDropdown(typeSelectionRect);
+            Rect nameFieldRect = new Rect(position)
+            {
+                x = position.x - INDENT_WIDTH * indentLevel,
+                y = position.y + singleLineHeight + standardVerticalSpacing,
+                width = position.width + INDENT_WIDTH * indentLevel,
+                height = singleLineHeight
+            };
+            valueObjectName = TextField(nameFieldRect, "Name: ", valueObjectName);
+            Rect buttonExternalRect = new Rect(position)
+            {
+                y = position.y + 2 * (singleLineHeight + standardVerticalSpacing),
+                width = position.width,
+                height = singleLineHeight
+            };
+            DrawCreateExternalButton(buttonExternalRect, property);
+            Rect buttonInternalRect = new Rect(buttonExternalRect)
+            {
+                y = position.y + 3 * (singleLineHeight + standardVerticalSpacing),
+            };
+            DrawCreateInternalButton(buttonInternalRect, property);
+        }
+
+        private void DrawTypeSelectionDropdown(Rect position)
+        {
+            typeSelectionIndex = Popup(position, typeSelectionIndex, TypeStringOptions);
+        }
+
+        private void DrawCreateExternalButton(Rect position, SerializedProperty property)
+        {
+            if (!GUI.Button(position, "Create New Asset File")) return;
+
+            string selectedAssetPath = "Assets";
+
+            if (property.serializedObject.targetObject is MonoBehaviour behaviour)
+            {
+                MonoScript ms = MonoScript.FromMonoBehaviour(behaviour);
+                selectedAssetPath = System.IO.Path.GetDirectoryName(AssetDatabase.GetAssetPath(ms));
+            }
+
+            Type type = SelectedObjectType;
+            property.objectReferenceValue = CreateAssetWithSavePrompt(type, valueObjectName, selectedAssetPath);
+        }
+
+        private void DrawCreateInternalButton(Rect position, SerializedProperty property)
+        {
+            if (!GUI.Button(position, "Insert Asset")) return;
+
+            Type type = SelectedObjectType;
+            string assetPath = PropertyAssetPath(property);
+            string assetName = string.IsNullOrEmpty(valueObjectName)
+                ? PropertyHierarchyName(property)
+                : valueObjectName;
+
+            property.objectReferenceValue = CreateInternalAsset(type, assetName, assetPath);
+        }
+
+        #endregion
+
+        #region Look and Feel
+
+        private static void DrawBoundingBox(Rect boxLayout)
+        {
+            GUI.Box(boxLayout, "", boxStyle);
+        }
+
+        private static GUIStyle boxStyle = null;
+
+        private static void InitStyles()
+        {
+            if (boxStyle != null) return;
+            boxStyle = new GUIStyle(GUI.skin.box)
+                {border = new RectOffset(2, 2, 2, 2)};
+        }
+
+        #endregion
     }
 }
