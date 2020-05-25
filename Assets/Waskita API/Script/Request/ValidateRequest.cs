@@ -16,8 +16,14 @@
 
         public ValidateRequest(ValidateRequest request) : base(request)
         {
+            Set(request);
+        }
+
+        public void Set(ValidateRequest request)
+        {
             clientID = request.clientID;
             gameVersion = request.gameVersion;
+            base.Set(request);
         }
     }
 }

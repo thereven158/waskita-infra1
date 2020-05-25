@@ -21,6 +21,11 @@
 
         public BasicRequest(BasicRequest request)
         {
+            Set(request);
+        }
+
+        public void Set(BasicRequest request)
+        {
             requestId = request.requestId;
             deviceId = request.deviceId;
         }
