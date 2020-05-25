@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Agate.WaskitaInfra1.LevelProgress;
+using Agate.WaskitaInfra1.UserInterface.LevelState;
 using Agate.WaskitaInfra1.UserInterface.QuestionList;
-using UserInterface.LevelState;
 
 namespace Agate.WaskitaInfra1.Utilities
 {

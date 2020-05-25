@@ -55,11 +55,11 @@ namespace Agate.WaskitaInfra1
         private LevelControl _levelControl = default;
 
         [SerializeField]
-        private BackendIntegrationController _backendIntegrationControl;
+        private BackendIntegrationController _backendIntegrationControl = default;
 
         [SerializeField]
         [Tooltip("Location is relative to Persistent Data Path")]
-        private string _playerDataFilepath;
+        private string _playerDataFilepath = default;
 
         public string PlayerDataFilepath => Path.Combine(Application.persistentDataPath, _playerDataFilepath);
 
@@ -85,8 +85,7 @@ namespace Agate.WaskitaInfra1
         #region Game Setting
 
         private IPlayerGameData GameData;
-
-
+        
         [SerializeField]
         private ScriptablePlayerGameData _testPlayerData = default;
 
@@ -99,7 +98,7 @@ namespace Agate.WaskitaInfra1
         public bool UiLoaded;
 
         [SerializeField]
-        private bool _isOnline;
+        private bool _isOnline = default;
 
         public bool IsOnline => _isOnline;
 

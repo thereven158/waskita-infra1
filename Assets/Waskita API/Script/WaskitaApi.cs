@@ -69,15 +69,15 @@ namespace Agate.Waskita.API
             {
                 error = new Error
                 {
-                    id = "3003",
-                    code = "Unknown error, please check your internet connection"
+                    code = "3003",
+                    message = "Unknown error, please check your internet connection"
                 }
             };
             switch (error.responseCode)
             {
                 case 200:
-                    response.error.id = "2017";
-                    response.error.code = "Username & Password  not found";
+                    response.error.code = "2017";
+                    response.error.message = "Username & Password  not found";
                     break;
 
                 case 400:
@@ -86,18 +86,18 @@ namespace Agate.Waskita.API
                     break;
 
                 case 401:
-                    response.error.id = "2018";
-                    response.error.code = "Unauthorized, please re-login";
+                    response.error.code = "2018";
+                    response.error.message = "Unauthorized, please re-login";
                     break;
 
                 case 403:
-                    response.error.id = "2019";
-                    response.error.code = "Forbidden Please, re-login";
+                    response.error.code = "2019";
+                    response.error.message = "Forbidden Please, re-login";
                     break;
 
                 case 500:
-                    response.error.id = "3002";
-                    response.error.code = "Internal server error / server on maintenance";
+                    response.error.code = "3002";
+                    response.error.message = "Internal server error / server on maintenance";
                     break;
             }
 

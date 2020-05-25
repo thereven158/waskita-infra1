@@ -3,11 +3,11 @@ using A3.UserInterface;
 using Agate.GlSim.Scene.Control.Map.Loader;
 using Agate.Waskita.Responses;
 using Agate.WaskitaInfra1.PlayerAccount;
+using Agate.WaskitaInfra1.UserInterface.Display;
 using Agate.WaskitaInfra1.UserInterface.Login;
 using BackendIntegration;
 using UnityEngine;
 using UnityEngine.UI;
-using UserInterface.Display;
 using UnityEngine.Networking;
 
 namespace Agate.WaskitaInfra1.SceneControl.Login
@@ -24,7 +24,7 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
         private Button _logOutButton = null;
 
         [SerializeField]
-        private PopUpDisplay _popUpDisplay;
+        private PopUpDisplay _popUpDisplay = default;
 
         private bool loggedIn;
 

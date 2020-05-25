@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UserInterface.Display
+namespace Agate.WaskitaInfra1.UserInterface.Display
 {
     public class YesNoPopUpDisplay : DisplayBehavior
     {

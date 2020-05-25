@@ -1,6 +1,5 @@
 using A3.UserInterface;
 using Agate.GlSim.Scene.Control.Map.Loader;
-using Agate.WaskitaInfra1;
 using Agate.WaskitaInfra1.GameProgress;
 using Agate.WaskitaInfra1.Level;
 using Agate.WaskitaInfra1.LevelProgress;
@@ -11,11 +10,10 @@ using Agate.WaskitaInfra1.UserInterface.Quiz;
 using Agate.WaskitaInfra1.Utilities;
 using UnityEngine;
 using UnityEngine.UI;
-using UserInterface;
-using UserInterface.Display;
-using UserInterface.LevelState;
+using Agate.WaskitaInfra1.UserInterface.Display;
+using Agate.WaskitaInfra1.UserInterface.LevelState;
 
-namespace SceneControl
+namespace Agate.WaskitaInfra1.SceneControl
 {
     public class PreparationPhaseSceneControl : MonoBehaviour
     {

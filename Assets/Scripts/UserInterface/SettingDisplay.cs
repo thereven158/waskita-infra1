@@ -2,21 +2,21 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace UserInterface
+namespace Agate.WaskitaInfra1.UserInterface
 {
     public class SettingDisplay : MonoBehaviour
     {
         [SerializeField]
-        private Toggle _bgmToggle;
+        private Toggle _bgmToggle = default;
 
         [SerializeField]
-        private Toggle _sfxToggle;
+        private Toggle _sfxToggle = default;
 
         [SerializeField]
-        private Button _logOutButton;
+        private Button _logOutButton = default;
 
         [SerializeField]
-        private Button _exitButton;
+        private Button _exitButton = default;
 
         public UnityAction<bool> OnBgmToggle;
         public UnityAction<bool> OnSfxToggle;

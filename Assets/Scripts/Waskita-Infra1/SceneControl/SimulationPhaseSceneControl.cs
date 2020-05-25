@@ -2,21 +2,20 @@ using System.Collections.Generic;
 using A3.DataDrivenEvent;
 using A3.UserInterface;
 using Agate.GlSim.Scene.Control.Map.Loader;
-using Agate.WaskitaInfra1;
 using Agate.WaskitaInfra1.GameProgress;
 using Agate.WaskitaInfra1.Level;
 using Agate.WaskitaInfra1.LevelProgress;
+using Agate.WaskitaInfra1.UserInterface;
+using Agate.WaskitaInfra1.UserInterface.Display;
+using Agate.WaskitaInfra1.UserInterface.LevelState;
 using Agate.WaskitaInfra1.UserInterface.QuestionList;
 using Agate.WaskitaInfra1.Utilities;
 using GameAction;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using UserInterface;
-using UserInterface.Display;
-using UserInterface.LevelState;
 
-namespace SceneControl
+namespace Agate.WaskitaInfra1.SceneControl
 {
     public class SimulationPhaseSceneControl : MonoBehaviour
     {

@@ -2,10 +2,9 @@ using A3.UserInterface;
 using Agate.WaskitaInfra1.UserInterface;
 using Agate.WaskitaInfra1.UserInterface.QuestionList;
 using Agate.WaskitaInfra1.UserInterface.LevelList;
+using Agate.WaskitaInfra1.UserInterface.LevelState;
 using Agate.WaskitaInfra1.UserInterface.Quiz;
-using UserInterface.LevelState;
 using UnityEngine;
-using UserInterface;
 
 namespace Agate.WaskitaInfra1.SceneControl
 {
