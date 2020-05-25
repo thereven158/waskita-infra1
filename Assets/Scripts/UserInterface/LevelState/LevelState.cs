@@ -1,6 +1,6 @@
 using Agate.WaskitaInfra1.Object;
 
-namespace UserInterface.LevelState
+namespace Agate.WaskitaInfra1.UserInterface.LevelState
 {
     public struct LevelState
     {

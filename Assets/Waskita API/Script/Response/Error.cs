@@ -6,17 +6,11 @@
     public class Error
     {
         public string code;
-        public object[] details;
-        public string id;
-        public InnerError innererror;
-        public string target;
+        public string message;
         public Error()
         {
             code = null;
-            id = null;
-            target = null;
-            details = null;
-            innererror = null;
+            message = null;
         }
     }
 

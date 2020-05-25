@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using A3.Quiz;
 using A3.Quiz.Unity;
 
@@ -25,9 +26,14 @@ namespace Agate.WaskitaInfra1.Level
         TAnswer Answer { get; }
     }
 
-    public interface IMultipleChoiceQuestion<TAnswer> : ITAnswerQuestion<TAnswer>
+    public interface IMultipleChoiceQuestion<TAnswer> : ITAnswerQuestion<TAnswer>, IMultipleChoiceQuestion
     {
-        List<TAnswer> AnswerOptions { get; }
+        new List<TAnswer> AnswerOptions { get; }
+    }
+
+    public interface IMultipleChoiceQuestion
+    {
+        List<object> AnswerOptions { get; }
     }
 
     public interface IMessageQuestion
@@ -40,6 +46,16 @@ namespace Agate.WaskitaInfra1.Level
         public abstract string Message { get; }
         public abstract TAnswer Answer { get; }
         public abstract List<TAnswer> AnswerOptions { get; }
+        private List<object> _answerOptions;
+
+        List<object> IMultipleChoiceQuestion.AnswerOptions
+        {
+            get
+            {
+                _answerOptions = _answerOptions ?? AnswerOptions.Cast<object>().ToList();
+                return _answerOptions;
+            }
+        }
     }
 
     public class BasicMultipleChoiceQuiz<TAnswer> : Quiz<BasicMultipleChoiceQuestion<TAnswer>, TAnswer>

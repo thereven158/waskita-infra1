@@ -1,7 +1,7 @@
 using A3.UserInterface;
 using Agate.WaskitaInfra1.LevelProgress;
 using UnityEngine;
-using UserInterface.Display;
+using Agate.WaskitaInfra1.UserInterface.Display;
 
 namespace GameAction
 {

@@ -1,15 +1,15 @@
 {
-    "name": "Agate.WaskitaInfra1.BackendIntegration",
+    "name": "Agate.WaskitaInfra1.Backend.Integration",
     "references": [
-        "Agate.WaskitaInfra1.Backend.API",
-        "Agate.WaskitaInfra1.UserInterface.Display",
+        "A3.Quiz",
         "A3.UserInterface",
-        "A3.CodePattern",
-        "Agate.WaskitaInfra1.Level",
+        "Agate.WaskitaInfra1.Backend.API",
         "Agate.WaskitaInfra1.LevelProgress",
         "Agate.WaskitaInfra1.GameProgress",
         "Agate.WaskitaInfra1.PlayerAccount",
-        "Agate.WaskitaInfra1.UserInterface"
+        "Agate.WaskitaInfra1.Level.Unity",
+        "Agate.WaskitaInfra1.Level",
+        "Agate.WaskitaInfra1.UserInterface.Display"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],

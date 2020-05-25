@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Agate.Waskita.Request;
 using Agate.Waskita.Responses;
 using Agate.Waskita.Responses.Data;
 using Agate.WaskitaInfra1.GameProgress;
@@ -31,14 +32,43 @@ namespace BackendIntegration
             };
         }
 
-        //public static LevelProgress LevelProgress(this LevelControl levelControl, LevelProgressData data)
-        //{
-        //    return new LevelProgress()
-        //    {
-                
-        //    };
-        //}
-        
+        public static LevelProgress LevelProgress(this LevelControl levelControl, LevelProgressData data)
+        {
+            LevelProgress progress = new LevelProgress
+            {
+                LastCheckpoint = (uint) data.lastCheckpoint,
+                CurrentDay = (uint) data.currentDay,
+                TryCount = (uint) data.tryCount,
+                Level = levelControl.GetLevel(data.level),
+                Answers = new List<object>(),
+            };
+            for (int i = 0; i < progress.Level.Questions.Count; i++)
+                progress.Answers.Add(null);
+            if (data.storedAnswers == null) return progress;
+            for (int i = 0; i < data.storedAnswers.Count; i++)
+                if (progress.Level.Questions[i].Quiz.Question is IMultipleChoiceQuestion multipleChoice)
+                    progress.Answers[i] = multipleChoice.AnswerOptions[data.storedAnswers[i]];
+
+            return progress;
+        }
+
+        public static SaveGameRequest SaveRequest(LevelControl control, LevelProgress data)
+        {
+            SaveGameRequest request = new SaveGameRequest()
+            {
+                currentDay = (int) data.CurrentDay,
+                tryCount = (int) data.TryCount,
+                lastCheckPoint = (int) data.LastCheckpoint,
+                answer = new List<int>()
+            };
+            for (int i = 0; i < data.Level.Questions.Count; i++)
+                request.answer.Add(-1);
+            if (data.Answers == null) return request;
+            for (int i = 0; i < data.Answers.Count; i++)
+                if (data.Level.Questions[i].Quiz.Question is IMultipleChoiceQuestion multipleChoice)
+                    request.answer[i] = multipleChoice.AnswerOptions.IndexOf(data.Answers[i]);
+            return request;
+        }
     }
 
     public class LevelProgress : ILevelProgressData

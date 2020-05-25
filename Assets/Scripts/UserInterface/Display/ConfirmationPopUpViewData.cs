@@ -1,6 +1,6 @@
 using System;
 
-namespace UserInterface.Display
+namespace Agate.WaskitaInfra1.UserInterface.Display
 {
     [Serializable]
     public struct ConfirmationPopUpViewData

@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 using Agate.Waskita.API;
 using Agate.Waskita.Request;
 using Agate.Waskita.Responses;
-using UserInterface.Display;
+using Agate.WaskitaInfra1.UserInterface.Display;
 using Agate.WaskitaInfra1.PlayerAccount;
 using A3.UserInterface;
 
@@ -15,14 +15,14 @@ namespace BackendIntegration
     public class BackendIntegrationController : MonoBehaviour
     {
         [SerializeField]
-        private BlockDisplay _blockDisplayPrefab;
+        private BlockDisplay _blockDisplayPrefab = default;
 
         [SerializeField]
-        private PopUpDisplay _popUpDisplay;
+        private PopUpDisplay _popUpDisplay = default;
 
         [SerializeField]
-        private YesNoPopUpDisplay _yesNoDisplay;
-
+        private YesNoPopUpDisplay _yesNoDisplay = default;
+        
         private WaskitaApi _api;
         private UiDisplaysSystem<GameObject> _displaysSystem;
         private PlayerAccountControl _accountControl;

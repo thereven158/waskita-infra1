@@ -1,7 +1,7 @@
 using A3.UserInterface;
 using UnityEngine;
 
-namespace UserInterface.Display
+namespace Agate.WaskitaInfra1.UserInterface.Display
 {
     public class BlockDisplay : DisplayBehavior
     {

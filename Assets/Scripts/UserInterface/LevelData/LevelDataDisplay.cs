@@ -1,10 +1,10 @@
 using System;
 using Agate.WaskitaInfra1.Level;
+using Agate.WaskitaInfra1.UserInterface.LevelState;
 using Agate.WaskitaInfra1.Utilities;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using UserInterface.LevelState;
 
 namespace Agate.WaskitaInfra1.UserInterface
 {

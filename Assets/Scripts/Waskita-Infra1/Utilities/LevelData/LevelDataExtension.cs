@@ -1,5 +1,5 @@
 using Agate.WaskitaInfra1.Level;
-using UserInterface.LevelState;
+using Agate.WaskitaInfra1.UserInterface.LevelState;
 
 namespace Agate.WaskitaInfra1.Utilities
 {
