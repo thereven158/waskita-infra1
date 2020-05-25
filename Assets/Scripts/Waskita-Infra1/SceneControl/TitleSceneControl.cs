@@ -1,16 +1,14 @@
 using System;
 using System.Collections;
 using A3.UserInterface;
-using Agate.Waskita.API;
-using Agate.Waskita.Request;
 using Agate.Waskita.Responses;
 using Agate.WaskitaInfra1.PlayerAccount;
 using Agate.WaskitaInfra1.UserInterface.Login;
 using BackendIntegration;
 using UnityEngine;
-using UnityEngine.Networking;
 using UnityEngine.UI;
 using UserInterface.Display;
+using UnityEngine.Networking;
 
 namespace Agate.WaskitaInfra1.SceneControl.Login
 {
@@ -26,9 +24,6 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
         private Button _logOutButton = null;
 
         [SerializeField]
-        private BlockDisplay _blockDisplayPrefab;
-
-        [SerializeField]
         private PopUpDisplay _popUpDisplay;
 
         [SerializeField]
@@ -40,24 +35,25 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
         private bool loggedIn;
 
         private Main _main;
-        private WaskitaApi _api;
-        private UiDisplaysSystem<GameObject> _displaysSystem;
         private PlayerAccountControl _accountControl;
+        private UiDisplaysSystem<GameObject> _displaysSystem;
 
-
-        [SerializeField]
-        [TextArea]
-        private string _requestFailedMessage = "Request failed make sure you have stable internet connection";
+        private BackendIntegrationController _backendControl;
 
         private IEnumerator Start()
         {
             _main = Main.Instance;
-            _api = Main.GetRegisteredComponent<WaskitaApi>();
-            _displaysSystem = Main.GetRegisteredComponent<UiDisplaysSystemBehavior>();
             _accountControl = Main.GetRegisteredComponent<PlayerAccountControl>();
+            _backendControl = Main.GetRegisteredComponent<BackendIntegrationController>();
+            _displaysSystem = Main.GetRegisteredComponent<UiDisplaysSystemBehavior>();
+
+            _accountControl.ClearData();
             Debug.Log(_accountControl.Data.AuthenticationToken);
-            if (!_accountControl.Data.IsEmpty())
-                yield return StartCoroutine(AwaitValidateRequest());
+            if (!_accountControl.Data.IsEmpty()) {
+                yield return StartCoroutine(_backendControl.AwaitValidateRequest(OnFailedValidate, OnFinishValidate));
+            }
+                
+            Debug.Log(loggedIn);
             _loginForm.Init();
             _loginForm.LoginAction = OnLoginButton;
             _logOutButton.gameObject.SetActive(loggedIn);
@@ -77,99 +73,38 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
             if (!_main.IsOnline)
                 _main.StartGame();
             else
-                StartCoroutine(AwaitLoginRequest(username, password));
+                StartCoroutine(_backendControl.AwaitLoginRequest(username, password, OnSuccessLogin, OnFailedLogin));
         }
 
-        private IEnumerator AwaitLoginRequest(string username, string password)
+        private void OnSuccessLogin(LoginResponse response)
         {
-            BlockDisplay blockDisplay = _displaysSystem.GetOrCreateDisplay<BlockDisplay>(_blockDisplayPrefab);
-            blockDisplay.Open();
-            UnityWebRequest webReq = _api.LoginUserRequest(
-                new LoginRequest(WaskitaApi.ValidateData)
-                {
-                    userId = username,
-                    password = password
-                });
-            yield return webReq.SendWebRequest();
-            blockDisplay.Close();
-            if (webReq.isNetworkError)
-            {
-                OpenFailedRequestPopUp(
-                    () => _loginForm.SubmitLoginForm(),
-                    () => _loginForm.ResetField(3));
-                yield break;
-            }
-
-            switch (webReq.responseCode)
-            {
-                case 200:
-                    Debug.Log(webReq.downloadHandler.text);
-                    LoginResponse response = JsonUtility.FromJson<LoginResponse>(webReq.downloadHandler.text);
-                    _accountControl.SetData(response.AccountData());
-                    _main.SaveAccountData();
-                    _main.StartGame();
-                    break;
-                default:
-                    BasicResponse errorResponse = _api.HandleError(webReq);
-                    _displaysSystem.GetOrCreateDisplay<PopUpDisplay>(_popUpDisplay)
-                        .Open(errorResponse.error.code, null);
-                    break;
-            }
+            _displaysSystem.GetOrCreateDisplay<PopUpDisplay>(_popUpDisplay)
+                .Open(response.message, null);
+            _main.StartGame();
         }
 
-        private void OpenFailedRequestPopUp(Action onRetry, Action onAbort)
+        private void OnFailedLogin(UnityWebRequest webReq)
         {
-            _displaysSystem.GetOrCreateDisplay<YesNoPopUpDisplay>(_yesNoDisplay).Open(new YesNoPopUpViewData()
-            {
-                MessageText = _requestFailedMessage,
-                NoAction = onAbort,
-                YesAction = onRetry,
-                NoButtonText = "Close",
-                YesButtonText = "Retry"
-            });
+            _backendControl.OpenPopupErrorResponse(webReq, () => Debug.Log("Pop up Closed"));
         }
 
-        private IEnumerator AwaitValidateRequest()
+        private void OnFailedValidate(UnityWebRequest webReq)
         {
-            bool requestCompleted = false;
-            bool requesting = true;
-            BlockDisplay blockDisplay = _displaysSystem.GetOrCreateDisplay<BlockDisplay>(_blockDisplayPrefab);
-            while (!requestCompleted)
-            {
-                blockDisplay.Open();
-                UnityWebRequest webReq = _api.ValidateRequest();
-                yield return webReq.SendWebRequest();
-                requesting = false;
-                blockDisplay.Close();
-                if (webReq.isNetworkError)
-                    OpenFailedRequestPopUp(
-                        () => requesting = true,
-                        () => requestCompleted = true);
-                else
-                {
-                    Debug.Log($"{webReq.responseCode} : {webReq.downloadHandler.text}");
-                    requestCompleted = true;
-                    switch (webReq.responseCode)
-                    {
-                        case 200:
-                            JsonUtility.FromJson<LoginResponse>(webReq.downloadHandler.text);
-                            loggedIn = true;
-                            break;
-                        default:
-                            BasicResponse errorResponse = _api.HandleError(webReq);
-                            break;
-                    }
-                }
+            _backendControl.OpenPopupErrorResponse(webReq, () => Debug.Log("Pop up Closed"));
+        }
 
-                yield return new WaitUntil(() => requestCompleted || requesting);
-            }
+        private void OnFinishValidate()
+        {
+            loggedIn = true;
         }
 
         private void OnLogoutButton()
         {
-            Main.Quit();
+            _accountControl.ClearData();
+            //Main.Quit();
             // if (Main.Instance.OfflineMode) Main.Instance.StartGame();
             // else StartCoroutine(_backendIntegration.LoginProcess(username, password, Main.Instance.StartGame, null));
         }
+
     }
 }

@@ -31,12 +31,14 @@ namespace BackendIntegration
             };
         }
 
-        public static LevelProgress LevelProgress(this LevelControl levelControl, LevelProgressData data)
-        {
-            return new LevelProgress()
-            {
-            };
-        }
+        //public static LevelProgress LevelProgress(this LevelControl levelControl, LevelProgressData data)
+        //{
+        //    return new LevelProgress()
+        //    {
+                
+        //    };
+        //}
+        
     }
 
     public class LevelProgress : ILevelProgressData
