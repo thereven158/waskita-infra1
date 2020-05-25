@@ -10,8 +10,6 @@ namespace Agate.Waskita.API
     public class WaskitaApi
     {
         private string _ipadd = "https://gameserver-api-waskitainfra1-dev.gf.agatedev.net/";
-
-        //private string _ipadd = "https://game-waskita-iptex-stag.agatedev.net/";
         private const string WASKITA_API = "https://west.waskita.co.id/page/tlcc/apiwest/login.php?";
         private string _token = string.Empty;
 
@@ -21,21 +19,19 @@ namespace Agate.Waskita.API
         
         private const string _login = "Auth/Login";
         private const string _validate = "Auth/Validate";
-
         private const string _startGame = "GameLoop/StartGame";
         private const string _saveGame = "GameLoop/SaveGame";
         private const string _endGame = "GameLoop/EndGame";
-
         private const string _refreshToken = "Token/Refresh";
         
         #endregion
 
-        private static readonly BasicRequest BaseData = new BasicRequest()
+        private static BasicRequest BaseData => new BasicRequest()
         {
             deviceId = SystemInfo.deviceUniqueIdentifier,
             requestId = DateTime.Now.ToString("yyyy-MM-dd-hh-mm-ss-zzz")
         };
-        public static readonly ValidateRequest ValidateData = new ValidateRequest(BaseData)
+        public static ValidateRequest ValidateData => new ValidateRequest(BaseData)
         {
             gameVersion = "1.0",
             clientID = "BmwzQACRCmddGbSXdUJIGw==",
@@ -64,7 +60,6 @@ namespace Agate.Waskita.API
 
         public BasicResponse HandleError(UnityWebRequest error)
         {
-            Debug.Log("ini error " + error.downloadHandler.text);
             BasicResponse response = new BasicResponse
             {
                 error = new Error
