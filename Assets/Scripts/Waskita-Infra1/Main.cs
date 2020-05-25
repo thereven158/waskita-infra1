@@ -130,9 +130,10 @@ namespace Agate.WaskitaInfra1
         {
             yield return new WaitUntil(() => UiLoaded);
 
-            _backendIntegrationControl.Init(_api, GetRegisteredComponent<PlayerAccountControl>(), GetRegisteredComponent<UiDisplaysSystemBehavior>());
-            _backendIntegrationControl._saveAccountAction = SaveAccountData;
-
+            _backendIntegrationControl.Init(
+                _api, 
+                GetRegisteredComponent<PlayerAccountControl>(), 
+                GetRegisteredComponent<UiDisplaysSystemBehavior>());
 
             if (!IsOnline)
                 LoadDummyData();
@@ -195,6 +196,11 @@ namespace Agate.WaskitaInfra1
         {
             _playerAccount.SetData(FileOperation.ReadFile<PlayerAccountData>(PlayerDataFilepath));
             SetAuthToken();
+        }
+
+        public void RemoveAccountData()
+        {
+            FileOperation.DeleteFile(PlayerDataFilepath);
         }
 
         private void SetAuthToken()

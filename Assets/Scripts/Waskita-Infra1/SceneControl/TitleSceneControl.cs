@@ -1,6 +1,6 @@
-using System;
 using System.Collections;
 using A3.UserInterface;
+using Agate.GlSim.Scene.Control.Map.Loader;
 using Agate.Waskita.Responses;
 using Agate.WaskitaInfra1.PlayerAccount;
 using Agate.WaskitaInfra1.UserInterface.Login;
@@ -26,17 +26,12 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
         [SerializeField]
         private PopUpDisplay _popUpDisplay;
 
-        [SerializeField]
-        private ConfirmationPopUpDisplay _confirmationDisplay;
-
-        [SerializeField]
-        private YesNoPopUpDisplay _yesNoDisplay;
-
         private bool loggedIn;
 
         private Main _main;
         private PlayerAccountControl _accountControl;
         private UiDisplaysSystem<GameObject> _displaysSystem;
+        private GameplaySceneLoadControl _sceneLoadControl;
 
         private BackendIntegrationController _backendControl;
 
@@ -46,14 +41,11 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
             _accountControl = Main.GetRegisteredComponent<PlayerAccountControl>();
             _backendControl = Main.GetRegisteredComponent<BackendIntegrationController>();
             _displaysSystem = Main.GetRegisteredComponent<UiDisplaysSystemBehavior>();
+            _sceneLoadControl = Main.GetRegisteredComponent<GameplaySceneLoadControl>();
 
-            _accountControl.ClearData();
-            Debug.Log(_accountControl.Data.AuthenticationToken);
-            if (!_accountControl.Data.IsEmpty()) {
+            if (!_accountControl.Data.IsEmpty())
                 yield return StartCoroutine(_backendControl.AwaitValidateRequest(OnFailedValidate, OnFinishValidate));
-            }
-                
-            Debug.Log(loggedIn);
+
             _loginForm.Init();
             _loginForm.LoginAction = OnLoginButton;
             _logOutButton.gameObject.SetActive(loggedIn);
@@ -80,6 +72,7 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
         {
             _displaysSystem.GetOrCreateDisplay<PopUpDisplay>(_popUpDisplay)
                 .Open(response.message, null);
+            _main.SaveAccountData();
             _main.StartGame();
         }
 
@@ -101,10 +94,9 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
         private void OnLogoutButton()
         {
             _accountControl.ClearData();
-            //Main.Quit();
-            // if (Main.Instance.OfflineMode) Main.Instance.StartGame();
-            // else StartCoroutine(_backendIntegration.LoginProcess(username, password, Main.Instance.StartGame, null));
-        }
+            _main.RemoveAccountData();
 
+            _sceneLoadControl.ChangeScene("Title");
+        }
     }
 }
