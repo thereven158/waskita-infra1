@@ -148,9 +148,7 @@ namespace Github.ScriptableObjectExtension
             if (AssetDatabase.IsMainAsset(property.objectReferenceValue))
             {
                 string assetPath = AssetDatabase.GetAssetPath(property.objectReferenceValue);
-                Debug.Log(assetPath);
                 AssetDatabase.RenameAsset(assetPath, newName);
-                // AssetDatabase.ImportAsset(PropertyAssetPath(property));
             }
 
             AssetDatabase.SaveAssets();
@@ -208,6 +206,13 @@ namespace Github.ScriptableObjectExtension
             return fi;
         }
 
+        private static void PropertyModificationCheck(SerializedProperty property)
+        {
+            //unknown process that might need additional refactoring
+            if (GUI.changed) property.serializedObject.ApplyModifiedProperties();
+            if (property.objectReferenceValue == null) GUIUtility.ExitGUI();
+        }
+        
         #endregion
 
         #region Properties
@@ -248,6 +253,14 @@ namespace Github.ScriptableObjectExtension
         private int typeSelectionIndex;
         private bool isDrawn;
 
+        private void AssignValueObjectName(SerializedProperty property)
+        {
+            if (isDrawn) return;
+            valueObjectName = property.objectReferenceValue == null
+                ? PropertyHierarchyName(property)
+                : property.objectReferenceValue.name;
+        }
+
         #endregion
 
         #region Unity Derivation Override
@@ -285,31 +298,11 @@ namespace Github.ScriptableObjectExtension
         {
             InitStyles();
             BeginProperty(position, label, property);
+            AssignValueObjectName(property);
             if (property.objectReferenceValue != null)
             {
-                Rect foldoutLayout = new Rect(position.x, position.y, labelWidth, singleLineHeight);
-                DrawSerializationFoldOut(foldoutLayout, property);
-
-                float deleteButtonOffset = (IsNestedAsset(property) ? DELETE_BUTTON_WIDTH : 0);
-                Rect propertyFieldLayout = new Rect(position)
-                {
-                    x = position.x + labelWidth - IndentOffset,
-                    width = position.width - labelWidth - deleteButtonOffset - HORIZONTAL_SPACING +
-                            IndentOffset,
-                    height = singleLineHeight
-                };
-                DrawAssignedPropertyField(propertyFieldLayout, property);
-
-                Rect deletebuttonLayout = new Rect(propertyFieldLayout)
-                {
-                    x = position.x + position.width - DELETE_BUTTON_WIDTH,
-                    width = DELETE_BUTTON_WIDTH,
-                };
-                if (IsNestedAsset(property)) DrawDeleteButton(deletebuttonLayout, property);
-
-                if (GUI.changed) property.serializedObject.ApplyModifiedProperties();
-                if (property.objectReferenceValue == null) GUIUtility.ExitGUI();
-                if (!isDrawn) valueObjectName = property.objectReferenceValue.name;
+                DrawPropertyField(position, property);
+                PropertyModificationCheck(property);
 
                 Rect contentLayout = new Rect()
                 {
@@ -318,9 +311,7 @@ namespace Github.ScriptableObjectExtension
                     width = position.width,
                     height = position.height - singleLineHeight - standardVerticalSpacing
                 };
-
-                if (property.isExpanded)
-                    DrawSerializationContent(contentLayout, property);
+                if (property.isExpanded) DrawSerializationContent(contentLayout, property);
             }
             else
             {
@@ -331,36 +322,7 @@ namespace Github.ScriptableObjectExtension
                     singleLineHeight);
                 ObjectField(fieldLayout, property);
 
-                Rect boxLayout = new Rect(position)
-                {
-                    x = position.x + IndentOffset,
-                    y = position.y + singleLineHeight + standardVerticalSpacing,
-                    width = position.width - IndentOffset,
-                    height = position.height - singleLineHeight - standardVerticalSpacing
-                };
-                DrawBoundingBox(boxLayout);
-
-                indentLevel++;
-
-                Rect foldoutLayout = new Rect(
-                    position.x,
-                    position.y + singleLineHeight + standardVerticalSpacing + standardVerticalSpacing,
-                    labelWidth,
-                    singleLineHeight);
-                DrawCreationFoldOut(foldoutLayout, property);
-                
-                if (!isDrawn) valueObjectName = PropertyHierarchyName(property);
-
-                Rect creationContentLayout = new Rect()
-                {
-                    x = foldoutLayout.x + IndentOffset,
-                    y = foldoutLayout.y,
-                    width = position.width - IndentOffset,
-                    height = (singleLineHeight + standardVerticalSpacing) * 3
-                };
-                if (property.isExpanded) DrawCreationContent(creationContentLayout, property);
-
-                indentLevel--;
+                DrawCreationContent(position, property);
             }
 
             property.serializedObject.ApplyModifiedProperties();
@@ -368,9 +330,36 @@ namespace Github.ScriptableObjectExtension
             EndProperty();
         }
 
+
+        
+
         #endregion
 
         #region Object Serialization GUI Drawer
+
+        private static void DrawPropertyField(Rect position, SerializedProperty property)
+        {
+            Rect foldoutLayout = new Rect(position.x, position.y, labelWidth, singleLineHeight);
+            DrawSerializationFoldOut(foldoutLayout, property);
+
+            float deleteButtonOffset = (IsNestedAsset(property) ? DELETE_BUTTON_WIDTH : 0);
+            Rect propertyFieldLayout = new Rect(position)
+            {
+                x = position.x + labelWidth - IndentOffset,
+                width = position.width - labelWidth - deleteButtonOffset - HORIZONTAL_SPACING +
+                        IndentOffset,
+                height = singleLineHeight
+            };
+            DrawAssignedPropertyField(propertyFieldLayout, property);
+
+            Rect deletebuttonLayout = new Rect(propertyFieldLayout)
+            {
+                x = position.x + position.width - DELETE_BUTTON_WIDTH,
+                width = DELETE_BUTTON_WIDTH,
+            };
+            if (IsNestedAsset(property)) DrawDeleteButton(deletebuttonLayout, property);
+        }
+
 
         private static void DrawSerializationFoldOut(Rect position, SerializedProperty property)
         {
@@ -433,14 +422,13 @@ namespace Github.ScriptableObjectExtension
 
             indentLevel--;
         }
-        
+
         private void DrawRenameButton(Rect position, SerializedProperty property)
         {
             if (!GUI.Button(position, "Rename")) return;
-
             RenamePropertyReference(property, valueObjectName);
         }
-        
+
         private static void DrawSerializedFields(Rect position, SerializedProperty property)
         {
             ScriptableObject data = (ScriptableObject) property.objectReferenceValue;
@@ -449,8 +437,8 @@ namespace Github.ScriptableObjectExtension
             SerializedProperty prop = serializedObject.GetIterator();
             float y = position.y;
 
-            if (!prop.NextVisible(true)) return; 
-            
+            if (!prop.NextVisible(true)) return;
+
             // Iterate over all the values and draw them
             do
             {
@@ -490,6 +478,37 @@ namespace Github.ScriptableObjectExtension
         }
 
         private void DrawCreationContent(Rect position, SerializedProperty property)
+        {
+            Rect boxLayout = new Rect(position)
+            {
+                x = position.x + IndentOffset,
+                y = position.y + singleLineHeight + standardVerticalSpacing,
+                width = position.width - IndentOffset,
+                height = position.height - singleLineHeight - standardVerticalSpacing
+            };
+            DrawBoundingBox(boxLayout);
+
+            indentLevel++;
+
+            Rect foldoutLayout = new Rect(
+                position.x,
+                position.y + singleLineHeight + standardVerticalSpacing + standardVerticalSpacing,
+                labelWidth,
+                singleLineHeight);
+            DrawCreationFoldOut(foldoutLayout, property);
+            Rect creationContentLayout = new Rect()
+            {
+                x = foldoutLayout.x + IndentOffset,
+                y = foldoutLayout.y,
+                width = position.width - IndentOffset,
+                height = (singleLineHeight + standardVerticalSpacing) * 3
+            };
+            if (property.isExpanded) DrawCreationFields(creationContentLayout, property);
+
+            indentLevel--;
+        }
+
+        private void DrawCreationFields(Rect position, SerializedProperty property)
         {
             Rect typeSelectionRect = new Rect()
             {
