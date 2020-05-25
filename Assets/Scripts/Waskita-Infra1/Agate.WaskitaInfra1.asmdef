@@ -8,7 +8,9 @@
         "Agate.WaskitaInfra1.Level.Unity",
         "Agate.WaskitaInfra1.Backend.API",
         "A3.CodePattern",
-        "A3.Utilities"
+        "A3.Utilities",
+        "Agate.WaskitaInfra1.BackendIntegration",
+        "A3.UserInterface"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],

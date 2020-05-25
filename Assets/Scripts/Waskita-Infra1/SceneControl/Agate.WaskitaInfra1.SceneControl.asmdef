@@ -7,7 +7,6 @@
         "A3.DataDrivenEvent",
         "Agate.GameAction",
         "Agate.WaskitaInfra1",
-        "Agate.WaskitaInfra1.Backend.API",
         "Agate.WaskitaInfra1.Level",
         "Agate.WaskitaInfra1.GameAction",
         "Agate.WaskitaInfra1.GameProgress",
@@ -23,7 +22,9 @@
         "Agate.WaskitaInfra1.UserInterface.LevelState",
         "Agate.WaskitaInfra1.Utilities.LevelData",
         "Agate.WaskitaInfra1.Utilities.LevelProgress",
-        "Unity.TextMeshPro"
+        "Unity.TextMeshPro",
+        "Agate.WaskitaInfra1.BackendIntegration",
+        "Agate.WaskitaInfra1.Backend.API"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],

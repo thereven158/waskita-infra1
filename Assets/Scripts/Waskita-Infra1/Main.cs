@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using A3.Utilities;
+using A3.UserInterface;
 using Agate.GlSim.Scene.Control.Map.Loader;
 using Agate.Waskita.API;
 using Agate.WaskitaInfra1.GameProgress;
 using Agate.WaskitaInfra1.Level;
 using Agate.WaskitaInfra1.LevelProgress;
 using Agate.WaskitaInfra1.PlayerAccount;
+using BackendIntegration;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 #if UNITY_EDITOR
@@ -53,8 +55,11 @@ namespace Agate.WaskitaInfra1
         private LevelControl _levelControl = default;
 
         [SerializeField]
+        private BackendIntegrationController _backendIntegrationControl;
+
+        [SerializeField]
         [Tooltip("Location is relative to Persistent Data Path")]
-        private string _playerDataFilepath = default;
+        private string _playerDataFilepath;
 
         public string PlayerDataFilepath => Path.Combine(Application.persistentDataPath, _playerDataFilepath);
 
@@ -94,7 +99,7 @@ namespace Agate.WaskitaInfra1
         public bool UiLoaded;
 
         [SerializeField]
-        private bool _isOnline = default;
+        private bool _isOnline;
 
         public bool IsOnline => _isOnline;
 
@@ -117,13 +122,18 @@ namespace Agate.WaskitaInfra1
             _gameProgress = new GameProgressControl();
             _levelProgress = new LevelProgressControl();
             _api = new WaskitaApi();
-            RegisterComponents(_playerAccount, _gameProgress, _levelProgress, _levelControl, _sceneLoader, _api);
+            RegisterComponents(_playerAccount, _gameProgress, _levelProgress, _levelControl, _sceneLoader, _api, _backendIntegrationControl);
             SceneManager.LoadScene("UserInterface", LoadSceneMode.Additive);
         }
 
         private IEnumerator Start()
         {
             yield return new WaitUntil(() => UiLoaded);
+
+            _backendIntegrationControl.Init(_api, GetRegisteredComponent<PlayerAccountControl>(), GetRegisteredComponent<UiDisplaysSystemBehavior>());
+            _backendIntegrationControl._saveAccountAction = SaveAccountData;
+
+
             if (!IsOnline)
                 LoadDummyData();
             else

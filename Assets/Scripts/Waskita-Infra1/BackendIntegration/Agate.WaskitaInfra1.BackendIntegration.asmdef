@@ -1,0 +1,22 @@
+{
+    "name": "Agate.WaskitaInfra1.BackendIntegration",
+    "references": [
+        "Agate.WaskitaInfra1.Backend.API",
+        "Agate.WaskitaInfra1.UserInterface.Display",
+        "A3.UserInterface",
+        "A3.CodePattern",
+        "Agate.WaskitaInfra1.Level",
+        "Agate.WaskitaInfra1.LevelProgress",
+        "Agate.WaskitaInfra1.GameProgress",
+        "Agate.WaskitaInfra1.PlayerAccount",
+        "Agate.WaskitaInfra1.UserInterface"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

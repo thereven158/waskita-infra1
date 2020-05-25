@@ -4,7 +4,7 @@
     public class ValidateRequest : BasicRequest
     {
         public string clientID;
-        public int gameVersion;
+        public string gameVersion;
 
         public ValidateRequest()
         {

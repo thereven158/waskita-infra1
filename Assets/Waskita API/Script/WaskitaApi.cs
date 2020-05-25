@@ -37,7 +37,7 @@ namespace Agate.Waskita.API
         };
         public static readonly ValidateRequest ValidateData = new ValidateRequest(BaseData)
         {
-            gameVersion = 0,
+            gameVersion = "1.0",
             clientID = "BmwzQACRCmddGbSXdUJIGw==",
         };
 
