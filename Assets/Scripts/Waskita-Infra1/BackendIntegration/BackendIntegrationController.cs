@@ -7,7 +7,6 @@ using Agate.Waskita.Request;
 using Agate.Waskita.Responses;
 using UserInterface.Display;
 using Agate.WaskitaInfra1.PlayerAccount;
-using Agate.WaskitaInfra1.UserInterface.Login;
 using A3.UserInterface;
 
 
@@ -23,14 +22,12 @@ namespace BackendIntegration
 
         [SerializeField]
         private YesNoPopUpDisplay _yesNoDisplay;
-        
+
         private WaskitaApi _api;
         private UiDisplaysSystem<GameObject> _displaysSystem;
         private PlayerAccountControl _accountControl;
         private BlockDisplay _blockDisplay;
-
-        public Action _saveAccountAction;
-
+        
         [SerializeField]
         [TextArea]
         private string _requestFailedMessage = "Request failed make sure you have stable internet connection";
@@ -43,7 +40,8 @@ namespace BackendIntegration
             _blockDisplay = _displaysSystem.GetOrCreateDisplay<BlockDisplay>(_blockDisplayPrefab);
         }
 
-        public IEnumerator AwaitLoginRequest(string username, string password, Action<LoginResponse> OnSuccess, Action<UnityWebRequest> OnFail)
+        public IEnumerator AwaitLoginRequest(string username, string password, Action<LoginResponse> onSuccess,
+            Action<UnityWebRequest> onFail)
         {
             _blockDisplay.Open();
             UnityWebRequest webReq = _api.LoginUserRequest(
@@ -56,7 +54,7 @@ namespace BackendIntegration
             _blockDisplay.Close();
             if (webReq.isNetworkError)
             {
-                OnFail.Invoke(webReq);
+                onFail.Invoke(webReq);
                 yield break;
             }
 
@@ -65,18 +63,16 @@ namespace BackendIntegration
                 case 200:
                     LoginResponse response = JsonUtility.FromJson<LoginResponse>(webReq.downloadHandler.text);
                     _accountControl.SetData(response.AccountData());
-                    _saveAccountAction?.Invoke();
-                    OnSuccess.Invoke(response);
+                    onSuccess.Invoke(response);
                     break;
                 default:
-                    OnFail.Invoke(webReq);
+                    onFail.Invoke(webReq);
                     break;
             }
         }
 
         public IEnumerator AwaitValidateRequest(Action<UnityWebRequest> onFailed, Action onFinish)
         {
-            Debug.Log("Validate Req");
             bool requestCompleted = false;
             bool requesting = true;
             while (!requestCompleted)
@@ -91,7 +87,7 @@ namespace BackendIntegration
                         () => requesting = true,
                         () => requestCompleted = true);
                 else
-                        {
+                {
                     requestCompleted = true;
                     switch (webReq.responseCode)
                     {
@@ -128,6 +124,5 @@ namespace BackendIntegration
                 YesButtonText = "Retry"
             });
         }
-
     }
 }
