@@ -78,12 +78,12 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
 
         private void OnFailedLogin(UnityWebRequest webReq)
         {
-            _backendControl.OpenPopupErrorResponse(webReq, () => Debug.Log("Pop up Closed"));
+            _backendControl.OpenErrorResponsePopUp(webReq, () => Debug.Log("Pop up Closed"));
         }
 
         private void OnFailedValidate(UnityWebRequest webReq)
         {
-            _backendControl.OpenPopupErrorResponse(webReq, () => Debug.Log("Pop up Closed"));
+            _backendControl.OpenErrorResponsePopUp(webReq, () => Debug.Log("Pop up Closed"));
         }
 
         private void OnFinishValidate()

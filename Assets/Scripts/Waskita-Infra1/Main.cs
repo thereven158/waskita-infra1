@@ -131,7 +131,6 @@ namespace Agate.WaskitaInfra1
 
             _backendIntegrationControl.Init(
                 _api, 
-                GetRegisteredComponent<PlayerAccountControl>(), 
                 GetRegisteredComponent<UiDisplaysSystemBehavior>());
 
             if (!IsOnline)
