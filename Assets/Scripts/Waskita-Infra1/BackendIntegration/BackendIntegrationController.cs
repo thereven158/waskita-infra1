@@ -1,17 +1,16 @@
-﻿using System;
+﻿using A3.UserInterface;
+using Agate.Waskita.API;
+using Agate.Waskita.Request;
+using Agate.Waskita.Responses;
+using Agate.WaskitaInfra1.Level;
+using Agate.WaskitaInfra1.LevelProgress;
+using Agate.WaskitaInfra1.UserInterface.Display;
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
-using Agate.Waskita.API;
-using Agate.Waskita.Request;
-using Agate.Waskita.Request.Data;
-using Agate.Waskita.Responses;
-using Agate.WaskitaInfra1.LevelProgress;
-using Agate.WaskitaInfra1.UserInterface.Display;
-using A3.UserInterface;
-using System.Collections.Generic;
 
-namespace BackendIntegration
+namespace Agate.WaskitaInfra1.Backend.Integration
 {
     public class BackendIntegrationController : MonoBehaviour
     {
@@ -25,6 +24,7 @@ namespace BackendIntegration
         private YesNoPopUpDisplay _yesNoDisplay = default;
 
         private WaskitaApi _api;
+        private LevelControl _levelControl;
         private UiDisplaysSystem<GameObject> _displaysSystem;
         private BlockDisplay _blockDisplay;
 
@@ -32,9 +32,10 @@ namespace BackendIntegration
         [TextArea]
         private string _requestFailedMessage = "Request failed make sure you have stable internet connection";
 
-        public void Init(WaskitaApi api, UiDisplaysSystem<GameObject> uiDisplay)
+        public void Init(WaskitaApi api, LevelControl levelControl, UiDisplaysSystem<GameObject> uiDisplay)
         {
             _api = api;
+            _levelControl = levelControl;
             _displaysSystem = uiDisplay;
             _blockDisplay = _displaysSystem.GetOrCreateDisplay<BlockDisplay>(_blockDisplayPrefab);
         }
@@ -63,13 +64,31 @@ namespace BackendIntegration
                 }
             }
 
-            yield return StartCoroutine(
-                AwaitRequest(
-                    loginWebRequest,
-                    HandleResponse,
-                    onFail.Invoke)
+            yield return StartCoroutine(AwaitRequest(loginWebRequest, HandleResponse, onFail.Invoke)
             );
         }
+
+        public IEnumerator AwaitValidateRequest(Action<UnityWebRequest> onFinish, Action onAbort)
+        {
+            UnityWebRequest webReq = _api.ValidateRequest();
+            yield return StartCoroutine(AwaitRequest(webReq, onFinish, onAbort));
+        }
+
+        public IEnumerator AwaitStartGameRequest(LevelData level, Action<UnityWebRequest> onFinish)
+        {
+            UnityWebRequest startGameReq = _api.StartGameRequest(_levelControl.StartLevelRequest(level));
+
+            yield return StartCoroutine(AwaitRequest(startGameReq, onFinish));
+        }
+
+        public IEnumerator AwaitSaveGameRequest(ILevelProgressData data, Action<UnityWebRequest> onFinish)
+        {
+            UnityWebRequest saveGameRequest = _api.SaveGame(data.SaveRequest());
+
+            yield return StartCoroutine(AwaitRequest(saveGameRequest, onFinish));
+        }
+
+        #region Request Await Handling Abstraction
 
         /// <summary>
         /// handle web request dispatch without any additional doodad behind it
@@ -85,9 +104,9 @@ namespace BackendIntegration
             yield return webRequest.SendWebRequest();
             _blockDisplay.Close();
             if (webRequest.isNetworkError)
-                onFail.Invoke(webRequest);
+                onFail?.Invoke(webRequest);
             else
-                onSuccess.Invoke(webRequest);
+                onSuccess?.Invoke(webRequest);
         }
 
         /// <summary>
@@ -105,7 +124,7 @@ namespace BackendIntegration
             void OnRequestSuccess(UnityWebRequest successRequest)
             {
                 requestCompleted = true;
-                onFinish.Invoke(successRequest);
+                onFinish?.Invoke(successRequest);
             }
 
             void OnRequestFailed(UnityWebRequest failedRequest)
@@ -140,13 +159,12 @@ namespace BackendIntegration
         /// <returns></returns>
         public IEnumerator AwaitRequest(UnityWebRequest webRequest, Action<UnityWebRequest> onFinish)
         {
-            
             bool requestCompleted = false;
             bool requesting = true;
             void OnRequestSuccess(UnityWebRequest successRequest)
             {
                 requestCompleted = true;
-                onFinish.Invoke(successRequest);
+                onFinish?.Invoke(successRequest);
             }
 
             void OnRequestFailed(UnityWebRequest failedRequest)
@@ -158,13 +176,7 @@ namespace BackendIntegration
 
             while (!requestCompleted)
             {
-                yield return StartCoroutine(
-                    AwaitRequest(
-                        webRequest,
-                        OnRequestSuccess,
-                        OnRequestFailed
-                    )
-                );
+                yield return StartCoroutine(AwaitRequest(webRequest, OnRequestSuccess, OnRequestFailed));
                 requesting = false;
 
                 yield return new WaitUntil(() => requestCompleted || requesting);
@@ -172,85 +184,21 @@ namespace BackendIntegration
 
         }
 
-        public IEnumerator AwaitValidateRequest(Action<UnityWebRequest> onFinish, Action onAbort)
-        {
-            UnityWebRequest webReq = _api.ValidateRequest();
-            yield return StartCoroutine(AwaitRequest(webReq, onFinish, onAbort));
-        }
-        
+        #endregion
+
         public BasicResponse HandleError(UnityWebRequest error)
         {
-            BasicResponse response = new BasicResponse
-            {
-                error = new Error
-                {
-                    code = "3003",
-                    message = "Unknown error, please check your internet connection"
-                }
-            };
             if (error.isNetworkError)
-            {
-                response.error.code = "-1";
-                response.error.message = _requestFailedMessage;
-            }
-            switch (error.responseCode)
-            {
-                case 200:
-                    response.error.code = "2017";
-                    response.error.message = "Username & Password  not found";
-                    break;
-
-                case 400:
-                    string text = error.downloadHandler.text;
-                    response = JsonUtility.FromJson<BasicResponse>(text);
-                    break;
-
-                case 401:
-                    response.error.code = "2018";
-                    response.error.message = "Unauthorized, please re-login";
-                    break;
-
-                case 403:
-                    response.error.code = "2019";
-                    response.error.message = "Forbidden Please, re-login";
-                    break;
-
-                case 500:
-                    response.error.code = "3002";
-                    response.error.message = "Internal server error / server on maintenance";
-                    break;
-            }
-
-            return response;
-        }
-
-        public IEnumerator AwaitStartGameRequest(int level, Action<UnityWebRequest> onFinish)
-        {
-
-            UnityWebRequest startGameReq = _api.StartGameRequest(
-            new StartGameRequest(WaskitaApi.ValidateData)
-            {
-                level = level
-            });
-
-            
-            yield return StartCoroutine(
-                AwaitRequest(
-                    startGameReq,
-                    onFinish.Invoke)
-            );
-        }
-
-        public IEnumerator AwateSaveGameRequest(ILevelProgressData data, Action<UnityWebRequest> onFinish)
-        {
-            UnityWebRequest saveGameRequest = _api.SaveGame(DataIntegration.SaveRequest(data));
-            
-
-            yield return StartCoroutine(
-                AwaitRequest(
-                    saveGameRequest,
-                    onFinish.Invoke)
-            );
+                return new BasicResponse()
+                {
+                    error =
+                    new Error
+                    {
+                        code = "-1",
+                        message = _requestFailedMessage
+                    }
+                };
+            return _api.HandleError(error);
         }
 
         #region PopUp Helper
@@ -262,7 +210,7 @@ namespace BackendIntegration
                 .Open(errorResponse.error.message, onClose);
         }
 
-        private void OpenRetryRequestPopUp(UnityWebRequest webReq,Action onRetry, Action onAbort)
+        private void OpenRetryRequestPopUp(UnityWebRequest webReq, Action onRetry, Action onAbort)
         {
             BasicResponse errorResponse = HandleError(webReq);
             _displaysSystem.GetOrCreateDisplay<YesNoPopUpDisplay>(_yesNoDisplay).Open(new YesNoPopUpViewData()
@@ -274,7 +222,7 @@ namespace BackendIntegration
                 YesButtonText = "Retry"
             });
         }
-        
+
         #endregion
 
     }

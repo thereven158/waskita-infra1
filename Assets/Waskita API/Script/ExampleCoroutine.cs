@@ -204,16 +204,7 @@ namespace Agate.Waskita.API.Example
                 requestId = Guid.NewGuid().ToString()
             };
 
-            api.EndGame(request, successResponse =>
-            {
-                isRequesting = false; //contoh 1 : rubah isRequesting setelah error / success muncul
-                //ini merupakan ok request
-            }, error =>
-            {
-                //ini merupakan bad request
-                HandleError(error,
-                    out isRequesting); //contoh 2 : rubah isRequesting setelah handle error / success selesai
-            });
+            api.EndGame(request);
 
             yield return new WaitUntil(() => !isRequesting);
 
@@ -238,18 +229,7 @@ namespace Agate.Waskita.API.Example
                 requestId = Guid.NewGuid().ToString()
             };
 
-            api.RefreshToken(request, successResponse =>
-            {
-                isRequesting = false; //contoh 1 : rubah isRequesting setelah error / success muncul
-                //ini merupakan ok request
-                Debug.Log("Menyimpan token dari hasil Refresh");
-                PlayerPrefs.SetString("token", successResponse.token);
-            }, error =>
-            {
-                //ini merupakan bad request
-                HandleError(error,
-                    out isRequesting); //contoh 2 : rubah isRequesting setelah handle error / success selesai
-            });
+            api.RefreshToken(request);
 
             yield return new WaitUntil(() => !isRequesting);
 

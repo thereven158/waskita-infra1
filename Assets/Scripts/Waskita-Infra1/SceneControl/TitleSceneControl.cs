@@ -1,20 +1,20 @@
-using System.Collections;
+using A3.AudioControl;
+using A3.AudioControl.Unity;
 using A3.UserInterface;
 using Agate.GlSim.Scene.Control.Map.Loader;
 using Agate.Waskita.Responses;
+using Agate.WaskitaInfra1.Backend.Integration;
 using Agate.WaskitaInfra1.GameProgress;
 using Agate.WaskitaInfra1.Level;
 using Agate.WaskitaInfra1.LevelProgress;
 using Agate.WaskitaInfra1.PlayerAccount;
 using Agate.WaskitaInfra1.UserInterface.Display;
 using Agate.WaskitaInfra1.UserInterface.Login;
-using BackendIntegration;
+using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.Networking;
-using A3.AudioControl;
 using UnityEngine.Audio;
-using A3.AudioControl.Unity;
+using UnityEngine.Networking;
+using UnityEngine.UI;
 
 namespace Agate.WaskitaInfra1.SceneControl.Login
 {

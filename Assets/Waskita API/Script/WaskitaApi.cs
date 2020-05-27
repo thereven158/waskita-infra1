@@ -125,6 +125,7 @@ namespace Agate.Waskita.API
 
         public UnityWebRequest StartGameRequest(StartGameRequest request)
         {
+            request.Set(BaseData);
             string param = JsonUtility.ToJson(request);
             return PostRequest(
                 _ipadd + _startGame,
@@ -140,8 +141,7 @@ namespace Agate.Waskita.API
             return PostRequest(_ipadd + _saveGame, param, true);
         }
 
-        public UnityWebRequest EndGame(EndGameRequest request, Action<BasicResponse> callbackSuccess,
-            Action<BasicResponse> callbackError)
+        public UnityWebRequest EndGame(EndGameRequest request)
         {
             string param = JsonUtility.ToJson(request);
             return PostRequest(_ipadd + _endGame, param, true);
@@ -151,8 +151,7 @@ namespace Agate.Waskita.API
 
         #region Request Refresh Token
 
-        public UnityWebRequest RefreshToken(BasicRequest request, Action<LoginResponse> callbackSuccess,
-            Action<BasicResponse> callbackError)
+        public UnityWebRequest RefreshToken(BasicRequest request)
         {
             string param = JsonUtility.ToJson(request);
             return PostRequest(_ipadd + _refreshToken, param, true);

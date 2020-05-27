@@ -9,7 +9,7 @@ using Agate.WaskitaInfra1.PlayerAccount;
 using DayCondition = Agate.WaskitaInfra1.LevelProgress.DayCondition;
 using LevelData = Agate.WaskitaInfra1.Level.LevelData;
 
-namespace BackendIntegration
+namespace Agate.WaskitaInfra1.Backend.Integration
 {
     public static class DataIntegration
     {
@@ -22,7 +22,7 @@ namespace BackendIntegration
             };
         }
 
-        public static IGameProgressData GameData(this Agate.Waskita.Responses.Data.GameProgressData data)
+        public static IGameProgressData GameData(this GameProgressData data)
         {
             return new GameProgress()
             {
@@ -52,24 +52,7 @@ namespace BackendIntegration
             return progress;
         }
 
-        public static SaveGameRequest SaveRequest(LevelControl control, LevelProgress data)
-        {
-            SaveGameRequest request = new SaveGameRequest()
-            {
-                currentDay = (int) data.CurrentDay,
-                tryCount = (int) data.TryCount,
-                lastCheckPoint = (int) data.LastCheckpoint,
-                storedAnswers = new List<int>()
-            };
-            for (int i = 0; i < data.Level.Questions.Count; i++)
-                request.storedAnswers.Add(-1);
-            if (data.Answers == null) return request;
-            for (int i = 0; i < data.Answers.Count; i++)
-                if (data.Level.Questions[i].Quiz.Question is IMultipleChoiceQuestion multipleChoice)
-                    request.storedAnswers[i] = multipleChoice.AnswerOptions.IndexOf(data.Answers[i]);
-            return request;
-        }
-        public static SaveGameRequest SaveRequest(ILevelProgressData data)
+        public static SaveGameRequest SaveRequest(this ILevelProgressData data)
         {
             SaveGameRequest request = new SaveGameRequest()
             {
@@ -85,6 +68,11 @@ namespace BackendIntegration
                 if (data.Level.Questions[i].Quiz.Question is IMultipleChoiceQuestion multipleChoice)
                     request.storedAnswers[i] = multipleChoice.AnswerOptions.IndexOf(data.Answers[i]);
             return request;
+        }
+
+        public static StartGameRequest StartLevelRequest(this LevelControl levelControl, LevelData level)
+        {
+            return new StartGameRequest(){level = levelControl.IndexOf(level) + 1};
         }
     }
 
