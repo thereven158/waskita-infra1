@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.8.0] - 2020-05-27
 
+- setting functionality
 - update quiz images
 - [not activated] login system
 - code cleaning and folder cleaning
