@@ -39,7 +39,7 @@ namespace BackendIntegration
                 LastCheckpoint = (uint) data.lastCheckpoint,
                 CurrentDay = (uint) data.currentDay,
                 TryCount = (uint) data.tryCount,
-                Level = levelControl.GetLevel(data.level),
+                Level = levelControl.GetLevel(data.level + 1),
                 Answers = new List<object>(),
             };
             for (int i = 0; i < progress.Level.Questions.Count; i++)
@@ -59,14 +59,31 @@ namespace BackendIntegration
                 currentDay = (int) data.CurrentDay,
                 tryCount = (int) data.TryCount,
                 lastCheckPoint = (int) data.LastCheckpoint,
-                answer = new List<int>()
+                storedAnswers = new List<int>()
             };
             for (int i = 0; i < data.Level.Questions.Count; i++)
-                request.answer.Add(-1);
+                request.storedAnswers.Add(-1);
             if (data.Answers == null) return request;
             for (int i = 0; i < data.Answers.Count; i++)
                 if (data.Level.Questions[i].Quiz.Question is IMultipleChoiceQuestion multipleChoice)
-                    request.answer[i] = multipleChoice.AnswerOptions.IndexOf(data.Answers[i]);
+                    request.storedAnswers[i] = multipleChoice.AnswerOptions.IndexOf(data.Answers[i]);
+            return request;
+        }
+        public static SaveGameRequest SaveRequest(ILevelProgressData data)
+        {
+            SaveGameRequest request = new SaveGameRequest()
+            {
+                currentDay = (int)data.CurrentDay,
+                tryCount = (int)data.TryCount,
+                lastCheckPoint = (int)data.LastCheckpoint,
+                storedAnswers = new List<int>()
+            };
+            for (int i = 0; i < data.Level.Questions.Count; i++)
+                request.storedAnswers.Add(-1);
+            if (data.Answers == null) return request;
+            for (int i = 0; i < data.Answers.Count; i++)
+                if (data.Level.Questions[i].Quiz.Question is IMultipleChoiceQuestion multipleChoice)
+                    request.storedAnswers[i] = multipleChoice.AnswerOptions.IndexOf(data.Answers[i]);
             return request;
         }
     }

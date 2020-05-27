@@ -2,6 +2,9 @@ using System.Collections;
 using A3.UserInterface;
 using Agate.GlSim.Scene.Control.Map.Loader;
 using Agate.Waskita.Responses;
+using Agate.WaskitaInfra1.GameProgress;
+using Agate.WaskitaInfra1.Level;
+using Agate.WaskitaInfra1.LevelProgress;
 using Agate.WaskitaInfra1.PlayerAccount;
 using Agate.WaskitaInfra1.UserInterface.Display;
 using Agate.WaskitaInfra1.UserInterface.Login;
@@ -35,13 +38,15 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
 
         [SerializeField]
         private ScriptableAudioSpecification _buttonInteraction = default;
-
         private bool loggedIn;
 
         private Main _main;
         private PlayerAccountControl _accountControl;
         private UiDisplaysSystem<GameObject> _displaysSystem;
         private GameplaySceneLoadControl _sceneLoadControl;
+        private GameProgressControl _gameProgressControl;
+        private LevelProgressControl _levelProgressControl;
+        private LevelControl _levelControl;
         private BackendIntegrationController _backendControl;
         private AudioSystem<AudioClip, AudioMixerGroup> _audioSystem;
 
@@ -56,9 +61,14 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
 
             _audioSystem.PlayAudio(_bgm);
 
+            _gameProgressControl = Main.GetRegisteredComponent<GameProgressControl>();
+            _levelControl = Main.GetRegisteredComponent<LevelControl>();
+            _levelProgressControl = Main.GetRegisteredComponent<LevelProgressControl>();
 
             if (!_accountControl.Data.IsEmpty())
-                yield return StartCoroutine(_backendControl.AwaitValidateRequest(OnFailedValidate, OnFinishValidate));
+            {
+                yield return StartCoroutine(_backendControl.AwaitValidateRequest(OnFinishValidate, OnAbortValidate));
+            }
 
             _loginForm.Init();
             _loginForm.LoginAction = OnLoginButton;
@@ -66,6 +76,7 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
             _logOutButton.onClick.AddListener(OnLogoutButton);
             _startButton.onClick.AddListener(OnStartButtonPress);
         }
+
 
         private void OnStartButtonPress()
         {
@@ -88,7 +99,10 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
         {
             _displaysSystem.GetOrCreateDisplay<PopUpDisplay>(_popUpDisplay)
                 .Open(response.message, null);
+            _accountControl.SetData(response.AccountData());
+            Debug.Log(response.token);
             _main.SaveAccountData();
+            StartCoroutine(_backendControl.AwaitValidateRequest(OnFinishValidate, OnAbortValidate));
             _main.StartGame();
         }
 
@@ -103,14 +117,27 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
             _backendControl.OpenErrorResponsePopUp(webReq, () => Debug.Log("Pop up Closed"));
         }
 
-        private void OnFailedValidate(UnityWebRequest webReq)
+        private void OnAbortValidate()
         {
-            _backendControl.OpenErrorResponsePopUp(webReq, () => Debug.Log("Pop up Closed"));
+            Debug.Log("Abort Validate");
         }
 
-        private void OnFinishValidate()
+        private void OnFinishValidate(UnityWebRequest webReq)
         {
-            loggedIn = true;
+            Debug.Log("Validate Success");
+            LoginResponse response = JsonUtility.FromJson<LoginResponse>(webReq.downloadHandler.text);
+            Agate.Waskita.Responses.Data.GameProgressData data = JsonUtility.FromJson<Agate.Waskita.Responses.Data.GameProgressData>(webReq.downloadHandler.text);
+            if (response == null)
+            {
+                Debug.Log("Response null");
+                loggedIn = false;
+            }
+            else
+            {
+                loggedIn = true;
+                _gameProgressControl.SetData(data.GameData());
+                _levelProgressControl.LoadData(_levelControl.LevelProgress(response.levelProgress));
+            }
         }
 
         private void OnLogoutButton()
