@@ -1,6 +1,8 @@
 {
     "name": "Agate.WaskitaInfra1.SceneControl",
     "references": [
+        "A3.Audio",
+        "A3.Audio.Unity",
         "A3.Quiz",
         "A3.CodePattern",
         "A3.UserInterface",

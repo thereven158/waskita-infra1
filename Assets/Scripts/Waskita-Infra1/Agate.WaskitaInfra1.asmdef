@@ -10,7 +10,8 @@
         "A3.CodePattern",
         "A3.Utilities",
         "Agate.WaskitaInfra1.Backend.Integration",
-        "A3.UserInterface"
+        "A3.UserInterface",
+        "A3.Audio.Unity"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],

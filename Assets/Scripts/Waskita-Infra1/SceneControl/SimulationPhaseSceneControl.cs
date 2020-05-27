@@ -1,4 +1,7 @@
+using System;
 using System.Collections.Generic;
+using A3.AudioControl;
+using A3.AudioControl.Unity;
 using A3.DataDrivenEvent;
 using A3.UserInterface;
 using Agate.GlSim.Scene.Control.Map.Loader;
@@ -13,6 +16,7 @@ using Agate.WaskitaInfra1.Utilities;
 using GameAction;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 namespace Agate.WaskitaInfra1.SceneControl
@@ -25,7 +29,7 @@ namespace Agate.WaskitaInfra1.SceneControl
         private UiDisplaysSystem<GameObject> _displaysSystem;
         private SettingDisplay _settingDisplay;
         private GameplaySceneLoadControl _sceneLoader;
-        
+        private AudioSystem<AudioClip, AudioMixerGroup> _audioSystem;
         private GameActionSystem _actionSystem;
 
         [SerializeField]
@@ -59,6 +63,20 @@ namespace Agate.WaskitaInfra1.SceneControl
         [SerializeField]
         private string _finishProjectMessage = default;
 
+        [Header("Audio")]
+        [SerializeField]
+        private ScriptableAudioSpecification _bgm;
+        [SerializeField]
+        private ScriptableAudioSpecification _buttonClick;
+        [SerializeField]
+        private ScriptableAudioSpecification _ambience;
+        [SerializeField]
+        private ScriptableAudioSpecification _successSfx;
+        [SerializeField]
+        private ScriptableAudioSpecification _failureSfx;
+
+
+
         private PopUpDisplay _popupDisplay;
         private PopUpDisplay PopUpDisplay
         {
@@ -81,11 +99,13 @@ namespace Agate.WaskitaInfra1.SceneControl
             _gameProgress = Main.GetRegisteredComponent<GameProgressControl>();
             _levelControl = Main.GetRegisteredComponent<LevelControl>();
             _settingDisplay = Main.GetRegisteredComponent<SettingDisplay>();
+            _audioSystem = Main.GetRegisteredComponent<AudioSystemBehavior>();
             _actionSystem = new GameActionSystem();
-            _stormControl.Init(_levelProgress, _displaysSystem);
-            _actionSystem = new GameActionSystem();
+            _stormControl.Init(_levelProgress, _displaysSystem, _audioSystem);
             _actionSystem.Init(_stormControl);
-            _settingButton.onClick.AddListener(() => _settingDisplay.gameObject.SetActive(true));
+
+            _audioSystem.PlayAudio(_ambience);
+            _settingButton.onClick.AddListener(() => _settingDisplay.ToggleDisplay(true));
 
             _eventSystem.Init(_actionSystem);
             foreach (IEventTriggerData<EventTriggerData> eventData in _levelProgress.Data.Level.Events)
@@ -121,15 +141,20 @@ namespace Agate.WaskitaInfra1.SceneControl
         private void OnLevelFinish(LevelEvaluationData data)
         {
             _evaluationMessages = data.EvaluationMessages();
+            void OnClose()
+            {
+                _settingButton.GetComponent<RectTransform>().SetPosition(_settingButtonPositions[1]);
+                _audioSystem.PlayAudio(_buttonClick);
+                _audioSystem.PlayAudio(_bgm);
+                _audioSystem.StopAudio(_ambience);
+                DisplayEvaluation(data);
+            }
             if (_evaluationMessages.Count < 1)
-                _gameProgress.UpdateCompletedLevelIndex((short) _levelControl.IndexOf(data.Level));
-            PopUpDisplay.Open(_finishProjectMessage,
-                () =>
-                {
-                    _settingButton.GetComponent<RectTransform>().SetPosition(_settingButtonPositions[1]);
-                    DisplayEvaluation(data);
-                });
+                _gameProgress.UpdateCompletedLevelIndex((short)_levelControl.IndexOf(data.Level));
+            PopUpDisplay.Open(_finishProjectMessage, OnClose);
         }
+
+        
 
         private void DisplayEvaluation(LevelEvaluationData data)
         {
@@ -142,6 +167,7 @@ namespace Agate.WaskitaInfra1.SceneControl
                 {
                     OnFinishButton = () =>
                     {
+                        _audioSystem.PlayAudio(_buttonClick);
                         OnFinishEvaluation();
                         display.Close();
                     }
@@ -150,10 +176,17 @@ namespace Agate.WaskitaInfra1.SceneControl
 
         private void OnFinishEvaluation()
         {
+            _settingButton.GetComponent<RectTransform>().SetPosition(_settingButtonPositions[0]);
             if (_evaluationMessages.Count > 0)
+            {
+                _audioSystem.PlayAudio(_failureSfx);
                 CycleDisplayEvaluationMessage();
+            }
             else
+            {
+                _audioSystem.PlayAudio(_successSfx);
                 PopUpDisplay.Open("Project Success", LoadPrepScene);
+            }
         }
 
         private void CycleDisplayEvaluationMessage()
@@ -163,10 +196,14 @@ namespace Agate.WaskitaInfra1.SceneControl
                 LoadPrepScene();
                 return;
             }
-
+            void onInteraction()
+            {
+                _audioSystem.PlayAudio(_buttonClick);
+                CycleDisplayEvaluationMessage();
+            }
             PopUpDisplay.Open(
                 _evaluationMessages.Dequeue(),
-                CycleDisplayEvaluationMessage);
+                onInteraction);
         }
 
         private void LoadPrepScene()

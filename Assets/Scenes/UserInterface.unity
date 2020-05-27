@@ -1534,6 +1534,8 @@ MonoBehaviour:
   _checklistInteractionDisplay: {fileID: 496944045}
   _displaySystem: {fileID: 1598519651}
   _settingDisplay: {fileID: 104772191}
+  _buttonClick: {fileID: 11400000, guid: 103b9b4896a001c4688cc5e717809083, type: 2}
+  _audioMixer: {fileID: 24100000, guid: 30203e7909e1ac84ebdd6c500eb4d09b, type: 2}
 --- !u!1 &1598519650
 GameObject:
   m_ObjectHideFlags: 0

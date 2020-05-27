@@ -5,11 +5,16 @@ using Agate.WaskitaInfra1.UserInterface.LevelList;
 using Agate.WaskitaInfra1.UserInterface.LevelState;
 using Agate.WaskitaInfra1.UserInterface.Quiz;
 using UnityEngine;
+using A3.AudioControl.Unity;
+using A3.AudioControl;
+using UnityEngine.Audio;
 
 namespace Agate.WaskitaInfra1.SceneControl
 {
     public class UserInterfaceSceneControl : MonoBehaviour
     {
+        private const string MIXER_BGM_PARAM = "BgmVolume";
+        private const string MIXER_SFX_PARAM = "SfxVolume";
         [SerializeField]
         private QuizDisplay _quizDisplay = default;
 
@@ -31,12 +36,23 @@ namespace Agate.WaskitaInfra1.SceneControl
         [SerializeField]
         private SettingDisplay _settingDisplay = default;
 
+        [Header("Audio")]
+        [SerializeField]
+        private ScriptableAudioSpecification _buttonClick = default;
+        [Space]
+        [Header("Setting Configuration")]
+        [SerializeField]
+        private AudioMixer _audioMixer = default;
+
+        private AudioSystem<AudioClip, AudioMixerGroup> _audioSystem;
+
         private void Start()
         {
             Main main = Main.Instance;
             _displaySystem.Init();
             _checklistInteractionDisplay.Init();
             _quizDisplay.Init();
+            _audioSystem = Main.GetRegisteredComponent<AudioSystemBehavior>();
             Main.RegisterComponents(_quizDisplay, _levelDataListDisplay, _levelStateDisplay, _levelDataDisplay,
                 _checklistInteractionDisplay, _displaySystem, _settingDisplay);
             _quizDisplay.Close();
@@ -44,7 +60,27 @@ namespace Agate.WaskitaInfra1.SceneControl
             _levelDataListDisplay.Close();
             _levelDataDisplay.ToggleDisplay(false);
             _checklistInteractionDisplay.Close();
+
+            _quizDisplay.OnInteraction += () => _audioSystem.PlayAudio(_buttonClick);
+            ConfigureSettings();
+
             main.UiLoaded = true;
+        }
+
+        private void ConfigureSettings()
+        {
+            _audioMixer.SetFloat(MIXER_BGM_PARAM, PlayerPrefs.GetFloat(MIXER_BGM_PARAM));
+            _audioMixer.SetFloat(MIXER_SFX_PARAM, PlayerPrefs.GetFloat(MIXER_SFX_PARAM));
+            _settingDisplay.BgmToggle = PlayerPrefs.GetFloat(MIXER_BGM_PARAM) >= 0;
+            _settingDisplay.SfxToggle = PlayerPrefs.GetFloat(MIXER_SFX_PARAM) >= 0;
+
+            _settingDisplay.OnInteraction += () => _audioSystem.PlayAudio(_buttonClick);
+            _settingDisplay.OnBgmToggle += toggle => _audioMixer.SetFloat(MIXER_BGM_PARAM, toggle ? 0 : -80);
+            _settingDisplay.OnBgmToggle += toggle => PlayerPrefs.SetFloat(MIXER_BGM_PARAM, toggle ? 0 : -80);
+            _settingDisplay.OnSfxToggle += toggle => _audioMixer.SetFloat(MIXER_SFX_PARAM, toggle ? 0 : -80);
+            _settingDisplay.OnSfxToggle += toggle => PlayerPrefs.SetFloat(MIXER_SFX_PARAM, toggle ? 0 : -80);
+            _settingDisplay.OnExitPress = Main.Quit;
+            _settingDisplay.OnLogOutPress = Main.LogOut;
         }
     }
 }

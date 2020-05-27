@@ -36,13 +36,14 @@ namespace Agate.WaskitaInfra1.UserInterface.Display
         public override void Close()
         {
             gameObject.SetActive(false);
-            _onClose?.Invoke();
+            Action onClose = _onClose;
             _onClose = null;
+            onClose?.Invoke();
         }
 
         public override bool IsOpen => gameObject.activeSelf;
         
-        private  void OnCloseButton()
+        private void OnCloseButton()
         {
             Close();
         }

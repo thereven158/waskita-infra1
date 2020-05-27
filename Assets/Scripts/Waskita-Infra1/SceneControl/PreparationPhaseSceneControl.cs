@@ -12,6 +12,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using Agate.WaskitaInfra1.UserInterface.Display;
 using Agate.WaskitaInfra1.UserInterface.LevelState;
+using A3.AudioControl.Unity;
+using A3.AudioControl;
+using UnityEngine.Audio;
 
 namespace Agate.WaskitaInfra1.SceneControl
 {
@@ -28,6 +31,7 @@ namespace Agate.WaskitaInfra1.SceneControl
         private UiDisplaysSystem<GameObject> _displaySystem;
         private GameplaySceneLoadControl _sceneLoader;
         private SettingDisplay _settingDisplay;
+        private AudioSystem<AudioClip, AudioMixerGroup> _audioSystem;
 
         [SerializeField]
         private ConfirmationPopUpDisplay _confirmationPopUp = default;
@@ -43,6 +47,13 @@ namespace Agate.WaskitaInfra1.SceneControl
         [SerializeField]
         private string _finishConfirmationMessage = default;
 
+        [Header("Audio")]
+        [SerializeField]
+        private ScriptableAudioSpecification _bgm = default;
+        
+        [SerializeField]
+        private ScriptableAudioSpecification _buttonClick = default;
+
         private void Start()
         {
             _gameProgress = Main.GetRegisteredComponent<GameProgressControl>();
@@ -56,15 +67,36 @@ namespace Agate.WaskitaInfra1.SceneControl
             _displaySystem = Main.GetRegisteredComponent<UiDisplaysSystemBehavior>();
             _sceneLoader = Main.GetRegisteredComponent<GameplaySceneLoadControl>();
             _settingDisplay = Main.GetRegisteredComponent<SettingDisplay>();
-            _settingButton.onClick.AddListener(() => _settingDisplay.gameObject.SetActive(true));
+            _audioSystem = Main.GetRegisteredComponent<AudioSystemBehavior>();
+
+            _settingButton.onClick.AddListener(() => _settingDisplay.ToggleDisplay(true));
+            Main.OnLogOut += OnLogOut;
+
+            _audioSystem.PlayAudio(_bgm);
             if (_levelProgress.Data == null)
                 OpenProjectList();
-            else
+            else if (_levelProgress.Data.LastCheckpoint < 1)
                 OpenCheckList();
+            else
+                GoToSimulation();
+        }
+        private void OnDestroy()
+        {
+            Main.OnLogOut -= OnLogOut;
+        }
+
+        private void OnLogOut()
+        {
+            _levelListDisplay.Close();
+            _levelDataDisplay.ToggleDisplay(false);
+            _checklistInteractionDisplay.Close();
+            _levelStateDisplay.ToggleDisplay(false);
+            _settingDisplay.ToggleDisplay(false);
         }
 
         private void OpenProjectList()
         {
+            _audioSystem.PlayAudio(_buttonClick);
             _levelStateDisplay.ToggleDisplay(false);
             _checklistInteractionDisplay.Close();
             _levelListDisplay.OpenList(
@@ -75,8 +107,10 @@ namespace Agate.WaskitaInfra1.SceneControl
 
         private void OpenProjectConfirmation(LevelData data)
         {
+            _audioSystem.PlayAudio(_buttonClick);
             void OnConfirm(LevelData levelData)
             {
+                _audioSystem.PlayAudio(_buttonClick);
                 _levelProgress.StartLevel(levelData);
                 OpenCheckList();
             }
@@ -104,6 +138,7 @@ namespace Agate.WaskitaInfra1.SceneControl
 
         private void OpenCheckListItem(IQuestion item)
         {
+            _audioSystem.PlayAudio(_buttonClick);
             _quizDisplay.Display(
                 item,
                 (quiz, o) => _levelProgress.AnswerQuestion(item, o),
@@ -113,6 +148,7 @@ namespace Agate.WaskitaInfra1.SceneControl
 
         private void SimulationConfirmation()
         {
+            _audioSystem.PlayAudio(_buttonClick);
             _displaySystem
                 .GetOrCreateDisplay<ConfirmationPopUpDisplay>(_confirmationPopUp)
                 .Open(_finishConfirmationMessage,
@@ -124,6 +160,7 @@ namespace Agate.WaskitaInfra1.SceneControl
         {
             void OnConfirm()
             {
+                _audioSystem.PlayAudio(_buttonClick);
                 _levelProgress.FinishLevel();
                 OpenProjectList();
             }
@@ -137,6 +174,8 @@ namespace Agate.WaskitaInfra1.SceneControl
 
         private void GoToSimulation()
         {
+            _audioSystem.PlayAudio(_buttonClick);
+            _audioSystem.StopAudio(_bgm);
             _quizDisplay.Close();
             _levelStateDisplay.ToggleDisplay(false);
             _levelDataDisplay.ToggleDisplay(false);

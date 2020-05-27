@@ -13,6 +13,7 @@ using Agate.WaskitaInfra1.PlayerAccount;
 using BackendIntegration;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using A3.AudioControl.Unity;
 #if UNITY_EDITOR
 using UnityEditor;
 
@@ -47,6 +48,9 @@ namespace Agate.WaskitaInfra1
         private GameProgressControl _gameProgress;
         private LevelProgressControl _levelProgress;
         private WaskitaApi _api;
+
+        [SerializeField]
+        private AudioSystemBehavior _audioSystem = default;
 
         [SerializeField]
         private GameplaySceneLoadControl _sceneLoader = default;
@@ -104,6 +108,8 @@ namespace Agate.WaskitaInfra1
 
         private IPlayerGameData _gameData;
 
+        public static event Action OnLogOut;
+
         #endregion
 
         #region Unity Event Function
@@ -121,7 +127,8 @@ namespace Agate.WaskitaInfra1
             _gameProgress = new GameProgressControl();
             _levelProgress = new LevelProgressControl();
             _api = new WaskitaApi();
-            RegisterComponents(_playerAccount, _gameProgress, _levelProgress, _levelControl, _sceneLoader, _api, _backendIntegrationControl);
+            _audioSystem.Init();
+            RegisterComponents(_playerAccount, _gameProgress, _levelProgress, _levelControl, _sceneLoader, _api, _backendIntegrationControl, _audioSystem);
             SceneManager.LoadScene("UserInterface", LoadSceneMode.Additive);
         }
 
@@ -179,9 +186,21 @@ namespace Agate.WaskitaInfra1
         {
             Application.Quit();
         }
+        public static void LogOut()
+        {
+            Instance._api.SetToken(string.Empty);
+            Instance._playerAccount.ClearData();
+            Instance._gameProgress.ClearData();
+            Instance._levelProgress.ClearData();
+            Instance.RemoveAccountData();
+            OnLogOut?.Invoke();
+            Instance._sceneLoader.ChangeScene(Instance._firstSceneToLoad);
+
+        }
 
         public void StartGame()
         {
+            if (!IsOnline && _playerAccount.Data.IsEmpty())LoadDummyData();
             _sceneLoader.ChangeScene("PreparationPhase");
         }
 
