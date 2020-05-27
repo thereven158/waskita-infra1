@@ -6,7 +6,12 @@
         "Agate.WaskitaInfra1.LevelProgress",
         "Agate.WaskitaInfra1.Level",
         "Agate.WaskitaInfra1.Level.Unity",
-        "A3.CodePattern"
+        "Agate.WaskitaInfra1.Backend.API",
+        "A3.CodePattern",
+        "A3.Utilities",
+        "Agate.WaskitaInfra1.Backend.Integration",
+        "A3.UserInterface",
+        "A3.Audio.Unity"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],

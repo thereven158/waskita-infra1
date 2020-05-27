@@ -1,12 +1,16 @@
 {
     "name": "Agate.WaskitaInfra1.SceneControl",
     "references": [
+        "A3.Audio",
+        "A3.Audio.Unity",
         "A3.Quiz",
         "A3.CodePattern",
         "A3.UserInterface",
         "A3.DataDrivenEvent",
         "Agate.GameAction",
         "Agate.WaskitaInfra1",
+        "Agate.WaskitaInfra1.Backend.Integration",
+        "Agate.WaskitaInfra1.Backend.API",
         "Agate.WaskitaInfra1.Level",
         "Agate.WaskitaInfra1.GameAction",
         "Agate.WaskitaInfra1.GameProgress",

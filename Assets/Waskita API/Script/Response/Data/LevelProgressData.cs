@@ -8,8 +8,9 @@ namespace Agate.Waskita.Responses.Data
         public int lastCheckpoint;
         public int currentDay;
         public int tryCount;
-        public List<QuizAnswer> answer;
         public DayCondition dayCondition;
-        public LevelData level;
+        public int level;
+        public List<int> storedAnswers;
+
     }
 }

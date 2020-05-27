@@ -16,9 +16,5 @@ namespace Agate.WaskitaInfra1
         public short MaxCompletedLevelIndex => _maxCompletedLevelIndex;
         public uint CompletionCount => _completionCount;
         public double PlayTime => _playTime;
-        public bool Equals(IGameProgressData data)
-        {
-            return base.Equals(data);
-        }
     }
 }

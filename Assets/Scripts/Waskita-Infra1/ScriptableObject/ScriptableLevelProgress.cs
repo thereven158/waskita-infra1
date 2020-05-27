@@ -28,9 +28,5 @@ namespace Agate.WaskitaInfra1
         public List<object> Answers => _answers.Select(o => _answers as object).ToList();
         public DayCondition Condition => _dayCondition;
         public LevelData Level => _level;
-        public bool Equals(ILevelProgressData other)
-        {
-            return base.Equals(other);
-        }
     }
 }

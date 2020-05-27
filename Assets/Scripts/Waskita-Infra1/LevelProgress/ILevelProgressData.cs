@@ -12,7 +12,6 @@ namespace Agate.WaskitaInfra1.LevelProgress
         List<object> Answers { get; }
         DayCondition Condition { get; }
         LevelData Level { get; }
-        bool Equals(ILevelProgressData other);
     }
 
     public static class ProgressExtension

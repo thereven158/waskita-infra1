@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UserInterface.Display
+namespace Agate.WaskitaInfra1.UserInterface.Display
 {
     public class ConfirmationPopUpDisplay : DisplayBehavior
     {
@@ -78,6 +78,8 @@ namespace UserInterface.Display
         {
             gameObject.SetActive(false);
             _onClose?.Invoke();
+            _onClose = null;
+            _onConfirm = null;
         }
 
         public override bool IsOpen => gameObject.activeSelf;

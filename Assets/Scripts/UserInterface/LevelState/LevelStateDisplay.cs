@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using ValueConversion;
 
-namespace UserInterface.LevelState
+namespace Agate.WaskitaInfra1.UserInterface.LevelState
 {
     public class LevelStateDisplay : MonoBehaviour
     {

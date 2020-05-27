@@ -1,4 +1,5 @@
 using Agate.WaskitaInfra1.Level;
+using Agate.WaskitaInfra1.UserInterface.Display;
 using Agate.WaskitaInfra1.UserInterface.Quiz;
 using UnityEngine;
 
@@ -10,12 +11,26 @@ namespace Experimental
         private QuizDisplay _quizDisplay = default;
 
         [SerializeField]
+        private PopUpDisplay ResultDisplay;
+
+        [SerializeField]
         private ScriptableQuestion question = default;
+        
+        
 
         private void Start()
         {
             _quizDisplay.Init();
-            _quizDisplay.Display(question, (quiz1, o) => Debug.Log(o), null);
+            ResultDisplay.Init();
+            OpenQuizDisplay();
+        }
+        private void OpenPopUp(string message)
+        {
+            ResultDisplay.Open(message, OpenQuizDisplay);
+        }
+        private void OpenQuizDisplay()
+        {
+            _quizDisplay.Display(question, (quiz1, o) => OpenPopUp($"answer is {quiz1.IsCorrect(o)}"), null);
         }
 
     }

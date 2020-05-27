@@ -1,7 +1,10 @@
 fileFormatVersion: 2
-guid: 5939088cf9c26aa448d987b9d4eb8891
+guid: 910271b3a94bc5547a191f9a2b584d7e
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Avatar_dada
+    21300002: Avatar_Pinggang
+    21300004: Avatar_perut
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -40,9 +43,9 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -104,11 +107,71 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Avatar_dada
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 638
+        width: 446
+        height: 546
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fb3c0d915e29d943ad199dc17623915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avatar_Pinggang
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 342
+        width: 446
+        height: 842
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84627bf7445e0b7478688ba33e1de37e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Avatar_perut
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 472
+        width: 446
+        height: 712
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7976a76a58fdc244b777d368bd36775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: eced8dc1ec7b11246a8416638d7f33b9
+    spriteID: 55eca036ca19762478e15fc34ecce783
     vertices: []
     indices: 
     edges: []

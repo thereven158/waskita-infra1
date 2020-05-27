@@ -1,3 +1,15 @@
-﻿{
-	"name": "Agate.WaskitaInfra1.Backend.API"
+{
+    "name": "Agate.WaskitaInfra1.Backend.API",
+    "references": [
+        "Agate.WaskitaInfra1.GameProgress",
+        "Agate.WaskitaInfra1.LevelProgress"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
 }

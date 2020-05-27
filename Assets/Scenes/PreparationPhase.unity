@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -462,13 +462,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f46414c3fb54f5a992fe3352fd4fb05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _confirmationPopUp: {fileID: 6700165356127211701, guid: a902c1e47abfdd345a0863da912fb833,
+  _confirmationPopUp: {fileID: 6700165356127211701, guid: 93391fdf2e534204884477c3305363a5,
     type: 3}
   _settingButton: {fileID: 1109784635}
   _abortConfirmationMessage: "Progress pengerjaan checklist anda tidak disimpan jika
     kembali sekarang. \nKembali ke main menu?"
   _finishConfirmationMessage: "Peringatan! \nChecklist yang telah disimpan tidak dapat
     diubah hingga proyek selesai. Apakah anda sudah yakin dengan jawaban anda?"
+  _bgm: {fileID: 11400000, guid: ccf1f9743b1cba749ba2afed6ca4300b, type: 2}
+  _buttonClick: {fileID: 11400000, guid: 103b9b4896a001c4688cc5e717809083, type: 2}
 --- !u!4 &848682937
 Transform:
   m_ObjectHideFlags: 0

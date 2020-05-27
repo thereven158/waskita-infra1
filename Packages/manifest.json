@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "com.a3.audio-control": "http://gategit.agate.id/billy.firman/a3-upm.git#audio-control",
+    "com.a3.audio-control.unity": "http://gategit.agate.id/billy.firman/a3-upm.git#audio-control.unity",
     "com.a3.code-pattern": "http://gategit.agate.id/billy.firman/a3-upm.git#code-pattern",
     "com.a3.data-driven-event": "http://gategit.agate.id/billy.firman/a3-upm.git#data-driven-event",
     "com.a3.interactive-data-display": "http://gategit.agate.id/billy.firman/a3-upm.git#interactive-data-display",
@@ -64,8 +66,16 @@
       "revision": "ugui-display"
     },
     "com.a3.utilities": {
-      "hash": "cdb01dc2e32053511c249ae9ce09fd117473e081",
+      "hash": "37a2028648cb4fe3f81381db05b0569b2d076024",
       "revision": "utilities"
+    },
+    "com.a3.audio-control": {
+      "hash": "ea56aaa8c46f08c7cc9374ee0aa47a293e92ff53",
+      "revision": "audio-control"
+    },
+    "com.a3.audio-control.unity": {
+      "hash": "62c93b60df8cd4dc62b387a67881ba564fd2c69d",
+      "revision": "audio-control.unity"
     }
   }
 }

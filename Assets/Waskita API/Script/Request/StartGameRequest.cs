@@ -3,7 +3,6 @@
     [System.Serializable]
     public class StartGameRequest : BasicRequest
     {
-
         public int level;
     }
 }

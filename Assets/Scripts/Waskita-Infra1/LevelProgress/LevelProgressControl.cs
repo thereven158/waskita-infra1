@@ -14,6 +14,10 @@ namespace Agate.WaskitaInfra1.LevelProgress
         public event Action<LevelEvaluationData> OnFinishLevel;
         public event Action OnRetryToCheckpoint;
 
+        public void ClearData()
+        {
+            _data = null;
+        }
 
         public void LoadData(ILevelProgressData data)
         {
@@ -65,8 +69,22 @@ namespace Agate.WaskitaInfra1.LevelProgress
 
         public void FinishLevel()
         {
-            OnFinishLevel?.Invoke(new LevelEvaluationData(Data));
+            LevelEvaluationData result = new LevelEvaluationData(Data);
+            OnFinishLevel?.Invoke(result);
             _data = null;
+        }
+
+        public static bool DataEquality(ILevelProgressData data1, ILevelProgressData data2)
+        {
+            return data1.CurrentDay == data2.CurrentDay &&
+                   data1.TryCount == data2.TryCount &&
+                   data1.Level == data2.Level &&
+                   data1.LastCheckpoint == data2.LastCheckpoint;
+        }
+
+        public bool CurrentDataEquality(ILevelProgressData data)
+        {
+            return DataEquality(_data, data);
         }
     }
 }

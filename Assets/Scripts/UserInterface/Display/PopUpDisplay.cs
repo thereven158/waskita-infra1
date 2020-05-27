@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UserInterface.Display
+namespace Agate.WaskitaInfra1.UserInterface.Display
 {
     public class PopUpDisplay:DisplayBehavior
     {
@@ -19,7 +19,7 @@ namespace UserInterface.Display
         public override void Init()
         {
             gameObject.SetActive(false);
-            _closeButton.onClick.AddListener(Close);
+            _closeButton.onClick.AddListener(OnCloseButton);
         }
 
         public override void Open()
@@ -36,12 +36,14 @@ namespace UserInterface.Display
         public override void Close()
         {
             gameObject.SetActive(false);
-            _onClose?.Invoke();
+            Action onClose = _onClose;
+            _onClose = null;
+            onClose?.Invoke();
         }
 
         public override bool IsOpen => gameObject.activeSelf;
         
-        private  void OnCloseButton()
+        private void OnCloseButton()
         {
             Close();
         }

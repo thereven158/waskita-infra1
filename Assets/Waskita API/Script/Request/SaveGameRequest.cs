@@ -10,7 +10,8 @@ namespace Agate.Waskita.Request
         public int currentDay;
         public int tryCount;
         public DayCondition dayCondition;
-        public List<QuizAnswer> answer;
+        public List<int> answer;
+
     }
 }
 

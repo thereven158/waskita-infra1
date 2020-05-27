@@ -1,3 +1,5 @@
+using System;
+
 namespace Agate.WaskitaInfra1.GameProgress
 {
     public interface IGameProgressData
@@ -5,6 +7,5 @@ namespace Agate.WaskitaInfra1.GameProgress
         short MaxCompletedLevelIndex { get; }
         uint CompletionCount { get; }
         double PlayTime { get; }
-        bool Equals(IGameProgressData data);
     }
 }

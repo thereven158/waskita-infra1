@@ -14,6 +14,7 @@ namespace Agate.WaskitaInfra1.UserInterface.Quiz
         private object _activeAnswer;
         private Action<IQuiz, object> _onConfirmAnswer;
         private Action _onClose;
+        public event Action OnInteraction;
 
         [SerializeField]
         private TMP_Text _headerText = default;
@@ -49,27 +50,29 @@ namespace Agate.WaskitaInfra1.UserInterface.Quiz
         public void Init()
         {
             spriteOptionDisplaySystem.Init();
-            spriteOptionDisplaySystem.OnInteraction += sprite => _activeAnswer = sprite;
-            spriteOptionDisplaySystem.OnInteraction += sprite => _confirmButton.interactable = true;
+            spriteOptionDisplaySystem.OnInteraction += sprite => OnOptionInteraction(sprite);
 
             stringOptionsDisplaySystem.Init();
-            stringOptionsDisplaySystem.OnInteraction += str => _activeAnswer = str;
-            stringOptionsDisplaySystem.OnInteraction += str => _confirmButton.interactable = true;
+            stringOptionsDisplaySystem.OnInteraction += str => OnOptionInteraction(str);
 
             imgTextOptionsDisplaySystem.Init();
-            imgTextOptionsDisplaySystem.OnInteraction += imgText => _activeAnswer = imgText;
-            imgTextOptionsDisplaySystem.OnInteraction += imgText => _confirmButton.interactable = true;
+            imgTextOptionsDisplaySystem.OnInteraction += imgText => OnOptionInteraction(imgText);
             
             spriteSheetOptionsDisplaySystem.Init();
-            spriteSheetOptionsDisplaySystem.OnInteraction += spriteSheet => _activeAnswer = spriteSheet;
-            spriteSheetOptionsDisplaySystem.OnInteraction += spriteSheet => _confirmButton.interactable = true;
+            spriteSheetOptionsDisplaySystem.OnInteraction += spriteSheet => OnOptionInteraction(spriteSheet);
             
             textSpriteSheetOptionsDisplaySystem.Init();
-            textSpriteSheetOptionsDisplaySystem.OnInteraction += textSpriteSheet => _activeAnswer = textSpriteSheet;
-            textSpriteSheetOptionsDisplaySystem.OnInteraction += textSpriteSheet => _confirmButton.interactable = true;
+            textSpriteSheetOptionsDisplaySystem.OnInteraction += textSpriteSheet => OnOptionInteraction(textSpriteSheet);
 
             _confirmButton.onClick.AddListener(ConfirmAnswer);
             _cancelButton.onClick.AddListener(Close);
+        }
+
+        public void OnOptionInteraction(object data)
+        {
+            OnInteraction?.Invoke();
+            _confirmButton.interactable = true;
+            _activeAnswer = data;
         }
 
         private void ToggleDisplay(bool toggle)
@@ -142,6 +145,7 @@ namespace Agate.WaskitaInfra1.UserInterface.Quiz
 
         public void Close()
         {
+            OnInteraction?.Invoke();
             ToggleDisplay(false);
             _onClose?.Invoke();
         }

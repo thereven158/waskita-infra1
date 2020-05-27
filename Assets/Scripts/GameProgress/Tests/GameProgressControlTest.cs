@@ -53,10 +53,10 @@ namespace Agate.WaskitaInfra1.GameProgress
         }
 
         [Test]
-        public void IsEqual_Data_Compare_Data_Value()
+        public void DataEquality_Compare_Data_Value()
         {
             _gameProgressCntrl.SetData(_testData);
-            Assert.That(_gameProgressCntrl.Data.Equals(_testData));
+            Assert.That(_gameProgressCntrl.CurrentDataEquality(_testData));
         }
 
         [Test]
@@ -108,10 +108,5 @@ namespace Agate.WaskitaInfra1.GameProgress
         public short MaxCompletedLevelIndex { get; set; }
         public uint CompletionCount { get; set; }
         public double PlayTime { get; set; }
-
-        public bool Equals(IGameProgressData data)
-        {
-            return base.Equals(data);
-        }
     }
 }

@@ -124,6 +124,8 @@ GameObject:
   - component: {fileID: 113000442}
   - component: {fileID: 113000444}
   - component: {fileID: 113000445}
+  - component: {fileID: 113000446}
+  - component: {fileID: 113000447}
   m_Layer: 0
   m_Name: Main
   m_TagString: Untagged
@@ -143,12 +145,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18e506a4fe437bc4399458c5894bda0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audioSystem: {fileID: 113000447}
   _sceneLoader: {fileID: 113000445}
   _levelControl: {fileID: 113000444}
+  _backendIntegrationControl: {fileID: 113000446}
+  _playerDataFilepath: account.obj
   _firstSceneToLoad: Title
   _testPlayerData: {fileID: 11400000, guid: 2afdc919ebc8703429f05b73f27b5bd7, type: 2}
   _targetFPS: 30
   UiLoaded: 0
+  _isOnline: 0
   _firstSceneAssetToLoad: {fileID: 102900000, guid: 573f6a3e6dc12a44381c2990ed637827,
     type: 3}
 --- !u!4 &113000443
@@ -197,3 +203,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _titleSceneName: Title
   _titleScene: {fileID: 102900000, guid: 573f6a3e6dc12a44381c2990ed637827, type: 3}
+--- !u!114 &113000446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113000441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d29ccac72ddc86140aa1a4226c213dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _blockDisplayPrefab: {fileID: 8156409307791900421, guid: f428a72321bf3a546b843221448600e3,
+    type: 3}
+  _popUpDisplay: {fileID: 6066408058732217489, guid: 385285812351fb5418c2ecd7a3530503,
+    type: 3}
+  _yesNoDisplay: {fileID: 116060631222838767, guid: a902c1e47abfdd345a0863da912fb833,
+    type: 3}
+  _requestFailedMessage: Request failed make sure you have stable internet connection
+--- !u!114 &113000447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113000441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 873100bd945d92446bb4dfa6394539ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  registeredChannel:
+  - {fileID: 11400000, guid: 3b6149e4aac888f4fa5ff2903493099c, type: 2}
+  - {fileID: 11400000, guid: 0bb30f2f936d56e448f09d7b269b4878, type: 2}

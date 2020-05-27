@@ -10,30 +10,37 @@ namespace Agate.Waskita.API
     public class WaskitaApi
     {
         private string _ipadd = "https://gameserver-api-waskitainfra1-dev.gf.agatedev.net/";
+        private const string WASKITA_API = "https://west.waskita.co.id/page/tlcc/apiwest/login.php?";
+        private string _token = string.Empty;
 
-        //private string _ipadd = "https://game-waskita-iptex-stag.agatedev.net/";
-        private readonly string _waskitaAPI = "https://west.waskita.co.id/page/tlcc/apiwest/login.php?";
-        private string _token = String.Empty;
-
-        /* List Reqeust endpoint */
+        /* List Request endpoint */
 
         #region Endpoint
         
         private const string _login = "Auth/Login";
         private const string _validate = "Auth/Validate";
-
         private const string _startGame = "GameLoop/StartGame";
         private const string _saveGame = "GameLoop/SaveGame";
         private const string _endGame = "GameLoop/EndGame";
-
         private const string _refreshToken = "Token/Refresh";
         
         #endregion
 
+        private static BasicRequest BaseData => new BasicRequest()
+        {
+            deviceId = SystemInfo.deviceUniqueIdentifier,
+            requestId = DateTime.Now.ToString("yyyy-MM-dd-hh-mm-ss-zzz")
+        };
+        public static ValidateRequest ValidateData => new ValidateRequest(BaseData)
+        {
+            gameVersion = "1.0",
+            clientID = "BmwzQACRCmddGbSXdUJIGw==",
+        };
 
-        private UTF8Encoding _stringEncoder;
 
-        private const int _timeOut = 60;
+        private readonly UTF8Encoding _stringEncoder;
+
+        private const int TIME_OUT = 60;
         /* End point */
 
         public WaskitaApi()
@@ -53,20 +60,19 @@ namespace Agate.Waskita.API
 
         public BasicResponse HandleError(UnityWebRequest error)
         {
-            Debug.Log("ini error " + error.downloadHandler.text);
             BasicResponse response = new BasicResponse
             {
                 error = new Error
                 {
-                    id = "3003",
-                    code = "Unknown error, please check your intenet connection"
+                    code = "3003",
+                    message = "Unknown error, please check your internet connection"
                 }
             };
             switch (error.responseCode)
             {
                 case 200:
-                    response.error.id = "2017";
-                    response.error.code = "Username & Password  not found";
+                    response.error.code = "2017";
+                    response.error.message = "Username & Password  not found";
                     break;
 
                 case 400:
@@ -75,18 +81,18 @@ namespace Agate.Waskita.API
                     break;
 
                 case 401:
-                    response.error.id = "2018";
-                    response.error.code = "Unauthorized, please re-login";
+                    response.error.code = "2018";
+                    response.error.message = "Unauthorized, please re-login";
                     break;
 
                 case 403:
-                    response.error.id = "2019";
-                    response.error.code = "Forbidden Please, re-login";
+                    response.error.code = "2019";
+                    response.error.message = "Forbidden Please, re-login";
                     break;
 
                 case 500:
-                    response.error.id = "3002";
-                    response.error.code = "Internal server error / server on maintenance";
+                    response.error.code = "3002";
+                    response.error.message = "Internal server error / server on maintenance";
                     break;
             }
 
@@ -104,9 +110,9 @@ namespace Agate.Waskita.API
                 false);
         }
 
-        public UnityWebRequest ValidateRequest(ValidateRequest request)
+        public UnityWebRequest ValidateRequest()
         {
-            string param = JsonUtility.ToJson(request);
+            string param = JsonUtility.ToJson(ValidateData);
             return PostRequest(
                 _ipadd + _validate,
                 param,
@@ -175,18 +181,18 @@ namespace Agate.Waskita.API
                 uploadHandler = new UploadHandlerRaw(data),
                 downloadHandler = new DownloadHandlerBuffer(),
                 certificateHandler = new AcceptAllCertificatesSignedWithASpecificKeyPublicKey(),
-                timeout = _timeOut
+                timeout = TIME_OUT
             };
             uwr.uploadHandler.contentType = "application/json";
             if (requireauthentication) uwr.SetRequestHeader("Authorization", "Bearer " + _token);
             return uwr;
         }
 
-        private UnityWebRequest GetRequest(string param)
+        public UnityWebRequest GetRequest(string param)
         {
-            UnityWebRequest webRequest = UnityWebRequest.Get(_waskitaAPI + param);
+            UnityWebRequest webRequest = UnityWebRequest.Get(WASKITA_API + param);
             webRequest.certificateHandler = new AcceptAllCertificatesSignedWithASpecificKeyPublicKey();
-            webRequest.timeout = _timeOut;
+            webRequest.timeout = TIME_OUT;
             return webRequest;
         }
 
