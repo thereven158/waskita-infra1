@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.Networking;
 using Agate.Waskita.API;
 using Agate.Waskita.Request;
+using Agate.Waskita.Request.Data;
 using Agate.Waskita.Responses;
+using Agate.WaskitaInfra1.LevelProgress;
 using Agate.WaskitaInfra1.UserInterface.Display;
 using A3.UserInterface;
-
+using System.Collections.Generic;
 
 namespace BackendIntegration
 {
@@ -138,6 +140,7 @@ namespace BackendIntegration
         /// <returns></returns>
         public IEnumerator AwaitRequest(UnityWebRequest webRequest, Action<UnityWebRequest> onFinish)
         {
+            
             bool requestCompleted = false;
             bool requesting = true;
             void OnRequestSuccess(UnityWebRequest successRequest)
@@ -220,7 +223,36 @@ namespace BackendIntegration
 
             return response;
         }
-        
+
+        public IEnumerator AwaitStartGameRequest(int level, Action<UnityWebRequest> onFinish)
+        {
+
+            UnityWebRequest startGameReq = _api.StartGameRequest(
+            new StartGameRequest(WaskitaApi.ValidateData)
+            {
+                level = level
+            });
+
+            
+            yield return StartCoroutine(
+                AwaitRequest(
+                    startGameReq,
+                    onFinish.Invoke)
+            );
+        }
+
+        public IEnumerator AwateSaveGameRequest(ILevelProgressData data, Action<UnityWebRequest> onFinish)
+        {
+            UnityWebRequest saveGameRequest = _api.SaveGame(DataIntegration.SaveRequest(data));
+            
+
+            yield return StartCoroutine(
+                AwaitRequest(
+                    saveGameRequest,
+                    onFinish.Invoke)
+            );
+        }
+
         #region PopUp Helper
 
         public void OpenErrorResponsePopUp(UnityWebRequest webReq, Action onClose)

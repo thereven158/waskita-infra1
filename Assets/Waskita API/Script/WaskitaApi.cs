@@ -123,8 +123,7 @@ namespace Agate.Waskita.API
 
         #region Request Game Loop
 
-        public UnityWebRequest StartGameRequest(StartGameRequest request, Action<BasicResponse> callbackSuccess,
-            Action<BasicResponse> callbackError)
+        public UnityWebRequest StartGameRequest(StartGameRequest request)
         {
             string param = JsonUtility.ToJson(request);
             return PostRequest(
@@ -133,10 +132,11 @@ namespace Agate.Waskita.API
                 true);
         }
 
-        public UnityWebRequest SaveGame(SaveGameRequest request, Action<BasicResponse> callbackSuccess,
-            Action<BasicResponse> callbackError)
+        public UnityWebRequest SaveGame(SaveGameRequest request)
         {
+            request.Set(WaskitaApi.BaseData);
             string param = JsonUtility.ToJson(request);
+            Debug.Log(param);
             return PostRequest(_ipadd + _saveGame, param, true);
         }
 

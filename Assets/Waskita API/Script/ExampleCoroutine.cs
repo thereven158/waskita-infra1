@@ -134,7 +134,6 @@ namespace Agate.Waskita.API.Example
         /// <returns></returns>
         private IEnumerator StartGame()
         {
-            bool isRequesting = true;
             Debug.Log("Melakukan request start game");
             StartGameRequest request = new StartGameRequest
             {
@@ -143,18 +142,13 @@ namespace Agate.Waskita.API.Example
                 requestId = Guid.NewGuid().ToString()
             };
 
-            api.StartGameRequest(request, successResponse =>
+            UnityWebRequest webRequest = api.StartGameRequest(request);
+            yield return webRequest.SendWebRequest();
+            if (webRequest.isNetworkError || webRequest.isHttpError)
             {
-                isRequesting = false; //contoh 1 : rubah isRequesting setelah error / success muncul
-                //ini merupakan ok request
-            }, error =>
-            {
-                //ini merupakan bad request
-                HandleError(error,
-                    out isRequesting); //contoh 2 : rubah isRequesting setelah handle error / success selesai
-            });
-
-            yield return new WaitUntil(() => !isRequesting);
+                HandleError(api.HandleError(webRequest));
+                yield break;
+            }
 
             //Code setelah request selesai
         }
@@ -165,7 +159,6 @@ namespace Agate.Waskita.API.Example
         /// <returns></returns>
         private IEnumerator SaveGame()
         {
-            bool isRequesting = true;
             Debug.Log("Melakukan request save game");
             SaveGameRequest request = new SaveGameRequest()
             {
@@ -178,23 +171,18 @@ namespace Agate.Waskita.API.Example
                     windStrength = 1,
                     soilCondition = 1
                 },
-                answer = new List<int>(),
+                storedAnswers = new List<int>(),
                 deviceId = deviceId,
                 requestId = Guid.NewGuid().ToString()
             };
 
-            api.SaveGame(request, successResponse =>
+            UnityWebRequest webRequest = api.SaveGame(request);
+            yield return webRequest.SendWebRequest();
+            if (webRequest.isNetworkError || webRequest.isHttpError)
             {
-                isRequesting = false; //contoh 1 : rubah isRequesting setelah error / success muncul
-                //ini merupakan ok request
-            }, error =>
-            {
-                //ini merupakan bad request
-                HandleError(error,
-                    out isRequesting); //contoh 2 : rubah isRequesting setelah handle error / success selesai
-            });
-
-            yield return new WaitUntil(() => !isRequesting);
+                HandleError(api.HandleError(webRequest));
+                yield break;
+            }
 
             //Code setelah request selesai
         }

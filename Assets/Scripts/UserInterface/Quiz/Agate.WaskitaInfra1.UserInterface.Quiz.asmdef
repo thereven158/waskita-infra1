@@ -6,7 +6,9 @@
         "A3.CodePattern",
         "Agate.SpriteSheet",
         "Agate.WaskitaInfra1.Level",
-        "Unity.TextMeshPro"
+        "Unity.TextMeshPro",
+        "Agate.WaskitaInfra1",
+        "Agate.WaskitaInfra1.Backend.Integration"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],
