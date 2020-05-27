@@ -54,7 +54,7 @@ namespace Agate.WaskitaInfra1.SceneControl
         private DayEventTriggerSystem _eventSystem = default;
 
         [SerializeField]
-        private StormActionControl _stormControl = default;
+        private RetryTrapControl _stormControl = default;
 
         [SerializeField]
         private PopUpDisplay _popupDisplayPrefab = default;

@@ -1,28 +1,21 @@
-using A3.UserInterface;
+﻿using A3.UserInterface;
 using Agate.WaskitaInfra1.LevelProgress;
 using UnityEngine;
 using Agate.WaskitaInfra1.UserInterface.Display;
+using System;
+using A3.AudioControl.Unity;
 using A3.AudioControl;
 using UnityEngine.Audio;
-using A3.AudioControl.Unity;
 
 namespace GameAction
 {
-    public class StormActionControl : MonoBehaviour
+    public class RetryTrapControl : MonoBehaviour
     {
         [SerializeField]
         private PopUpDisplay _information = default;
 
         [SerializeField]
         private ConfirmationPopUpDisplay _confirmation = default;
-
-        [SerializeField]
-        [TextArea]
-        private string _stormWarningMessage = default;
-
-        [SerializeField]
-        [TextArea]
-        private string _retryFromCheckpointMessage = default;
 
         [Header("Audio")]
         [SerializeField]
@@ -34,60 +27,61 @@ namespace GameAction
         [SerializeField]
         private ScriptableAudioSpecification _buttonClick = default;
 
-
         private UiDisplaysSystem<GameObject> _displaysSystem;
         private LevelProgressControl _levelProgress;
         private AudioSystem<AudioClip, AudioMixerGroup> _audioSystem;
 
 
 
-        public void Init(LevelProgressControl levelProgressControl, UiDisplaysSystem<GameObject> uiDisplaysSystem, AudioSystem<AudioClip, AudioMixerGroup> audioSystem)
+        public void Init(
+            LevelProgressControl levelProgressControl, 
+            UiDisplaysSystem<GameObject> uiDisplaysSystem, 
+            AudioSystem<AudioClip, AudioMixerGroup> audioSystem)
         {
             _levelProgress = levelProgressControl;
             _displaysSystem = uiDisplaysSystem;
             _audioSystem = audioSystem;
         }
 
-        public void Invoke()
+        public void Invoke(RetryTrap data)
         {
-            _audioSystem.PlayAudio(_rainWarning);
-            void onClose()
+            Action CorrectAction = () =>
             {
                 Interaction();
                 _levelProgress.NextDay(1);
-            }
-            void onConfirm()
+            };
+            Action WrongAction = () =>
             {
                 Interaction();
-                FailurePopUps();
-            }
+                FailurePopUps(data._failureMessage);
+            };
+
+            _audioSystem.PlayAudio(_rainWarning);
             _displaysSystem
                 .GetOrCreateDisplay<ConfirmationPopUpDisplay>(_confirmation)
                 .Open(new ConfirmationPopUpViewData()
                 {
-                    MessageText = _stormWarningMessage,
+                    MessageText = data._warningMessage,
+                    CloseAction = !data._isContinueCorrect ? CorrectAction : WrongAction,
                     CloseButtonText = "Tunda",
-                    CloseAction = onClose,
-                    ConfirmAction = onConfirm
+                    ConfirmAction = data._isContinueCorrect ? CorrectAction : WrongAction
                 });
         }
 
         public bool Ready => _levelProgress != null && _displaysSystem != null;
 
-        private void FailurePopUps()
+        private void FailurePopUps(string message)
         {
-            _audioSystem.PlayAudio(_failAudio);
-
             void onClose()
             {
                 Interaction();
                 _levelProgress.RetryFromCheckPoint();
             }
+            _audioSystem.PlayAudio(_failAudio);
             _displaysSystem.GetOrCreateDisplay<PopUpDisplay>(_information).Open(
-                _retryFromCheckpointMessage,
+                message,
                 onClose);
         }
-
         private void Interaction()
         {
             _audioSystem.PlayAudio(_buttonClick);

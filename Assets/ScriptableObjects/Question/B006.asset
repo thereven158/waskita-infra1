@@ -31,11 +31,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _question:
     _message: "Metode pengecoran pilehead yang benar adalah...\r"
-    _answer: "Pasang clamp sesuai elevasi. Pasang bekisting bagian bawah. Pembesian
+    _answer: "Pasang clamp sesuai elevasi. Pasang bekisting bagian bawah.\nPembesian
       pilehead. Pasang bekisting samping Cor Beton\r."
     _answerOptions:
-    - Pasang clamp sesuai elevasi. Pasang bekisting bagian bawah. Pembesian pilehead.
-      Pasang bekisting samping Cor Beton.
+    - "Pasang clamp sesuai elevasi. Pasang bekisting bagian bawah.\nPembesian pilehead.
+      Pasang bekisting samping Cor Beton\r."
     - Pasang clamp sesuai elevasi. Pasang bekisting bagian atas. Pilehad tidak menjalani
       pembesian dan pasang bekisting samping cor beton.
     - Pasang clamp tidak sesuai elevasi. Pasang bekisting bagian bawah. Pembesian
