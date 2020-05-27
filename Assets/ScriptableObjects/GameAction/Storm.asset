@@ -9,10 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a06c50afeec465ba18cdfdf8fe4e8cf, type: 3}
+  m_Script: {fileID: 11500000, guid: c042e41d8f894d64e91801db5325368b, type: 3}
   m_Name: Storm
   m_EditorClassIdentifier: 
-  _information: {fileID: 86249164618557688, guid: a902c1e47abfdd345a0863da912fb833,
-    type: 3}
-  _confirmation: {fileID: 3459654611352779794, guid: a22d783a7f8c4f64fb12fa6ae6a4a7ac,
-    type: 3}
+  _warningMessage: 'Hari ini sepertinya akan hujan deras!
+
+    Apakah kita harus tetap melanjutkan proyek hari ini?'
+  _failureMessage: "Proyek gagal !\nMelanjutkan pekerjaan dengan kondisi\r penuh genangan
+    air membuat alat tidak berfungsi dengan baik."
+  _isContinueCorrect: 0
