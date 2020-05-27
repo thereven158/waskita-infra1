@@ -1,19 +1,23 @@
-﻿{
-	"name": "Agate.WaskitaInfra1.GameAction",
-	"references": [
-		"A3.CodePattern",
-		"A3.UserInterface",
-		"Agate.GameAction",
-		"Agate.WaskitaInfra1.Level",
-		"Agate.WaskitaInfra1.LevelProgress",
-		"Agate.WaskitaInfra1.UserInterface.Display"
-	],
-	"optionalUnityReferences": [],
-	"includePlatforms": [],
-	"excludePlatforms": [],
-	"allowUnsafeCode": false,
-	"overrideReferences": false,
-	"precompiledReferences": [],
-	"autoReferenced": true,
-	"defineConstraints": []
+{
+    "name": "Agate.WaskitaInfra1.GameAction",
+    "references": [
+        "A3.Audio",
+        "A3.Audio.Unity",
+        "A3.CodePattern",
+        "A3.UserInterface",
+        "Agate.GameAction",
+        "Agate.WaskitaInfra1.Level",
+        "Agate.WaskitaInfra1.LevelProgress",
+        "Agate.WaskitaInfra1.UserInterface.Display"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [
+        "PS4"
+    ],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
 }

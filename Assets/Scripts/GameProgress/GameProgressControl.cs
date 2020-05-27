@@ -17,6 +17,11 @@ namespace Agate.WaskitaInfra1.GameProgress
             OnDataChange?.Invoke(Data);
         }
 
+        public void ClearData()
+        {
+            _data = null;
+        }
+
         public void NewGame()
         {
             SetData(new GameProgressData());

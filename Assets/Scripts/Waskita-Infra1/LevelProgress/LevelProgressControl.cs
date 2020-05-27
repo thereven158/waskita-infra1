@@ -14,6 +14,10 @@ namespace Agate.WaskitaInfra1.LevelProgress
         public event Action<LevelEvaluationData> OnFinishLevel;
         public event Action OnRetryToCheckpoint;
 
+        public void ClearData()
+        {
+            _data = null;
+        }
 
         public void LoadData(ILevelProgressData data)
         {

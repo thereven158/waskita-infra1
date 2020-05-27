@@ -19,7 +19,7 @@ namespace Agate.WaskitaInfra1.LevelProgress
         {
             CurrentDay = 1;
             TryCount = 1;
-            LastCheckpoint = CurrentDay;
+            LastCheckpoint = 0;
             Answers = new List<object>(level.Questions.Count);
             Condition = new DayCondition();
             Level = level;

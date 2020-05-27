@@ -18,6 +18,9 @@ namespace Agate.WaskitaInfra1.UserInterface
         [SerializeField]
         private Button _exitButton = default;
 
+        public bool BgmToggle { get => _bgmToggle.isOn; set => _bgmToggle.isOn = value; }
+        public bool SfxToggle { get => _sfxToggle.isOn; set => _sfxToggle.isOn = value; }
+
         public UnityAction<bool> OnBgmToggle;
         public UnityAction<bool> OnSfxToggle;
         public UnityAction OnLogOutPress;
@@ -36,6 +39,12 @@ namespace Agate.WaskitaInfra1.UserInterface
             _sfxToggle.onValueChanged.AddListener(toggle => OnSfxToggle?.Invoke(toggle));
             _logOutButton.onClick.AddListener(() => OnLogOutPress?.Invoke());
             _exitButton.onClick.AddListener(() => OnExitPress?.Invoke());
+        }
+
+        public void ToggleDisplay(bool toggle)
+        {
+            OnInteraction?.Invoke();
+            gameObject.SetActive(toggle);
         }
     }
 }
