@@ -31,8 +31,6 @@ namespace GameAction
         private LevelProgressControl _levelProgress;
         private AudioSystem<AudioClip, AudioMixerGroup> _audioSystem;
 
-
-
         public void Init(
             LevelProgressControl levelProgressControl, 
             UiDisplaysSystem<GameObject> uiDisplaysSystem, 
@@ -49,6 +47,7 @@ namespace GameAction
             {
                 Interaction();
                 _levelProgress.NextDay(1);
+                _levelProgress.UpdateCheckPoint();
             };
             Action WrongAction = () =>
             {
