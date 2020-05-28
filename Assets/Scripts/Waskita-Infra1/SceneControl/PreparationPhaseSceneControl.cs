@@ -43,6 +43,9 @@ namespace Agate.WaskitaInfra1.SceneControl
         private ConfirmationPopUpDisplay _confirmationPopUp = default;
 
         [SerializeField]
+        private PopUpDisplay _informationPopUp = default;
+
+        [SerializeField]
         private Button _settingButton = default;
 
         [TextArea]
@@ -52,6 +55,10 @@ namespace Agate.WaskitaInfra1.SceneControl
         [TextArea]
         [SerializeField]
         private string _finishConfirmationMessage = default;
+
+        [TextArea]
+        [SerializeField]
+        private string _activeSimulationMessage = default;
 
         [Header("Audio")]
         [SerializeField]
@@ -88,7 +95,10 @@ namespace Agate.WaskitaInfra1.SceneControl
             else if (_levelProgress.Data.LastCheckpoint < 1)
                 OpenCheckList();
             else
-                GoToSimulation();
+                _displaySystem
+                .GetOrCreateDisplay<PopUpDisplay>(_informationPopUp)
+                .Open(_activeSimulationMessage,
+                    GoToSimulation);
         }
 
         private void OnDestroy()

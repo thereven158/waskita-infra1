@@ -37,7 +37,7 @@ namespace Agate.WaskitaInfra1.Backend.Integration
             LevelProgress progress = new LevelProgress
             {
                 LastCheckpoint = (uint) data.lastCheckpoint,
-                CurrentDay = (uint) data.currentDay,
+                CurrentDay = (uint) data.lastCheckpoint,
                 TryCount = (uint) data.tryCount,
                 Level = levelControl.GetLevel(data.level + 1),
                 Answers = new List<object>(),
