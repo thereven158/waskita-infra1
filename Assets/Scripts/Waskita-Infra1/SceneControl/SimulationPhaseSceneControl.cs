@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using A3.AudioControl;
 using A3.AudioControl.Unity;
 using A3.DataDrivenEvent;
@@ -14,6 +12,7 @@ using Agate.WaskitaInfra1.UserInterface.LevelState;
 using Agate.WaskitaInfra1.UserInterface.QuestionList;
 using Agate.WaskitaInfra1.Utilities;
 using GameAction;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -65,15 +64,15 @@ namespace Agate.WaskitaInfra1.SceneControl
 
         [Header("Audio")]
         [SerializeField]
-        private ScriptableAudioSpecification _bgm;
+        private ScriptableAudioSpecification _bgm = default;
         [SerializeField]
-        private ScriptableAudioSpecification _buttonClick;
+        private ScriptableAudioSpecification _buttonClick = default;
         [SerializeField]
-        private ScriptableAudioSpecification _ambience;
+        private ScriptableAudioSpecification _ambience = default;
         [SerializeField]
-        private ScriptableAudioSpecification _successSfx;
+        private ScriptableAudioSpecification _successSfx = default;
         [SerializeField]
-        private ScriptableAudioSpecification _failureSfx;
+        private ScriptableAudioSpecification _failureSfx = default;
 
 
 
@@ -121,7 +120,7 @@ namespace Agate.WaskitaInfra1.SceneControl
         private void OnDayChange(uint day)
         {
             _dayText.text = $"Hari {day:00}";
-            _eventSystem.InvokeEvent(new EventTriggerData() {Day = day});
+            _eventSystem.InvokeEvent(new EventTriggerData() { Day = day });
         }
 
         private void OnRetry()
@@ -154,7 +153,7 @@ namespace Agate.WaskitaInfra1.SceneControl
             PopUpDisplay.Open(_finishProjectMessage, OnClose);
         }
 
-        
+
 
         private void DisplayEvaluation(LevelEvaluationData data)
         {

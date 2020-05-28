@@ -18,8 +18,11 @@ namespace Agate.WaskitaInfra1.UserInterface
         [SerializeField]
         private Button _exitButton = default;
 
-        public bool BgmToggle { get => _bgmToggle.isOn; set => _bgmToggle.isOn = value; }
-        public bool SfxToggle { get => _sfxToggle.isOn; set => _sfxToggle.isOn = value; }
+        public bool BgmToggleState
+        {
+            get => _bgmToggle.isOn; set => _bgmToggle.isOn = value;
+        }
+        public bool SfxToggleState { get => _sfxToggle.isOn; set => _sfxToggle.isOn = value; }
 
         public UnityAction<bool> OnBgmToggle;
         public UnityAction<bool> OnSfxToggle;

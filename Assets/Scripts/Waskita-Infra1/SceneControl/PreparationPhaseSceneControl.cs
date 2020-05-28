@@ -1,24 +1,23 @@
+using A3.AudioControl;
+using A3.AudioControl.Unity;
+using A3.Quiz;
 using A3.UserInterface;
 using Agate.GlSim.Scene.Control.Map.Loader;
 using Agate.WaskitaInfra1.GameProgress;
 using Agate.WaskitaInfra1.Level;
 using Agate.WaskitaInfra1.LevelProgress;
 using Agate.WaskitaInfra1.UserInterface;
-using Agate.WaskitaInfra1.UserInterface.QuestionList;
+using Agate.WaskitaInfra1.UserInterface.Display;
 using Agate.WaskitaInfra1.UserInterface.LevelList;
+using Agate.WaskitaInfra1.UserInterface.LevelState;
+using Agate.WaskitaInfra1.UserInterface.QuestionList;
 using Agate.WaskitaInfra1.UserInterface.Quiz;
 using Agate.WaskitaInfra1.Utilities;
+using Agate.WaskitaInfra1.Backend.Integration;
 using UnityEngine;
-using UnityEngine.UI;
-using Agate.WaskitaInfra1.UserInterface.Display;
-using Agate.WaskitaInfra1.UserInterface.LevelState;
-using A3.AudioControl.Unity;
-using A3.AudioControl;
 using UnityEngine.Audio;
-using BackendIntegration;
-using Agate.Waskita.Responses;
 using UnityEngine.Networking;
-using A3.Quiz;
+using UnityEngine.UI;
 
 namespace Agate.WaskitaInfra1.SceneControl
 {
@@ -57,7 +56,7 @@ namespace Agate.WaskitaInfra1.SceneControl
         [Header("Audio")]
         [SerializeField]
         private ScriptableAudioSpecification _bgm = default;
-        
+
         [SerializeField]
         private ScriptableAudioSpecification _buttonClick = default;
 
@@ -68,21 +67,22 @@ namespace Agate.WaskitaInfra1.SceneControl
             _levelProgress = Main.GetRegisteredComponent<LevelProgressControl>();
             _levelControl = Main.GetRegisteredComponent<LevelControl>();
             _levelListDisplay = Main.GetRegisteredComponent<LevelDataListDisplay>();
+            _audioSystem = Main.GetRegisteredComponent<AudioSystemBehavior>();
+            _backendControl = Main.GetRegisteredComponent<BackendIntegrationController>();
+            _sceneLoader = Main.GetRegisteredComponent<GameplaySceneLoadControl>();
+
             _levelDataDisplay = Main.GetRegisteredComponent<LevelDataDisplay>();
             _checklistInteractionDisplay = Main.GetRegisteredComponent<QuestionListInteractionDisplay>();
             _quizDisplay = Main.GetRegisteredComponent<QuizDisplay>();
             _levelStateDisplay = Main.GetRegisteredComponent<LevelStateDisplay>();
             _displaySystem = Main.GetRegisteredComponent<UiDisplaysSystemBehavior>();
-            _sceneLoader = Main.GetRegisteredComponent<GameplaySceneLoadControl>();
             _settingDisplay = Main.GetRegisteredComponent<SettingDisplay>();
-            _audioSystem = Main.GetRegisteredComponent<AudioSystemBehavior>();
 
             _settingButton.onClick.AddListener(() => _settingDisplay.ToggleDisplay(true));
             Main.OnLogOut += OnLogOut;
 
             _audioSystem.PlayAudio(_bgm);
-            _backendControl = Main.GetRegisteredComponent<BackendIntegrationController>();
-            _settingButton.onClick.AddListener(() => _settingDisplay.gameObject.SetActive(true));
+
             if (_levelProgress.Data == null)
                 OpenProjectList();
             else if (_levelProgress.Data.LastCheckpoint < 1)
@@ -90,6 +90,7 @@ namespace Agate.WaskitaInfra1.SceneControl
             else
                 GoToSimulation();
         }
+
         private void OnDestroy()
         {
             Main.OnLogOut -= OnLogOut;
@@ -122,8 +123,8 @@ namespace Agate.WaskitaInfra1.SceneControl
             {
                 _audioSystem.PlayAudio(_buttonClick);
                 _levelProgress.StartLevel(levelData);
-                if(!_main.IsOnline)
-                    StartCoroutine(_backendControl.AwaitStartGameRequest(_levelControl.IndexOf(levelData), OnFinishReqStartGame));
+                if (!_main.IsOnline)
+                    StartCoroutine(_backendControl.AwaitStartGameRequest(levelData, OnFinishReqStartGame));
                 OpenCheckList();
             }
 
@@ -136,8 +137,7 @@ namespace Agate.WaskitaInfra1.SceneControl
 
         private void OnFinishReqStartGame(UnityWebRequest webReq)
         {
-            BasicResponse response = JsonUtility.FromJson<BasicResponse>(webReq.downloadHandler.text);
-            Debug.Log(response);
+            // do nothing
         }
 
         private void OpenCheckList()
@@ -161,7 +161,7 @@ namespace Agate.WaskitaInfra1.SceneControl
             {
                 _levelProgress.AnswerQuestion(item, o);
                 if (!_main.IsOnline)
-                    StartCoroutine(_backendControl.AwateSaveGameRequest(_levelProgress.Data, OnFinishReqSaveData));
+                    StartCoroutine(_backendControl.AwaitSaveGameRequest(_levelProgress.Data, OnFinishReqSaveData));
             }
             _quizDisplay.Display(
                 item,
@@ -172,10 +172,8 @@ namespace Agate.WaskitaInfra1.SceneControl
 
         private void OnFinishReqSaveData(UnityWebRequest webReq)
         {
-
-            Debug.Log(webReq.downloadHandler.text);
+            // do nothing
         }
-
 
         private void SimulationConfirmation()
         {

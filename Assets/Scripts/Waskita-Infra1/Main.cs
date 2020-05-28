@@ -10,7 +10,7 @@ using Agate.WaskitaInfra1.GameProgress;
 using Agate.WaskitaInfra1.Level;
 using Agate.WaskitaInfra1.LevelProgress;
 using Agate.WaskitaInfra1.PlayerAccount;
-using BackendIntegration;
+using Agate.WaskitaInfra1.Backend.Integration;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using A3.AudioControl.Unity;
@@ -88,8 +88,6 @@ namespace Agate.WaskitaInfra1
 
         #region Game Setting
 
-        private IPlayerGameData GameData;
-        
         [SerializeField]
         private ScriptablePlayerGameData _testPlayerData = default;
 
@@ -119,9 +117,9 @@ namespace Agate.WaskitaInfra1
             if (!SetupInstance()) return;
             SetAppSystemSetting();
 
-            #if ONLINE
+#if ONLINE
                 _isOnline = true;
-            #endif
+#endif
 
             _playerAccount = new PlayerAccountControl();
             _gameProgress = new GameProgressControl();
@@ -137,7 +135,8 @@ namespace Agate.WaskitaInfra1
             yield return new WaitUntil(() => UiLoaded);
 
             _backendIntegrationControl.Init(
-                _api, 
+                _api,
+                _levelControl,
                 GetRegisteredComponent<UiDisplaysSystemBehavior>());
 
             if (!IsOnline)
@@ -200,7 +199,7 @@ namespace Agate.WaskitaInfra1
 
         public void StartGame()
         {
-            if (!IsOnline && _playerAccount.Data.IsEmpty())LoadDummyData();
+            if (!IsOnline && _playerAccount.Data.IsEmpty()) LoadDummyData();
             _sceneLoader.ChangeScene("PreparationPhase");
         }
 
@@ -228,7 +227,7 @@ namespace Agate.WaskitaInfra1
 
         #region Editor
 
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         [SerializeField]
         private SceneAsset _firstSceneAssetToLoad = null;
 
@@ -237,7 +236,7 @@ namespace Agate.WaskitaInfra1
             _firstSceneToLoad = !_firstSceneAssetToLoad ? string.Empty : _firstSceneAssetToLoad.name;
         }
 
-        #endif
+#endif
 
         #endregion
 
@@ -280,7 +279,7 @@ namespace Agate.WaskitaInfra1
         public static T GetRegisteredComponent<T>() where T : class
         {
             if (Instance._component == null) return null;
-            if (Instance._component.ContainsKey(typeof(T))) return (T) Instance._component[typeof(T)];
+            if (Instance._component.ContainsKey(typeof(T))) return (T)Instance._component[typeof(T)];
             foreach (KeyValuePair<Type, object> keyValuePair in Instance._component)
                 if (keyValuePair.Value is T value)
                     return value;

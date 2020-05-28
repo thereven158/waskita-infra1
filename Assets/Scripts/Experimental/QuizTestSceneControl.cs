@@ -11,12 +11,12 @@ namespace Experimental
         private QuizDisplay _quizDisplay = default;
 
         [SerializeField]
-        private PopUpDisplay ResultDisplay;
+        private PopUpDisplay ResultDisplay = default;
 
         [SerializeField]
         private ScriptableQuestion question = default;
-        
-        
+
+
 
         private void Start()
         {
