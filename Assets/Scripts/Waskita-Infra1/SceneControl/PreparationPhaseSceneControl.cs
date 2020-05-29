@@ -133,8 +133,10 @@ namespace Agate.WaskitaInfra1.SceneControl
             {
                 _audioSystem.PlayAudio(_buttonClick);
                 _levelProgress.StartLevel(levelData);
-                if (!_main.IsOnline)
-                    StartCoroutine(_backendControl.AwaitStartGameRequest(levelData, OnFinishReqStartGame));
+                if (_main.IsOnline)
+                {
+                    StartCoroutine(_backendControl.AwaitStartLevelRequest(levelData, OnFinishReqStartLevel));
+                }
                 OpenCheckList();
             }
 
@@ -145,7 +147,7 @@ namespace Agate.WaskitaInfra1.SceneControl
                 OpenProjectList);
         }
 
-        private void OnFinishReqStartGame(UnityWebRequest webReq)
+        private void OnFinishReqStartLevel(UnityWebRequest webReq)
         {
             // do nothing
         }
@@ -170,8 +172,8 @@ namespace Agate.WaskitaInfra1.SceneControl
             void OnAnswerQuiz(IQuiz quiz, object o)
             {
                 _levelProgress.AnswerQuestion(item, o);
-                if (!_main.IsOnline)
-                    StartCoroutine(_backendControl.AwaitSaveGameRequest(_levelProgress.Data, OnFinishReqSaveData));
+                if (_main.IsOnline)
+                    StartCoroutine(_backendControl.AwaitSaveLevelProgressRequest(_levelProgress.Data, OnFinishReqSaveData));
             }
             _quizDisplay.Display(
                 item,

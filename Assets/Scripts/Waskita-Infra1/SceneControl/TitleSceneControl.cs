@@ -123,7 +123,6 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
 
         private void OnFinishValidate(UnityWebRequest webReq)
         {
-            Debug.Log("Validate Success");
             LoginResponse response = JsonUtility.FromJson<LoginResponse>(webReq.downloadHandler.text);
             if (response == null)
             {

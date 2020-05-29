@@ -74,16 +74,16 @@ namespace Agate.WaskitaInfra1.Backend.Integration
             yield return StartCoroutine(AwaitRequest(webReq, onFinish, onAbort));
         }
 
-        public IEnumerator AwaitStartGameRequest(LevelData level, Action<UnityWebRequest> onFinish)
+        public IEnumerator AwaitStartLevelRequest(LevelData level, Action<UnityWebRequest> onFinish)
         {
-            UnityWebRequest startGameReq = _api.StartGameRequest(_levelControl.StartLevelRequest(level));
+            UnityWebRequest startGameReq = _api.StartLevelRequest(_levelControl.StartLevelRequest(level));
 
             yield return StartCoroutine(AwaitRequest(startGameReq, onFinish));
         }
 
-        public IEnumerator AwaitSaveGameRequest(ILevelProgressData data, Action<UnityWebRequest> onFinish)
+        public IEnumerator AwaitSaveLevelProgressRequest(ILevelProgressData data, Action<UnityWebRequest> onFinish)
         {
-            UnityWebRequest saveGameRequest = _api.SaveGame(data.SaveRequest());
+            UnityWebRequest saveGameRequest = _api.SaveLevelProgress(data.SaveRequest());
 
             yield return StartCoroutine(AwaitRequest(saveGameRequest, onFinish));
         }

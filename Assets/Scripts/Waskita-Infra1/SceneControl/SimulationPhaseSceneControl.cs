@@ -151,7 +151,7 @@ namespace Agate.WaskitaInfra1.SceneControl
             if (!Main.Instance.IsOnline) 
                 Action();
             else
-                _backendIntegration.StartCoroutine(_backendIntegration.AwaitSaveGameRequest(_levelProgress.Data, OnFinish));
+                _backendIntegration.StartCoroutine(_backendIntegration.AwaitSaveLevelProgressRequest(_levelProgress.Data, OnFinish));
         }
 
         private void OnDestroy()
@@ -172,7 +172,7 @@ namespace Agate.WaskitaInfra1.SceneControl
                 // TBA
             }
 
-            _backendIntegration.StartCoroutine(_backendIntegration.AwaitSaveGameRequest(_levelProgress.Data, OnFinish));
+            _backendIntegration.StartCoroutine(_backendIntegration.AwaitSaveLevelProgressRequest(_levelProgress.Data, OnFinish));
         }
 
         private void OnLevelFinish(LevelEvaluationData data)
