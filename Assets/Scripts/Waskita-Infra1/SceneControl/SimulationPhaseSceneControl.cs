@@ -178,6 +178,7 @@ namespace Agate.WaskitaInfra1.SceneControl
         private void OnLevelFinish(LevelEvaluationData data)
         {
             _evaluationMessages = data.EvaluationMessages();
+            StartCoroutine(_backendIntegration.AwaitEndLevelRequest(data, OnFinishReqEndLevel));
             void OnClose()
             {
                 _settingButton.GetComponent<RectTransform>().SetPosition(_settingButtonPositions[1]);
@@ -191,7 +192,10 @@ namespace Agate.WaskitaInfra1.SceneControl
             PopUpDisplay.Open(_finishProjectMessage, OnClose);
         }
 
-
+        private void OnFinishReqEndLevel(UnityWebRequest webReq)
+        {
+            //do nothing
+        }
 
         private void DisplayEvaluation(LevelEvaluationData data)
         {
