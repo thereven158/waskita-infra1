@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Agate.Waskita.Request;
 using Agate.Waskita.Responses;
 using Agate.Waskita.Responses.Data;
@@ -82,6 +83,17 @@ namespace Agate.WaskitaInfra1.Backend.Integration
         public static StartGameRequest StartLevelRequest(this LevelControl levelControl, LevelData level)
         {
             return new StartGameRequest(){level = levelControl.IndexOf(level) + 1};
+        }
+
+        public static EndGameRequest EndLevelRequest(this LevelEvaluationData data)
+        {
+            EndGameRequest request = new EndGameRequest()
+            {
+                correctAnswers = new List<bool>(data.AnswerEvaluations),
+                isSuccess = data.AnswerEvaluations.All(eval => eval == true)
+            };
+
+            return request;
         }
     }
 

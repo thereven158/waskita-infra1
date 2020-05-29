@@ -139,12 +139,12 @@ namespace Agate.Waskita.API
         {
             request.Set(WaskitaApi.BaseData);
             string param = JsonUtility.ToJson(request);
-            Debug.Log(param);
             return PostRequest(_ipadd + _saveLevel, param, true);
         }
 
-        public UnityWebRequest EndGame(EndGameRequest request)
+        public UnityWebRequest EndLevel(EndGameRequest request)
         {
+            request.Set(WaskitaApi.BaseData);
             string param = JsonUtility.ToJson(request);
             return PostRequest(_ipadd + _endLevel, param, true);
         }
