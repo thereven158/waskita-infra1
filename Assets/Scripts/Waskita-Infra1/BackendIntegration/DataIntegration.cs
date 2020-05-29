@@ -34,20 +34,29 @@ namespace Agate.WaskitaInfra1.Backend.Integration
 
         public static LevelProgress LevelProgress(this LevelControl levelControl, LevelProgressData data)
         {
+            if (data.level == 0)
+            {
+                return null;
+            }
             LevelProgress progress = new LevelProgress
             {
                 LastCheckpoint = (uint) data.lastCheckpoint,
                 CurrentDay = (uint) data.lastCheckpoint,
                 TryCount = (uint) data.tryCount,
-                Level = levelControl.GetLevel(data.level + 1),
+                Level = levelControl.GetLevel(data.level - 1),
                 Answers = new List<object>(),
             };
             for (int i = 0; i < progress.Level.Questions.Count; i++)
                 progress.Answers.Add(null);
             if (data.storedAnswers == null) return progress;
+
             for (int i = 0; i < data.storedAnswers.Count; i++)
+            {
+                if (data.storedAnswers[i] < 0) continue;
                 if (progress.Level.Questions[i].Quiz.Question is IMultipleChoiceQuestion multipleChoice)
                     progress.Answers[i] = multipleChoice.AnswerOptions[data.storedAnswers[i]];
+            }
+
 
             return progress;
         }

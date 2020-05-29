@@ -19,9 +19,11 @@ namespace Agate.Waskita.API
         
         private const string _login = "Auth/Login";
         private const string _validate = "Auth/Validate";
-        private const string _startGame = "GameLoop/StartGame";
-        private const string _saveGame = "GameLoop/SaveGame";
-        private const string _endGame = "GameLoop/EndGame";
+        private const string _fetchGameProgress = "Game/GameProgress";
+        private const string _fetchLevelProgress = "Game/LevelProgress";
+        private const string _startLevel = "GameLoop/StartLevel";
+        private const string _saveLevel = "GameLoop/SaveLevelProgress";
+        private const string _endLevel = "GameLoop/EndLevel";
         private const string _refreshToken = "Token/Refresh";
         
         #endregion
@@ -123,28 +125,28 @@ namespace Agate.Waskita.API
 
         #region Request Game Loop
 
-        public UnityWebRequest StartGameRequest(StartGameRequest request)
+        public UnityWebRequest StartLevelRequest(StartGameRequest request)
         {
             request.Set(BaseData);
             string param = JsonUtility.ToJson(request);
             return PostRequest(
-                _ipadd + _startGame,
+                _ipadd + _startLevel,
                 param,
                 true);
         }
 
-        public UnityWebRequest SaveGame(SaveGameRequest request)
+        public UnityWebRequest SaveLevelProgress(SaveGameRequest request)
         {
             request.Set(WaskitaApi.BaseData);
             string param = JsonUtility.ToJson(request);
             Debug.Log(param);
-            return PostRequest(_ipadd + _saveGame, param, true);
+            return PostRequest(_ipadd + _saveLevel, param, true);
         }
 
         public UnityWebRequest EndGame(EndGameRequest request)
         {
             string param = JsonUtility.ToJson(request);
-            return PostRequest(_ipadd + _endGame, param, true);
+            return PostRequest(_ipadd + _endLevel, param, true);
         }
 
         #endregion
