@@ -4,6 +4,7 @@ using Agate.WaskitaInfra1.LevelProgress;
 using Agate.WaskitaInfra1.Server.API;
 using Agate.WaskitaInfra1.Server.Request;
 using Agate.WaskitaInfra1.Server.Responses;
+using Agate.WaskitaInfra1.Server.Responses.Data;
 using Agate.WaskitaInfra1.UserInterface.Display;
 using System;
 using System.Collections;
@@ -38,6 +39,11 @@ namespace Agate.WaskitaInfra1.Backend.Integration
             _levelControl = levelControl;
             _displaysSystem = uiDisplay;
             _blockDisplay = _displaysSystem.GetOrCreateDisplay<BlockDisplay>(_blockDisplayPrefab);
+        }
+
+        public LevelProgressIntegration ParseLevelProgress(ServerLevelProgressData data)
+        {
+            return _levelControl.LevelProgress(data);
         }
 
         public IEnumerator AwaitLoginRequest(string username, string password, Action<LoginResponse> onSuccess,

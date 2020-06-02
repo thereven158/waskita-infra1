@@ -2,6 +2,7 @@ using A3.AudioControl;
 using A3.AudioControl.Unity;
 using A3.UserInterface;
 using Agate.WaskitaInfra1.UserInterface;
+using Agate.WaskitaInfra1.UserInterface.Display;
 using Agate.WaskitaInfra1.UserInterface.LevelList;
 using Agate.WaskitaInfra1.UserInterface.LevelState;
 using Agate.WaskitaInfra1.UserInterface.QuestionList;
@@ -39,12 +40,23 @@ namespace Agate.WaskitaInfra1.SceneControl
         [Header("Audio")]
         [SerializeField]
         private ScriptableAudioSpecification _buttonClick = default;
-        [Space]
         [Header("Setting Configuration")]
         [SerializeField]
         private AudioMixer _audioMixer = default;
 
+        [SerializeField]
+        private ConfirmationPopUpDisplay _confirmationPopup = default;
+
+        [SerializeField]
+        [TextArea]
+        private string _exitConfirmationText = default;
+
+        [SerializeField]
+        [TextArea]
+        private string _logoutConfirmationText = default;
+
         private AudioSystem<AudioClip, AudioMixerGroup> _audioSystem;
+        private UiDisplaysSystem<GameObject> DisplaySystem => _displaySystem;
 
         private void Start()
         {
@@ -79,8 +91,30 @@ namespace Agate.WaskitaInfra1.SceneControl
             _settingDisplay.OnBgmToggle += toggle => PlayerPrefs.SetFloat(MIXER_BGM_PARAM, toggle ? 0 : -80);
             _settingDisplay.OnSfxToggle += toggle => _audioMixer.SetFloat(MIXER_SFX_PARAM, toggle ? 0 : -80);
             _settingDisplay.OnSfxToggle += toggle => PlayerPrefs.SetFloat(MIXER_SFX_PARAM, toggle ? 0 : -80);
-            _settingDisplay.OnExitPress = Main.Quit;
-            _settingDisplay.OnLogOutPress = Main.LogOut;
+
+            void OnSettingExit()
+            {
+                DisplaySystem.GetOrCreateDisplay<ConfirmationPopUpDisplay>(_confirmationPopup)
+                    .Open(new ConfirmationPopUpViewData()
+                    {
+                        MessageText = _exitConfirmationText,
+                        ConfirmAction = Main.Quit,
+                        CloseAction = null
+                    });
+            }
+            void OnSettingLogout()
+            {
+                DisplaySystem.GetOrCreateDisplay<ConfirmationPopUpDisplay>(_confirmationPopup)
+                    .Open(new ConfirmationPopUpViewData()
+                    {
+                        MessageText = _logoutConfirmationText,
+                        ConfirmAction = Main.LogOut,
+                        CloseAction = null
+                    });
+            }
+
+            _settingDisplay.OnExitPress = OnSettingExit;
+            _settingDisplay.OnLogOutPress = OnSettingLogout;
         }
     }
 }

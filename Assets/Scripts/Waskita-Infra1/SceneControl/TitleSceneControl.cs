@@ -4,10 +4,10 @@ using A3.UserInterface;
 using Agate.GlSim.Scene.Control.Map.Loader;
 using Agate.WaskitaInfra1.Backend.Integration;
 using Agate.WaskitaInfra1.GameProgress;
-using Agate.WaskitaInfra1.Level;
 using Agate.WaskitaInfra1.LevelProgress;
 using Agate.WaskitaInfra1.PlayerAccount;
 using Agate.WaskitaInfra1.Server.Responses;
+using Agate.WaskitaInfra1.UserInterface;
 using Agate.WaskitaInfra1.UserInterface.Display;
 using Agate.WaskitaInfra1.UserInterface.Login;
 using System.Collections;
@@ -50,7 +50,7 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
         private GameplaySceneLoadControl _sceneLoadControl;
         private GameProgressControl _gameProgressControl;
         private LevelProgressControl _levelProgressControl;
-        private LevelControl _levelControl;
+        private SettingDisplay _settingDisplay;
         private BackendIntegrationController _backendControl;
         private AudioSystem<AudioClip, AudioMixerGroup> _audioSystem;
 
@@ -58,26 +58,31 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
         {
             _main = Main.Instance;
             _accountControl = Main.GetRegisteredComponent<PlayerAccountControl>();
-            _backendControl = Main.GetRegisteredComponent<BackendIntegrationController>();
-            _displaysSystem = Main.GetRegisteredComponent<UiDisplaysSystemBehavior>();
-            _sceneLoadControl = Main.GetRegisteredComponent<GameplaySceneLoadControl>();
-            _audioSystem = Main.GetRegisteredComponent<AudioSystemBehavior>();
-            _audioSystem.PlayAudio(_bgm);
-
             _gameProgressControl = Main.GetRegisteredComponent<GameProgressControl>();
-            _levelControl = Main.GetRegisteredComponent<LevelControl>();
             _levelProgressControl = Main.GetRegisteredComponent<LevelProgressControl>();
+            _sceneLoadControl = Main.GetRegisteredComponent<GameplaySceneLoadControl>();
+
+            _displaysSystem = Main.GetRegisteredComponent<UiDisplaysSystemBehavior>();
+            _settingDisplay = Main.GetRegisteredComponent<SettingDisplay>();
+
+            _audioSystem = Main.GetRegisteredComponent<AudioSystemBehavior>();
+
+            _backendControl = Main.GetRegisteredComponent<BackendIntegrationController>();
+
+            _audioSystem.PlayAudio(_bgm);
+            _loginForm.Init();
+            _logOutButton.gameObject.SetActive(false);
+
+            _loginForm.LoginAction = OnLoginButton;
+            _logOutButton.onClick.AddListener(OnLogoutButton);
+            _startButton.onClick.AddListener(OnStartButtonPress);
 
             if (!_accountControl.Data.IsEmpty())
             {
                 yield return StartCoroutine(_backendControl.AwaitValidateRequest(OnFinishValidate, OnAbortValidate));
             }
 
-            _loginForm.Init();
-            _loginForm.LoginAction = OnLoginButton;
             _logOutButton.gameObject.SetActive(loggedIn);
-            _logOutButton.onClick.AddListener(OnLogoutButton);
-            _startButton.onClick.AddListener(OnStartButtonPress);
         }
 
 
@@ -103,6 +108,7 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
             _displaysSystem.GetOrCreateDisplay<PopUpDisplay>(_popUpDisplay)
                 .Open(response.message, null);
             _accountControl.SetData(response.AccountData());
+            _settingDisplay.NikText = response.name;
             Debug.Log(response.token);
             _main.SaveAccountData();
             SetDataProgress(response);
@@ -149,7 +155,7 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
         private void SetDataProgress(LoginResponse response)
         {
             _gameProgressControl.SetData(response.gameProgress);
-            _levelProgressControl.LoadData(_levelControl.LevelProgress(response.levelProgress));
+            _levelProgressControl.LoadData(_backendControl.ParseLevelProgress(response.levelProgress));
         }
 
         private void OnLogoutButton()
