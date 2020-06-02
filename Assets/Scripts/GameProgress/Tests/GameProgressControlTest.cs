@@ -1,5 +1,5 @@
-using System;
 using NUnit.Framework;
+using System;
 
 namespace Agate.WaskitaInfra1.GameProgress
 {
@@ -79,7 +79,7 @@ namespace Agate.WaskitaInfra1.GameProgress
             [Random(0, 10, 3)] double initial,
             [Random(0, 50, 3)] double delta)
         {
-            _gameProgressCntrl.SetData(new TestGameProgressData() {PlayTime = initial});
+            _gameProgressCntrl.SetData(new TestGameProgressData() { PlayTime = initial });
             _gameProgressCntrl.AddPlayTime(delta);
             Assert.That(_gameProgressCntrl.Data.PlayTime, Is.EqualTo(initial + delta));
         }
@@ -88,7 +88,7 @@ namespace Agate.WaskitaInfra1.GameProgress
         public void UpdateCompletedLevelIndex_With_Number_Lower_Or_Equal_than_MaxCompletedIndex_Do_Nothing(
             [Range(0, 3)] short index)
         {
-            _gameProgressCntrl.SetData(new TestGameProgressData() {MaxCompletedLevelIndex = 3});
+            _gameProgressCntrl.SetData(new TestGameProgressData() { MaxCompletedLevelIndex = 3 });
             _gameProgressCntrl.UpdateCompletedLevelIndex(index);
             Assert.That(_gameProgressCntrl.Data.MaxCompletedLevelIndex, Is.EqualTo(3));
         }
@@ -97,7 +97,7 @@ namespace Agate.WaskitaInfra1.GameProgress
         public void UpdateCompletedLevelIndex_With_Higher_Than_MaxCompletedIndex_Update_Value(
             [Range(1, 3)] short index)
         {
-            _gameProgressCntrl.SetData(new TestGameProgressData() {MaxCompletedLevelIndex = 0});
+            _gameProgressCntrl.SetData(new TestGameProgressData() { MaxCompletedLevelIndex = 0 });
             _gameProgressCntrl.UpdateCompletedLevelIndex(index);
             Assert.That(_gameProgressCntrl.Data.MaxCompletedLevelIndex, Is.Not.EqualTo(0));
         }

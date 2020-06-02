@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace GameAction
 {
-    public abstract class ScriptableGameAction: ScriptableObject, IGameActionData
+    public abstract class ScriptableGameAction : ScriptableObject, IGameActionData
     {
         public abstract void Init(GameActionSystem system);
 

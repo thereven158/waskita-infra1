@@ -1,12 +1,12 @@
-using System.Collections.Generic;
-using System.Linq;
-using Agate.WaskitaInfra1.Server.Request;
-using Agate.WaskitaInfra1.Server.Responses;
-using Agate.WaskitaInfra1.Server.Responses.Data;
 using Agate.WaskitaInfra1.GameProgress;
 using Agate.WaskitaInfra1.Level;
 using Agate.WaskitaInfra1.LevelProgress;
 using Agate.WaskitaInfra1.PlayerAccount;
+using Agate.WaskitaInfra1.Server.Request;
+using Agate.WaskitaInfra1.Server.Responses;
+using Agate.WaskitaInfra1.Server.Responses.Data;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Agate.WaskitaInfra1.Backend.Integration
 {
@@ -25,9 +25,9 @@ namespace Agate.WaskitaInfra1.Backend.Integration
         {
             return new GameProgress()
             {
-                CompletionCount = (uint) data.completionCount,
+                CompletionCount = (uint)data.completionCount,
                 PlayTime = data.playTime.TotalSeconds,
-                MaxCompletedLevelIndex = (short) data.maxCompleteLevelIndex
+                MaxCompletedLevelIndex = (short)data.maxCompleteLevelIndex
             };
         }
 
@@ -39,9 +39,9 @@ namespace Agate.WaskitaInfra1.Backend.Integration
             }
             LevelProgressIntegration progress = new LevelProgressIntegration
             {
-                LastCheckpoint = (uint) data.lastCheckpoint,
-                CurrentDay = (uint) data.lastCheckpoint,
-                TryCount = (uint) data.tryCount,
+                LastCheckpoint = (uint)data.lastCheckpoint,
+                CurrentDay = (uint)data.lastCheckpoint,
+                TryCount = (uint)data.tryCount,
                 Level = levelControl.GetLevel(data.level - 1),
                 Answers = new List<object>(),
             };
@@ -80,7 +80,7 @@ namespace Agate.WaskitaInfra1.Backend.Integration
 
         public static StartGameRequest StartLevelRequest(this LevelControl levelControl, LevelData level)
         {
-            return new StartGameRequest(){level = levelControl.IndexOf(level) + 1};
+            return new StartGameRequest() { level = levelControl.IndexOf(level) + 1 };
         }
 
         public static EndGameRequest EndLevelRequest(this LevelEvaluationData data)
@@ -88,7 +88,7 @@ namespace Agate.WaskitaInfra1.Backend.Integration
             EndGameRequest request = new EndGameRequest()
             {
                 correctAnswers = new List<bool>(data.AnswerEvaluations),
-                isSuccess = data.AnswerEvaluations.All(eval => eval == true)
+                isSuccess = data.AnswerEvaluations.All(eval => eval)
             };
 
             return request;

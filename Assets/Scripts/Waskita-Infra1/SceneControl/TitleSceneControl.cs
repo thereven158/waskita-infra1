@@ -2,12 +2,12 @@ using A3.AudioControl;
 using A3.AudioControl.Unity;
 using A3.UserInterface;
 using Agate.GlSim.Scene.Control.Map.Loader;
-using Agate.WaskitaInfra1.Server.Responses;
 using Agate.WaskitaInfra1.Backend.Integration;
 using Agate.WaskitaInfra1.GameProgress;
 using Agate.WaskitaInfra1.Level;
 using Agate.WaskitaInfra1.LevelProgress;
 using Agate.WaskitaInfra1.PlayerAccount;
+using Agate.WaskitaInfra1.Server.Responses;
 using Agate.WaskitaInfra1.UserInterface.Display;
 using Agate.WaskitaInfra1.UserInterface.Login;
 using System.Collections;
@@ -127,7 +127,7 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
 
         private void OnFinishValidate(UnityWebRequest webReq)
         {
-            if(webReq.responseCode != 200)
+            if (webReq.responseCode != 200)
             {
                 _displaysSystem.GetOrCreateDisplay<PopUpDisplay>(_popUpDisplay).Open(FailedValidationMessage, null);
                 return;

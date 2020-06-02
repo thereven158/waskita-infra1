@@ -1,5 +1,5 @@
-using System;
 using Agate.WaskitaInfra1.Level;
+using System;
 
 namespace Agate.WaskitaInfra1.LevelProgress
 {
@@ -35,16 +35,16 @@ namespace Agate.WaskitaInfra1.LevelProgress
         public void NextDay(uint delta)
         {
             _data.CurrentDay += delta;
-            
+
             OnDayChange?.Invoke(_data.CurrentDay);
-            if(_data.CurrentDay > _data.Level.DayDuration)
+            if (_data.CurrentDay > _data.Level.DayDuration)
                 FinishLevel();
         }
 
         public void AnswerQuestion(IQuestion item, object answer)
         {
             int index = _data.Level.Questions.IndexOf(item);
-            if(index != -1) AnswerQuestion(index,answer);
+            if (index != -1) AnswerQuestion(index, answer);
         }
 
         public void AnswerQuestion(int index, object answer)

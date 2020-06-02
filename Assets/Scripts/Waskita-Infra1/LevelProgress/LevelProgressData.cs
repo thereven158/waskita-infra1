@@ -1,5 +1,5 @@
-using System.Collections.Generic;
 using Agate.WaskitaInfra1.Level;
+using System.Collections.Generic;
 
 namespace Agate.WaskitaInfra1.LevelProgress
 {

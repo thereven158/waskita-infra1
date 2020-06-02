@@ -1,8 +1,8 @@
-using System.Collections.Generic;
-using System.Linq;
 using A3.CodePattern.Unity;
 using A3.DataDrivenEvent;
 using Agate.WaskitaInfra1.Object;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Agate.WaskitaInfra1.Level

@@ -1,6 +1,6 @@
 ﻿using Agate.SpriteSheet;
-using UnityEngine;
 using Agate.WaskitaInfra1.UserInterface.SpriteSheet;
+using UnityEngine;
 
 namespace Experimental
 {
@@ -16,5 +16,5 @@ namespace Experimental
             _spritesDisplay.SetSpriteSheet(_spriteSheet);
         }
     }
-    
+
 }

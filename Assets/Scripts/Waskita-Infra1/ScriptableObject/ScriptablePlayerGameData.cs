@@ -16,7 +16,7 @@ namespace Agate.WaskitaInfra1
 
         [SerializeField]
         private ScriptableLevelProgress _levelProgress = default;
-        
+
         public PlayerAccountData GetAccountData()
         {
             return new PlayerAccountData()
@@ -37,5 +37,5 @@ namespace Agate.WaskitaInfra1
         }
     }
 
-    
+
 }

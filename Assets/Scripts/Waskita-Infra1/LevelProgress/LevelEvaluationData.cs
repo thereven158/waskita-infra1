@@ -1,5 +1,5 @@
-using System.Collections.Generic;
 using Agate.WaskitaInfra1.Level;
+using System.Collections.Generic;
 
 namespace Agate.WaskitaInfra1.LevelProgress
 {
@@ -22,9 +22,9 @@ namespace Agate.WaskitaInfra1.LevelProgress
         public Queue<string> EvaluationMessages()
         {
             Queue<string> evalMessage = new Queue<string>();
-            for (int i =0; i< AnswerEvaluations.Count;i++)
+            for (int i = 0; i < AnswerEvaluations.Count; i++)
             {
-                if(AnswerEvaluations[i]) continue;
+                if (AnswerEvaluations[i]) continue;
                 evalMessage.Enqueue(Level.Questions[i].WrongExplanation);
             }
 

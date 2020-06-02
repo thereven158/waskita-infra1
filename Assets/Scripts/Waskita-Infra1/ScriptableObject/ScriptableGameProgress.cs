@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Agate.WaskitaInfra1
 {
     [CreateAssetMenu(fileName = "GameProgressData", menuName = "WaskitaInfra1/GameProgressData")]
-    public class ScriptableGameProgress: ScriptableObject, IGameProgressData
+    public class ScriptableGameProgress : ScriptableObject, IGameProgressData
     {
         [SerializeField]
         private short _maxCompletedLevelIndex = default;

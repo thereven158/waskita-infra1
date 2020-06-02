@@ -17,6 +17,6 @@ namespace Agate.WaskitaInfra1.Utilities
             };
         }
 
-        
+
     }
 }

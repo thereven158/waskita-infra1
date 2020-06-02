@@ -1,6 +1,6 @@
+using Agate.SpriteSheet;
 using System;
 using System.Collections.Generic;
-using Agate.SpriteSheet;
 using UnityEngine;
 
 namespace Agate.WaskitaInfra1.Level

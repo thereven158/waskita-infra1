@@ -1,7 +1,7 @@
-using System.Collections.Generic;
 using A3.Quiz;
 using Agate.WaskitaInfra1.Level;
 using NUnit.Framework;
+using System.Collections.Generic;
 
 namespace Agate.WaskitaInfra1.LevelProgress.Test
 {
@@ -17,7 +17,7 @@ namespace Agate.WaskitaInfra1.LevelProgress.Test
         private readonly LevelData testLevel = new LevelData()
         {
             DayDuration = 50,
-            Questions = new List<IQuestion>() {TestQuestion, TestQuestion, TestQuestion}
+            Questions = new List<IQuestion>() { TestQuestion, TestQuestion, TestQuestion }
         };
 
 

@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Agate.WaskitaInfra1.Level
 {
     [CreateAssetMenu(fileName = "debugEvent", menuName = "WaskitaInfra1/Event/Debug")]
-    public class DebugLogEvent: ScriptableDayEventData
+    public class DebugLogEvent : ScriptableDayEventData
     {
         public uint Day;
         public override bool IsSuitable(EventTriggerData data)

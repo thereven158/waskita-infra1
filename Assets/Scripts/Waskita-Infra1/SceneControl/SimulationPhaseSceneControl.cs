@@ -148,7 +148,7 @@ namespace Agate.WaskitaInfra1.SceneControl
             {
                 Action();
             }
-            if (!Main.Instance.IsOnline) 
+            if (!Main.Instance.IsOnline)
                 Action();
             else
                 _backendIntegration.StartCoroutine(_backendIntegration.AwaitSaveLevelProgressRequest(_levelProgress.Data, OnFinish));

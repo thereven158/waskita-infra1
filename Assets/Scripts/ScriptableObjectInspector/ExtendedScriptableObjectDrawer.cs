@@ -10,11 +10,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using UnityEngine;
 using UnityEditor;
-using Object = UnityEngine.Object;
+using UnityEngine;
 using static UnityEditor.EditorGUI;
 using static UnityEditor.EditorGUIUtility;
+using Object = UnityEngine.Object;
 
 namespace Github.ScriptableObjectExtension
 {
@@ -164,7 +164,7 @@ namespace Github.ScriptableObjectExtension
 
         private static bool IsThereAnyVisibileProperty(SerializedProperty property)
         {
-            ScriptableObject data = (ScriptableObject) property.objectReferenceValue;
+            ScriptableObject data = (ScriptableObject)property.objectReferenceValue;
             if (!data) return false;
             SerializedObject serializedObject = new SerializedObject(data);
 
@@ -212,7 +212,7 @@ namespace Github.ScriptableObjectExtension
             if (GUI.changed) property.serializedObject.ApplyModifiedProperties();
             if (property.objectReferenceValue == null) GUIUtility.ExitGUI();
         }
-        
+
         #endregion
 
         #region Properties
@@ -331,7 +331,7 @@ namespace Github.ScriptableObjectExtension
         }
 
 
-        
+
 
         #endregion
 
@@ -431,7 +431,7 @@ namespace Github.ScriptableObjectExtension
 
         private static void DrawSerializedFields(Rect position, SerializedProperty property)
         {
-            ScriptableObject data = (ScriptableObject) property.objectReferenceValue;
+            ScriptableObject data = (ScriptableObject)property.objectReferenceValue;
             SerializedObject serializedObject = new SerializedObject(data);
 
             SerializedProperty prop = serializedObject.GetIterator();
@@ -589,7 +589,7 @@ namespace Github.ScriptableObjectExtension
         {
             if (boxStyle != null) return;
             boxStyle = new GUIStyle(GUI.skin.box)
-                {border = new RectOffset(2, 2, 2, 2)};
+            { border = new RectOffset(2, 2, 2, 2) };
         }
 
         #endregion
