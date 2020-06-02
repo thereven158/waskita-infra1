@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Agate.Waskita.Request.Data;
+using Agate.WaskitaInfra1.Server.Request.Data;
 
-namespace Agate.Waskita.Request
+namespace Agate.WaskitaInfra1.Server.Request
 {
     [System.Serializable]
     public class SaveGameRequest : BasicRequest

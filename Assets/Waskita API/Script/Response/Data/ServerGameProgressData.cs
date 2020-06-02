@@ -1,10 +1,10 @@
 ﻿using System;
 using Agate.WaskitaInfra1.GameProgress;
 
-namespace Agate.Waskita.Responses.Data
+namespace Agate.WaskitaInfra1.Server.Responses.Data
 {
     [System.Serializable]
-    public class GameProgressData : IGameProgressData
+    public class ServerGameProgressData : IGameProgressData
     {
         public int maxCompleteLevelIndex;
         public int completionCount;

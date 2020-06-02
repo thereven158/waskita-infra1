@@ -1,6 +1,6 @@
-﻿using Agate.Waskita.Responses;
+﻿using Agate.WaskitaInfra1.Server.Responses;
 
-namespace Agate.Waskita.Responses
+namespace Agate.WaskitaInfra1.Server.Responses
 {
     [System.Serializable]
     public class BasicResponse

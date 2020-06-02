@@ -1,14 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
-using Agate.Waskita.Request;
-using Agate.Waskita.Responses;
-using Agate.Waskita.Responses.Data;
+using Agate.WaskitaInfra1.Server.Request;
+using Agate.WaskitaInfra1.Server.Responses;
+using Agate.WaskitaInfra1.Server.Responses.Data;
 using Agate.WaskitaInfra1.GameProgress;
 using Agate.WaskitaInfra1.Level;
 using Agate.WaskitaInfra1.LevelProgress;
 using Agate.WaskitaInfra1.PlayerAccount;
-using DayCondition = Agate.WaskitaInfra1.LevelProgress.DayCondition;
-using LevelData = Agate.WaskitaInfra1.Level.LevelData;
 
 namespace Agate.WaskitaInfra1.Backend.Integration
 {
@@ -23,7 +21,7 @@ namespace Agate.WaskitaInfra1.Backend.Integration
             };
         }
 
-        public static IGameProgressData GameData(this GameProgressData data)
+        public static IGameProgressData GameData(this ServerGameProgressData data)
         {
             return new GameProgress()
             {
@@ -33,13 +31,13 @@ namespace Agate.WaskitaInfra1.Backend.Integration
             };
         }
 
-        public static LevelProgress LevelProgress(this LevelControl levelControl, LevelProgressData data)
+        public static LevelProgressIntegration LevelProgress(this LevelControl levelControl, ServerLevelProgressData data)
         {
             if (data.level == 0)
             {
                 return null;
             }
-            LevelProgress progress = new LevelProgress
+            LevelProgressIntegration progress = new LevelProgressIntegration
             {
                 LastCheckpoint = (uint) data.lastCheckpoint,
                 CurrentDay = (uint) data.lastCheckpoint,
@@ -95,9 +93,20 @@ namespace Agate.WaskitaInfra1.Backend.Integration
 
             return request;
         }
+
+        public static EndGameRequest AbortLevelRequest(this ILevelProgressData data)
+        {
+            EndGameRequest request = new EndGameRequest()
+            {
+                correctAnswers = new List<bool>(),
+                isSuccess = false
+            };
+
+            return request;
+        }
     }
 
-    public class LevelProgress : ILevelProgressData
+    public class LevelProgressIntegration : ILevelProgressData
     {
         public uint LastCheckpoint { get; set; }
         public uint CurrentDay { get; set; }
@@ -106,11 +115,11 @@ namespace Agate.WaskitaInfra1.Backend.Integration
         public DayCondition Condition { get; set; }
         public LevelData Level { get; set; }
 
-        public LevelProgress()
+        public LevelProgressIntegration()
         {
         }
 
-        public LevelProgress(ILevelProgressData data)
+        public LevelProgressIntegration(ILevelProgressData data)
         {
             LastCheckpoint = data.LastCheckpoint;
             CurrentDay = data.CurrentDay;

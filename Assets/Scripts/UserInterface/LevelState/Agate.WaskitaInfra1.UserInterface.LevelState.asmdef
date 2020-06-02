@@ -3,7 +3,7 @@
     "references": [
         "Agate.WaskitaInfra1.Object",
         "Unity.TextMeshPro",
-        "Agate.ValueConversion"
+        "A3.ValueConversion"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],

@@ -1,8 +1,7 @@
 using System;
 using System.Collections.Generic;
-using ValueConversion;
 
-namespace ValueConversion
+namespace A3.ValueConversion
 {
     public class ThresholdValueConverter<TInput, TOutput> :
         IValueConverter<TInput, TOutput>

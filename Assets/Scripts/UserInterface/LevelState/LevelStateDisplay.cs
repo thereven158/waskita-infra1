@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using ValueConversion;
+using A3.ValueConversion;
 
 namespace Agate.WaskitaInfra1.UserInterface.LevelState
 {

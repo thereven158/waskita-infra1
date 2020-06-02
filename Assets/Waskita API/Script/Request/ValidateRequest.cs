@@ -1,4 +1,4 @@
-﻿namespace Agate.Waskita.Request
+﻿namespace Agate.WaskitaInfra1.Server.Request
 {
     [System.Serializable]
     public class ValidateRequest : BasicRequest

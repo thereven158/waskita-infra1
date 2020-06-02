@@ -1,12 +1,12 @@
-﻿using Agate.Waskita.Responses.Data;
+﻿using Agate.WaskitaInfra1.Server.Responses.Data;
 
-namespace Agate.Waskita.Responses
+namespace Agate.WaskitaInfra1.Server.Responses
 {
     [System.Serializable]
     public class LoginResponse : BasicResponse
     {
-        public GameProgressData gameProgress;
-        public LevelProgressData levelProgress;
+        public ServerGameProgressData gameProgress;
+        public ServerLevelProgressData levelProgress;
 
         public string name;
         public string token;

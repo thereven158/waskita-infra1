@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 
-namespace Agate.Waskita.Responses.Data
+namespace Agate.WaskitaInfra1.Server.Responses.Data
 {
     [System.Serializable]
-    public class LevelProgressData
+    public class ServerLevelProgressData
     {
         public int lastCheckpoint;
         public int currentDay;
         public int tryCount;
-        public DayCondition dayCondition;
+        public ServerDayCondition dayCondition;
         public int level;
         public List<int> storedAnswers;
 

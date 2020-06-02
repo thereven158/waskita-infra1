@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Agate.Waskita.Request
+namespace Agate.WaskitaInfra1.Server.Request
 {
     [System.Serializable]
     public class EndGameRequest : BasicRequest

@@ -1,4 +1,4 @@
-﻿namespace Agate.Waskita.Responses
+﻿namespace Agate.WaskitaInfra1.Server.Responses
 {
     [System.Serializable]
     public class CurrentProject

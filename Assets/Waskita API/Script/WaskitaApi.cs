@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Text;
-using Agate.Waskita.Request;
-using Agate.Waskita.Responses;
+using Agate.WaskitaInfra1.Server.Request;
+using Agate.WaskitaInfra1.Server.Responses;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace Agate.Waskita.API
+namespace Agate.WaskitaInfra1.Server.API
 {
     public class WaskitaApi
     {

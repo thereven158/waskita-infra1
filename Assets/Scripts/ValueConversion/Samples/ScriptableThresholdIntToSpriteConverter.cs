@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using RotaryHeart.Lib.SerializableDictionary;
 using UnityEngine;
 
-namespace ValueConversion
+namespace A3.ValueConversion
 {
     [CreateAssetMenu(fileName = "ThreshIntToSpr", menuName = "A3/ValuC/Thr/IntToSp")]
     public class ScriptableThresholdIntToSpriteConverter : ScriptableIntToSpriteConverter

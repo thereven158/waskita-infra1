@@ -1,4 +1,4 @@
-﻿namespace Agate.Waskita.Request.Data
+﻿namespace Agate.WaskitaInfra1.Server.Request.Data
 {
     [System.Serializable]
     public class QuizAnswer
