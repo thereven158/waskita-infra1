@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -6,6 +7,9 @@ namespace Agate.WaskitaInfra1.UserInterface
 {
     public class SettingDisplay : MonoBehaviour
     {
+        [SerializeField]
+        private TMP_Text _nikLabel = default;
+
         [SerializeField]
         private Toggle _bgmToggle = default;
 
@@ -18,17 +22,14 @@ namespace Agate.WaskitaInfra1.UserInterface
         [SerializeField]
         private Button _exitButton = default;
 
-        public bool BgmToggleState
-        {
-            get => _bgmToggle.isOn; set => _bgmToggle.isOn = value;
-        }
+        public bool BgmToggleState { get => _bgmToggle.isOn; set => _bgmToggle.isOn = value; }
         public bool SfxToggleState { get => _sfxToggle.isOn; set => _sfxToggle.isOn = value; }
+        public string NikText { get => _nikLabel.text.Substring(6); set => _nikLabel.text = $"NIK : {value}"; }
 
         public UnityAction<bool> OnBgmToggle;
         public UnityAction<bool> OnSfxToggle;
         public UnityAction OnLogOutPress;
         public UnityAction OnExitPress;
-
         public UnityAction OnInteraction;
 
         private void Awake()
