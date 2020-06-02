@@ -1,9 +1,9 @@
 ﻿using A3.UserInterface;
-using Agate.Waskita.API;
-using Agate.Waskita.Request;
-using Agate.Waskita.Responses;
 using Agate.WaskitaInfra1.Level;
 using Agate.WaskitaInfra1.LevelProgress;
+using Agate.WaskitaInfra1.Server.API;
+using Agate.WaskitaInfra1.Server.Request;
+using Agate.WaskitaInfra1.Server.Responses;
 using Agate.WaskitaInfra1.UserInterface.Display;
 using System;
 using System.Collections;
@@ -92,6 +92,12 @@ namespace Agate.WaskitaInfra1.Backend.Integration
         {
             UnityWebRequest endLevelRequest = _api.EndLevel(data.EndLevelRequest());
 
+            yield return StartCoroutine(AwaitRequest(endLevelRequest, onFinish));
+        }
+
+        public IEnumerator AwaitAbortLevelRequest(ILevelProgressData data, Action<UnityWebRequest> onFinish)
+        {
+            UnityWebRequest endLevelRequest = _api.EndLevel(data.AbortLevelRequest());
             yield return StartCoroutine(AwaitRequest(endLevelRequest, onFinish));
         }
 

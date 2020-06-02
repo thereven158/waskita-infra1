@@ -11,7 +11,7 @@ namespace GameAction
         public string _failureMessage;
         public bool _isContinueCorrect;
         private RetryTrapControl _stormControl;
-        
+
         public override void Init(GameActionSystem system)
         {
             _stormControl = system.GetActionComponent<RetryTrapControl>();

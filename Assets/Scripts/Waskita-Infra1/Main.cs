@@ -5,7 +5,7 @@ using System.IO;
 using A3.Utilities;
 using A3.UserInterface;
 using Agate.GlSim.Scene.Control.Map.Loader;
-using Agate.Waskita.API;
+using Agate.WaskitaInfra1.Server.API;
 using Agate.WaskitaInfra1.GameProgress;
 using Agate.WaskitaInfra1.Level;
 using Agate.WaskitaInfra1.LevelProgress;

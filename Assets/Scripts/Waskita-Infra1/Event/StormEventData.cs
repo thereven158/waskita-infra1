@@ -1,8 +1,8 @@
 using A3.DataDrivenEvent;
 using A3.UserInterface;
 using Agate.WaskitaInfra1.LevelProgress;
-using UnityEngine;
 using Agate.WaskitaInfra1.UserInterface.Display;
+using UnityEngine;
 
 namespace Agate.WaskitaInfra1.Level
 {

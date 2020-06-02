@@ -10,7 +10,7 @@ namespace Agate.Util
 
         private void OnEnable()
         {
-            _text.text = "" + (char) (0x41 + transform.GetSiblingIndex());
+            _text.text = "" + (char)(0x41 + transform.GetSiblingIndex());
         }
     }
 }

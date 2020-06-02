@@ -11,13 +11,13 @@ namespace Agate.GlSim.Scene.Control.Map.Loader
     public class GameplaySceneLoadControl : MonoBehaviour
     {
         #region Fields / Attributes
-        
+
         [SerializeField, HideInInspector]
         private string _titleSceneName = string.Empty;
-        
+
         #region Editor
 
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         [SerializeField]
         private SceneAsset _titleScene = null;
 
@@ -26,10 +26,10 @@ namespace Agate.GlSim.Scene.Control.Map.Loader
             _titleSceneName = !_titleScene ? string.Empty : _titleScene.name;
         }
 
-        #endif
+#endif
 
         #endregion
-        
+
         private string _currentSceneName;
 
         public Action<float> OnLoadProgress;

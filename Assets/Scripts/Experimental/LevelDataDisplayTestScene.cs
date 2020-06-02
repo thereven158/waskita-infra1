@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Experimental
 {
-    public class LevelDataDisplayTestScene:MonoBehaviour
+    public class LevelDataDisplayTestScene : MonoBehaviour
     {
         [SerializeField]
         private LevelDataDisplay _levelDisplay = default;
@@ -13,7 +13,7 @@ namespace Experimental
 
         private void Start()
         {
-            _levelDisplay.OpenDisplay(_level.Object,Debug.Log,null);
+            _levelDisplay.OpenDisplay(_level.Object, Debug.Log, null);
         }
     }
 }

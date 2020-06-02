@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Agate.WaskitaInfra1.Level
 {
-    [CreateAssetMenu(fileName = "ScriptableQuestions",menuName = "WaskitaInfra1/Question")]
+    [CreateAssetMenu(fileName = "ScriptableQuestions", menuName = "WaskitaInfra1/Question")]
     public class ScriptableQuestion : ScriptableObject, IQuestion
     {
         [SerializeField]

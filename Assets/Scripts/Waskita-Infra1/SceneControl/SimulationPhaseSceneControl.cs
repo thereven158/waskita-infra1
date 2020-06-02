@@ -148,7 +148,7 @@ namespace Agate.WaskitaInfra1.SceneControl
             {
                 Action();
             }
-            if (!Main.Instance.IsOnline) 
+            if (!Main.Instance.IsOnline)
                 Action();
             else
                 _backendIntegration.StartCoroutine(_backendIntegration.AwaitSaveLevelProgressRequest(_levelProgress.Data, OnFinish));
@@ -178,7 +178,12 @@ namespace Agate.WaskitaInfra1.SceneControl
         private void OnLevelFinish(LevelEvaluationData data)
         {
             _evaluationMessages = data.EvaluationMessages();
-            StartCoroutine(_backendIntegration.AwaitEndLevelRequest(data, OnFinishReqEndLevel));
+            void OnFinishRequest(UnityWebRequest webReq)
+            {
+                //do nothing
+            }
+            if (Main.Instance.IsOnline)
+                StartCoroutine(_backendIntegration.AwaitEndLevelRequest(data, OnFinishRequest));
             void OnClose()
             {
                 _settingButton.GetComponent<RectTransform>().SetPosition(_settingButtonPositions[1]);
@@ -192,10 +197,6 @@ namespace Agate.WaskitaInfra1.SceneControl
             PopUpDisplay.Open(_finishProjectMessage, OnClose);
         }
 
-        private void OnFinishReqEndLevel(UnityWebRequest webReq)
-        {
-            //do nothing
-        }
 
         private void DisplayEvaluation(LevelEvaluationData data)
         {

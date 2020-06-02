@@ -3,6 +3,7 @@ using A3.AudioControl.Unity;
 using A3.Quiz;
 using A3.UserInterface;
 using Agate.GlSim.Scene.Control.Map.Loader;
+using Agate.WaskitaInfra1.Backend.Integration;
 using Agate.WaskitaInfra1.GameProgress;
 using Agate.WaskitaInfra1.Level;
 using Agate.WaskitaInfra1.LevelProgress;
@@ -13,7 +14,6 @@ using Agate.WaskitaInfra1.UserInterface.LevelState;
 using Agate.WaskitaInfra1.UserInterface.QuestionList;
 using Agate.WaskitaInfra1.UserInterface.Quiz;
 using Agate.WaskitaInfra1.Utilities;
-using Agate.WaskitaInfra1.Backend.Integration;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Networking;
@@ -117,7 +117,6 @@ namespace Agate.WaskitaInfra1.SceneControl
 
         private void OpenProjectList()
         {
-            _audioSystem.PlayAudio(_buttonClick);
             _levelStateDisplay.ToggleDisplay(false);
             _checklistInteractionDisplay.Close();
             _levelListDisplay.OpenList(
@@ -133,23 +132,25 @@ namespace Agate.WaskitaInfra1.SceneControl
             {
                 _audioSystem.PlayAudio(_buttonClick);
                 _levelProgress.StartLevel(levelData);
-                if (_main.IsOnline)
+                void OnFinishRequest(UnityWebRequest webReq)
                 {
-                    StartCoroutine(_backendControl.AwaitStartLevelRequest(levelData, OnFinishReqStartLevel));
+                    // do nothing
                 }
+                if (_main.IsOnline)
+                    StartCoroutine(_backendControl.AwaitStartLevelRequest(levelData, OnFinishRequest));
                 OpenCheckList();
+            }
+            void OnCancel()
+            {
+                _audioSystem.PlayAudio(_buttonClick);
+                OpenProjectList();
             }
 
             _levelListDisplay.Close();
             _levelDataDisplay.OpenDisplay(
                 data,
                 OnConfirm,
-                OpenProjectList);
-        }
-
-        private void OnFinishReqStartLevel(UnityWebRequest webReq)
-        {
-            // do nothing
+                OnCancel);
         }
 
         private void OpenCheckList()
@@ -169,22 +170,23 @@ namespace Agate.WaskitaInfra1.SceneControl
         private void OpenCheckListItem(IQuestion item)
         {
             _audioSystem.PlayAudio(_buttonClick);
+
             void OnAnswerQuiz(IQuiz quiz, object o)
             {
                 _levelProgress.AnswerQuestion(item, o);
+                void OnFinishRequest(UnityWebRequest webReq)
+                {
+                    // do nothing
+                }
                 if (_main.IsOnline)
-                    StartCoroutine(_backendControl.AwaitSaveLevelProgressRequest(_levelProgress.Data, OnFinishReqSaveData));
+                    StartCoroutine(_backendControl.AwaitSaveLevelProgressRequest(_levelProgress.Data, OnFinishRequest));
             }
+
             _quizDisplay.Display(
                 item,
                 OnAnswerQuiz,
                 OpenCheckList,
                 _levelProgress.Data.AnswerOf(item));
-        }
-
-        private void OnFinishReqSaveData(UnityWebRequest webReq)
-        {
-            // do nothing
         }
 
         private void SimulationConfirmation()
@@ -203,6 +205,14 @@ namespace Agate.WaskitaInfra1.SceneControl
             {
                 _audioSystem.PlayAudio(_buttonClick);
                 _levelProgress.FinishLevel();
+
+                void OnFinishRequest(UnityWebRequest webReq)
+                {
+                    // do nothing
+                }
+                if (_main.IsOnline)
+                    StartCoroutine(_backendControl.AwaitAbortLevelRequest(_levelProgress.Data, OnFinishRequest));
+
                 OpenProjectList();
             }
 

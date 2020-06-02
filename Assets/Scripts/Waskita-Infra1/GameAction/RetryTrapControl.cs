@@ -1,10 +1,10 @@
-﻿using A3.UserInterface;
+﻿using A3.AudioControl;
+using A3.AudioControl.Unity;
+using A3.UserInterface;
 using Agate.WaskitaInfra1.LevelProgress;
-using UnityEngine;
 using Agate.WaskitaInfra1.UserInterface.Display;
 using System;
-using A3.AudioControl.Unity;
-using A3.AudioControl;
+using UnityEngine;
 using UnityEngine.Audio;
 
 namespace GameAction
@@ -32,8 +32,8 @@ namespace GameAction
         private AudioSystem<AudioClip, AudioMixerGroup> _audioSystem;
 
         public void Init(
-            LevelProgressControl levelProgressControl, 
-            UiDisplaysSystem<GameObject> uiDisplaysSystem, 
+            LevelProgressControl levelProgressControl,
+            UiDisplaysSystem<GameObject> uiDisplaysSystem,
             AudioSystem<AudioClip, AudioMixerGroup> audioSystem)
         {
             _levelProgress = levelProgressControl;
