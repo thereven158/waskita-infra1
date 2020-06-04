@@ -1,0 +1,242 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3caac20cc7fb4c5cb17d94f53e689c84, type: 3}
+  m_Name: C006
+  m_EditorClassIdentifier: 
+  _quiz: {fileID: 114989784885391828}
+  _displayName: Penurunan Fullslab dari truck
+  _category: Instalasi Fullslab
+  _wrongExplanation: Fullslab terjatuh saat proses pengangkatan, menyebabkan kerusakan
+    material dan membahayakan keselamatan kerja.
+--- !u!114 &114000030609233554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1ee8e0afb847b42ae6f403357ba440, type: 3}
+  m_Name: C006.Quiz._answerOptions-0.Sprite Sheet
+  m_EditorClassIdentifier: 
+  _sprites:
+  - {fileID: 21300000, guid: d0a2b0bda01061044b99e43a7dd7d141, type: 3}
+  - {fileID: 21300002, guid: d0a2b0bda01061044b99e43a7dd7d141, type: 3}
+  - {fileID: 21300004, guid: d0a2b0bda01061044b99e43a7dd7d141, type: 3}
+  - {fileID: 21300006, guid: d0a2b0bda01061044b99e43a7dd7d141, type: 3}
+  - {fileID: 21300008, guid: d0a2b0bda01061044b99e43a7dd7d141, type: 3}
+  - {fileID: 21300010, guid: d0a2b0bda01061044b99e43a7dd7d141, type: 3}
+  - {fileID: 21300012, guid: d0a2b0bda01061044b99e43a7dd7d141, type: 3}
+  - {fileID: 21300014, guid: d0a2b0bda01061044b99e43a7dd7d141, type: 3}
+  - {fileID: 21300016, guid: d0a2b0bda01061044b99e43a7dd7d141, type: 3}
+  _framerate: 5
+  _loop: 1
+--- !u!114 &114000483395742566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
+  m_Name: C006.Quiz.Answer
+  m_EditorClassIdentifier: 
+  _text: Posisi truck sejajar dengan area penyimpanan.
+  _spriteSheet: {fileID: 114221983796413972}
+--- !u!114 &114221983796413972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1ee8e0afb847b42ae6f403357ba440, type: 3}
+  m_Name: C006.Quiz.Answer.Sprite Sheet
+  m_EditorClassIdentifier: 
+  _sprites:
+  - {fileID: 21300000, guid: 7fcb252884e111746b64c5d60947f7d5, type: 3}
+  - {fileID: 21300002, guid: 7fcb252884e111746b64c5d60947f7d5, type: 3}
+  - {fileID: 21300004, guid: 7fcb252884e111746b64c5d60947f7d5, type: 3}
+  - {fileID: 21300006, guid: 7fcb252884e111746b64c5d60947f7d5, type: 3}
+  - {fileID: 21300008, guid: 7fcb252884e111746b64c5d60947f7d5, type: 3}
+  - {fileID: 21300010, guid: 7fcb252884e111746b64c5d60947f7d5, type: 3}
+  - {fileID: 21300012, guid: 7fcb252884e111746b64c5d60947f7d5, type: 3}
+  - {fileID: 21300014, guid: 7fcb252884e111746b64c5d60947f7d5, type: 3}
+  _framerate: 5
+  _loop: 1
+--- !u!114 &114369487006632790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1ee8e0afb847b42ae6f403357ba440, type: 3}
+  m_Name: C006.Quiz._answerOptions-0.Sprite Sheet
+  m_EditorClassIdentifier: 
+  _sprites:
+  - {fileID: 21300000, guid: 935d9ee32f4e3fc4ab03aca4e9189a76, type: 3}
+  - {fileID: 21300002, guid: 935d9ee32f4e3fc4ab03aca4e9189a76, type: 3}
+  - {fileID: 21300004, guid: 935d9ee32f4e3fc4ab03aca4e9189a76, type: 3}
+  - {fileID: 21300006, guid: 935d9ee32f4e3fc4ab03aca4e9189a76, type: 3}
+  - {fileID: 21300008, guid: 935d9ee32f4e3fc4ab03aca4e9189a76, type: 3}
+  - {fileID: 21300010, guid: 935d9ee32f4e3fc4ab03aca4e9189a76, type: 3}
+  - {fileID: 21300012, guid: 935d9ee32f4e3fc4ab03aca4e9189a76, type: 3}
+  - {fileID: 21300014, guid: 935d9ee32f4e3fc4ab03aca4e9189a76, type: 3}
+  _framerate: 5
+  _loop: 1
+--- !u!114 &114397419188186300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
+  m_Name: C006.Quiz._answerOptions-0
+  m_EditorClassIdentifier: 
+  _text: Posisi truck sejajar dengan area penyimpanan.
+  _spriteSheet: {fileID: 114925502103982596}
+--- !u!114 &114617035406143622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1ee8e0afb847b42ae6f403357ba440, type: 3}
+  m_Name: C006.Quiz._answerOptions-0.Sprite Sheet
+  m_EditorClassIdentifier: 
+  _sprites:
+  - {fileID: 21300000, guid: 4056414fa786ff246aa8e7d767747342, type: 3}
+  - {fileID: 21300002, guid: 4056414fa786ff246aa8e7d767747342, type: 3}
+  - {fileID: 21300004, guid: 4056414fa786ff246aa8e7d767747342, type: 3}
+  - {fileID: 21300006, guid: 4056414fa786ff246aa8e7d767747342, type: 3}
+  - {fileID: 21300008, guid: 4056414fa786ff246aa8e7d767747342, type: 3}
+  - {fileID: 21300010, guid: 4056414fa786ff246aa8e7d767747342, type: 3}
+  - {fileID: 21300012, guid: 4056414fa786ff246aa8e7d767747342, type: 3}
+  - {fileID: 21300014, guid: 4056414fa786ff246aa8e7d767747342, type: 3}
+  - {fileID: 21300016, guid: 4056414fa786ff246aa8e7d767747342, type: 3}
+  - {fileID: 21300018, guid: 4056414fa786ff246aa8e7d767747342, type: 3}
+  _framerate: 5
+  _loop: 1
+--- !u!114 &114734720308060020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1ee8e0afb847b42ae6f403357ba440, type: 3}
+  m_Name: C006.Quiz._answerOptions-0.Sprite Sheet
+  m_EditorClassIdentifier: 
+  _sprites: []
+  _framerate: 0
+  _loop: 0
+--- !u!114 &114818303001593542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
+  m_Name: C006.Quiz._answerOptions-0
+  m_EditorClassIdentifier: 
+  _text: Posisi truck tepat di samping area penyimpanan.
+  _spriteSheet: {fileID: 114369487006632790}
+--- !u!114 &114834999391615334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
+  m_Name: C006.Quiz._answerOptions-0
+  m_EditorClassIdentifier: 
+  _text: Posisi truck tepat di sebelah crane.
+  _spriteSheet: {fileID: 114617035406143622}
+--- !u!114 &114909474015380516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
+  m_Name: C006.Quiz._answerOptions-0
+  m_EditorClassIdentifier: 
+  _text: Posisi truck jauh dari area penyimpanan.
+  _spriteSheet: {fileID: 114000030609233554}
+--- !u!114 &114925502103982596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1ee8e0afb847b42ae6f403357ba440, type: 3}
+  m_Name: C006.Quiz._answerOptions-0.Sprite Sheet
+  m_EditorClassIdentifier: 
+  _sprites:
+  - {fileID: 21300000, guid: 7fcb252884e111746b64c5d60947f7d5, type: 3}
+  - {fileID: 21300002, guid: 7fcb252884e111746b64c5d60947f7d5, type: 3}
+  - {fileID: 21300004, guid: 7fcb252884e111746b64c5d60947f7d5, type: 3}
+  - {fileID: 21300006, guid: 7fcb252884e111746b64c5d60947f7d5, type: 3}
+  - {fileID: 21300008, guid: 7fcb252884e111746b64c5d60947f7d5, type: 3}
+  - {fileID: 21300010, guid: 7fcb252884e111746b64c5d60947f7d5, type: 3}
+  - {fileID: 21300012, guid: 7fcb252884e111746b64c5d60947f7d5, type: 3}
+  - {fileID: 21300014, guid: 7fcb252884e111746b64c5d60947f7d5, type: 3}
+  _framerate: 5
+  _loop: 1
+--- !u!114 &114989784885391828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152796e4c801448b9d9cc76c94908ba4, type: 3}
+  m_Name: C006.Quiz
+  m_EditorClassIdentifier: 
+  _question:
+    _message: Posisi truck angkut fullslab saat proses penurunan yang ideal adalah...
+    _answer: {fileID: 114000483395742566}
+    _answerOptions:
+    - {fileID: 114818303001593542}
+    - {fileID: 114000483395742566}
+    - {fileID: 114909474015380516}
+    - {fileID: 114834999391615334}
