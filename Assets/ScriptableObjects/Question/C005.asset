@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3caac20cc7fb4c5cb17d94f53e689c84, type: 3}
+  m_Name: C005
+  m_EditorClassIdentifier: 
+  _quiz: {fileID: 114610318262052344}
+  _displayName: Erection Fullslab
+  _category: Instalasi Fullslab
+  _wrongExplanation: Fullslab terjatuh saat proses pengangkatan, menyebabkan kerusakan
+    material dan membahayakan keselamatan kerja.
+--- !u!114 &114282568547582174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
+  m_Name: C005.Quiz.A
+  m_EditorClassIdentifier: 
+  _text: Menggunakan spreader beam dengan rope sling terpasang pada dua lifting point.
+  _spriteSheet: {fileID: 11400000, guid: d7cc987f8c5a1d44c92fec8acc7fce9d, type: 2}
+--- !u!114 &114334364338062784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
+  m_Name: C005.Quiz.D
+  m_EditorClassIdentifier: 
+  _text: Menggunakan spreader beam dengan rope sling terpasang pada empat lifting
+    point.
+  _spriteSheet: {fileID: 11400000, guid: 62bce6d8ef8bbe14fb90609e0d233006, type: 2}
+--- !u!114 &114610318262052344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152796e4c801448b9d9cc76c94908ba4, type: 3}
+  m_Name: C005.Quiz
+  m_EditorClassIdentifier: 
+  _question:
+    _message: Pemasangan alat yang benar untuk pengangkatan fullslab dengan OHC adalah...
+    _answer: {fileID: 114334364338062784}
+    _answerOptions:
+    - {fileID: 114282568547582174}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 114334364338062784}
