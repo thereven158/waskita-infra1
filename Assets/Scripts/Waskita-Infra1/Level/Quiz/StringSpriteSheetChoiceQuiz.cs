@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Agate.WaskitaInfra1.Level
 {
-    public class TextSpriteSheetChoiceQuiz : ScriptableMultipleChoiceQuiz<ITextSpriteSheet>
+    public class StringSpriteSheetChoiceQuiz : ScriptableMultipleChoiceQuiz<ITextSpriteSheet>
     {
         [SerializeField]
         private TextSpriteSheetQuestion _question = default;

@@ -81,10 +81,10 @@ namespace Agate.WaskitaInfra1.SceneControl
 
         private void ConfigureSettings()
         {
-            _audioMixer.SetFloat(MIXER_BGM_PARAM, PlayerPrefs.GetFloat(MIXER_BGM_PARAM));
-            _audioMixer.SetFloat(MIXER_SFX_PARAM, PlayerPrefs.GetFloat(MIXER_SFX_PARAM));
-            _settingDisplay.BgmToggleState = PlayerPrefs.GetFloat(MIXER_BGM_PARAM) >= 0;
-            _settingDisplay.SfxToggleState = PlayerPrefs.GetFloat(MIXER_SFX_PARAM) >= 0;
+            _audioMixer.SetFloat(MIXER_BGM_PARAM, PlayerPrefs.GetFloat(MIXER_BGM_PARAM, 0));
+            _settingDisplay.BgmToggleState = PlayerPrefs.GetFloat(MIXER_BGM_PARAM, 0) >= 0;
+            _audioMixer.SetFloat(MIXER_SFX_PARAM, PlayerPrefs.GetFloat(MIXER_SFX_PARAM, 0));
+            _settingDisplay.SfxToggleState = PlayerPrefs.GetFloat(MIXER_SFX_PARAM, 0) >= 0;
 
             _settingDisplay.OnInteraction += () => _audioSystem.PlayAudio(_buttonClick);
             _settingDisplay.OnBgmToggle += toggle => _audioMixer.SetFloat(MIXER_BGM_PARAM, toggle ? 0 : -80);

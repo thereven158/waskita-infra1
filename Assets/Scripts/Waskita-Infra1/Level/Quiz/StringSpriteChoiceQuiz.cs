@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Agate.WaskitaInfra1.Level
 {
-    public class ScriptableImgTextChoiceQuiz : ScriptableMultipleChoiceQuiz<ScriptableImgText>
+    public class StringSpriteChoiceQuiz : ScriptableMultipleChoiceQuiz<ScriptableImgText>
     {
         [SerializeField]
         private ImgTextChoiceQuestion _question = default;
