@@ -125,10 +125,17 @@ namespace Agate.WaskitaInfra1.SceneControl
             _levelProgress.OnRetryToCheckpoint += OnRetry;
             _levelProgress.OnFinishLevel += OnLevelFinish;
             _levelProgress.OnCheckPointUpdate += OnCheckPointUpdate;
+            Main.OnLogOut += OnLogOut;
 
             if (_levelProgress.Data.CurrentDay > 0) return;
             _levelProgress.NextDay(1);
             _levelProgress.UpdateCheckPoint();
+        }
+
+        private void OnLogOut()
+        {
+            _settingDisplay.ToggleDisplay(false);
+            _displaysSystem.GetOrCreateDisplay<QuestionListInteractionDisplay>(_evaluationDisplay).Close();
         }
 
         private void OnDayChange(uint day)
@@ -156,6 +163,7 @@ namespace Agate.WaskitaInfra1.SceneControl
 
         private void OnDestroy()
         {
+            Main.OnLogOut -= OnLogOut;
             if (Main.Instance == null) return;
             if (!Main.Instance.UiLoaded) return;
             _levelProgress.OnRetryToCheckpoint -= OnRetry;
