@@ -4,6 +4,7 @@ using System;
 using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
+using System.Security.Cryptography;
 
 namespace Agate.WaskitaInfra1.Server.API
 {
@@ -186,6 +187,8 @@ namespace Agate.WaskitaInfra1.Server.API
             };
             uwr.uploadHandler.contentType = "application/json";
             if (requireauthentication) uwr.SetRequestHeader("Authorization", "Bearer " + _token);
+            string secretKey = "0dc8e733-37c3-4f7e-9d41-b55078a9f90a";
+            uwr.SetRequestHeader("Checksum", new Checksum().ChecksumGenerator(data, secretKey));
             return uwr;
         }
 
@@ -198,6 +201,21 @@ namespace Agate.WaskitaInfra1.Server.API
         }
 
         #endregion
+    }
+
+    class Checksum
+    {
+        public string ChecksumGenerator(byte[] bodyObject, string serverKey)
+        {
+            SHA256Managed sha256 = new SHA256Managed();
+            byte[] hash = sha256.ComputeHash(Encoding.UTF8.GetBytes(bodyObject + serverKey));
+            var checksumHash = new StringBuilder(hash.Length * 2);
+            foreach (byte b in hash)
+            {
+                checksumHash.Append(b.ToString("x2"));
+            }
+            return checksumHash.ToString();
+        }
     }
 
     internal class AcceptAllCertificatesSignedWithASpecificKeyPublicKey : CertificateHandler
