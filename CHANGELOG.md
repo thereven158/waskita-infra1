@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- animation handling system [not implemented]
 - exit and log out confirmation
 - logged-in NIK label
 
