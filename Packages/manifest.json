@@ -7,6 +7,7 @@
     "com.a3.interactive-data-display": "http://gategit.agate.id/billy.firman/a3-upm.git#interactive-data-display",
     "com.a3.quiz": "http://gategit.agate.id/billy.firman/a3-upm.git#quiz",
     "com.a3.ugui-display": "http://gategit.agate.id/billy.firman/a3-upm.git#ugui-display",
+    "com.a3.unique-id": "http://gategit.agate.id/billy.firman/a3-upm.git#unique-id",
     "com.a3.utilities": "http://gategit.agate.id/billy.firman/a3-upm.git#utilities",
     "com.unity.analytics": "3.2.2",
     "com.unity.package-manager-ui": "2.0.8",
@@ -76,6 +77,10 @@
     "com.a3.audio-control.unity": {
       "hash": "62c93b60df8cd4dc62b387a67881ba564fd2c69d",
       "revision": "audio-control.unity"
+    },
+    "com.a3.unique-id": {
+      "hash": "12e07da7ab7ac79bb60492cbf43288f4716f6dc8",
+      "revision": "unique-id"
     }
   }
 }

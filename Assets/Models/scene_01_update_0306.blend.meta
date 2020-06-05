@@ -1,0 +1,159 @@
+fileFormatVersion: 2
+guid: 04b394f2cd0366141a8303cc13363aa4
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: base
+    100002: base_bottom
+    100004: base_top
+    100006: camera_01
+    100008: camera_02
+    100010: camera_stand
+    100012: crawler_crane_armature
+    100014: crawler_crane_bottom
+    100016: crawler_crane_item
+    100018: crawler_crane_top
+    100020: hydraulic
+    100022: hydraulic_001
+    100024: ik_pole
+    100026: pile_tumpukan_01
+    100028: pile_tumpukan_02
+    100030: //RootNode
+    100032: tail
+    100034: tail_01
+    100036: tail_02
+    100038: tail_02_ext
+    100040: tail_02_flail
+    100042: tail_ext
+    100044: trailer_truck
+    400000: base
+    400002: base_bottom
+    400004: base_top
+    400006: camera_01
+    400008: camera_02
+    400010: camera_stand
+    400012: crawler_crane_armature
+    400014: crawler_crane_bottom
+    400016: crawler_crane_item
+    400018: crawler_crane_top
+    400020: hydraulic
+    400022: hydraulic_001
+    400024: ik_pole
+    400026: pile_tumpukan_01
+    400028: pile_tumpukan_02
+    400030: //RootNode
+    400032: tail
+    400034: tail_01
+    400036: tail_02
+    400038: tail_02_ext
+    400040: tail_02_flail
+    400042: tail_ext
+    400044: trailer_truck
+    2100000: props_texture
+    2100002: crawler_crane_texture
+    2100004: trailer_truck_texture
+    2300000: pile_tumpukan_01
+    2300002: pile_tumpukan_02
+    2300004: trailer_truck
+    3300000: pile_tumpukan_01
+    3300002: pile_tumpukan_02
+    3300004: trailer_truck
+    4300000: pile_tumpukan_02
+    4300002: pile_tumpukan_01
+    4300004: crawler_crane_item
+    4300006: crawler_crane_bottom
+    4300008: crawler_crane_top
+    4300010: trailer_truck
+    7400000: Default Take
+    7400002: anim_scene_01
+    9500000: //RootNode
+    13700000: crawler_crane_bottom
+    13700002: crawler_crane_item
+    13700004: crawler_crane_top
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
