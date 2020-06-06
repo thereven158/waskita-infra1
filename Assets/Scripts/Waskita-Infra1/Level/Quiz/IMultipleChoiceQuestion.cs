@@ -1,7 +1,7 @@
-using System.Collections.Generic;
-using System.Linq;
 using A3.Quiz;
 using A3.Quiz.Unity;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Agate.WaskitaInfra1.Level
 {

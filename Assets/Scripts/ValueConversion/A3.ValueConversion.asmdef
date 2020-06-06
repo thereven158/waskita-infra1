@@ -1,0 +1,14 @@
+{
+    "name": "A3.ValueConversion",
+    "references": [
+        "RotaryHeart.SerializableDictionaryLite"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

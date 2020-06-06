@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.9.0] - 2020-06-05
+
+- backend integration, detect dual login still not implement.
+- animation handling system [not implemented]
+- exit and log out confirmation
+- logged-in NIK label
+
 ## [0.8.0] - 2020-05-27
 
 - setting functionality

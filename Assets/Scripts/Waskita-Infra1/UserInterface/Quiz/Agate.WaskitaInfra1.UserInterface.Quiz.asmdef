@@ -1,0 +1,21 @@
+{
+    "name": "Agate.WaskitaInfra1.UserInterface.Quiz",
+    "references": [
+        "A3.Quiz",
+        "A3.InteractiveDataDisplay",
+        "A3.CodePattern",
+        "Agate.SpriteSheet",
+        "Agate.WaskitaInfra1.Level",
+        "Unity.TextMeshPro",
+        "Agate.WaskitaInfra1",
+        "Agate.WaskitaInfra1.Backend.Integration"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

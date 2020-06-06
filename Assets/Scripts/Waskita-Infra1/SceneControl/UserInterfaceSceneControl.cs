@@ -1,12 +1,13 @@
+using A3.AudioControl;
+using A3.AudioControl.Unity;
 using A3.UserInterface;
 using Agate.WaskitaInfra1.UserInterface;
-using Agate.WaskitaInfra1.UserInterface.QuestionList;
+using Agate.WaskitaInfra1.UserInterface.Display;
 using Agate.WaskitaInfra1.UserInterface.LevelList;
 using Agate.WaskitaInfra1.UserInterface.LevelState;
+using Agate.WaskitaInfra1.UserInterface.QuestionList;
 using Agate.WaskitaInfra1.UserInterface.Quiz;
 using UnityEngine;
-using A3.AudioControl.Unity;
-using A3.AudioControl;
 using UnityEngine.Audio;
 
 namespace Agate.WaskitaInfra1.SceneControl
@@ -39,12 +40,23 @@ namespace Agate.WaskitaInfra1.SceneControl
         [Header("Audio")]
         [SerializeField]
         private ScriptableAudioSpecification _buttonClick = default;
-        [Space]
         [Header("Setting Configuration")]
         [SerializeField]
         private AudioMixer _audioMixer = default;
 
+        [SerializeField]
+        private ConfirmationPopUpDisplay _confirmationPopup = default;
+
+        [SerializeField]
+        [TextArea]
+        private string _exitConfirmationText = default;
+
+        [SerializeField]
+        [TextArea]
+        private string _logoutConfirmationText = default;
+
         private AudioSystem<AudioClip, AudioMixerGroup> _audioSystem;
+        private UiDisplaysSystem<GameObject> DisplaySystem => _displaySystem;
 
         private void Start()
         {
@@ -69,18 +81,40 @@ namespace Agate.WaskitaInfra1.SceneControl
 
         private void ConfigureSettings()
         {
-            _audioMixer.SetFloat(MIXER_BGM_PARAM, PlayerPrefs.GetFloat(MIXER_BGM_PARAM));
-            _audioMixer.SetFloat(MIXER_SFX_PARAM, PlayerPrefs.GetFloat(MIXER_SFX_PARAM));
-            _settingDisplay.BgmToggle = PlayerPrefs.GetFloat(MIXER_BGM_PARAM) >= 0;
-            _settingDisplay.SfxToggle = PlayerPrefs.GetFloat(MIXER_SFX_PARAM) >= 0;
+            _audioMixer.SetFloat(MIXER_BGM_PARAM, PlayerPrefs.GetFloat(MIXER_BGM_PARAM, 0));
+            _settingDisplay.BgmToggleState = PlayerPrefs.GetFloat(MIXER_BGM_PARAM, 0) >= 0;
+            _audioMixer.SetFloat(MIXER_SFX_PARAM, PlayerPrefs.GetFloat(MIXER_SFX_PARAM, 0));
+            _settingDisplay.SfxToggleState = PlayerPrefs.GetFloat(MIXER_SFX_PARAM, 0) >= 0;
 
             _settingDisplay.OnInteraction += () => _audioSystem.PlayAudio(_buttonClick);
             _settingDisplay.OnBgmToggle += toggle => _audioMixer.SetFloat(MIXER_BGM_PARAM, toggle ? 0 : -80);
             _settingDisplay.OnBgmToggle += toggle => PlayerPrefs.SetFloat(MIXER_BGM_PARAM, toggle ? 0 : -80);
             _settingDisplay.OnSfxToggle += toggle => _audioMixer.SetFloat(MIXER_SFX_PARAM, toggle ? 0 : -80);
             _settingDisplay.OnSfxToggle += toggle => PlayerPrefs.SetFloat(MIXER_SFX_PARAM, toggle ? 0 : -80);
-            _settingDisplay.OnExitPress = Main.Quit;
-            _settingDisplay.OnLogOutPress = Main.LogOut;
+
+            void OnSettingExit()
+            {
+                DisplaySystem.GetOrCreateDisplay<ConfirmationPopUpDisplay>(_confirmationPopup)
+                    .Open(new ConfirmationPopUpViewData()
+                    {
+                        MessageText = _exitConfirmationText,
+                        ConfirmAction = Main.Quit,
+                        CloseAction = null
+                    });
+            }
+            void OnSettingLogout()
+            {
+                DisplaySystem.GetOrCreateDisplay<ConfirmationPopUpDisplay>(_confirmationPopup)
+                    .Open(new ConfirmationPopUpViewData()
+                    {
+                        MessageText = _logoutConfirmationText,
+                        ConfirmAction = Main.LogOut,
+                        CloseAction = null
+                    });
+            }
+
+            _settingDisplay.OnExitPress = OnSettingExit;
+            _settingDisplay.OnLogOutPress = OnSettingLogout;
         }
     }
 }

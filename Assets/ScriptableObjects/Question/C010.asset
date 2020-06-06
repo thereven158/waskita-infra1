@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3caac20cc7fb4c5cb17d94f53e689c84, type: 3}
+  m_Name: C010
+  m_EditorClassIdentifier: 
+  _quiz: {fileID: 114666567572562832}
+  _displayName: Pengaspalan
+  _category: Instalasi Fullslab
+  _wrongExplanation: Pemasangan material dengan proses yang tidak tepat dapat menyebabkan
+    kerusakan
+--- !u!114 &114666567572562832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5513a841b9c34eebaedceb15de89531e, type: 3}
+  m_Name: C010.Quiz
+  m_EditorClassIdentifier: 
+  _question:
+    _message: Suhu aspal yang tepat untuk saat proses pengangkutan di dump truck adalah...
+    _answer: '> 90 derajat C'
+    _answerOptions:
+    - < 90 derajat C
+    - tepat 70 derajat C
+    - 10 - 30 derajat C
+    - '> 90 derajat C'

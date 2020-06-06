@@ -1,17 +1,20 @@
-using System.Collections;
+using A3.AudioControl;
+using A3.AudioControl.Unity;
 using A3.UserInterface;
 using Agate.GlSim.Scene.Control.Map.Loader;
-using Agate.Waskita.Responses;
+using Agate.WaskitaInfra1.Backend.Integration;
+using Agate.WaskitaInfra1.GameProgress;
+using Agate.WaskitaInfra1.LevelProgress;
 using Agate.WaskitaInfra1.PlayerAccount;
+using Agate.WaskitaInfra1.Server.Responses;
+using Agate.WaskitaInfra1.UserInterface;
 using Agate.WaskitaInfra1.UserInterface.Display;
 using Agate.WaskitaInfra1.UserInterface.Login;
-using BackendIntegration;
+using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.Networking;
-using A3.AudioControl;
 using UnityEngine.Audio;
-using A3.AudioControl.Unity;
+using UnityEngine.Networking;
+using UnityEngine.UI;
 
 namespace Agate.WaskitaInfra1.SceneControl.Login
 {
@@ -29,19 +32,25 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
         [SerializeField]
         private PopUpDisplay _popUpDisplay = default;
 
+        [SerializeField]
+        private string FailedValidationMessage = "Validasi Gagal, tolong lakukan login ulang";
+
+
         [Header("Audio")]
         [SerializeField]
         private ScriptableAudioSpecification _bgm = default;
 
         [SerializeField]
         private ScriptableAudioSpecification _buttonInteraction = default;
-
         private bool loggedIn;
 
         private Main _main;
         private PlayerAccountControl _accountControl;
         private UiDisplaysSystem<GameObject> _displaysSystem;
         private GameplaySceneLoadControl _sceneLoadControl;
+        private GameProgressControl _gameProgressControl;
+        private LevelProgressControl _levelProgressControl;
+        private SettingDisplay _settingDisplay;
         private BackendIntegrationController _backendControl;
         private AudioSystem<AudioClip, AudioMixerGroup> _audioSystem;
 
@@ -49,23 +58,33 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
         {
             _main = Main.Instance;
             _accountControl = Main.GetRegisteredComponent<PlayerAccountControl>();
-            _backendControl = Main.GetRegisteredComponent<BackendIntegrationController>();
-            _displaysSystem = Main.GetRegisteredComponent<UiDisplaysSystemBehavior>();
+            _gameProgressControl = Main.GetRegisteredComponent<GameProgressControl>();
+            _levelProgressControl = Main.GetRegisteredComponent<LevelProgressControl>();
             _sceneLoadControl = Main.GetRegisteredComponent<GameplaySceneLoadControl>();
+
+            _displaysSystem = Main.GetRegisteredComponent<UiDisplaysSystemBehavior>();
+            _settingDisplay = Main.GetRegisteredComponent<SettingDisplay>();
+
             _audioSystem = Main.GetRegisteredComponent<AudioSystemBehavior>();
 
+            _backendControl = Main.GetRegisteredComponent<BackendIntegrationController>();
+
             _audioSystem.PlayAudio(_bgm);
-
-
-            if (!_accountControl.Data.IsEmpty())
-                yield return StartCoroutine(_backendControl.AwaitValidateRequest(OnFailedValidate, OnFinishValidate));
-
             _loginForm.Init();
+            _logOutButton.gameObject.SetActive(false);
+
             _loginForm.LoginAction = OnLoginButton;
-            _logOutButton.gameObject.SetActive(loggedIn);
             _logOutButton.onClick.AddListener(OnLogoutButton);
             _startButton.onClick.AddListener(OnStartButtonPress);
+
+            if (!_accountControl.Data.IsEmpty())
+            {
+                yield return StartCoroutine(_backendControl.AwaitValidateRequest(OnFinishValidate, OnAbortValidate));
+            }
+
+            _logOutButton.gameObject.SetActive(loggedIn);
         }
+
 
         private void OnStartButtonPress()
         {
@@ -88,7 +107,11 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
         {
             _displaysSystem.GetOrCreateDisplay<PopUpDisplay>(_popUpDisplay)
                 .Open(response.message, null);
+            _accountControl.SetData(response.AccountData());
+            _settingDisplay.NikText = response.name;
+            Debug.Log(response.token);
             _main.SaveAccountData();
+            SetDataProgress(response);
             _main.StartGame();
         }
 
@@ -103,14 +126,36 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
             _backendControl.OpenErrorResponsePopUp(webReq, () => Debug.Log("Pop up Closed"));
         }
 
-        private void OnFailedValidate(UnityWebRequest webReq)
+        private void OnAbortValidate()
         {
-            _backendControl.OpenErrorResponsePopUp(webReq, () => Debug.Log("Pop up Closed"));
+            Debug.Log("Abort Validate");
         }
 
-        private void OnFinishValidate()
+        private void OnFinishValidate(UnityWebRequest webReq)
         {
-            loggedIn = true;
+            if (webReq.responseCode != 200)
+            {
+                _displaysSystem.GetOrCreateDisplay<PopUpDisplay>(_popUpDisplay).Open(FailedValidationMessage, null);
+                return;
+            }
+
+            LoginResponse response = JsonUtility.FromJson<LoginResponse>(webReq.downloadHandler.text);
+            if (response == null)
+            {
+                Debug.Log("Response null");
+                loggedIn = false;
+            }
+            else
+            {
+                loggedIn = true;
+                SetDataProgress(response);
+            }
+        }
+
+        private void SetDataProgress(LoginResponse response)
+        {
+            _gameProgressControl.SetData(response.gameProgress);
+            _levelProgressControl.LoadData(_backendControl.ParseLevelProgress(response.levelProgress));
         }
 
         private void OnLogoutButton()

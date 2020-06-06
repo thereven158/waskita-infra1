@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3caac20cc7fb4c5cb17d94f53e689c84, type: 3}
+  m_Name: C008
+  m_EditorClassIdentifier: 
+  _quiz: {fileID: 114302391227967212}
+  _displayName: Pengecoran Parapet
+  _category: Instalasi Fullslab
+  _wrongExplanation: Pengecoran parapet gagal karena urutan tahapan pekerjaan salah
+--- !u!114 &114302391227967212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5513a841b9c34eebaedceb15de89531e, type: 3}
+  m_Name: C008.Quiz
+  m_EditorClassIdentifier: 
+  _question:
+    _message: Urutan proses pengecoran parapet yang benar adalah...
+    _answer: "Pasang pembesian \u2192 Pasang bekisting, pastikan sudah lurus dan rata
+      \u2192 Cor beton sesuai mutu"
+    _answerOptions:
+    - "Pasang pembesian \u2192 Pasang bekisting, pastikan sudah lurus dan rata \u2192
+      Cor beton sesuai mutu"
+    - "Cor beton sesuai mutu \u2192 Pasang pembesian \u2192 Pasang bekisting, pastikan
+      sudah lurus dan rata"
+    - "Pasang pembesian \u2192 Cor beton sesuai mutu \u2192 Pasang bekisting, pastikan
+      sudah lurus dan rata "
+    - "Pasang bekisting, pastikan sudah lurus dan rata \u2192 Pasang pembesian \u2192
+      Cor beton sesuai mutu"

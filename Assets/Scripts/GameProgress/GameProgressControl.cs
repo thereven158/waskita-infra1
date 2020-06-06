@@ -53,6 +53,6 @@ namespace Agate.WaskitaInfra1.GameProgress
         {
             return DataEquality(_data, data);
         }
-        
+
     }
 }

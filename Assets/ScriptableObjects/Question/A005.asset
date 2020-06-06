@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3caac20cc7fb4c5cb17d94f53e689c84, type: 3}
+  m_Name: A005
+  m_EditorClassIdentifier: 
+  _quiz: {fileID: 114839495381428444}
+  _displayName: Jumlah maximal tumpukan tiang pancang
+  _category: Penyimpanan Material
+  _wrongExplanation: Tiang Pancang diletakkan dengan cara yang tidak tepat, mengakibatkan
+    sebagian terguling dari tempat penyimpanan dan mengalami keretakan.
+--- !u!114 &114055591366686668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: A005.Quiz.Answer
+  m_EditorClassIdentifier: 
+  Image: {fileID: 0}
+  Text: 2
+--- !u!114 &114324752765757160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: A005.Quiz._answerOptions-0
+  m_EditorClassIdentifier: 
+  Image: {fileID: 0}
+  Text: 4
+--- !u!114 &114457699568958984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: A005.Quiz._answerOptions-0
+  m_EditorClassIdentifier: 
+  Image: {fileID: 0}
+  Text: 1
+--- !u!114 &114553071844637842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: A005.Quiz._answerOptions-0
+  m_EditorClassIdentifier: 
+  Image: {fileID: 0}
+  Text: 2
+--- !u!114 &114839495381428444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c16c4fd801b4bbf9eca531138ed0572, type: 3}
+  m_Name: A005.Quiz
+  m_EditorClassIdentifier: 
+  _question:
+    _message: Jumlah maximal tumpukan tiang pancang di lapangan adalah...
+    _answer: {fileID: 114055591366686668}
+    _answerOptions:
+    - {fileID: 114553071844637842}
+    - {fileID: 114457699568958984}
+    - {fileID: 114324752765757160}
+    - {fileID: 114972601097386102}
+--- !u!114 &114972601097386102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: A005.Quiz._answerOptions-0
+  m_EditorClassIdentifier: 
+  Image: {fileID: 0}
+  Text: 5

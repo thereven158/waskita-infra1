@@ -1,0 +1,234 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3caac20cc7fb4c5cb17d94f53e689c84, type: 3}
+  m_Name: B018
+  m_EditorClassIdentifier: 
+  _quiz: {fileID: 114963678012201650}
+  _displayName: Pemancangan Tiang Pancang Miring
+  _category: Instalasi Tiang Pancang
+  _wrongExplanation: Proses pemancangan yang tidak ideal menyebabkan alat berpotensi
+    roboh.
+--- !u!114 &114026654924491360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
+  m_Name: B018.Quiz._answerOptions-0
+  m_EditorClassIdentifier: 
+  _text: C
+  _spriteSheet: {fileID: 114659056244357422}
+--- !u!114 &114195368371918354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1ee8e0afb847b42ae6f403357ba440, type: 3}
+  m_Name: B018.Quiz._answerOptions-0.Sprite Sheet
+  m_EditorClassIdentifier: 
+  _sprites:
+  - {fileID: 21300000, guid: 4f2d0508cb96c0a458a65711d755342d, type: 3}
+  - {fileID: 21300002, guid: 4f2d0508cb96c0a458a65711d755342d, type: 3}
+  - {fileID: 21300004, guid: 4f2d0508cb96c0a458a65711d755342d, type: 3}
+  - {fileID: 21300006, guid: 4f2d0508cb96c0a458a65711d755342d, type: 3}
+  - {fileID: 21300008, guid: 4f2d0508cb96c0a458a65711d755342d, type: 3}
+  - {fileID: 21300010, guid: 4f2d0508cb96c0a458a65711d755342d, type: 3}
+  - {fileID: 21300012, guid: 4f2d0508cb96c0a458a65711d755342d, type: 3}
+  - {fileID: 21300014, guid: 4f2d0508cb96c0a458a65711d755342d, type: 3}
+  - {fileID: 21300016, guid: 4f2d0508cb96c0a458a65711d755342d, type: 3}
+  - {fileID: 21300018, guid: 4f2d0508cb96c0a458a65711d755342d, type: 3}
+  _framerate: 5
+  _loop: 1
+--- !u!114 &114262859022531308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
+  m_Name: B018.Quiz._answerOptions-0
+  m_EditorClassIdentifier: 
+  _text: B
+  _spriteSheet: {fileID: 114345617515160162}
+--- !u!114 &114345617515160162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1ee8e0afb847b42ae6f403357ba440, type: 3}
+  m_Name: B018.Quiz._answerOptions-0.Sprite Sheet
+  m_EditorClassIdentifier: 
+  _sprites:
+  - {fileID: 21300000, guid: 84da13b9c69c9ef43b3fc46eb63b226a, type: 3}
+  - {fileID: 21300002, guid: 84da13b9c69c9ef43b3fc46eb63b226a, type: 3}
+  - {fileID: 21300004, guid: 84da13b9c69c9ef43b3fc46eb63b226a, type: 3}
+  - {fileID: 21300006, guid: 84da13b9c69c9ef43b3fc46eb63b226a, type: 3}
+  - {fileID: 21300008, guid: 84da13b9c69c9ef43b3fc46eb63b226a, type: 3}
+  - {fileID: 21300010, guid: 84da13b9c69c9ef43b3fc46eb63b226a, type: 3}
+  - {fileID: 21300012, guid: 84da13b9c69c9ef43b3fc46eb63b226a, type: 3}
+  - {fileID: 21300014, guid: 84da13b9c69c9ef43b3fc46eb63b226a, type: 3}
+  - {fileID: 21300016, guid: 84da13b9c69c9ef43b3fc46eb63b226a, type: 3}
+  - {fileID: 21300018, guid: 84da13b9c69c9ef43b3fc46eb63b226a, type: 3}
+  _framerate: 8
+  _loop: 1
+--- !u!114 &114580066042872482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
+  m_Name: B018.Quiz.Answer
+  m_EditorClassIdentifier: 
+  _text: B
+  _spriteSheet: {fileID: 114720244926434072}
+--- !u!114 &114659056244357422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1ee8e0afb847b42ae6f403357ba440, type: 3}
+  m_Name: B018.Quiz._answerOptions-0.Sprite Sheet
+  m_EditorClassIdentifier: 
+  _sprites:
+  - {fileID: 21300000, guid: 63491fa7f4cc1414baa3d3a409b6e061, type: 3}
+  - {fileID: 21300002, guid: 63491fa7f4cc1414baa3d3a409b6e061, type: 3}
+  - {fileID: 21300004, guid: 63491fa7f4cc1414baa3d3a409b6e061, type: 3}
+  - {fileID: 21300006, guid: 63491fa7f4cc1414baa3d3a409b6e061, type: 3}
+  - {fileID: 21300008, guid: 63491fa7f4cc1414baa3d3a409b6e061, type: 3}
+  - {fileID: 21300010, guid: 63491fa7f4cc1414baa3d3a409b6e061, type: 3}
+  - {fileID: 21300012, guid: 63491fa7f4cc1414baa3d3a409b6e061, type: 3}
+  - {fileID: 21300014, guid: 63491fa7f4cc1414baa3d3a409b6e061, type: 3}
+  - {fileID: 21300016, guid: 63491fa7f4cc1414baa3d3a409b6e061, type: 3}
+  - {fileID: 21300018, guid: 63491fa7f4cc1414baa3d3a409b6e061, type: 3}
+  _framerate: 5
+  _loop: 1
+--- !u!114 &114682416986143868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
+  m_Name: B018.Quiz._answerOptions-0
+  m_EditorClassIdentifier: 
+  _text: D
+  _spriteSheet: {fileID: 114195368371918354}
+--- !u!114 &114720244926434072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1ee8e0afb847b42ae6f403357ba440, type: 3}
+  m_Name: B018.Quiz.Answer.Sprite Sheet
+  m_EditorClassIdentifier: 
+  _sprites:
+  - {fileID: 21300000, guid: 84da13b9c69c9ef43b3fc46eb63b226a, type: 3}
+  - {fileID: 21300002, guid: 84da13b9c69c9ef43b3fc46eb63b226a, type: 3}
+  - {fileID: 21300004, guid: 84da13b9c69c9ef43b3fc46eb63b226a, type: 3}
+  - {fileID: 21300006, guid: 84da13b9c69c9ef43b3fc46eb63b226a, type: 3}
+  - {fileID: 21300008, guid: 84da13b9c69c9ef43b3fc46eb63b226a, type: 3}
+  - {fileID: 21300010, guid: 84da13b9c69c9ef43b3fc46eb63b226a, type: 3}
+  - {fileID: 21300012, guid: 84da13b9c69c9ef43b3fc46eb63b226a, type: 3}
+  - {fileID: 21300014, guid: 84da13b9c69c9ef43b3fc46eb63b226a, type: 3}
+  - {fileID: 21300016, guid: 84da13b9c69c9ef43b3fc46eb63b226a, type: 3}
+  - {fileID: 21300018, guid: 84da13b9c69c9ef43b3fc46eb63b226a, type: 3}
+  _framerate: 5
+  _loop: 1
+--- !u!114 &114882007132355966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1ee8e0afb847b42ae6f403357ba440, type: 3}
+  m_Name: B018.Quiz._answerOptions-0.Sprite Sheet
+  m_EditorClassIdentifier: 
+  _sprites:
+  - {fileID: 21300000, guid: 12f668b4b1502d54e80ca1b5ba3b6292, type: 3}
+  - {fileID: 21300002, guid: 12f668b4b1502d54e80ca1b5ba3b6292, type: 3}
+  - {fileID: 21300004, guid: 12f668b4b1502d54e80ca1b5ba3b6292, type: 3}
+  - {fileID: 21300006, guid: 12f668b4b1502d54e80ca1b5ba3b6292, type: 3}
+  - {fileID: 21300008, guid: 12f668b4b1502d54e80ca1b5ba3b6292, type: 3}
+  - {fileID: 21300010, guid: 12f668b4b1502d54e80ca1b5ba3b6292, type: 3}
+  - {fileID: 21300012, guid: 12f668b4b1502d54e80ca1b5ba3b6292, type: 3}
+  - {fileID: 21300014, guid: 12f668b4b1502d54e80ca1b5ba3b6292, type: 3}
+  - {fileID: 21300016, guid: 12f668b4b1502d54e80ca1b5ba3b6292, type: 3}
+  - {fileID: 21300018, guid: 12f668b4b1502d54e80ca1b5ba3b6292, type: 3}
+  _framerate: 5
+  _loop: 1
+--- !u!114 &114899585253314472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
+  m_Name: B018.Quiz._answerOptions-0
+  m_EditorClassIdentifier: 
+  _text: A
+  _spriteSheet: {fileID: 114882007132355966}
+--- !u!114 &114963678012201650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152796e4c801448b9d9cc76c94908ba4, type: 3}
+  m_Name: B018.Quiz
+  m_EditorClassIdentifier: 
+  _question:
+    _message: Apabila situasi mengharuskan pemancangan miring, maka yang tepat adalah...
+    _answer: {fileID: 114580066042872482}
+    _answerOptions:
+    - {fileID: 114899585253314472}
+    - {fileID: 114580066042872482}
+    - {fileID: 114026654924491360}
+    - {fileID: 114682416986143868}

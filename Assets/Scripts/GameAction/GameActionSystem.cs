@@ -10,9 +10,9 @@ namespace GameAction
         public T GetActionComponent<T>() where T : class
         {
             if (!_component.ContainsKey(typeof(T))) return null;
-            return (T) _component[typeof(T)];
+            return (T)_component[typeof(T)];
         }
-        
+
         public virtual void Init(params object[] components)
         {
             foreach (object cmpn in components)
@@ -32,6 +32,6 @@ namespace GameAction
             data.Init(this);
             data.Invoke();
         }
-        
+
     }
 }

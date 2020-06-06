@@ -17,5 +17,5 @@ namespace Agate.WaskitaInfra1.PlayerAccount
         {
             SetData(new PlayerAccountData());
         }
-}
+    }
 }
