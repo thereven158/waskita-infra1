@@ -144,6 +144,7 @@ MonoBehaviour:
   _aScMn: {fileID: 768455689}
   animRef: {fileID: 7002195162503216679, guid: 982b1b6c4a4b20d459d37ddca59a4134, type: 3}
   block: {fileID: 8156409307791900421, guid: f428a72321bf3a546b843221448600e3, type: 3}
+  fade: {fileID: 8560514259464806155, guid: dfa3a55ac3a6cb94383bd44b9f4bbfea, type: 3}
   _infoPopup: {fileID: 6066408058732217489, guid: 385285812351fb5418c2ecd7a3530503,
     type: 3}
 --- !u!4 &578905963

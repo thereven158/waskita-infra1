@@ -2,7 +2,8 @@
     "name": "Agate.WaskitaInfra1.UserInterface.Display",
     "references": [
         "A3.UserInterface",
-        "Unity.TextMeshPro"
+        "Unity.TextMeshPro",
+        "DOTween.Modules"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],

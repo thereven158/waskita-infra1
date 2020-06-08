@@ -40,11 +40,6 @@ namespace Agate.WaskitaInfra1.UserInterface.Display
             _noButton.onClick.AddListener(No);
         }
 
-        public override void Open()
-        {
-            gameObject.SetActive(true);
-        }
-
         public void Open(string text, Action onYes, Action onNo, Action onClose = null)
         {
             Open(new YesNoPopUpViewData()
@@ -54,7 +49,6 @@ namespace Agate.WaskitaInfra1.UserInterface.Display
                 YesAction = onYes,
                 NoAction = onNo
             });
-            Open();
         }
 
         public void Open(YesNoPopUpViewData data)
@@ -74,7 +68,7 @@ namespace Agate.WaskitaInfra1.UserInterface.Display
             _onClose = data.CloseAction;
             _onYes = data.YesAction;
             _onNo = data.NoAction;
-            Open();
+            gameObject.SetActive(true);
         }
 
         public override void Close()
