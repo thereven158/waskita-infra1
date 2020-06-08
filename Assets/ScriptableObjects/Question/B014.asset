@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3caac20cc7fb4c5cb17d94f53e689c84, type: 3}
+  m_Name: B014
+  m_EditorClassIdentifier: 
+  _quiz: {fileID: 114206260340765610}
+  _displayName: APD tukang las
+  _category: Instalasi Tiang Pancang
+  _wrongExplanation: '"Radius sekitar alat pancang yang tidak steril dapat berpotensi
+    menimbulkan kecelakaan" kerja'
+--- !u!114 &114206260340765610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c16c4fd801b4bbf9eca531138ed0572, type: 3}
+  m_Name: B014.Quiz
+  m_EditorClassIdentifier: 
+  _question:
+    _message: Radius steril dari alat pancang saat proses pemancangan tiang pancang
+      yang tepat adalah...
+    _answer: {fileID: 114219714981817232}
+    _answerOptions:
+    - {fileID: 114396464553503742}
+    - {fileID: 114337393306075686}
+    - {fileID: 114568600631175172}
+    - {fileID: 114238238476742792}
+--- !u!114 &114219714981817232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: B014.Quiz.Answer
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 426cc57d46773ab4d89b1ed7ade972a8, type: 3}
+  Text: "\u2265 50 m"
+--- !u!114 &114238238476742792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: B014.Quiz._answerOptions-0
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 6688134bd4806704c8bcaf243f398d56, type: 3}
+  Text: 30 - 50 m
+--- !u!114 &114337393306075686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: B014.Quiz._answerOptions-0
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: e22689f8e92e59a4c822eb4247307f12, type: 3}
+  Text: 5 - 10 m
+--- !u!114 &114396464553503742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: B014.Quiz._answerOptions-0
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 426cc57d46773ab4d89b1ed7ade972a8, type: 3}
+  Text: "\u2265 50 m"
+--- !u!114 &114568600631175172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: B014.Quiz._answerOptions-0
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 99138d37e7fae774891252b505dc996c, type: 3}
+  Text: 10 - 30 m

@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3caac20cc7fb4c5cb17d94f53e689c84, type: 3}
+  m_Name: B015
+  m_EditorClassIdentifier: 
+  _quiz: {fileID: 114010924728658010}
+  _displayName: APD tukang las
+  _category: Instalasi Tiang Pancang
+  _wrongExplanation: Bekerja tanpa APD yang sesuai dapat membahayakan pekerja.
+--- !u!114 &114010924728658010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c16c4fd801b4bbf9eca531138ed0572, type: 3}
+  m_Name: B015.Quiz
+  m_EditorClassIdentifier: 
+  _question:
+    _message: APD yang tepat untuk digunakan tukang las adalah...
+    _answer: {fileID: 114637754696588552}
+    _answerOptions:
+    - {fileID: 114934432654549000}
+    - {fileID: 114200310980592756}
+    - {fileID: 114859420005087886}
+    - {fileID: 114279797670557804}
+--- !u!114 &114200310980592756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: B015.Quiz._answerOptions-0
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 223c1418cf6560345ba57174d8f25ab7, type: 3}
+  Text: B
+--- !u!114 &114279797670557804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: B015.Quiz._answerOptions-0
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: a1e166d11cc24834ab99b8c3f84902ff, type: 3}
+  Text: D
+--- !u!114 &114637754696588552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: B015.Quiz.Answer
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 84ec5f9e250a7244eb35923ce2f48c17, type: 3}
+  Text: C
+--- !u!114 &114859420005087886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: B015.Quiz._answerOptions-0
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 84ec5f9e250a7244eb35923ce2f48c17, type: 3}
+  Text: C
+--- !u!114 &114934432654549000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: B015.Quiz._answerOptions-0
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 70a9e2d6d52a8fb4a9fb88d34c92ad47, type: 3}
+  Text: A

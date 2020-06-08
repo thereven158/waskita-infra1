@@ -1,0 +1,225 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3caac20cc7fb4c5cb17d94f53e689c84, type: 3}
+  m_Name: C013
+  m_EditorClassIdentifier: 
+  _quiz: {fileID: 114453464736663416}
+  _displayName: Isyarat Rigger
+  _category: Instalasi Fullslab
+  _wrongExplanation: Kesalahan interpretasi isyarat dapat menyebabkan miskomunikasi
+    dan kecelakaan kerja.
+--- !u!114 &114045338211321074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1ee8e0afb847b42ae6f403357ba440, type: 3}
+  m_Name: C013.Quiz._answerOptions-0.Sprite Sheet
+  m_EditorClassIdentifier: 
+  _sprites:
+  - {fileID: 21300000, guid: 547ac01431a202844816232bc8b8e8a8, type: 3}
+  - {fileID: 21300002, guid: 547ac01431a202844816232bc8b8e8a8, type: 3}
+  - {fileID: 21300004, guid: 547ac01431a202844816232bc8b8e8a8, type: 3}
+  - {fileID: 21300006, guid: 547ac01431a202844816232bc8b8e8a8, type: 3}
+  - {fileID: 21300008, guid: 547ac01431a202844816232bc8b8e8a8, type: 3}
+  - {fileID: 21300010, guid: 547ac01431a202844816232bc8b8e8a8, type: 3}
+  - {fileID: 21300012, guid: 547ac01431a202844816232bc8b8e8a8, type: 3}
+  - {fileID: 21300014, guid: 547ac01431a202844816232bc8b8e8a8, type: 3}
+  - {fileID: 21300016, guid: 547ac01431a202844816232bc8b8e8a8, type: 3}
+  - {fileID: 21300018, guid: 547ac01431a202844816232bc8b8e8a8, type: 3}
+  - {fileID: 21300020, guid: 547ac01431a202844816232bc8b8e8a8, type: 3}
+  - {fileID: 21300022, guid: 547ac01431a202844816232bc8b8e8a8, type: 3}
+  _framerate: 5
+  _loop: 1
+--- !u!114 &114182411976063748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1ee8e0afb847b42ae6f403357ba440, type: 3}
+  m_Name: C013.Quiz._answerOptions-0.Sprite Sheet
+  m_EditorClassIdentifier: 
+  _sprites:
+  - {fileID: 21300000, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
+  - {fileID: 21300002, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
+  - {fileID: 21300004, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
+  - {fileID: 21300006, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
+  - {fileID: 21300008, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
+  - {fileID: 21300010, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
+  - {fileID: 21300012, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
+  - {fileID: 21300014, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
+  - {fileID: 21300016, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
+  - {fileID: 21300018, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
+  - {fileID: 21300020, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
+  - {fileID: 21300022, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
+  _framerate: 5
+  _loop: 1
+--- !u!114 &114203976433573534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
+  m_Name: C013.Quiz.Answer
+  m_EditorClassIdentifier: 
+  _text: C
+  _spriteSheet: {fileID: 114316307655517564}
+--- !u!114 &114316307655517564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1ee8e0afb847b42ae6f403357ba440, type: 3}
+  m_Name: C013.Quiz.Answer.Sprite Sheet
+  m_EditorClassIdentifier: 
+  _sprites:
+  - {fileID: 21300010, guid: 4fc56fb151b41244ab555ba2587dd540, type: 3}
+  - {fileID: 21300010, guid: 4fc56fb151b41244ab555ba2587dd540, type: 3}
+  _framerate: 5
+  _loop: 1
+--- !u!114 &114379926341913688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1ee8e0afb847b42ae6f403357ba440, type: 3}
+  m_Name: C013.Quiz._answerOptions-0.Sprite Sheet
+  m_EditorClassIdentifier: 
+  _sprites:
+  - {fileID: 21300010, guid: 4fc56fb151b41244ab555ba2587dd540, type: 3}
+  - {fileID: 21300010, guid: 4fc56fb151b41244ab555ba2587dd540, type: 3}
+  _framerate: 5
+  _loop: 1
+--- !u!114 &114413842944862186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
+  m_Name: C013.Quiz._answerOptions-0
+  m_EditorClassIdentifier: 
+  _text: C
+  _spriteSheet: {fileID: 114379926341913688}
+--- !u!114 &114444474262148582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
+  m_Name: C013.Quiz._answerOptions-0
+  m_EditorClassIdentifier: 
+  _text: A
+  _spriteSheet: {fileID: 114045338211321074}
+--- !u!114 &114453464736663416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152796e4c801448b9d9cc76c94908ba4, type: 3}
+  m_Name: C013.Quiz
+  m_EditorClassIdentifier: 
+  _question:
+    _message: Isyarat rigger yang sesuai dengan standard internasional OSHA untuk
+      berhenti karena kondisi darurat adalah...
+    _answer: {fileID: 114203976433573534}
+    _answerOptions:
+    - {fileID: 114444474262148582}
+    - {fileID: 114779907799911794}
+    - {fileID: 114413842944862186}
+    - {fileID: 114725686318433586}
+--- !u!114 &114453736490337724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1ee8e0afb847b42ae6f403357ba440, type: 3}
+  m_Name: C013.Quiz._answerOptions-0.Sprite Sheet
+  m_EditorClassIdentifier: 
+  _sprites:
+  - {fileID: 21300000, guid: aa1343d8877938446aaf3cd719791364, type: 3}
+  - {fileID: 21300002, guid: aa1343d8877938446aaf3cd719791364, type: 3}
+  - {fileID: 21300004, guid: aa1343d8877938446aaf3cd719791364, type: 3}
+  - {fileID: 21300006, guid: aa1343d8877938446aaf3cd719791364, type: 3}
+  - {fileID: 21300008, guid: aa1343d8877938446aaf3cd719791364, type: 3}
+  - {fileID: 21300010, guid: aa1343d8877938446aaf3cd719791364, type: 3}
+  - {fileID: 21300012, guid: aa1343d8877938446aaf3cd719791364, type: 3}
+  - {fileID: 21300014, guid: aa1343d8877938446aaf3cd719791364, type: 3}
+  - {fileID: 21300016, guid: aa1343d8877938446aaf3cd719791364, type: 3}
+  - {fileID: 21300018, guid: aa1343d8877938446aaf3cd719791364, type: 3}
+  - {fileID: 21300020, guid: aa1343d8877938446aaf3cd719791364, type: 3}
+  - {fileID: 21300022, guid: aa1343d8877938446aaf3cd719791364, type: 3}
+  _framerate: 5
+  _loop: 1
+--- !u!114 &114725686318433586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
+  m_Name: C013.Quiz._answerOptions-0
+  m_EditorClassIdentifier: 
+  _text: D
+  _spriteSheet: {fileID: 114453736490337724}
+--- !u!114 &114779907799911794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
+  m_Name: C013.Quiz._answerOptions-0
+  m_EditorClassIdentifier: 
+  _text: B
+  _spriteSheet: {fileID: 114182411976063748}
