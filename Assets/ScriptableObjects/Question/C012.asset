@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: C012
   m_EditorClassIdentifier: 
   _quiz: {fileID: 114924415162559712}
-  _displayName: 
-  _category: 
-  _wrongExplanation: 
+  _displayName: Pengangkutan fullslab
+  _category: Instalasi Fullslab
+  _wrongExplanation: Pengangkutan material dengan proses yang tidak tepat dapat menyebabkan
+    kerusakan.
 --- !u!114 &114051870009786318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,7 +83,7 @@ MonoBehaviour:
   m_Name: C012.Quiz._answerOptions-0
   m_EditorClassIdentifier: 
   _text: D
-  _spriteSheet: {fileID: 0}
+  _spriteSheet: {fileID: 114947938406732792}
 --- !u!114 &114403899975179938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,6 +219,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea1ee8e0afb847b42ae6f403357ba440, type: 3}
   m_Name: C012.Quiz._answerOptions-0.Sprite Sheet
   m_EditorClassIdentifier: 
-  _sprites: []
-  _framerate: 0
-  _loop: 0
+  _sprites:
+  - {fileID: 21300000, guid: 35962fa3e06d59b4b82e38e913932611, type: 3}
+  - {fileID: 21300002, guid: 35962fa3e06d59b4b82e38e913932611, type: 3}
+  - {fileID: 21300004, guid: 35962fa3e06d59b4b82e38e913932611, type: 3}
+  - {fileID: 21300006, guid: 35962fa3e06d59b4b82e38e913932611, type: 3}
+  - {fileID: 21300008, guid: 35962fa3e06d59b4b82e38e913932611, type: 3}
+  - {fileID: 21300010, guid: 35962fa3e06d59b4b82e38e913932611, type: 3}
+  - {fileID: 21300012, guid: 35962fa3e06d59b4b82e38e913932611, type: 3}
+  - {fileID: 21300014, guid: 35962fa3e06d59b4b82e38e913932611, type: 3}
+  _framerate: 5
+  _loop: 1

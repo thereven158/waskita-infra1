@@ -10,43 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3caac20cc7fb4c5cb17d94f53e689c84, type: 3}
-  m_Name: A002
+  m_Name: B015
   m_EditorClassIdentifier: 
-  _quiz: {fileID: 114789760541019468}
-  _displayName: 'Penumpukan Material Fullslab '
-  _category: 'Penyimpanan Material '
-  _wrongExplanation: Penyimpanan yang kurang baik menyebabkan material rusak
---- !u!114 &114065151990704550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
-  m_Name: __A002__quiz_data
-  m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: eb94c1dd748d109438b64009e12f07cd, type: 3}
-  Text: "Lahan padat (CBR > 3%), tidak rata, dan kering. Menggunakan kayu ganjal dan
-    slip kayu (SF \u2265 3)\n"
---- !u!114 &114502289823463752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
-  m_Name: __A002__quiz_data
-  m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: dd11412200e88694c9a7fdd316c132df, type: 3}
-  Text: "Lahan tidak padat (CBR < 3%), rata, dan kering. Menggunakan kayu ganjal dan
-    slip kayu (SF \u2265 3)"
---- !u!114 &114789760541019468
+  _quiz: {fileID: 114010924728658010}
+  _displayName: APD tukang las
+  _category: Instalasi Tiang Pancang
+  _wrongExplanation: Bekerja tanpa APD yang sesuai dapat membahayakan pekerja.
+--- !u!114 &114010924728658010
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,18 +26,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c16c4fd801b4bbf9eca531138ed0572, type: 3}
-  m_Name: _A002__quiz
+  m_Name: B015.Quiz
   m_EditorClassIdentifier: 
   _question:
-    _message: "Di bawah ini, yang merupakan kondisi dan metode yang tepat untuk penumpukan
-      material  fullslab adalah...\r"
-    _answer: {fileID: 114830315233438632}
+    _message: APD yang tepat untuk digunakan tukang las adalah...
+    _answer: {fileID: 114637754696588552}
     _answerOptions:
-    - {fileID: 114502289823463752}
-    - {fileID: 114065151990704550}
-    - {fileID: 114962740791373636}
-    - {fileID: 114830315233438632}
---- !u!114 &114830315233438632
+    - {fileID: 114934432654549000}
+    - {fileID: 114200310980592756}
+    - {fileID: 114859420005087886}
+    - {fileID: 114279797670557804}
+--- !u!114 &114200310980592756
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -77,12 +46,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
-  m_Name: __A002__quiz__answer
+  m_Name: B015.Quiz._answerOptions-0
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 4bbc967d5705c434bbaad46f0bfd2470, type: 3}
-  Text: "Lahan padat (CBR > 3%), rata, dan Kering. Menggunakan kayu ganjal dan slip
-    kayu (SF \u2265 3)\r"
---- !u!114 &114962740791373636
+  Image: {fileID: 21300000, guid: 223c1418cf6560345ba57174d8f25ab7, type: 3}
+  Text: B
+--- !u!114 &114279797670557804
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,8 +60,49 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
-  m_Name: __A002__quiz_data
+  m_Name: B015.Quiz._answerOptions-0
   m_EditorClassIdentifier: 
-  Image: {fileID: 21300000, guid: 3e00dd93dce010f418a44e9e0a622559, type: 3}
-  Text: "Lahan padat (CBR > 3%), rata, dan terdapat genangan air. Menggunakan kayu
-    ganjal dan slip kayu (SF < 3)\r\n"
+  Image: {fileID: 21300000, guid: a1e166d11cc24834ab99b8c3f84902ff, type: 3}
+  Text: D
+--- !u!114 &114637754696588552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: B015.Quiz.Answer
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 84ec5f9e250a7244eb35923ce2f48c17, type: 3}
+  Text: C
+--- !u!114 &114859420005087886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: B015.Quiz._answerOptions-0
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 84ec5f9e250a7244eb35923ce2f48c17, type: 3}
+  Text: C
+--- !u!114 &114934432654549000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: B015.Quiz._answerOptions-0
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 70a9e2d6d52a8fb4a9fb88d34c92ad47, type: 3}
+  Text: A

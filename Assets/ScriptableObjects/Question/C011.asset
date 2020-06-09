@@ -12,11 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3caac20cc7fb4c5cb17d94f53e689c84, type: 3}
   m_Name: C011
   m_EditorClassIdentifier: 
-  _quiz: {fileID: 114379172630867638}
-  _displayName: Pengangkutan fullslab
+  _quiz: {fileID: 114707036457521798}
+  _displayName: Persiapan pekerjaan black top
   _category: Instalasi Fullslab
-  _wrongExplanation: Pengangkutan material dengan proses yang tidak tepat dapat menyebabkan
+  _wrongExplanation: Pemasangan material dengan proses yang tidak tepat dapat menyebabkan
     kerusakan.
+--- !u!114 &114012634749933244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
+  m_Name: C011.Quiz._answerOptions-0
+  m_EditorClassIdentifier: 
+  _text: Bersihkan permukaan slab beton dengan compressor
+  _spriteSheet: {fileID: 114554612903525708}
 --- !u!114 &114023151857003542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44,6 +58,45 @@ MonoBehaviour:
   m_Name: C011.Quiz.Answer.Sprite Sheet
   m_EditorClassIdentifier: 
   _sprites: []
+  _framerate: 5
+  _loop: 1
+--- !u!114 &114097445809058468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
+  m_Name: C011.Quiz._answerOptions-0
+  m_EditorClassIdentifier: 
+  _text: Siram permukaan slab beton dengan air
+  _spriteSheet: {fileID: 114982276423057348}
+--- !u!114 &114111994727973036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1ee8e0afb847b42ae6f403357ba440, type: 3}
+  m_Name: C011.Quiz._answerOptions-0.Sprite Sheet
+  m_EditorClassIdentifier: 
+  _sprites:
+  - {fileID: 21300000, guid: 29e705ec0735a1c4e99d794e63603ead, type: 3}
+  - {fileID: 21300002, guid: 29e705ec0735a1c4e99d794e63603ead, type: 3}
+  - {fileID: 21300004, guid: 29e705ec0735a1c4e99d794e63603ead, type: 3}
+  - {fileID: 21300006, guid: 29e705ec0735a1c4e99d794e63603ead, type: 3}
+  - {fileID: 21300008, guid: 29e705ec0735a1c4e99d794e63603ead, type: 3}
+  - {fileID: 21300010, guid: 29e705ec0735a1c4e99d794e63603ead, type: 3}
+  - {fileID: 21300012, guid: 29e705ec0735a1c4e99d794e63603ead, type: 3}
+  - {fileID: 21300014, guid: 29e705ec0735a1c4e99d794e63603ead, type: 3}
+  - {fileID: 21300016, guid: 29e705ec0735a1c4e99d794e63603ead, type: 3}
+  - {fileID: 21300018, guid: 29e705ec0735a1c4e99d794e63603ead, type: 3}
   _framerate: 5
   _loop: 1
 --- !u!114 &114263995934356628
@@ -90,7 +143,7 @@ MonoBehaviour:
   _sprites: []
   _framerate: 5
   _loop: 1
---- !u!114 &114379172630867638
+--- !u!114 &114379168978627942
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,17 +152,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 152796e4c801448b9d9cc76c94908ba4, type: 3}
-  m_Name: C011.Quiz
+  m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
+  m_Name: C011.Quiz._answerOptions-0
   m_EditorClassIdentifier: 
-  _question:
-    _message: Pengangkutan fullslab yang sesuai prosedur adalah...
-    _answer: {fileID: 114386414938149986}
-    _answerOptions:
-    - {fileID: 114580199005175128}
-    - {fileID: 114945233051755418}
-    - {fileID: 114272409843262292}
-    - {fileID: 114023151857003542}
+  _text: Tutup permukaa slab beton dengan geotextile
+  _spriteSheet: {fileID: 114111994727973036}
 --- !u!114 &114386414938149986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +171,70 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: A
   _spriteSheet: {fileID: 114023686490461916}
+--- !u!114 &114447481148357066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1ee8e0afb847b42ae6f403357ba440, type: 3}
+  m_Name: C011.Quiz._answerOptions-0.Sprite Sheet
+  m_EditorClassIdentifier: 
+  _sprites:
+  - {fileID: 21300000, guid: a4ecb260116e26d4fb1b1866076be507, type: 3}
+  - {fileID: 21300002, guid: a4ecb260116e26d4fb1b1866076be507, type: 3}
+  - {fileID: 21300004, guid: a4ecb260116e26d4fb1b1866076be507, type: 3}
+  - {fileID: 21300006, guid: a4ecb260116e26d4fb1b1866076be507, type: 3}
+  - {fileID: 21300008, guid: a4ecb260116e26d4fb1b1866076be507, type: 3}
+  - {fileID: 21300010, guid: a4ecb260116e26d4fb1b1866076be507, type: 3}
+  - {fileID: 21300012, guid: a4ecb260116e26d4fb1b1866076be507, type: 3}
+  - {fileID: 21300014, guid: a4ecb260116e26d4fb1b1866076be507, type: 3}
+  - {fileID: 21300016, guid: a4ecb260116e26d4fb1b1866076be507, type: 3}
+  - {fileID: 21300018, guid: a4ecb260116e26d4fb1b1866076be507, type: 3}
+  _framerate: 5
+  _loop: 1
+--- !u!114 &114494045577778454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
+  m_Name: C011.Quiz._answerOptions-0
+  m_EditorClassIdentifier: 
+  _text: Lapisi permukaan slab beton dengan oli
+  _spriteSheet: {fileID: 114447481148357066}
+--- !u!114 &114554612903525708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1ee8e0afb847b42ae6f403357ba440, type: 3}
+  m_Name: C011.Quiz._answerOptions-0.Sprite Sheet
+  m_EditorClassIdentifier: 
+  _sprites:
+  - {fileID: 21300000, guid: dd23538072e4f894189505fdd1b1d9b7, type: 3}
+  - {fileID: 21300002, guid: dd23538072e4f894189505fdd1b1d9b7, type: 3}
+  - {fileID: 21300004, guid: dd23538072e4f894189505fdd1b1d9b7, type: 3}
+  - {fileID: 21300006, guid: dd23538072e4f894189505fdd1b1d9b7, type: 3}
+  - {fileID: 21300008, guid: dd23538072e4f894189505fdd1b1d9b7, type: 3}
+  - {fileID: 21300010, guid: dd23538072e4f894189505fdd1b1d9b7, type: 3}
+  - {fileID: 21300012, guid: dd23538072e4f894189505fdd1b1d9b7, type: 3}
+  - {fileID: 21300014, guid: dd23538072e4f894189505fdd1b1d9b7, type: 3}
+  - {fileID: 21300016, guid: dd23538072e4f894189505fdd1b1d9b7, type: 3}
+  - {fileID: 21300018, guid: dd23538072e4f894189505fdd1b1d9b7, type: 3}
+  _framerate: 5
+  _loop: 1
 --- !u!114 &114580199005175128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,6 +249,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: A
   _spriteSheet: {fileID: 114895097877045126}
+--- !u!114 &114707036457521798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152796e4c801448b9d9cc76c94908ba4, type: 3}
+  m_Name: C011.Quiz
+  m_EditorClassIdentifier: 
+  _question:
+    _message: Hal pertama yang harus dilakukan sebelum melakukan pekerjaan blacktop
+      adalah...
+    _answer: {fileID: 114822802198075252}
+    _answerOptions:
+    - {fileID: 114097445809058468}
+    - {fileID: 114494045577778454}
+    - {fileID: 114012634749933244}
+    - {fileID: 114379168978627942}
 --- !u!114 &114796110498056786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,6 +283,45 @@ MonoBehaviour:
   m_Name: C011.Quiz._answerOptions-0.Sprite Sheet
   m_EditorClassIdentifier: 
   _sprites: []
+  _framerate: 5
+  _loop: 1
+--- !u!114 &114822802198075252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
+  m_Name: C011.Quiz.Answer
+  m_EditorClassIdentifier: 
+  _text: Bersihkan permukaan slab beton dengan compressor
+  _spriteSheet: {fileID: 114880680315654438}
+--- !u!114 &114880680315654438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1ee8e0afb847b42ae6f403357ba440, type: 3}
+  m_Name: C011.Quiz.Answer.Sprite Sheet
+  m_EditorClassIdentifier: 
+  _sprites:
+  - {fileID: 21300000, guid: dd23538072e4f894189505fdd1b1d9b7, type: 3}
+  - {fileID: 21300002, guid: dd23538072e4f894189505fdd1b1d9b7, type: 3}
+  - {fileID: 21300004, guid: dd23538072e4f894189505fdd1b1d9b7, type: 3}
+  - {fileID: 21300006, guid: dd23538072e4f894189505fdd1b1d9b7, type: 3}
+  - {fileID: 21300008, guid: dd23538072e4f894189505fdd1b1d9b7, type: 3}
+  - {fileID: 21300010, guid: dd23538072e4f894189505fdd1b1d9b7, type: 3}
+  - {fileID: 21300012, guid: dd23538072e4f894189505fdd1b1d9b7, type: 3}
+  - {fileID: 21300014, guid: dd23538072e4f894189505fdd1b1d9b7, type: 3}
+  - {fileID: 21300016, guid: dd23538072e4f894189505fdd1b1d9b7, type: 3}
+  - {fileID: 21300018, guid: dd23538072e4f894189505fdd1b1d9b7, type: 3}
   _framerate: 5
   _loop: 1
 --- !u!114 &114895097877045126
@@ -182,3 +353,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _text: B
   _spriteSheet: {fileID: 114263995934356628}
+--- !u!114 &114982276423057348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1ee8e0afb847b42ae6f403357ba440, type: 3}
+  m_Name: C011.Quiz._answerOptions-0.Sprite Sheet
+  m_EditorClassIdentifier: 
+  _sprites:
+  - {fileID: 21300000, guid: 2acebe5cfdb003342a73cd9fbbefc34b, type: 3}
+  - {fileID: 21300002, guid: 2acebe5cfdb003342a73cd9fbbefc34b, type: 3}
+  - {fileID: 21300004, guid: 2acebe5cfdb003342a73cd9fbbefc34b, type: 3}
+  - {fileID: 21300006, guid: 2acebe5cfdb003342a73cd9fbbefc34b, type: 3}
+  - {fileID: 21300008, guid: 2acebe5cfdb003342a73cd9fbbefc34b, type: 3}
+  - {fileID: 21300010, guid: 2acebe5cfdb003342a73cd9fbbefc34b, type: 3}
+  - {fileID: 21300012, guid: 2acebe5cfdb003342a73cd9fbbefc34b, type: 3}
+  - {fileID: 21300014, guid: 2acebe5cfdb003342a73cd9fbbefc34b, type: 3}
+  - {fileID: 21300016, guid: 2acebe5cfdb003342a73cd9fbbefc34b, type: 3}
+  - {fileID: 21300018, guid: 2acebe5cfdb003342a73cd9fbbefc34b, type: 3}
+  _framerate: 5
+  _loop: 1
