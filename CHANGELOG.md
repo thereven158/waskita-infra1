@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.10.0] - 2020-06-09
+- fixing bug:
+	- text stacking in simulation when wrong answer in event
+	- typo in brief project
+	- issue #131, #130, #75, #97, #96
+	- icon wind strenght
+- fill content level data
+
 ## [0.9.0] - 2020-06-05
 
 - backend integration, detect dual login still not implement.
