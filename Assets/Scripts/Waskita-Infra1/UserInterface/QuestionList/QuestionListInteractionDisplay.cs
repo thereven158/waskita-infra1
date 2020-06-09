@@ -46,11 +46,6 @@ namespace Agate.WaskitaInfra1.UserInterface.QuestionList
             _abortButton.onClick.AddListener(OnAbortButton);
         }
 
-        public override void Open()
-        {
-            gameObject.SetActive(true);
-        }
-
         public override void Close()
         {
             _verticalScrollBar.value = 1;

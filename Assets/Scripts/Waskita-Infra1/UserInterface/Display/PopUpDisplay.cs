@@ -22,15 +22,11 @@ namespace Agate.WaskitaInfra1.UserInterface.Display
             _closeButton.onClick.AddListener(OnCloseButton);
         }
 
-        public override void Open()
-        {
-            gameObject.SetActive(true);
-        }
         public void Open(string text, Action onClose)
         {
             _text.text = text;
             _onClose = onClose;
-            Open();
+            gameObject.SetActive(true);
         }
 
         public override void Close()

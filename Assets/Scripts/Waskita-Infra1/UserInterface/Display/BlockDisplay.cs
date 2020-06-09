@@ -9,7 +9,7 @@ namespace Agate.WaskitaInfra1.UserInterface.Display
             //do nothing
         }
 
-        public override void Open()
+        public void Open()
         {
             gameObject.SetActive(true);
         }
