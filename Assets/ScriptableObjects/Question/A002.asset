@@ -29,8 +29,8 @@ MonoBehaviour:
   m_Name: __A002__quiz_data
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: eb94c1dd748d109438b64009e12f07cd, type: 3}
-  Text: "\"Lahan padat (CBR > 3%), tidak rata, dan kering. Menggunakan kayu ganjal
-    dan slip kayu (SF \u2265 3)\"\r\n"
+  Text: "Lahan padat (CBR > 3%), tidak rata, dan kering. Menggunakan kayu ganjal dan
+    slip kayu (SF \u2265 3)\n"
 --- !u!114 &114502289823463752
 MonoBehaviour:
   m_ObjectHideFlags: 0

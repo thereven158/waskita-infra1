@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Name: _B003__quiz
   m_EditorClassIdentifier: 
   _question:
-    _message: "Posisi titik pengakatan di ujung belakang tiang pancang.\r"
+    _message: Di bawah ini, gambar mana yang menunjukkan kondisi ideal untuk pemancangan
+      tiang pancang adalah...
     _answer: {fileID: 114507366934537658}
     _answerOptions:
     - {fileID: 114507366934537658}
