@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3caac20cc7fb4c5cb17d94f53e689c84, type: 3}
   m_Name: A005
   m_EditorClassIdentifier: 
-  _quiz: {fileID: 114839495381428444}
+  _quiz: {fileID: 114720287202426694}
   _displayName: Jumlah maximal tumpukan tiang pancang
   _category: Penyimpanan Material
   _wrongExplanation: Tiang Pancang diletakkan dengan cara yang tidak tepat, mengakibatkan
     sebagian terguling dari tempat penyimpanan dan mengalami keretakan.
---- !u!114 &114055591366686668
+--- !u!114 &114387983015378266
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -29,9 +29,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
   m_Name: A005.Quiz.Answer
   m_EditorClassIdentifier: 
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 310be6f2fb14ef443968c7af776380b0, type: 3}
   Text: 2
---- !u!114 &114324752765757160
+--- !u!114 &114488200620710814
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,37 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
   m_Name: A005.Quiz._answerOptions-0
   m_EditorClassIdentifier: 
-  Image: {fileID: 0}
-  Text: 4
---- !u!114 &114457699568958984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
-  m_Name: A005.Quiz._answerOptions-0
-  m_EditorClassIdentifier: 
-  Image: {fileID: 0}
-  Text: 1
---- !u!114 &114553071844637842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
-  m_Name: A005.Quiz._answerOptions-0
-  m_EditorClassIdentifier: 
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 310be6f2fb14ef443968c7af776380b0, type: 3}
   Text: 2
---- !u!114 &114839495381428444
+--- !u!114 &114720287202426694
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,14 +58,34 @@ MonoBehaviour:
   m_Name: A005.Quiz
   m_EditorClassIdentifier: 
   _question:
-    _message: Jumlah maximal tumpukan tiang pancang di lapangan adalah...
-    _answer: {fileID: 114055591366686668}
+    _message: Jumlah maximam tumpukan tiang pancang di lapangan adalah...
+    _answer: {fileID: 114387983015378266}
     _answerOptions:
-    - {fileID: 114553071844637842}
-    - {fileID: 114457699568958984}
-    - {fileID: 114324752765757160}
-    - {fileID: 114972601097386102}
---- !u!114 &114972601097386102
+    - {fileID: 114488200620710814}
+    - {fileID: 114887792392219536}
+    - {fileID: 114807734049901458}
+    - {fileID: 114897753282208944}
+--- !u!114 &114783628662476728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6d0afb11504f65a3a9dd25c7433b53, type: 3}
+  m_Name: A005.Quiz
+  m_EditorClassIdentifier: 
+  _question:
+    _message: 
+    _answer: {fileID: 0}
+    _answerOptions:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+--- !u!114 &114807734049901458
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,5 +97,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
   m_Name: A005.Quiz._answerOptions-0
   m_EditorClassIdentifier: 
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 0d37250fcbb7af4489b9660954d04b08, type: 3}
+  Text: 4
+--- !u!114 &114887792392219536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: A005.Quiz._answerOptions-0
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: da5784261833caf4ab10557632ca8613, type: 3}
+  Text: 1
+--- !u!114 &114897753282208944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
+  m_Name: A005.Quiz._answerOptions-0
+  m_EditorClassIdentifier: 
+  Image: {fileID: 21300000, guid: 1ab92da40a758044ab00d5a483215718, type: 3}
   Text: 5

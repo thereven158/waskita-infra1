@@ -5,6 +5,7 @@ using A3.UserInterface;
 using Agate.GlSim.Scene.Control.Map.Loader;
 using Agate.WaskitaInfra1.Backend.Integration;
 using Agate.WaskitaInfra1.GameProgress;
+using Agate.WaskitaInfra1.PlayerAccount;
 using Agate.WaskitaInfra1.Level;
 using Agate.WaskitaInfra1.LevelProgress;
 using Agate.WaskitaInfra1.UserInterface;
@@ -36,6 +37,7 @@ namespace Agate.WaskitaInfra1.SceneControl
         private SettingDisplay _settingDisplay;
         private AudioSystem<AudioClip, AudioMixerGroup> _audioSystem;
         private BackendIntegrationController _backendControl;
+        private PlayerAccountControl _accountControl;
 
         private Main _main;
 
@@ -70,6 +72,7 @@ namespace Agate.WaskitaInfra1.SceneControl
         private void Start()
         {
             _main = Main.Instance;
+            _accountControl = Main.GetRegisteredComponent<PlayerAccountControl>();
             _gameProgress = Main.GetRegisteredComponent<GameProgressControl>();
             _levelProgress = Main.GetRegisteredComponent<LevelProgressControl>();
             _levelControl = Main.GetRegisteredComponent<LevelControl>();
@@ -176,8 +179,21 @@ namespace Agate.WaskitaInfra1.SceneControl
                 _levelProgress.AnswerQuestion(item, o);
                 void OnFinishRequest(UnityWebRequest webReq)
                 {
-                    // do nothing
+                    switch (webReq.responseCode)
+                    {
+                        case 200:
+                            //do nothing
+                            break;
+                        default:
+                            _backendControl.OpenErrorResponsePopUp(webReq, () => {
+                                Main.LogOut();
+                                OnLogOut();
+                                _sceneLoader.ChangeScene("Title");
+                            });
+                            break;
+                    }
                 }
+
                 if (_main.IsOnline)
                     StartCoroutine(_backendControl.AwaitSaveLevelProgressRequest(_levelProgress.Data, OnFinishRequest));
             }

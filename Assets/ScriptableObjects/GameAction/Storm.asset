@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c042e41d8f894d64e91801db5325368b, type: 3}
   m_Name: Storm
   m_EditorClassIdentifier: 
-  _warningMessage: 'Hari ini sepertinya akan hujan deras!
-
-    Apakah kita harus tetap melanjutkan proyek hari ini?'
-  _failureMessage: "Proyek gagal !\nMelanjutkan pekerjaan dengan kondisi\r penuh genangan
+  _warningMessage: Hari ini sepertinya akan hujan deras! Apakah kita harus tetap melanjutkan
+    proyek hari ini?
+  _failureMessage: "Proyek gagal! Melanjutkan pekerjaan dengan kondisi\r penuh genangan
     air membuat alat tidak berfungsi dengan baik."
   _isContinueCorrect: 0

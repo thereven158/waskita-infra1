@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b2eb8a6b0e3ad4d9a9291415082d86, type: 3}
   m_Name: Ui_Button_Click
   m_EditorClassIdentifier: 
-  _clip: {fileID: 8300000, guid: a7b270af165066940ba9d8e9a94c9c51, type: 3}
+  _clip: {fileID: 8300000, guid: f580758a3e61fd145bd4411b6cd78d34, type: 3}
   _isLoop: 0
   _canOverlap: 1
   _channel: {fileID: 11400000, guid: 0bb30f2f936d56e448f09d7b269b4878, type: 2}

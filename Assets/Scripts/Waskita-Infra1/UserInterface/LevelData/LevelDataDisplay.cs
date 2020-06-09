@@ -40,8 +40,8 @@ namespace Agate.WaskitaInfra1.UserInterface
             _descriptionText.text =
                 $"Proyek kali ini akan dilakukan di {levelData.Location}. " +
                 $"Sekarang sedang musim {levelData.WeatherForecast.Season}, " +
-                $"curah hujan diperikan {levelData.WeatherForecast.RainFall}. " +
-                $"Waktu pelaksanaan proyek adalah {levelData.DayDuration}. " +
+                $"curah hujan diperkirakan {levelData.WeatherForecast.RainFall}. " +
+                $"Waktu pelaksanaan proyek adalah {levelData.DayDuration} hari. " +
                 $"Selamat bertugas dan semoga sukses!";
             _onYes = onYes;
             _onNo = onNo;

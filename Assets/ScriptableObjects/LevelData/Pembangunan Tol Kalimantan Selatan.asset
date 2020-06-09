@@ -18,18 +18,197 @@ MonoBehaviour:
     keras. Durasi Proyek 60 hari
   DayDuration: 30
   Questions:
-  - {fileID: 11400000, guid: 1cd4ff00a817a854c88ad9b9f51ada42, type: 2}
-  - {fileID: 11400000, guid: 1cd4ff00a817a854c88ad9b9f51ada42, type: 2}
-  - {fileID: 11400000, guid: 1cd4ff00a817a854c88ad9b9f51ada42, type: 2}
-  - {fileID: 11400000, guid: 1cd4ff00a817a854c88ad9b9f51ada42, type: 2}
-  - {fileID: 11400000, guid: 1cd4ff00a817a854c88ad9b9f51ada42, type: 2}
-  - {fileID: 11400000, guid: 1cd4ff00a817a854c88ad9b9f51ada42, type: 2}
-  - {fileID: 11400000, guid: 1cd4ff00a817a854c88ad9b9f51ada42, type: 2}
+  - {fileID: 11400000, guid: 35a0220b2344a1848ab45c6e8fb76c68, type: 2}
+  - {fileID: 11400000, guid: 67e5499574753d04280deafef407544d, type: 2}
+  - {fileID: 11400000, guid: fbd125e49921dda4b82fd8b7cddf775b, type: 2}
+  - {fileID: 11400000, guid: d0d3b4ac858df8c4aa5559efcd3719cb, type: 2}
+  - {fileID: 11400000, guid: d0a2b98a2d0cef3448e5b6da0d1f1e80, type: 2}
+  - {fileID: 11400000, guid: e1269baf3b37d9741b821f9ed5695834, type: 2}
+  - {fileID: 11400000, guid: 6000fb4ed40258543a811b98b0d1d529, type: 2}
   Events:
-  - {fileID: 114879597395144836}
+  - {fileID: 114354699422583612}
+  - {fileID: 114456118382747874}
+  - {fileID: 114511952637515942}
+  - {fileID: 114855006450203444}
+  - {fileID: 114409349515484914}
+  - {fileID: 114389118326778342}
   SoilCondition: {fileID: 11400000, guid: 35630f21c3d1b6947a286a2353e83768, type: 2}
-  WeatherForecast: {fileID: 11400000, guid: fe8e7f51e1f815f43bd4983a8eff352e, type: 2}
+  WeatherForecast: {fileID: 11400000, guid: b722269cf9594554b8b7e8c1d1f81bfb, type: 2}
   WindStrength: 20
+--- !u!114 &114043381271306214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c042e41d8f894d64e91801db5325368b, type: 3}
+  m_Name: Pembangunan Tol Kalimantan Selatan.Events-0.Action
+  m_EditorClassIdentifier: 
+  _warningMessage: 
+  _failureMessage: 
+  _isContinueCorrect: 0
+--- !u!114 &114188991210837126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c042e41d8f894d64e91801db5325368b, type: 3}
+  m_Name: Pembangunan Tol Kalimantan Selatan.Events-0.Action
+  m_EditorClassIdentifier: 
+  _warningMessage: 
+  _failureMessage: 
+  _isContinueCorrect: 0
+--- !u!114 &114198449637806682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c042e41d8f894d64e91801db5325368b, type: 3}
+  m_Name: Pembangunan Tol Kalimantan Selatan.Events-0.Action
+  m_EditorClassIdentifier: 
+  _warningMessage: 
+  _failureMessage: 
+  _isContinueCorrect: 0
+--- !u!114 &114354699422583612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaa486fbcd444375a400c0dec6c0587a, type: 3}
+  m_Name: Pembangunan Tol Kalimantan Selatan.Events-0
+  m_EditorClassIdentifier: 
+  _day: 3
+  _action: {fileID: 11400000, guid: b62c714d4d0032143ad43ef65ad55a71, type: 2}
+--- !u!114 &114385776794556674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c042e41d8f894d64e91801db5325368b, type: 3}
+  m_Name: Pembangunan Tol Kalimantan Selatan.Events-0.Action
+  m_EditorClassIdentifier: 
+  _warningMessage: 
+  _failureMessage: 
+  _isContinueCorrect: 0
+--- !u!114 &114389118326778342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaa486fbcd444375a400c0dec6c0587a, type: 3}
+  m_Name: Pembangunan Tol Kalimantan Selatan.Events-0
+  m_EditorClassIdentifier: 
+  _day: 25
+  _action: {fileID: 11400000, guid: 2665312aafc36174198918f99995e5ff, type: 2}
+--- !u!114 &114409349515484914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaa486fbcd444375a400c0dec6c0587a, type: 3}
+  m_Name: Pembangunan Tol Kalimantan Selatan.Events-0
+  m_EditorClassIdentifier: 
+  _day: 7
+  _action: {fileID: 11400000, guid: 2665312aafc36174198918f99995e5ff, type: 2}
+--- !u!114 &114456118382747874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaa486fbcd444375a400c0dec6c0587a, type: 3}
+  m_Name: Pembangunan Tol Kalimantan Selatan.Events-0
+  m_EditorClassIdentifier: 
+  _day: 10
+  _action: {fileID: 11400000, guid: b62c714d4d0032143ad43ef65ad55a71, type: 2}
+--- !u!114 &114511952637515942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaa486fbcd444375a400c0dec6c0587a, type: 3}
+  m_Name: Pembangunan Tol Kalimantan Selatan.Events-0
+  m_EditorClassIdentifier: 
+  _day: 13
+  _action: {fileID: 11400000, guid: b62c714d4d0032143ad43ef65ad55a71, type: 2}
+--- !u!114 &114557955940439338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c042e41d8f894d64e91801db5325368b, type: 3}
+  m_Name: Pembangunan Tol Kalimantan Selatan.Events-0.Action
+  m_EditorClassIdentifier: 
+  _warningMessage: 
+  _failureMessage: 
+  _isContinueCorrect: 0
+--- !u!114 &114813405642254710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c042e41d8f894d64e91801db5325368b, type: 3}
+  m_Name: Pembangunan Tol Kalimantan Selatan.Events-0.Action
+  m_EditorClassIdentifier: 
+  _warningMessage: 
+  _failureMessage: 
+  _isContinueCorrect: 0
+--- !u!114 &114855006450203444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaa486fbcd444375a400c0dec6c0587a, type: 3}
+  m_Name: Pembangunan Tol Kalimantan Selatan.Events-0
+  m_EditorClassIdentifier: 
+  _day: 15
+  _action: {fileID: 11400000, guid: b62c714d4d0032143ad43ef65ad55a71, type: 2}
 --- !u!114 &114879597395144836
 MonoBehaviour:
   m_ObjectHideFlags: 0

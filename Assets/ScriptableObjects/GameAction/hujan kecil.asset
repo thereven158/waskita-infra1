@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c042e41d8f894d64e91801db5325368b, type: 3}
   m_Name: hujan kecil
   m_EditorClassIdentifier: 
-  _warningMessage: 'Hari ini sepertinya akan hujan gerimis!
-
-    Apakah kita harus tetap melanjutkan proyek hari ini?'
-  _failureMessage: Proyek gagal karena tidak dapat terselesaikan tepat waktu!
+  _warningMessage: Hari ini sepertinya akan hujan gerimis! Apakah kita harus tetap
+    melanjutkan proyek hari ini?
+  _failureMessage: Proyek gagal! Menghentikan pekerjaan karena kendala yang tidak
+    vital membuat pekerjaan tidak selesai tepat waktu.
   _isContinueCorrect: 1

@@ -39,11 +39,6 @@ namespace Agate.WaskitaInfra1.UserInterface.Display
             _closeButton.onClick.AddListener(Close);
         }
 
-        public override void Open()
-        {
-            gameObject.SetActive(true);
-        }
-
         public void Open(string text, Action onConfirm, Action onClose)
         {
             Open(new ConfirmationPopUpViewData()
@@ -52,7 +47,6 @@ namespace Agate.WaskitaInfra1.UserInterface.Display
                 CloseAction = onClose,
                 ConfirmAction = onConfirm
             });
-            Open();
         }
 
         public void Open(ConfirmationPopUpViewData data)
@@ -71,7 +65,7 @@ namespace Agate.WaskitaInfra1.UserInterface.Display
                 : data.ConfirmButtonText;
             _onClose = data.CloseAction;
             _onConfirm = data.ConfirmAction;
-            Open();
+            gameObject.SetActive(true);
         }
 
         public override void Close()
