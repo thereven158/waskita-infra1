@@ -94,6 +94,7 @@ namespace Agate.WaskitaInfra1.Backend.Integration
             yield return StartCoroutine(AwaitRequest(saveGameRequest, onFinish));
         }
 
+
         public IEnumerator AwaitEndLevelRequest(LevelEvaluationData data, Action<UnityWebRequest> onFinish)
         {
             UnityWebRequest endLevelRequest = _api.EndLevel(data.EndLevelRequest());

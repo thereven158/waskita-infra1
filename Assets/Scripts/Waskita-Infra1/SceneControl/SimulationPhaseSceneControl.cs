@@ -153,12 +153,22 @@ namespace Agate.WaskitaInfra1.SceneControl
 
             void OnFinish(UnityWebRequest finishedRequest)
             {
-                Action();
+                
+                switch (finishedRequest.responseCode)
+                {
+                    case 200:
+                        Action();
+                        break;
+                    default:
+                        OnDoubleLogin(finishedRequest);
+                        break;
+                }
             }
+
             if (!Main.Instance.IsOnline)
                 Action();
             else
-                _backendIntegration.StartCoroutine(_backendIntegration.AwaitSaveLevelProgressRequest(_levelProgress.Data, OnFinish));
+                StartCoroutine(_backendIntegration.AwaitSaveLevelProgressRequest(_levelProgress.Data, OnFinish));
         }
 
         private void OnDestroy()
@@ -177,10 +187,28 @@ namespace Agate.WaskitaInfra1.SceneControl
             if (!Main.Instance.IsOnline) return;
             void OnFinish(UnityWebRequest finishedRequest)
             {
-                // TBA
+                switch (finishedRequest.responseCode)
+                {
+                    case 200:
+                        //do nothing
+                        break;
+                    default:
+                        OnDoubleLogin(finishedRequest);
+                        break;
+                }
+                
             }
 
-            _backendIntegration.StartCoroutine(_backendIntegration.AwaitSaveLevelProgressRequest(_levelProgress.Data, OnFinish));
+            StartCoroutine(_backendIntegration.AwaitSaveLevelProgressRequest(_levelProgress.Data, OnFinish));
+        }
+
+        private void OnDoubleLogin(UnityWebRequest webReq)
+        {
+            _backendIntegration.OpenErrorResponsePopUp(webReq, () => {
+                Main.LogOut();
+                OnLogOut();
+                _sceneLoader.ChangeScene("Title");
+            });
         }
 
         private void OnLevelFinish(LevelEvaluationData data)
