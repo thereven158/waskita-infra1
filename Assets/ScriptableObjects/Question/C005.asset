@@ -63,6 +63,81 @@ MonoBehaviour:
     _answer: {fileID: 114334364338062784}
     _answerOptions:
     - {fileID: 114282568547582174}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 114822695419187472}
+    - {fileID: 114876528732266016}
     - {fileID: 114334364338062784}
+--- !u!114 &114822695419187472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
+  m_Name: C005.Quiz._answerOptions-1
+  m_EditorClassIdentifier: 
+  _text: Menggunakan sling dan terpasang pada dua lifting point.
+  _spriteSheet: {fileID: 114941710275349950}
+--- !u!114 &114832248914356964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1ee8e0afb847b42ae6f403357ba440, type: 3}
+  m_Name: C005.Quiz._answerOptions-1.Sprite Sheet
+  m_EditorClassIdentifier: 
+  _sprites:
+  - {fileID: 21300000, guid: 370f50a1c8a9b414f9b7c6cbd8826558, type: 3}
+  - {fileID: 21300002, guid: 370f50a1c8a9b414f9b7c6cbd8826558, type: 3}
+  - {fileID: 21300004, guid: 370f50a1c8a9b414f9b7c6cbd8826558, type: 3}
+  - {fileID: 21300006, guid: 370f50a1c8a9b414f9b7c6cbd8826558, type: 3}
+  - {fileID: 21300008, guid: 370f50a1c8a9b414f9b7c6cbd8826558, type: 3}
+  - {fileID: 21300010, guid: 370f50a1c8a9b414f9b7c6cbd8826558, type: 3}
+  - {fileID: 21300012, guid: 370f50a1c8a9b414f9b7c6cbd8826558, type: 3}
+  - {fileID: 21300014, guid: 370f50a1c8a9b414f9b7c6cbd8826558, type: 3}
+  - {fileID: 21300016, guid: 370f50a1c8a9b414f9b7c6cbd8826558, type: 3}
+  _framerate: 5
+  _loop: 1
+--- !u!114 &114876528732266016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
+  m_Name: C005.Quiz._answerOptions-1
+  m_EditorClassIdentifier: 
+  _text: Menggunakan sling dan terpasang pada empat lifting point.
+  _spriteSheet: {fileID: 114832248914356964}
+--- !u!114 &114941710275349950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1ee8e0afb847b42ae6f403357ba440, type: 3}
+  m_Name: C005.Quiz._answerOptions-1.Sprite Sheet
+  m_EditorClassIdentifier: 
+  _sprites:
+  - {fileID: 21300000, guid: d63e01584c685b148970819d721b42aa, type: 3}
+  - {fileID: 21300002, guid: d63e01584c685b148970819d721b42aa, type: 3}
+  - {fileID: 21300004, guid: d63e01584c685b148970819d721b42aa, type: 3}
+  - {fileID: 21300006, guid: d63e01584c685b148970819d721b42aa, type: 3}
+  - {fileID: 21300008, guid: d63e01584c685b148970819d721b42aa, type: 3}
+  - {fileID: 21300010, guid: d63e01584c685b148970819d721b42aa, type: 3}
+  - {fileID: 21300012, guid: d63e01584c685b148970819d721b42aa, type: 3}
+  - {fileID: 21300014, guid: d63e01584c685b148970819d721b42aa, type: 3}
+  _framerate: 5
+  _loop: 1

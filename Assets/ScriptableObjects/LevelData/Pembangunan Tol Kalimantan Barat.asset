@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: _Pembangunan Tol Kalimantan Barat_data
   m_EditorClassIdentifier: 
   _day: 3
-  _action: {fileID: 11400000, guid: b62c714d4d0032143ad43ef65ad55a71, type: 2}
+  _action: {fileID: 11400000, guid: 2665312aafc36174198918f99995e5ff, type: 2}
 --- !u!114 &114418844546281542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Name: _Pembangunan Tol Kalimantan Barat_data
   m_EditorClassIdentifier: 
   _day: 23
-  _action: {fileID: 11400000, guid: b62c714d4d0032143ad43ef65ad55a71, type: 2}
+  _action: {fileID: 11400000, guid: 2665312aafc36174198918f99995e5ff, type: 2}
 --- !u!114 &114978741179561540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,4 +101,4 @@ MonoBehaviour:
   m_Name: _Pembangunan Tol Kalimantan Barat_data
   m_EditorClassIdentifier: 
   _day: 21
-  _action: {fileID: 11400000, guid: b62c714d4d0032143ad43ef65ad55a71, type: 2}
+  _action: {fileID: 11400000, guid: 2665312aafc36174198918f99995e5ff, type: 2}
