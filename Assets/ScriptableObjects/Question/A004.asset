@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea662e3ee6f54fd9aa3c4614cb537f9b, type: 3}
   m_Name: A004.Quiz.Answer
   m_EditorClassIdentifier: 
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 520a8fd7d704e5940bc15dc1304d16ff, type: 3}
   Text: Timbun permukaan tanah dengan sirtu.
 --- !u!114 &114830451098272594
 MonoBehaviour:

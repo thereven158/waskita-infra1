@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.10.1] - 2020-06-10
+- fix stacking text when fail at event #106
+- add handling when username or password are empty #141
+- change text at pop up when success login #142
+- change text deadline from "days" into "hari" #144
+- fix content (empty and typo): #138 #139 #146 #147 #149 
+
+
 ## [0.10.0] - 2020-06-09
 - fixing bug:
 	- text stacking in simulation when wrong answer in event

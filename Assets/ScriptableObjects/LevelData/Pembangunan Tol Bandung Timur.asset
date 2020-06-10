@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Name: _Pembangunan Tol Bandung Timur_data
   m_EditorClassIdentifier: 
   _day: 10
-  _action: {fileID: 11400000, guid: b62c714d4d0032143ad43ef65ad55a71, type: 2}
+  _action: {fileID: 11400000, guid: 2665312aafc36174198918f99995e5ff, type: 2}
 --- !u!114 &114134991451644346
 MonoBehaviour:
   m_ObjectHideFlags: 0

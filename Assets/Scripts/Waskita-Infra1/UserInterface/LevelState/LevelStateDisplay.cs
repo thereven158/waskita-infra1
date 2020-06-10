@@ -44,7 +44,7 @@ namespace Agate.WaskitaInfra1.UserInterface.LevelState
             _windText.text = $"{levelState.WindStrength} m/s";
             _soilImage.sprite = levelState.SoilCondition.Image;
             _soilText.text = $"{levelState.SoilCondition.name} Soil";
-            _dayText.text = $"{levelState.ProjectDuration} Days";
+            _dayText.text = $"{levelState.ProjectDuration} Hari";
         }
 
         public void ToggleDisplay(bool toggle)

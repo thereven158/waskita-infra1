@@ -35,6 +35,9 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
         [SerializeField]
         private string FailedValidationMessage = "Validasi Gagal, tolong lakukan login ulang";
 
+        [SerializeField]
+        private string SuccessLoginMessage = "Selamat datang ";
+
 
         [Header("Audio")]
         [SerializeField]
@@ -97,6 +100,13 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
         private void OnLoginButton(string username, string password)
         {
             _audioSystem.PlayAudio(_buttonInteraction);
+            if (username == "" || password == "")
+            {
+                _displaysSystem.GetOrCreateDisplay<PopUpDisplay>(_popUpDisplay)
+                .Open("NIK dan Password Harus Diisi", null);
+                return;
+            }
+
             if (!_main.IsOnline)
                 _main.StartGame();
             else
@@ -106,7 +116,7 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
         private void OnSuccessLogin(LoginResponse response)
         {
             _displaysSystem.GetOrCreateDisplay<PopUpDisplay>(_popUpDisplay)
-                .Open(response.message, null);
+                .Open(SuccessLoginMessage + response.name + ".", null);
             _accountControl.SetData(response.AccountData());
             _settingDisplay.NikText = response.name;
             Debug.Log(response.token);
