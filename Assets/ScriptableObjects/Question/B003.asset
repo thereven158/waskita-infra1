@@ -29,8 +29,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
   m_Name: __B003__quiz__answer
   m_EditorClassIdentifier: 
-  _text: "As tiang pancang tegak lurus dengan As \nhammer. Tanah Stabil dan area radius
-    50m dari alat pancang steril."
+  _text: As tiang pancang tegak lurus dengan As hammer. Tanah Stabil dan area radius
+    50m dari alat pancang steril.
   _spriteSheet: {fileID: 11400000, guid: 2085b06b8954584438f1ba5561e15e8d, type: 2}
 --- !u!114 &114544976664344928
 MonoBehaviour:
