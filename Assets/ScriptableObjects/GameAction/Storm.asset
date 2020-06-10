@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _warningMessage: Hari ini sepertinya akan hujan deras! Apakah kita harus tetap melanjutkan
     proyek hari ini?
-  _failureMessage: "Proyek gagal! Melanjutkan pekerjaan dengan kondisi\r penuh genangan
-    air membuat alat tidak berfungsi dengan baik."
+  _failureMessage: Proyek gagal! Melanjutkan pekerjaan dengan kondisi penuh genangan
+    air membuat alat tidak berfungsi dengan baik.
   _isContinueCorrect: 0
