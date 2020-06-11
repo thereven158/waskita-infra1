@@ -140,6 +140,7 @@ namespace Agate.WaskitaInfra1.Backend.Integration
         {
             bool requestCompleted = false;
             bool requesting = true;
+            UnityWebRequest clonedRequest;
 
             void OnRequestSuccess(UnityWebRequest successRequest)
             {
@@ -156,9 +157,10 @@ namespace Agate.WaskitaInfra1.Backend.Integration
 
             while (!requestCompleted)
             {
+                clonedRequest = _api.CloneUnityWebRequest(webRequest);
                 yield return StartCoroutine(
                     AwaitRequest(
-                        webRequest,
+                        clonedRequest,
                         OnRequestSuccess,
                         OnRequestFailed
                         )
@@ -181,6 +183,8 @@ namespace Agate.WaskitaInfra1.Backend.Integration
         {
             bool requestCompleted = false;
             bool requesting = true;
+            UnityWebRequest clonedRequest;
+
             void OnRequestSuccess(UnityWebRequest successRequest)
             {
                 requestCompleted = true;
@@ -196,7 +200,8 @@ namespace Agate.WaskitaInfra1.Backend.Integration
 
             while (!requestCompleted)
             {
-                yield return StartCoroutine(AwaitRequest(webRequest, OnRequestSuccess, OnRequestFailed));
+                clonedRequest = _api.CloneUnityWebRequest(webRequest);
+                yield return StartCoroutine(AwaitRequest(clonedRequest, OnRequestSuccess, OnRequestFailed));
                 requesting = false;
 
                 yield return new WaitUntil(() => requestCompleted || requesting);
