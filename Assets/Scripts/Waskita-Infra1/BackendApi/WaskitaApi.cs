@@ -1,10 +1,10 @@
 ﻿using Agate.WaskitaInfra1.Server.Request;
 using Agate.WaskitaInfra1.Server.Responses;
 using System;
+using System.Security.Cryptography;
 using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
-using System.Security.Cryptography;
 
 namespace Agate.WaskitaInfra1.Server.API
 {
@@ -12,6 +12,8 @@ namespace Agate.WaskitaInfra1.Server.API
     {
         private string _ipadd = "https://gameserver-api-waskitainfra1-dev.gf.agatedev.net/";
         private const string WASKITA_API = "https://west.waskita.co.id/page/tlcc/apiwest/login.php?";
+        private const string secretCheckSumKey = "0dc8e733-37c3-4f7e-9d41-b55078a9f90a";
+
         private string _token = string.Empty;
 
         /* List Request endpoint */
@@ -32,7 +34,7 @@ namespace Agate.WaskitaInfra1.Server.API
         private static BasicRequest BaseData => new BasicRequest()
         {
             deviceId = SystemInfo.deviceUniqueIdentifier,
-            requestId = DateTime.Now.ToString("yyyy-MM-dd-hh-mm-ss-zzz")
+            requestId = Guid.NewGuid().ToString(),
         };
         public static ValidateRequest ValidateData => new ValidateRequest(BaseData)
         {
@@ -187,8 +189,7 @@ namespace Agate.WaskitaInfra1.Server.API
             };
             uwr.uploadHandler.contentType = "application/json";
             if (requireauthentication) uwr.SetRequestHeader("Authorization", "Bearer " + _token);
-            string secretKey = "0dc8e733-37c3-4f7e-9d41-b55078a9f90a";
-            uwr.SetRequestHeader("Checksum", new Checksum().ChecksumGenerator(data, secretKey));
+            uwr.SetRequestHeader("Checksum", new Checksum().ChecksumGenerator(data, secretCheckSumKey));
             return uwr;
         }
 
@@ -198,6 +199,24 @@ namespace Agate.WaskitaInfra1.Server.API
             webRequest.certificateHandler = new AcceptAllCertificatesSignedWithASpecificKeyPublicKey();
             webRequest.timeout = TIME_OUT;
             return webRequest;
+        }
+
+        public UnityWebRequest CloneUnityWebRequest(UnityWebRequest original)
+        {
+            UnityWebRequest clone = new UnityWebRequest()
+            {
+                method = original.method,
+                url = original.url,
+                chunkedTransfer = original.chunkedTransfer,
+                uploadHandler = original.uploadHandler,
+                downloadHandler = new DownloadHandlerBuffer(),
+                certificateHandler = original.certificateHandler,
+                timeout = original.timeout
+            };
+            clone.SetRequestHeader("Authorization", "Bearer " + _token);
+            clone.SetRequestHeader("Checksum", new Checksum().ChecksumGenerator(clone.uploadHandler.data, secretCheckSumKey));
+
+            return clone;
         }
 
         #endregion

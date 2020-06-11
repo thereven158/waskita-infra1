@@ -120,7 +120,6 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
                 .Open(SuccessLoginMessage + response.name + ".", null);
             _accountControl.SetData(response.AccountData());
             _settingDisplay.NikText = response.name;
-            Debug.Log(response.token);
             _main.SaveAccountData();
             SetDataProgress(response);
             _main.StartGame();

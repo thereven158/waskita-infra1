@@ -10,7 +10,7 @@ namespace Agate.WaskitaInfra1.PlayerAccount
 
         public bool IsEmpty()
         {
-            return string.IsNullOrEmpty(Username);
+            return string.IsNullOrEmpty(AuthenticationToken);
         }
     }
 }
