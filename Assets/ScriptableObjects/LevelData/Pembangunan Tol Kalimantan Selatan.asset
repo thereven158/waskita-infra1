@@ -15,7 +15,7 @@ MonoBehaviour:
   Location: Kalimantan Selatan
   Description: Proyek kali ini mayoritas dalam keadaan berawan dan kemungkinan hujan
     yang cukup rendah. Intensitas angin umumnya sedang dengan tanah penanaman yang
-    keras. Durasi Proyek 60 hari
+    keras. Durasi Proyek 30 hari
   DayDuration: 30
   Questions:
   - {fileID: 11400000, guid: 35a0220b2344a1848ab45c6e8fb76c68, type: 2}
@@ -24,7 +24,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d0d3b4ac858df8c4aa5559efcd3719cb, type: 2}
   - {fileID: 11400000, guid: d0a2b98a2d0cef3448e5b6da0d1f1e80, type: 2}
   - {fileID: 11400000, guid: e1269baf3b37d9741b821f9ed5695834, type: 2}
-  - {fileID: 11400000, guid: 6000fb4ed40258543a811b98b0d1d529, type: 2}
+  - {fileID: 11400000, guid: cc6a8247afadddd4d936c5fcafa823f2, type: 2}
   Events:
   - {fileID: 114354699422583612}
   - {fileID: 114456118382747874}
@@ -34,7 +34,7 @@ MonoBehaviour:
   - {fileID: 114389118326778342}
   SoilCondition: {fileID: 11400000, guid: 35630f21c3d1b6947a286a2353e83768, type: 2}
   WeatherForecast: {fileID: 11400000, guid: b722269cf9594554b8b7e8c1d1f81bfb, type: 2}
-  WindStrength: 20
+  WindStrength: 16
 --- !u!114 &114043381271306214
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -30,7 +30,7 @@ MonoBehaviour:
   m_Name: C011.Quiz._answerOptions-0
   m_EditorClassIdentifier: 
   _text: Bersihkan permukaan slab beton dengan compressor
-  _spriteSheet: {fileID: 114554612903525708}
+  _spriteSheet: {fileID: 114880680315654438}
 --- !u!114 &114023151857003542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
   m_Name: C011.Quiz._answerOptions-0
   m_EditorClassIdentifier: 
-  _text: Tutup permukaa slab beton dengan geotextile
+  _text: Tutup permukaan slab beton dengan geotextile
   _spriteSheet: {fileID: 114111994727973036}
 --- !u!114 &114386414938149986
 MonoBehaviour:

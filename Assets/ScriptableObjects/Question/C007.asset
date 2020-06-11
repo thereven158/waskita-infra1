@@ -32,13 +32,13 @@ MonoBehaviour:
   _question:
     _message: Urutan proses pengaspalan yang tepat adalah...
     _answer: "Bersihkan permukaan dengan compressor \u2192 Siram tack coat \u2192
-      Dump Trcuk membawa aspal untuk dihampar di asphalt finisher"
+      Dump Truck membawa aspal untuk dihampar di asphalt finisher"
     _answerOptions:
-    - "Siram tack coat \u2192 Bersihkan permukaan dengan compressor \u2192 Dump Trcuk
+    - "Siram tack coat \u2192 Bersihkan permukaan dengan compressor \u2192 Dump Truck
       membawa aspal untuk dihampar di asphalt finisher"
-    - "Bersihkan permukaan dengan compressor \u2192 Siram tack coat \u2192 Dump Trcuk
+    - "Bersihkan permukaan dengan compressor \u2192 Siram tack coat \u2192 Dump Truck
       membawa aspal untuk dihampar di asphalt finisher"
-    - "Disiram tack coat \u2192 Dump Trcuk membawa aspal untuk dihampar di asphalt
+    - "Disiram tack coat \u2192 Dump Truck membawa aspal untuk dihampar di asphalt
       finisher \u2192 Bersihkan permukaan dengan compressor"
-    - "Bersihkan dengan compressor \u2192 Dump Trcuk membawa aspal untuk dihampar
+    - "Bersihkan dengan compressor \u2192 Dump Truck membawa aspal untuk dihampar
       di asphalt finisher \u2192 Disiram tack coat"

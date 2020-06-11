@@ -61,7 +61,7 @@ MonoBehaviour:
     _message: Jumlah maximam tumpukan tiang pancang di lapangan adalah...
     _answer: {fileID: 114387983015378266}
     _answerOptions:
-    - {fileID: 114488200620710814}
+    - {fileID: 114387983015378266}
     - {fileID: 114887792392219536}
     - {fileID: 114807734049901458}
     - {fileID: 114897753282208944}
