@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using GameAction;
+using UnityEngine;
 
-namespace GameAction
+namespace Agate.WaskitaInfra1.GameAction
 {
     [CreateAssetMenu(menuName = "WaskitaInfra1/GameAction/Retry Trap", fileName = "RetryTrap")]
     public class RetryTrap : ScriptableGameAction

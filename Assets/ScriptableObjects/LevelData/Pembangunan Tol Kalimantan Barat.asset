@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Pembangunan Tol Kalimantan Barat
   m_EditorClassIdentifier: 
   Location: Kalimantan Barat
-  Description: 
-  DayDuration: 25
+  Description: Proyek kali ini mayoritas dalam keadaan berawan dan kemungkinan hujan
+    yang cukup rendah. Intensitas angin umumnya sedang dengan tanah penanaman yang
+    keras. Durasi Proyek 30 hari
+  DayDuration: 30
   Questions:
   - {fileID: 11400000, guid: 5e81c96d5388336419b2bb79b45a283e, type: 2}
   - {fileID: 11400000, guid: 953fefdc0d9bda241a3e98c180eb7620, type: 2}
@@ -31,7 +33,7 @@ MonoBehaviour:
   - {fileID: 114964192785322452}
   SoilCondition: {fileID: 11400000, guid: 35630f21c3d1b6947a286a2353e83768, type: 2}
   WeatherForecast: {fileID: 11400000, guid: b722269cf9594554b8b7e8c1d1f81bfb, type: 2}
-  WindStrength: 0
+  WindStrength: 18
 --- !u!114 &114141902505983406
 MonoBehaviour:
   m_ObjectHideFlags: 0

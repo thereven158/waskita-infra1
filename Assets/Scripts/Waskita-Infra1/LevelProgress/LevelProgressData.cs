@@ -21,7 +21,7 @@ namespace Agate.WaskitaInfra1.LevelProgress
             TryCount = 1;
             LastCheckpoint = 0;
             Answers = new List<object>(level.Questions.Count);
-            Condition = new DayCondition();
+            Condition = new DayCondition() { _weather = level.WeatherForecast, _windStrength = level.WindStrength };
             Level = level;
             for (int i = 0; i < level.Questions.Count; i++)
                 Answers.Add(null);
@@ -31,7 +31,7 @@ namespace Agate.WaskitaInfra1.LevelProgress
         public uint CurrentDay { get; set; }
         public uint TryCount { get; set; }
         public List<object> Answers { get; }
-        public DayCondition Condition { get; }
+        public DayCondition Condition { get; set; }
         public LevelData Level { get; }
 
     }

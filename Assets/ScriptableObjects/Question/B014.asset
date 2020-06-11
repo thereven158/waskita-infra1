@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: B014
   m_EditorClassIdentifier: 
   _quiz: {fileID: 114206260340765610}
-  _displayName: APD tukang las
+  _displayName: Radius steril dari alat pancang
   _category: Instalasi Tiang Pancang
-  _wrongExplanation: '"Radius sekitar alat pancang yang tidak steril dapat berpotensi
-    menimbulkan kecelakaan" kerja'
+  _wrongExplanation: Radius sekitar alat pancang yang tidak steril dapat berpotensi
+    menimbulkan kecelakaan kerja
 --- !u!114 &114206260340765610
 MonoBehaviour:
   m_ObjectHideFlags: 0

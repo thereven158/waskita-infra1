@@ -1,0 +1,14 @@
+{
+    "name": "A3.AnimationScene",
+    "references": [
+        "A3.UniqueId"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

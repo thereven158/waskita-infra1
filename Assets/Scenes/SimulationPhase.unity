@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -686,7 +686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _information: {fileID: 6066408058732217489, guid: 385285812351fb5418c2ecd7a3530503,
     type: 3}
-  _confirmation: {fileID: 6700165356127211701, guid: 93391fdf2e534204884477c3305363a5,
+  _yesNoPopUp: {fileID: 116060631222838767, guid: a902c1e47abfdd345a0863da912fb833,
     type: 3}
   _rainWarning: {fileID: 11400000, guid: a2719b85522d0fb4483ae1cba3915e27, type: 2}
   _failAudio: {fileID: 11400000, guid: 5629ad1b9e758ef4e81aa31bb514685d, type: 2}

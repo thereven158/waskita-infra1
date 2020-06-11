@@ -30,6 +30,7 @@ namespace GameAction
         public void InvokeAction(IGameActionData data)
         {
             data.Init(this);
+            if (!data.Ready) return;
             data.Invoke();
         }
 

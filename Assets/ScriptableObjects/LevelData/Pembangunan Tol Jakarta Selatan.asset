@@ -15,7 +15,7 @@ MonoBehaviour:
   Location: Jakarta Selatan
   Description: Proyek kali ini mayoritas dalam keadaan berawan dan kemungkinan hujan
     yang cukup rendah. Intensitas angin umumnya sedang dengan tanah penanaman yang
-    keras. Durasi Proyek 60 hari
+    keras. Durasi Proyek 30 hari
   DayDuration: 30
   Questions:
   - {fileID: 11400000, guid: 94d67e532df7dd44e9cae33a9e01fc3d, type: 2}
@@ -33,7 +33,7 @@ MonoBehaviour:
   - {fileID: 114695538405421974}
   SoilCondition: {fileID: 11400000, guid: 35630f21c3d1b6947a286a2353e83768, type: 2}
   WeatherForecast: {fileID: 11400000, guid: b722269cf9594554b8b7e8c1d1f81bfb, type: 2}
-  WindStrength: 20
+  WindStrength: 15
 --- !u!114 &114072940638777408
 MonoBehaviour:
   m_ObjectHideFlags: 0

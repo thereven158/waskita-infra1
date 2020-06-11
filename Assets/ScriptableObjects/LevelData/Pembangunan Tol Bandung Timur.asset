@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Pembangunan Tol Bandung Timur
   m_EditorClassIdentifier: 
   Location: Bandung Timur
-  Description: Pembangunan Tol Bandung Timur
+  Description: Proyek kali ini mayoritas dalam keadaan cerah dan kemungkinan hujan
+    yang cukup rendah. Intensitas angin umumnya sedang dengan tanah penanaman yang
+    keras. Durasi Proyek 30 hari
   DayDuration: 30
   Questions:
   - {fileID: 11400000, guid: 16c77c88dc2e9d04eae749e3a02940fa, type: 2}
@@ -29,7 +31,7 @@ MonoBehaviour:
   - {fileID: 114771418730785078}
   SoilCondition: {fileID: 11400000, guid: 35630f21c3d1b6947a286a2353e83768, type: 2}
   WeatherForecast: {fileID: 11400000, guid: fe8e7f51e1f815f43bd4983a8eff352e, type: 2}
-  WindStrength: 0
+  WindStrength: 15
 --- !u!114 &114126048985783266
 MonoBehaviour:
   m_ObjectHideFlags: 0

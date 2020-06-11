@@ -9,6 +9,7 @@ namespace Agate.WaskitaInfra1.LevelProgress
         private LevelProgressData _data;
         public event Action<ILevelProgressData> OnDataChange;
         public event Action<uint> OnDayChange;
+        public event Action<DayCondition> OnConditionChange;
         public event Action<int, object> OnAnswer;
         public event Action<uint> OnCheckPointUpdate;
         public event Action<LevelEvaluationData> OnFinishLevel;
@@ -65,6 +66,21 @@ namespace Agate.WaskitaInfra1.LevelProgress
             _data.CurrentDay = _data.LastCheckpoint;
             OnDayChange?.Invoke(_data.CurrentDay);
             _data.TryCount++;
+        }
+
+        public void ChangeCondition(DayCondition condition)
+        {
+            _data.Condition = ParseCondition(condition);
+            OnConditionChange?.Invoke(_data.Condition);
+        }
+
+        private DayCondition ParseCondition(DayCondition condition)
+        {
+            return new DayCondition()
+            {
+                _windStrength = condition._windStrength == default ? _data.Condition._windStrength : condition._windStrength,
+                _weather = condition._weather == default ? _data.Condition._weather : condition._weather
+            };
         }
 
         public void FinishLevel()
