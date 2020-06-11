@@ -7,7 +7,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Audio;
 
-namespace GameAction
+namespace Agate.WaskitaInfra1.GameAction
 {
     public class RetryTrapControl : MonoBehaviour
     {
@@ -15,7 +15,7 @@ namespace GameAction
         private PopUpDisplay _information = default;
 
         [SerializeField]
-        private ConfirmationPopUpDisplay _confirmation = default;
+        private YesNoPopUpDisplay _yesNoPopUp = default;
 
         [Header("Audio")]
         [SerializeField]
@@ -30,6 +30,9 @@ namespace GameAction
         private UiDisplaysSystem<GameObject> _displaysSystem;
         private LevelProgressControl _levelProgress;
         private AudioSystem<AudioClip, AudioMixerGroup> _audioSystem;
+
+        public Action<bool> PauseCommand;
+        public Action OnFinish;
 
         public void Init(
             LevelProgressControl levelProgressControl,
@@ -56,14 +59,16 @@ namespace GameAction
             };
 
             _audioSystem.PlayAudio(_rainWarning);
+            PauseCommand?.Invoke(true);
             _displaysSystem
-                .GetOrCreateDisplay<ConfirmationPopUpDisplay>(_confirmation)
-                .Open(new ConfirmationPopUpViewData()
+                .GetOrCreateDisplay<YesNoPopUpDisplay>(_yesNoPopUp)
+                .Open(new YesNoPopUpViewData()
                 {
                     MessageText = data._warningMessage,
-                    CloseAction = !data._isContinueCorrect ? CorrectAction : WrongAction,
-                    CloseButtonText = "Tunda",
-                    ConfirmAction = data._isContinueCorrect ? CorrectAction : WrongAction
+                    NoAction = !data._isContinueCorrect ? CorrectAction : WrongAction,
+                    NoButtonText = "Tunda",
+                    YesAction = data._isContinueCorrect ? CorrectAction : WrongAction,
+                    YesButtonText = "Lanjut"
                 });
         }
 
@@ -83,6 +88,7 @@ namespace GameAction
         }
         private void Interaction()
         {
+            PauseCommand?.Invoke(false);
             _audioSystem.PlayAudio(_buttonClick);
         }
     }
