@@ -8,13 +8,12 @@
         "Agate.GameAction",
         "Agate.WaskitaInfra1.Level",
         "Agate.WaskitaInfra1.LevelProgress",
-        "Agate.WaskitaInfra1.UserInterface.Display"
+        "Agate.WaskitaInfra1.UserInterface.Display",
+        "A3.AnimationScene"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],
-    "excludePlatforms": [
-        "PS4"
-    ],
+    "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
     "precompiledReferences": [],
