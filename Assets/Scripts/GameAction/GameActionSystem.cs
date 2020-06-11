@@ -30,7 +30,7 @@ namespace GameAction
         public void InvokeAction(IGameActionData data)
         {
             data.Init(this);
-            if (!data.Ready) throw new Exception("Action Not Ready");
+            if (!data.Ready) return;
             data.Invoke();
         }
 

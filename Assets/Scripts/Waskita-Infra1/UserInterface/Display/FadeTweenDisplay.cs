@@ -8,6 +8,7 @@ namespace Agate.WaskitaInfra1.UserInterface.Display
     [RequireComponent(typeof(Image))]
     public class FadeTweenDisplay : DelayedDisplayBehavior
     {
+        private const bool setUpdate = false;
         [SerializeField]
         private float _fadeDuration = default;
         [SerializeField]
@@ -24,7 +25,7 @@ namespace Agate.WaskitaInfra1.UserInterface.Display
             if (!IsOpen) return;
 
             _image.DOFade(0, _fadeDuration);
-            DOVirtual.DelayedCall(_fadeDuration, () => gameObject.SetActive(false));
+            DOVirtual.DelayedCall(_fadeDuration, () => gameObject.SetActive(false)).SetUpdate(setUpdate);
         }
 
         public override void Init()
@@ -42,7 +43,7 @@ namespace Agate.WaskitaInfra1.UserInterface.Display
             {
                 onFinish?.Invoke();
             }
-            DOVirtual.DelayedCall(_fadeDuration, OnFinish);
+            DOVirtual.DelayedCall(_fadeDuration, OnFinish).SetUpdate(setUpdate);
         }
     }
 }

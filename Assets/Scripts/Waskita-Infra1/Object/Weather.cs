@@ -14,6 +14,12 @@ namespace Agate.WaskitaInfra1.Object
         [SerializeField]
         private string _rainFall = default;
 
+        [SerializeField]
+        private float _floodHeight = default;
+
+        [SerializeField]
+        private float _rainIntensity = default;
+
         public Sprite Image => _image;
 
         public string Season => _season;

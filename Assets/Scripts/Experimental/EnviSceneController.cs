@@ -45,9 +45,9 @@ namespace Experimental
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 if (playing)
-                    _aScMn.PauseAnimation();
+                    Time.timeScale = 0;
                 else
-                    _aScMn.ResumeAnimation();
+                    Time.timeScale = 1;
                 playing = !playing;
             }
 

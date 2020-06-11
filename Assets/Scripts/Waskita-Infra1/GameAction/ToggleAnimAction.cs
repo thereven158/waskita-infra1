@@ -3,9 +3,11 @@ using GameAction;
 
 namespace Agate.WaskitaInfra1.GameAction
 {
-    public class ResumeAnimAction : ScriptableGameAction
+    public class ToggleAnimAction : ScriptableGameAction
     {
         AnimationScenesManager _animManager;
+
+        public bool Play;
         public override bool Ready => _animManager != null;
 
         public override void Init(GameActionSystem system)
@@ -15,7 +17,8 @@ namespace Agate.WaskitaInfra1.GameAction
 
         public override void Invoke()
         {
-            _animManager.ResumeAnimation();
+            if (Play) _animManager.ResumeAnimation();
+            else _animManager.PauseAnimation();
         }
 
     }
