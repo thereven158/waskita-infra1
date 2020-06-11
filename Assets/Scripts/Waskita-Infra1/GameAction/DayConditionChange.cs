@@ -7,7 +7,7 @@ namespace Agate.WaskitaInfra1.GameAction
     public class DayConditionChange : ScriptableGameAction
     {
         [SerializeField]
-        private DayCondition _dayCondition;
+        private DayCondition _dayCondition = default;
         private LevelProgressControl _levelProgress;
         public override bool Ready => _levelProgress != null;
 

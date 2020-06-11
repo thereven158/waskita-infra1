@@ -154,7 +154,7 @@ MonoBehaviour:
   _testPlayerData: {fileID: 11400000, guid: 2afdc919ebc8703429f05b73f27b5bd7, type: 2}
   _targetFPS: 30
   UiLoaded: 0
-  _isOnline: 1
+  _isOnline: 0
   _firstSceneAssetToLoad: {fileID: 102900000, guid: 573f6a3e6dc12a44381c2990ed637827,
     type: 3}
 --- !u!4 &113000443

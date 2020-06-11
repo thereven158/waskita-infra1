@@ -1,6 +1,7 @@
 ﻿using A3.AudioControl;
 using A3.AudioControl.Unity;
 using A3.UserInterface;
+using Agate.WaskitaInfra1.Animations;
 using Agate.WaskitaInfra1.LevelProgress;
 using Agate.WaskitaInfra1.UserInterface.Display;
 using System;
@@ -49,6 +50,7 @@ namespace Agate.WaskitaInfra1.GameAction
             Action CorrectAction = () =>
             {
                 Interaction();
+                PauseCommand?.Invoke(false);
                 _levelProgress.NextDay(1);
                 _levelProgress.UpdateCheckPoint();
             };
@@ -65,7 +67,7 @@ namespace Agate.WaskitaInfra1.GameAction
                 .Open(new YesNoPopUpViewData()
                 {
                     MessageText = data._warningMessage,
-                    NoAction = !data._isContinueCorrect ? CorrectAction : WrongAction,
+                    NoAction = (!data._isContinueCorrect)? CorrectAction: WrongAction,
                     NoButtonText = "Tunda",
                     YesAction = data._isContinueCorrect ? CorrectAction : WrongAction,
                     YesButtonText = "Lanjut"
@@ -88,7 +90,6 @@ namespace Agate.WaskitaInfra1.GameAction
         }
         private void Interaction()
         {
-            PauseCommand?.Invoke(false);
             _audioSystem.PlayAudio(_buttonClick);
         }
     }

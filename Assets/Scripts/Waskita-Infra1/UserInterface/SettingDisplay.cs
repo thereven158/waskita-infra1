@@ -31,6 +31,7 @@ namespace Agate.WaskitaInfra1.UserInterface
         public UnityAction OnLogOutPress;
         public UnityAction OnExitPress;
         public UnityAction OnInteraction;
+        public UnityAction OnClose;
 
         private void Awake()
         {
@@ -47,8 +48,11 @@ namespace Agate.WaskitaInfra1.UserInterface
 
         public void ToggleDisplay(bool toggle)
         {
+            if (gameObject.activeSelf == toggle) return;
             OnInteraction?.Invoke();
             gameObject.SetActive(toggle);
+            if (toggle) return;
+            OnClose?.Invoke();
         }
     }
 }

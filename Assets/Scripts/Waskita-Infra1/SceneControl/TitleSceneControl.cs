@@ -94,6 +94,7 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
             _audioSystem.PlayAudio(_buttonInteraction);
             if (loggedIn) _main.StartGame();
             _startButton.gameObject.SetActive(false);
+            if (loggedIn) return;
             _loginForm.ToggleDisplay(true);
         }
 
