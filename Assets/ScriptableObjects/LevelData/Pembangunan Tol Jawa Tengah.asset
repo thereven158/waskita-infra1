@@ -34,7 +34,7 @@ MonoBehaviour:
   - {fileID: 114690399398305994}
   SoilCondition: {fileID: 11400000, guid: 35630f21c3d1b6947a286a2353e83768, type: 2}
   WeatherForecast: {fileID: 11400000, guid: b722269cf9594554b8b7e8c1d1f81bfb, type: 2}
-  WindStrength: 20
+  WindStrength: 17
 --- !u!114 &114047183947273334
 MonoBehaviour:
   m_ObjectHideFlags: 0

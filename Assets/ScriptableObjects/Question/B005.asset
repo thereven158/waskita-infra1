@@ -96,5 +96,5 @@ MonoBehaviour:
   m_Name: __B005__quiz_data
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 5292f6ca734824c439b44bde1aa6dbd5, type: 3}
-  Text: Potong tiang pada Cut of Pile dengan sisa tiang bagian atas tidak dipegangi
-    oleh crane.
+  Text: 'Potong tiang pada Cut of Pile dengan sisa tiang bagian bawah dipegangi oleh
+    crane. '
