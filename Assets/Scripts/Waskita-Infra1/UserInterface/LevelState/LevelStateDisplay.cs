@@ -41,7 +41,7 @@ namespace Agate.WaskitaInfra1.UserInterface.LevelState
             _weatherImage.sprite = levelState.Weather.Image;
             _weatherText.text = levelState.Weather.name;
             _windImage.sprite = _windSpriteConverter.Convert((int)levelState.WindStrength);
-            _windText.text = $"{levelState.WindStrength} m/s";
+            _windText.text = $"{levelState.WindStrength} km/h";
             _soilImage.sprite = levelState.SoilCondition.Image;
             _soilText.text = $"{levelState.SoilCondition.name} Soil";
             _dayText.text = $"{levelState.ProjectDuration} Hari";
