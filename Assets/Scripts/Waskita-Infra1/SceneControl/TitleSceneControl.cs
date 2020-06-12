@@ -157,6 +157,7 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
             }
             else
             {
+                _settingDisplay.NikText = response.name;
                 loggedIn = true;
                 SetDataProgress(response);
             }

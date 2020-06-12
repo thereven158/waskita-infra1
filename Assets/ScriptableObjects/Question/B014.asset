@@ -34,7 +34,7 @@ MonoBehaviour:
       yang tepat adalah...
     _answer: {fileID: 114219714981817232}
     _answerOptions:
-    - {fileID: 114396464553503742}
+    - {fileID: 114219714981817232}
     - {fileID: 114337393306075686}
     - {fileID: 114568600631175172}
     - {fileID: 114238238476742792}
