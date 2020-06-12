@@ -1,3 +1,4 @@
+using Agate.WaskitaInfra1.Animations;
 using Agate.WaskitaInfra1.Level;
 using System.Collections.Generic;
 
@@ -29,6 +30,17 @@ namespace Agate.WaskitaInfra1.LevelProgress
             }
 
             return evalMessage;
+        }
+        public Queue<AnimationSceneControl> EvaluationAnims()
+        {
+            Queue<AnimationSceneControl> anims = new Queue<AnimationSceneControl>();
+            for (int i = 0; i < AnswerEvaluations.Count; i++)
+            {
+                if (AnswerEvaluations[i]) continue;
+                anims.Enqueue(Level.Questions[i].WrongAnimation);
+            }
+
+            return anims;
         }
     }
 }

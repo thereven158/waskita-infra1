@@ -12,7 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3caac20cc7fb4c5cb17d94f53e689c84, type: 3}
   m_Name: Lorem Ipsum
   m_EditorClassIdentifier: 
-  _quiz: {fileID: 0}
+  _quiz: {fileID: 114619743501662768}
   _displayName: Lorem Ipsum
   _category: Lorem Ipsum
+  _wrongAnim: {fileID: 2151781868707027454, guid: d5d60811e79c0d245b0bef3bc50e2409,
+    type: 3}
   _wrongExplanation: Lorem Ipsum Dolor Sit Amet
+--- !u!114 &114619743501662768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6d0afb11504f65a3a9dd25c7433b53, type: 3}
+  m_Name: Lorem Ipsum.Quiz
+  m_EditorClassIdentifier: 
+  _question:
+    _message: 
+    _answer: {fileID: 21300000, guid: 59f7c8959470a0640805262db9115d6d, type: 3}
+    _answerOptions: []
