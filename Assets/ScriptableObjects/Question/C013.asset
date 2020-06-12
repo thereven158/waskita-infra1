@@ -57,18 +57,8 @@ MonoBehaviour:
   m_Name: C013.Quiz._answerOptions-0.Sprite Sheet
   m_EditorClassIdentifier: 
   _sprites:
-  - {fileID: 21300000, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
-  - {fileID: 21300002, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
-  - {fileID: 21300004, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
-  - {fileID: 21300006, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
-  - {fileID: 21300008, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
-  - {fileID: 21300010, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
-  - {fileID: 21300012, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
-  - {fileID: 21300014, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
-  - {fileID: 21300016, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
-  - {fileID: 21300018, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
-  - {fileID: 21300020, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
-  - {fileID: 21300022, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
+  - {fileID: 21300010, guid: 4fc56fb151b41244ab555ba2587dd540, type: 3}
+  - {fileID: 21300010, guid: 4fc56fb151b41244ab555ba2587dd540, type: 3}
   _framerate: 5
   _loop: 1
 --- !u!114 &114203976433573534
@@ -83,7 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
   m_Name: C013.Quiz.Answer
   m_EditorClassIdentifier: 
-  _text: C
+  _text: B
   _spriteSheet: {fileID: 114316307655517564}
 --- !u!114 &114316307655517564
 MonoBehaviour:
@@ -98,8 +88,18 @@ MonoBehaviour:
   m_Name: C013.Quiz.Answer.Sprite Sheet
   m_EditorClassIdentifier: 
   _sprites:
-  - {fileID: 21300010, guid: 4fc56fb151b41244ab555ba2587dd540, type: 3}
-  - {fileID: 21300010, guid: 4fc56fb151b41244ab555ba2587dd540, type: 3}
+  - {fileID: 21300000, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
+  - {fileID: 21300002, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
+  - {fileID: 21300004, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
+  - {fileID: 21300006, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
+  - {fileID: 21300008, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
+  - {fileID: 21300010, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
+  - {fileID: 21300012, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
+  - {fileID: 21300014, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
+  - {fileID: 21300016, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
+  - {fileID: 21300018, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
+  - {fileID: 21300020, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
+  - {fileID: 21300022, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
   _framerate: 5
   _loop: 1
 --- !u!114 &114379926341913688
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Name: C013.Quiz._answerOptions-0
   m_EditorClassIdentifier: 
   _text: C
-  _spriteSheet: {fileID: 114379926341913688}
+  _spriteSheet: {fileID: 114316307655517564}
 --- !u!114 &114444474262148582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,8 +165,8 @@ MonoBehaviour:
     _answer: {fileID: 114203976433573534}
     _answerOptions:
     - {fileID: 114444474262148582}
+    - {fileID: 114203976433573534}
     - {fileID: 114779907799911794}
-    - {fileID: 114413842944862186}
     - {fileID: 114725686318433586}
 --- !u!114 &114453736490337724
 MonoBehaviour:
@@ -221,5 +221,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc471c1baace40e98193a82fe285a86d, type: 3}
   m_Name: C013.Quiz._answerOptions-0
   m_EditorClassIdentifier: 
-  _text: B
+  _text: C
   _spriteSheet: {fileID: 114182411976063748}
