@@ -1,0 +1,182 @@
+fileFormatVersion: 2
+guid: b356ee510020cbb4892519ad4315f825
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: base
+    100002: base_bottom
+    100004: base_bottom_end
+    100006: base_top
+    100008: Bone
+    100010: Bone_end
+    100012: Camera
+    100014: camera
+    100016: camera_01
+    100018: camera_02
+    100020: camera_02_end
+    100022: crawler_crane_armature
+    100024: crawler_crane_bottom
+    100026: crawler_crane_item
+    100028: crawler_crane_top
+    100030: hydraulic
+    100032: hydraulic.001
+    100034: hydraulic.001_end
+    100036: ik_pole
+    100038: ik_pole_end
+    100040: mound
+    100042: //RootNode
+    100044: slabs_pile
+    100046: stone_wall
+    100048: tail
+    100050: tail_01
+    100052: tail_02
+    100054: tail_02_ext
+    100056: tail_02_flail
+    100058: tail_02_flail_end
+    100060: tail_ext
+    100062: tail_ext_end
+    100064: tiang_pancang
+    400000: base
+    400002: base_bottom
+    400004: base_bottom_end
+    400006: base_top
+    400008: Bone
+    400010: Bone_end
+    400012: Camera
+    400014: camera
+    400016: camera_01
+    400018: camera_02
+    400020: camera_02_end
+    400022: crawler_crane_armature
+    400024: crawler_crane_bottom
+    400026: crawler_crane_item
+    400028: crawler_crane_top
+    400030: hydraulic
+    400032: hydraulic.001
+    400034: hydraulic.001_end
+    400036: ik_pole
+    400038: ik_pole_end
+    400040: mound
+    400042: //RootNode
+    400044: slabs_pile
+    400046: stone_wall
+    400048: tail
+    400050: tail_01
+    400052: tail_02
+    400054: tail_02_ext
+    400056: tail_02_flail
+    400058: tail_02_flail_end
+    400060: tail_ext
+    400062: tail_ext_end
+    400064: tiang_pancang
+    2000000: Camera
+    2100000: props_texture
+    2100002: mound_texture
+    2100004: stone_wall
+    2100006: crawler_crane_texture
+    2300000: mound
+    2300002: slabs_pile
+    2300004: stone_wall
+    2300006: tiang_pancang
+    3300000: mound
+    3300002: slabs_pile
+    3300004: stone_wall
+    3300006: tiang_pancang
+    4300000: slabs_pile
+    4300002: mound
+    4300004: stone_wall
+    4300006: tiang_pancang
+    4300008: crawler_crane_item
+    4300010: crawler_crane_bottom
+    4300012: crawler_crane_top
+    7400000: crawler_crane_armature|anim_scene_04
+    9500000: //RootNode
+    13700000: crawler_crane_bottom
+    13700002: crawler_crane_item
+    13700004: crawler_crane_top
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.5
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
