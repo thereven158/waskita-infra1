@@ -203,7 +203,7 @@ MonoBehaviour:
     _message: Pengangkutan fullslab yang sesuai prosedur adalah...
     _answer: {fileID: 114537578018031426}
     _answerOptions:
-    - {fileID: 114295860499067886}
+    - {fileID: 114537578018031426}
     - {fileID: 114171205522691386}
     - {fileID: 114832911762155866}
     - {fileID: 114382923497799210}
