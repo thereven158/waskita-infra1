@@ -13,7 +13,7 @@ namespace Agate.WaskitaInfra1.Animations
         private List<AnimationSceneControl> _animationScenes = default;
         private AnimationSceneControl _playingAnim;
         private Dictionary<string, AnimationSceneControl> _animationDictionary;
-
+        private bool isPlaying;
         private AnimationSceneControl PlayingAnim
         {
             get => _playingAnim;
@@ -55,6 +55,7 @@ namespace Agate.WaskitaInfra1.Animations
             AnimationSceneControl correspondingAnim = GetAnimation(animControl);
             if (PlayingAnim)
                 StopAnimation();
+            isPlaying = true;
             PlayingAnim = correspondingAnim;
             OnPlayingAnimStop = OnStop;
             PlayingAnim.OnStart = () => OnStartAnimation(PlayingAnim);
@@ -68,9 +69,10 @@ namespace Agate.WaskitaInfra1.Animations
         {
             if (!PlayingAnim) return;
             OnPlayingAnimStop?.Invoke();
-            OnStopAnimation(PlayingAnim);
+            if (isPlaying) OnStopAnimation(PlayingAnim);
             OnPlayingAnimStop = null;
             PauseAnimation();
+            isPlaying = false;
             if (keepActive) return;
             PlayingAnim = null;
         }

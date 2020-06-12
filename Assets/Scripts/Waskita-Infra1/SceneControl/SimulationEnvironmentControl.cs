@@ -7,7 +7,7 @@ namespace Agate.WaskitaInfra1.SceneControl
         [SerializeField]
         private ParticleSystem _rainParticle = default;
         [SerializeField]
-        private int _rainIntensity = default;
+        public int _rainIntensity = default;
 
         private ParticleSystem.EmissionModule _emissionRain;
 

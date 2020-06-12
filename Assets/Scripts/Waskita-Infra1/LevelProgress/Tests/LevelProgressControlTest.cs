@@ -1,4 +1,5 @@
 using A3.Quiz;
+using Agate.WaskitaInfra1.Animations;
 using Agate.WaskitaInfra1.Level;
 using NUnit.Framework;
 using System.Collections.Generic;
@@ -175,5 +176,7 @@ namespace Agate.WaskitaInfra1.LevelProgress.Test
         public string DisplayName => null;
 
         public IQuiz Quiz { get; set; }
+
+        public AnimationSceneControl WrongAnimation { get; set; }
     }
 }

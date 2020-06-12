@@ -26,10 +26,31 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1cd4ff00a817a854c88ad9b9f51ada42, type: 2}
   - {fileID: 11400000, guid: 1cd4ff00a817a854c88ad9b9f51ada42, type: 2}
   Events:
-  - {fileID: 114247553559797074}
+  - _day: 2
+    _actions:
+    - {fileID: 114933314211213792}
+    - {fileID: 114613465838622548}
+    - {fileID: 11400000, guid: b62c714d4d0032143ad43ef65ad55a71, type: 2}
+  - _day: 4
+    _actions:
+    - {fileID: 114570965527627182}
+    - {fileID: 114227132898692800}
   SoilCondition: {fileID: 11400000, guid: 35630f21c3d1b6947a286a2353e83768, type: 2}
   WeatherForecast: {fileID: 11400000, guid: fe8e7f51e1f815f43bd4983a8eff352e, type: 2}
   WindStrength: 20
+--- !u!114 &114227132898692800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76120ff74cb8e5d4e81c355104d828c2, type: 3}
+  m_Name: Lorem Ipsum Dolor Sit Amet.Event1.resumeAnim
+  m_EditorClassIdentifier: 
+  Play: 1
 --- !u!114 &114247553559797074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40,7 +61,78 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aaa486fbcd444375a400c0dec6c0587a, type: 3}
-  m_Name: Lorem Ipsum Dolor Sit Amet.Events-0
+  m_Name: Lorem Ipsum Dolor Sit Amet.Events-2-Storm
   m_EditorClassIdentifier: 
-  _day: 1
+  _day: 2
   _action: {fileID: 11400000, guid: b62c714d4d0032143ad43ef65ad55a71, type: 2}
+--- !u!114 &114553467891955886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaa486fbcd444375a400c0dec6c0587a, type: 3}
+  m_Name: Lorem Ipsum Dolor Sit Amet.Events-2-pause-animation
+  m_EditorClassIdentifier: 
+  _day: 2
+  _action: {fileID: 114933314211213792}
+--- !u!114 &114570965527627182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33cc592e53cab2d4fa61ca332a6c8589, type: 3}
+  m_Name: Lorem Ipsum Dolor Sit Amet.Event1.weather
+  m_EditorClassIdentifier: 
+  _dayCondition:
+    _weather: {fileID: 11400000, guid: fe8e7f51e1f815f43bd4983a8eff352e, type: 2}
+    _windStrength: 0
+--- !u!114 &114613465838622548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33cc592e53cab2d4fa61ca332a6c8589, type: 3}
+  m_Name: Lorem Ipsum Dolor Sit Amet.Events-2-weather.Action
+  m_EditorClassIdentifier: 
+  _dayCondition:
+    _weather: {fileID: 11400000, guid: 00558a33ebadc394698008056cdbdda8, type: 2}
+    _windStrength: 0
+--- !u!114 &114896261216838068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaa486fbcd444375a400c0dec6c0587a, type: 3}
+  m_Name: Lorem Ipsum Dolor Sit Amet.Events-2-weather
+  m_EditorClassIdentifier: 
+  _day: 2
+  _action: {fileID: 114613465838622548}
+--- !u!114 &114933314211213792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76120ff74cb8e5d4e81c355104d828c2, type: 3}
+  m_Name: Lorem Ipsum Dolor Sit Amet.Events-2-pause-animation.Action
+  m_EditorClassIdentifier: 
+  Play: 0
