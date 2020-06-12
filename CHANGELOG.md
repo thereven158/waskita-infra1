@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.10.3] - 2020-06-12
+- fix animation in quiz. #161 , #162 , #186 , #190
+- fix quiz answer value. #158 , #189
+- fix text split. #159
+- fix account name in setting display. #113
+
 ## [0.10.2] - 2020-06-11
 - fix loop event trigger, no matter wrong or correct the answer its return wrong. #176 , #163 , #157
 - fix request problem unity web request. #168
