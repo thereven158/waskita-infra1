@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.11.1] - 2020-06-15
+- fix bug has level progress in No Internet Build (APK)
+- fix bug stuck in evaluation display
+
 ## [0.11.0] - 2020-06-15
 - implement animation
 - darken input block of popup display
