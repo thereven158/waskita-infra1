@@ -15,6 +15,8 @@ MonoBehaviour:
   _quiz: {fileID: 114453318950167296}
   _displayName: 'Penyambungan Tiang Pancang '
   _category: 'Instalasi Tiang Pancang '
+  _wrongAnim: {fileID: 2151781868707027454, guid: d5d60811e79c0d245b0bef3bc50e2409,
+    type: 3}
   _wrongExplanation: Hasil pemasangan tiang pancang kurang baik, fondasi menjadi tidak
     sekokoh dan tahan lama seperti seharusnya
 --- !u!114 &114453318950167296

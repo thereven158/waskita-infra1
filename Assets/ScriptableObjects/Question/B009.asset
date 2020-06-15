@@ -15,6 +15,8 @@ MonoBehaviour:
   _quiz: {fileID: 114060647558955350}
   _displayName: Konfigurasi Tiang Pancang
   _category: 'Instalasi Tiang Pancang '
+  _wrongAnim: {fileID: 2151781868707027454, guid: d5d60811e79c0d245b0bef3bc50e2409,
+    type: 3}
   _wrongExplanation: Penggunaan tiang pancang boros dan tidak efisien
 --- !u!114 &114060647558955350
 MonoBehaviour:

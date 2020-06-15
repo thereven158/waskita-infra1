@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: C012
   m_EditorClassIdentifier: 
   _quiz: {fileID: 114924415162559712}
-  _displayName: Pengangkutan fullslab
+  _displayName: Pengiriman fullslab
   _category: Instalasi Fullslab
+  _wrongAnim: {fileID: 1554513523, guid: 7ae1e4b07600fdf4fada141fb303b6b8, type: 3}
   _wrongExplanation: Pengangkutan material dengan proses yang tidak tepat dapat menyebabkan
     kerusakan.
 --- !u!114 &114051870009786318

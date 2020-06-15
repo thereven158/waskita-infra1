@@ -15,6 +15,7 @@ MonoBehaviour:
   _quiz: {fileID: 114066788383876996}
   _displayName: Identifikasi Tipe Fullslab
   _category: Instalasi Fullslab
+  _wrongAnim: {fileID: 1554513523, guid: 7ae1e4b07600fdf4fada141fb303b6b8, type: 3}
   _wrongExplanation: Pemilihan material tidak sesuai dengan kebutuhan.
 --- !u!114 &114003299375668854
 MonoBehaviour:
