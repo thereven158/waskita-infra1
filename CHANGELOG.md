@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.11.0] - 2020-06-15
+- implement animation
+- darken input block of popup display
+
 ## [0.10.3] - 2020-06-12
 - fix animation in quiz. #161 , #162 , #186 , #190
 - fix quiz answer value. #158 , #189
