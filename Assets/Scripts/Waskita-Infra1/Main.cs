@@ -14,6 +14,7 @@ using Agate.WaskitaInfra1.Backend.Integration;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using A3.AudioControl.Unity;
+using Agate.WaskitaInfra1.UserInterface;
 #if UNITY_EDITOR
 using UnityEditor;
 
@@ -48,6 +49,7 @@ namespace Agate.WaskitaInfra1
         private GameProgressControl _gameProgress;
         private LevelProgressControl _levelProgress;
         private WaskitaApi _api;
+        private UiDisplaysSystem<GameObject> _displaySystem;
 
         [SerializeField]
         private AudioSystemBehavior _audioSystem = default;
@@ -65,7 +67,20 @@ namespace Agate.WaskitaInfra1
         [Tooltip("Location is relative to Persistent Data Path")]
         private string _playerDataFilepath = default;
 
+        [SerializeField]
+        private LoadingDisplay _loadingDisplayPrefab = default;
+
         public string PlayerDataFilepath => Path.Combine(Application.persistentDataPath, _playerDataFilepath);
+
+        private LoadingDisplay _loadingDisplay;
+        private LoadingDisplay LoadingDisplay
+        {
+            get
+            {
+                _loadingDisplay = _loadingDisplay ?? _displaySystem.GetOrCreateDisplay<LoadingDisplay>(_loadingDisplayPrefab);
+                return _loadingDisplay;
+            }
+        }
 
         #endregion
 
@@ -134,10 +149,12 @@ namespace Agate.WaskitaInfra1
         {
             yield return new WaitUntil(() => UiLoaded);
 
+            _displaySystem = GetRegisteredComponent<UiDisplaysSystemBehavior>();
+            _sceneLoader.OnChangeScene += OnSceneChanges;
             _backendIntegrationControl.Init(
                 _api,
                 _levelControl,
-                GetRegisteredComponent<UiDisplaysSystemBehavior>());
+                _displaySystem);
 
             if (!IsOnline)
                 LoadDummyData();
@@ -150,6 +167,16 @@ namespace Agate.WaskitaInfra1
         #endregion
 
         #region Setup Methods
+
+        private void OnSceneChanges()
+        {
+            LoadingDisplay.Open();
+            SceneManager.sceneLoaded += (scene, loadMode) => LoadingDisplay.Close();
+            _sceneLoader.OnLoadProgress = (progress) =>
+            {
+                LoadingDisplay.Update(progress);
+            };
+        }
 
         private void SetAppSystemSetting()
         {

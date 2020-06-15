@@ -150,6 +150,8 @@ MonoBehaviour:
   _levelControl: {fileID: 113000444}
   _backendIntegrationControl: {fileID: 113000446}
   _playerDataFilepath: account.obj
+  _loadingDisplayPrefab: {fileID: 8517126815661558778, guid: 7e2873309fe7df64c80815c51c9f4b12,
+    type: 3}
   _firstSceneToLoad: Title
   _testPlayerData: {fileID: 11400000, guid: 2afdc919ebc8703429f05b73f27b5bd7, type: 2}
   _targetFPS: 30
