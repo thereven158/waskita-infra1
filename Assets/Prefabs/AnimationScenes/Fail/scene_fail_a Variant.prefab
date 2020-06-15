@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &7963298127970024414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4603688687202130259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e3b59b66f974f8a89b9aa8ee6bc8e27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uniqueId: 
 --- !u!114 &2151781868707027454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27,6 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: {fileID: 7963298127970024414}
   _animator: {fileID: 4603688687211621111}
+--- !u!114 &7963298127970024414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4603688687202130259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e3b59b66f974f8a89b9aa8ee6bc8e27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uniqueId: e6040730-f41e-4768-ad31-ec343b54d51d
 --- !u!1001 &4603688687202164631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36,8 +36,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100036, guid: 3e2d8d27f300f834886e01eda3d8b1af, type: 3}
       propertyPath: m_Name
-      value: scene_fail_a
+      value: scene_fail_a Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 3e2d8d27f300f834886e01eda3d8b1af, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6de0ecad41cb1e54f9220b3db9f7f3b5, type: 2}
     - target: {fileID: 400036, guid: 3e2d8d27f300f834886e01eda3d8b1af, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -82,10 +86,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9500000, guid: 3e2d8d27f300f834886e01eda3d8b1af, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 6de0ecad41cb1e54f9220b3db9f7f3b5, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e2d8d27f300f834886e01eda3d8b1af, type: 3}
 --- !u!1 &4603688687202130259 stripped
