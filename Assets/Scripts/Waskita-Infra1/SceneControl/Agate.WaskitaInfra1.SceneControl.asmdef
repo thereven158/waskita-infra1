@@ -28,7 +28,8 @@
         "Agate.WaskitaInfra1.UserInterface.LevelState",
         "Agate.WaskitaInfra1.Utilities.LevelData",
         "Agate.WaskitaInfra1.Utilities.LevelProgress",
-        "Unity.TextMeshPro"
+        "Unity.TextMeshPro",
+        "Agate.WaskitaInfra1.Object"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],

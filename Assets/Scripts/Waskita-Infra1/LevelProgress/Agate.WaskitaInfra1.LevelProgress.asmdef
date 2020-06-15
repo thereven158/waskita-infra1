@@ -3,7 +3,8 @@
     "references": [
         "Agate.WaskitaInfra1.Level",
         "Agate.WaskitaInfra1.Object",
-        "A3.Quiz"
+        "A3.Quiz",
+        "A3.AnimationScene"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],

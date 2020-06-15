@@ -15,6 +15,7 @@ MonoBehaviour:
   _quiz: {fileID: 114910591647938686}
   _displayName: Pengecoran Joint Fullslab
   _category: Instalasi Fullslab
+  _wrongAnim: {fileID: 1554513523, guid: 7ae1e4b07600fdf4fada141fb303b6b8, type: 3}
   _wrongExplanation: Pemasangan material dengan proses yang tidak tepat dapat menyebabkan
     kerusakan
 --- !u!114 &114910591647938686

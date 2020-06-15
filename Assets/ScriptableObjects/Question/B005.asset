@@ -15,6 +15,7 @@ MonoBehaviour:
   _quiz: {fileID: 114729700327425828}
   _displayName: 'Pemotongan Tiang Pancang '
   _category: 'Instalasi Tiang Pancang '
+  _wrongAnim: {fileID: 531952760, guid: 934b9f87407ba684ab65307da7eb382c, type: 3}
   _wrongExplanation: Proses pemotongan yang tidak sesuai SOP dapat membahayakan pekerja
     yang berada di sekitar lokasi
 --- !u!114 &114035782649447592

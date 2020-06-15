@@ -15,6 +15,8 @@ MonoBehaviour:
   _quiz: {fileID: 114008796281136314}
   _displayName: Penanggulangan Kerusakan Tiang Pancang
   _category: Instalasi Tiang Pancang
+  _wrongAnim: {fileID: 2151781868707027454, guid: d5d60811e79c0d245b0bef3bc50e2409,
+    type: 3}
   _wrongExplanation: Perbaikan Material tidak dilakukan dengan baik.
 --- !u!114 &114008796281136314
 MonoBehaviour:

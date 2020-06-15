@@ -15,7 +15,7 @@ MonoBehaviour:
   username: 
   authToken: 
   _gameProgress: {fileID: 114656688988709706}
-  _levelProgress: {fileID: 0}
+  _levelProgress: {fileID: 114798295232206494}
 --- !u!114 &114656688988709706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: _TestGameData__levelProgress
   m_EditorClassIdentifier: 
   _lastCheckpoint: 0
-  _currentDay: 30
+  _currentDay: 9
   _tryCount: 0
   _answers:
   - {fileID: 114870999856314070, guid: 16c77c88dc2e9d04eae749e3a02940fa, type: 2}
@@ -55,3 +55,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   _level: {fileID: 11400000, guid: 7508d0c3b07a7014787ee315a01bb606, type: 2}
+  _dayCondition:
+    _weather: {fileID: 11400000, guid: b722269cf9594554b8b7e8c1d1f81bfb, type: 2}
+    _windStrength: 3

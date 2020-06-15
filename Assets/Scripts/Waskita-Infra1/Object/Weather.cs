@@ -25,5 +25,9 @@ namespace Agate.WaskitaInfra1.Object
         public string Season => _season;
 
         public string RainFall => _rainFall;
+
+        public float FloodHeight => _floodHeight;
+
+        public float RainIntensity => _rainIntensity;
     }
 }
