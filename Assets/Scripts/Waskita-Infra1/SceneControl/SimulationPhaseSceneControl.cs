@@ -170,7 +170,12 @@ namespace Agate.WaskitaInfra1.SceneControl
             _levelProgress.OnCheckPointUpdate += OnCheckPointUpdate;
             Main.OnLogOut += OnLogOut;
             _levelProgress.OnConditionChange += OnConditionChange;
-            _settingButton.onClick.AddListener(() => _settingDisplay.ToggleDisplay(true));
+            _settingButton.onClick.AddListener(() =>
+            {
+                Time.timeScale = 0; 
+                _settingDisplay.ToggleDisplay(true);
+            }
+            );
             _nextDayButton.onClick.AddListener(() => _levelProgress.NextDay(1));
 
             foreach (IEventTriggerData<EventTriggerData> eventData in _levelProgress.Data.Level.Events)

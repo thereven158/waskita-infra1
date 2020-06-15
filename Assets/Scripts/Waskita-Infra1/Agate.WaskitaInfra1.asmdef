@@ -7,6 +7,7 @@
         "Agate.WaskitaInfra1.Level",
         "Agate.WaskitaInfra1.Level.Unity",
         "Agate.WaskitaInfra1.Backend.API",
+        "Agate.WaskitaInfra1.UserInterface.Display",
         "A3.CodePattern",
         "A3.Utilities",
         "Agate.WaskitaInfra1.Backend.Integration",

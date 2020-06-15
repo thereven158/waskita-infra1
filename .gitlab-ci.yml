@@ -75,11 +75,10 @@ stages:
     when: always
     expire_in: 1 week
 
-# Primay Branch Refs Template
+# Primary Branch Refs Template
 .primary-branch-refs-template:
   only:
     refs: &primary-branch-refss-definition
-      - 2-maturing-and-improvement-unity-ci-cd-repo-with-new-requirements
       - develop
       - sandbox
       - staging
@@ -96,6 +95,7 @@ stages:
   when: manual
   only:
     - merge_request
+    - tags
   artifacts: *build-artifacts-definition
 build-android-dev:
   extends: .build-android
