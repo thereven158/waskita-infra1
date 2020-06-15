@@ -15,6 +15,7 @@ MonoBehaviour:
   _quiz: {fileID: 114010924728658010}
   _displayName: APD tukang las
   _category: Instalasi Tiang Pancang
+  _wrongAnim: {fileID: 531952760, guid: 934b9f87407ba684ab65307da7eb382c, type: 3}
   _wrongExplanation: Bekerja tanpa APD yang sesuai dapat membahayakan pekerja.
 --- !u!114 &114010924728658010
 MonoBehaviour:

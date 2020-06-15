@@ -26,12 +26,56 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e1269baf3b37d9741b821f9ed5695834, type: 2}
   - {fileID: 11400000, guid: cc6a8247afadddd4d936c5fcafa823f2, type: 2}
   Events:
-  - {fileID: 114354699422583612}
-  - {fileID: 114456118382747874}
-  - {fileID: 114511952637515942}
-  - {fileID: 114855006450203444}
-  - {fileID: 114409349515484914}
-  - {fileID: 114389118326778342}
+  - _day: 3
+    _actions:
+    - {fileID: 11400000, guid: 48a4cd201d5391f4d975440e2933f814, type: 2}
+    - {fileID: 11400000, guid: b62c714d4d0032143ad43ef65ad55a71, type: 2}
+    - {fileID: 11400000, guid: a461aab0771ee404ca26760d38432043, type: 2}
+  - _day: 4
+    _actions:
+    - {fileID: 11400000, guid: 46139adf1c3dd3c4d8dd70ab54585f96, type: 2}
+    - {fileID: 11400000, guid: 72c314289117ed14292e833ae6c12886, type: 2}
+  - _day: 10
+    _actions:
+    - {fileID: 11400000, guid: 48a4cd201d5391f4d975440e2933f814, type: 2}
+    - {fileID: 11400000, guid: a461aab0771ee404ca26760d38432043, type: 2}
+    - {fileID: 11400000, guid: b62c714d4d0032143ad43ef65ad55a71, type: 2}
+  - _day: 11
+    _actions:
+    - {fileID: 11400000, guid: 46139adf1c3dd3c4d8dd70ab54585f96, type: 2}
+    - {fileID: 11400000, guid: 72c314289117ed14292e833ae6c12886, type: 2}
+  - _day: 13
+    _actions:
+    - {fileID: 11400000, guid: 48a4cd201d5391f4d975440e2933f814, type: 2}
+    - {fileID: 11400000, guid: b62c714d4d0032143ad43ef65ad55a71, type: 2}
+    - {fileID: 11400000, guid: a461aab0771ee404ca26760d38432043, type: 2}
+  - _day: 14
+    _actions:
+    - {fileID: 11400000, guid: 46139adf1c3dd3c4d8dd70ab54585f96, type: 2}
+    - {fileID: 11400000, guid: 72c314289117ed14292e833ae6c12886, type: 2}
+  - _day: 15
+    _actions:
+    - {fileID: 11400000, guid: 48a4cd201d5391f4d975440e2933f814, type: 2}
+    - {fileID: 11400000, guid: a461aab0771ee404ca26760d38432043, type: 2}
+    - {fileID: 11400000, guid: b62c714d4d0032143ad43ef65ad55a71, type: 2}
+  - _day: 16
+    _actions:
+    - {fileID: 11400000, guid: 46139adf1c3dd3c4d8dd70ab54585f96, type: 2}
+    - {fileID: 11400000, guid: 72c314289117ed14292e833ae6c12886, type: 2}
+  - _day: 7
+    _actions:
+    - {fileID: 11400000, guid: 8373c51bb00a4384aa74fdbf3a7a4266, type: 2}
+    - {fileID: 11400000, guid: 2665312aafc36174198918f99995e5ff, type: 2}
+  - _day: 8
+    _actions:
+    - {fileID: 11400000, guid: 416b36567a978e145a806884a398349d, type: 2}
+  - _day: 25
+    _actions:
+    - {fileID: 11400000, guid: 8373c51bb00a4384aa74fdbf3a7a4266, type: 2}
+    - {fileID: 11400000, guid: 2665312aafc36174198918f99995e5ff, type: 2}
+  - _day: 26
+    _actions:
+    - {fileID: 11400000, guid: 72c314289117ed14292e833ae6c12886, type: 2}
   SoilCondition: {fileID: 11400000, guid: 35630f21c3d1b6947a286a2353e83768, type: 2}
   WeatherForecast: {fileID: 11400000, guid: b722269cf9594554b8b7e8c1d1f81bfb, type: 2}
   WindStrength: 16

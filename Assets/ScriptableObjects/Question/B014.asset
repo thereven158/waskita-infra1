@@ -15,6 +15,7 @@ MonoBehaviour:
   _quiz: {fileID: 114206260340765610}
   _displayName: Radius steril dari alat pancang
   _category: Instalasi Tiang Pancang
+  _wrongAnim: {fileID: 531952760, guid: 934b9f87407ba684ab65307da7eb382c, type: 3}
   _wrongExplanation: Radius sekitar alat pancang yang tidak steril dapat berpotensi
     menimbulkan kecelakaan kerja
 --- !u!114 &114206260340765610
