@@ -31,6 +31,7 @@ namespace Agate.GlSim.Scene.Control.Map.Loader
         #endregion
 
         private string _currentSceneName;
+        public Action OnChangeScene;
 
         public Action<float> OnLoadProgress;
         public Action<float> OnUnloadProgress;
@@ -43,6 +44,7 @@ namespace Agate.GlSim.Scene.Control.Map.Loader
 
         private IEnumerator ChangeSceneProcess(string sceneName)
         {
+            OnChangeScene?.Invoke();
             yield return StartCoroutine(UnloadCurrentScene());
             yield return StartCoroutine(LoadSceneAsync(sceneName));
         }
