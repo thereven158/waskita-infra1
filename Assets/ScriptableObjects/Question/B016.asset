@@ -15,6 +15,7 @@ MonoBehaviour:
   _quiz: {fileID: 114996602871353222}
   _displayName: Nilai Safety Factor (SF) sling pengangkat
   _category: Instalasi Tiang Pancang
+  _wrongAnim: {fileID: 531952760, guid: 934b9f87407ba684ab65307da7eb382c, type: 3}
   _wrongExplanation: Peralatan yang tidak sesuai standard dapat menyebabkan kerusakan
     dan kecelakaan kerja.
 --- !u!114 &114996602871353222

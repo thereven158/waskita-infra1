@@ -23,5 +23,6 @@ MonoBehaviour:
   - {fileID: 21300014, guid: 8cf6f94a7205e464aadf5b70a0d43141, type: 3}
   - {fileID: 21300016, guid: 8cf6f94a7205e464aadf5b70a0d43141, type: 3}
   - {fileID: 21300018, guid: 8cf6f94a7205e464aadf5b70a0d43141, type: 3}
+  - {fileID: 21300018, guid: 8cf6f94a7205e464aadf5b70a0d43141, type: 3}
   _framerate: 8
   _loop: 1

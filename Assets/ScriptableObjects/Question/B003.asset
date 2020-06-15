@@ -15,6 +15,7 @@ MonoBehaviour:
   _quiz: {fileID: 114544976664344928}
   _displayName: 'Pemancangan Tiang Pancang '
   _category: 'Instalasi Tiang Pancang '
+  _wrongAnim: {fileID: 674096970, guid: 2ce8ac9d8200acc4789695fcb14d7c06, type: 3}
   _wrongExplanation: Proses pemancangan yang tidak ideal menyebabkan alat berpotensi
     roboh
 --- !u!114 &114507366934537658

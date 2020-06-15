@@ -15,6 +15,7 @@ MonoBehaviour:
   _quiz: {fileID: 114768291919851794}
   _displayName: Pemancangan Tiang Pancang Miring
   _category: Instalasi Tiang Pancang
+  _wrongAnim: {fileID: 531952760, guid: 934b9f87407ba684ab65307da7eb382c, type: 3}
   _wrongExplanation: Proses pemancangan yang tidak ideal menyebabkan alat berpotensi
     roboh
 --- !u!114 &114106852533168466

@@ -15,6 +15,7 @@ MonoBehaviour:
   _quiz: {fileID: 114453464736663416}
   _displayName: Isyarat Rigger
   _category: Instalasi Fullslab
+  _wrongAnim: {fileID: 1554513523, guid: 7ae1e4b07600fdf4fada141fb303b6b8, type: 3}
   _wrongExplanation: Kesalahan interpretasi isyarat dapat menyebabkan miskomunikasi
     dan kecelakaan kerja.
 --- !u!114 &114045338211321074
@@ -42,7 +43,7 @@ MonoBehaviour:
   - {fileID: 21300018, guid: 547ac01431a202844816232bc8b8e8a8, type: 3}
   - {fileID: 21300020, guid: 547ac01431a202844816232bc8b8e8a8, type: 3}
   - {fileID: 21300022, guid: 547ac01431a202844816232bc8b8e8a8, type: 3}
-  _framerate: 5
+  _framerate: 12
   _loop: 1
 --- !u!114 &114182411976063748
 MonoBehaviour:
@@ -59,7 +60,7 @@ MonoBehaviour:
   _sprites:
   - {fileID: 21300010, guid: 4fc56fb151b41244ab555ba2587dd540, type: 3}
   - {fileID: 21300010, guid: 4fc56fb151b41244ab555ba2587dd540, type: 3}
-  _framerate: 5
+  _framerate: 12
   _loop: 1
 --- !u!114 &114203976433573534
 MonoBehaviour:
@@ -100,7 +101,7 @@ MonoBehaviour:
   - {fileID: 21300018, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
   - {fileID: 21300020, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
   - {fileID: 21300022, guid: 08124e23b5bd5a04c90a382082a8134e, type: 3}
-  _framerate: 5
+  _framerate: 12
   _loop: 1
 --- !u!114 &114379926341913688
 MonoBehaviour:
@@ -193,7 +194,7 @@ MonoBehaviour:
   - {fileID: 21300018, guid: aa1343d8877938446aaf3cd719791364, type: 3}
   - {fileID: 21300020, guid: aa1343d8877938446aaf3cd719791364, type: 3}
   - {fileID: 21300022, guid: aa1343d8877938446aaf3cd719791364, type: 3}
-  _framerate: 5
+  _framerate: 12
   _loop: 1
 --- !u!114 &114725686318433586
 MonoBehaviour:

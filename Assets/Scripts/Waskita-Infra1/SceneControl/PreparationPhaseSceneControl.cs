@@ -185,11 +185,7 @@ namespace Agate.WaskitaInfra1.SceneControl
                             //do nothing
                             break;
                         default:
-                            _backendControl.OpenErrorResponsePopUp(webReq, () => {
-                                Main.LogOut();
-                                OnLogOut();
-                                _sceneLoader.ChangeScene("Title");
-                            });
+                            _backendControl.OpenErrorResponsePopUp(webReq, Main.LogOut);
                             break;
                     }
                 }

@@ -24,7 +24,12 @@ ModelImporter:
     4300000: Plane
     7400000: Armature|anim_scene_06
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: road_texture
+    second: {fileID: 2100000, guid: 7ec6fe84cb8712142810c87dac6d4c87, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -76,7 +81,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
+    previousCalculatedGlobalScale: 0.005
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60

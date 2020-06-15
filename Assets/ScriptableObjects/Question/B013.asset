@@ -15,6 +15,8 @@ MonoBehaviour:
   _quiz: {fileID: 114572739414340652}
   _displayName: Pengecoran pilehead
   _category: Instalasi Tiang Pancang
+  _wrongAnim: {fileID: 2151781868707027454, guid: d5d60811e79c0d245b0bef3bc50e2409,
+    type: 3}
   _wrongExplanation: Pengecoran pilehead gagal karena urutan tahapan pekerjaan salah.
 --- !u!114 &114572739414340652
 MonoBehaviour:

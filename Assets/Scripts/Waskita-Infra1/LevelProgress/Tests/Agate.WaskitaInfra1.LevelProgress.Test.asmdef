@@ -3,7 +3,8 @@
     "references": [
         "Agate.WaskitaInfra1.LevelProgress",
         "Agate.WaskitaInfra1.Level",
-        "A3.Quiz"
+        "A3.Quiz",
+        "A3.AnimationScene"
     ],
     "optionalUnityReferences": [
         "TestAssemblies"
