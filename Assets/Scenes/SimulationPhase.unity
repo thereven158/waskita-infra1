@@ -554,6 +554,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 674096971, guid: 2ce8ac9d8200acc4789695fcb14d7c06, type: 3}
+      propertyPath: uniqueId
+      value: 4fbd12dc-9e3e-4417-ac43-2294bd02a713
+      objectReference: {fileID: 0}
     - target: {fileID: 6109893427483146751, guid: 2ce8ac9d8200acc4789695fcb14d7c06,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -608,10 +612,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 674096971, guid: 2ce8ac9d8200acc4789695fcb14d7c06, type: 3}
-      propertyPath: uniqueId
-      value: 4fbd12dc-9e3e-4417-ac43-2294bd02a713
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ce8ac9d8200acc4789695fcb14d7c06, type: 3}
@@ -910,6 +910,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 531952761, guid: 934b9f87407ba684ab65307da7eb382c, type: 3}
+      propertyPath: uniqueId
+      value: 7b09f598-411e-4841-a98d-21177e105d2b
+      objectReference: {fileID: 0}
     - target: {fileID: 3661639644047720808, guid: 934b9f87407ba684ab65307da7eb382c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -964,10 +968,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 531952761, guid: 934b9f87407ba684ab65307da7eb382c, type: 3}
-      propertyPath: uniqueId
-      value: 7b09f598-411e-4841-a98d-21177e105d2b
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 934b9f87407ba684ab65307da7eb382c, type: 3}
@@ -1257,6 +1257,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7963298127970024414, guid: d5d60811e79c0d245b0bef3bc50e2409,
+        type: 3}
+      propertyPath: uniqueId
+      value: 922db45d-82dc-43b8-965c-bfb57da120f8
+      objectReference: {fileID: 0}
     - target: {fileID: 4603688687202288947, guid: d5d60811e79c0d245b0bef3bc50e2409,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1312,11 +1317,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7963298127970024414, guid: d5d60811e79c0d245b0bef3bc50e2409,
-        type: 3}
-      propertyPath: uniqueId
-      value: 922db45d-82dc-43b8-965c-bfb57da120f8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5d60811e79c0d245b0bef3bc50e2409, type: 3}
 --- !u!114 &1284667834 stripped
@@ -1353,6 +1353,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1554513524, guid: 7ae1e4b07600fdf4fada141fb303b6b8, type: 3}
+      propertyPath: uniqueId
+      value: dbfb587c-b631-4d6d-b954-729322ea157b
       objectReference: {fileID: 0}
     - target: {fileID: 6779793190938078782, guid: 7ae1e4b07600fdf4fada141fb303b6b8,
         type: 3}
@@ -1408,10 +1412,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1554513524, guid: 7ae1e4b07600fdf4fada141fb303b6b8, type: 3}
-      propertyPath: uniqueId
-      value: dbfb587c-b631-4d6d-b954-729322ea157b
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ae1e4b07600fdf4fada141fb303b6b8, type: 3}
@@ -3040,7 +3040,7 @@ PrefabInstance:
     - target: {fileID: 7278229717250867795, guid: 385285812351fb5418c2ecd7a3530503,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7278229716741542465, guid: 385285812351fb5418c2ecd7a3530503,
         type: 3}

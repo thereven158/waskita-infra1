@@ -35,6 +35,7 @@ MonoBehaviour:
     _actions:
     - {fileID: 11400000, guid: 416b36567a978e145a806884a398349d, type: 2}
     - {fileID: 11400000, guid: 46139adf1c3dd3c4d8dd70ab54585f96, type: 2}
+    - {fileID: 11400000, guid: 873ad73d96713eb499489e7395d7988b, type: 2}
   - _day: 13
     _actions:
     - {fileID: 11400000, guid: 48a4cd201d5391f4d975440e2933f814, type: 2}
@@ -44,6 +45,7 @@ MonoBehaviour:
     _actions:
     - {fileID: 11400000, guid: 416b36567a978e145a806884a398349d, type: 2}
     - {fileID: 11400000, guid: 46139adf1c3dd3c4d8dd70ab54585f96, type: 2}
+    - {fileID: 11400000, guid: 873ad73d96713eb499489e7395d7988b, type: 2}
   - _day: 5
     _actions:
     - {fileID: 11400000, guid: 8373c51bb00a4384aa74fdbf3a7a4266, type: 2}
@@ -51,6 +53,7 @@ MonoBehaviour:
   - _day: 6
     _actions:
     - {fileID: 11400000, guid: 416b36567a978e145a806884a398349d, type: 2}
+    - {fileID: 11400000, guid: 873ad73d96713eb499489e7395d7988b, type: 2}
   - _day: 7
     _actions:
     - {fileID: 11400000, guid: 2665312aafc36174198918f99995e5ff, type: 2}
@@ -58,6 +61,7 @@ MonoBehaviour:
   - _day: 8
     _actions:
     - {fileID: 11400000, guid: 72c314289117ed14292e833ae6c12886, type: 2}
+    - {fileID: 11400000, guid: 873ad73d96713eb499489e7395d7988b, type: 2}
   - _day: 15
     _actions:
     - {fileID: 11400000, guid: 8373c51bb00a4384aa74fdbf3a7a4266, type: 2}
@@ -65,6 +69,7 @@ MonoBehaviour:
   - _day: 16
     _actions:
     - {fileID: 11400000, guid: 416b36567a978e145a806884a398349d, type: 2}
+    - {fileID: 11400000, guid: 873ad73d96713eb499489e7395d7988b, type: 2}
   SoilCondition: {fileID: 11400000, guid: 35630f21c3d1b6947a286a2353e83768, type: 2}
   WeatherForecast: {fileID: 11400000, guid: b722269cf9594554b8b7e8c1d1f81bfb, type: 2}
   WindStrength: 15

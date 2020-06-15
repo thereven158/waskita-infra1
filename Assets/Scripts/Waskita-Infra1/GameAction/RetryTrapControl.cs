@@ -1,7 +1,6 @@
 ﻿using A3.AudioControl;
 using A3.AudioControl.Unity;
 using A3.UserInterface;
-using Agate.WaskitaInfra1.Animations;
 using Agate.WaskitaInfra1.LevelProgress;
 using Agate.WaskitaInfra1.UserInterface.Display;
 using System;
@@ -51,8 +50,6 @@ namespace Agate.WaskitaInfra1.GameAction
             {
                 Interaction();
                 PauseCommand?.Invoke(false);
-                _levelProgress.NextDay(1);
-                _levelProgress.UpdateCheckPoint();
             };
             Action WrongAction = () =>
             {
@@ -82,6 +79,7 @@ namespace Agate.WaskitaInfra1.GameAction
             {
                 Interaction();
                 _levelProgress.RetryFromCheckPoint();
+                PauseCommand?.Invoke(false);
             }
             _audioSystem.PlayAudio(_failAudio);
             _displaysSystem.GetOrCreateDisplay<PopUpDisplay>(_information).Open(

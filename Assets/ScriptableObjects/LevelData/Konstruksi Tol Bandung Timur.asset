@@ -33,6 +33,7 @@ MonoBehaviour:
   - _day: 11
     _actions:
     - {fileID: 11400000, guid: 416b36567a978e145a806884a398349d, type: 2}
+    - {fileID: 11400000, guid: 873ad73d96713eb499489e7395d7988b, type: 2}
   - _day: 20
     _actions:
     - {fileID: 11400000, guid: 48a4cd201d5391f4d975440e2933f814, type: 2}
@@ -42,6 +43,7 @@ MonoBehaviour:
     _actions:
     - {fileID: 11400000, guid: 46139adf1c3dd3c4d8dd70ab54585f96, type: 2}
     - {fileID: 11400000, guid: 72c314289117ed14292e833ae6c12886, type: 2}
+    - {fileID: 11400000, guid: 873ad73d96713eb499489e7395d7988b, type: 2}
   - _day: 23
     _actions:
     - {fileID: 11400000, guid: 48a4cd201d5391f4d975440e2933f814, type: 2}
@@ -51,6 +53,7 @@ MonoBehaviour:
     _actions:
     - {fileID: 11400000, guid: 46139adf1c3dd3c4d8dd70ab54585f96, type: 2}
     - {fileID: 11400000, guid: 72c314289117ed14292e833ae6c12886, type: 2}
+    - {fileID: 11400000, guid: 873ad73d96713eb499489e7395d7988b, type: 2}
   SoilCondition: {fileID: 11400000, guid: 35630f21c3d1b6947a286a2353e83768, type: 2}
   WeatherForecast: {fileID: 11400000, guid: fe8e7f51e1f815f43bd4983a8eff352e, type: 2}
   WindStrength: 15

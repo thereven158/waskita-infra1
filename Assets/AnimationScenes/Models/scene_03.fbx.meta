@@ -61,7 +61,17 @@ ModelImporter:
     9500000: //RootNode
     13700000: tiang_pancang_cor
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mixer_truck_texture
+    second: {fileID: 2100000, guid: 9a064edbd561dc145a98440dbecce2e0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: props_texture
+    second: {fileID: 2100000, guid: eec981cd4176586419bffe2eacc6af05, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -113,7 +123,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
+    previousCalculatedGlobalScale: 0.005
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
