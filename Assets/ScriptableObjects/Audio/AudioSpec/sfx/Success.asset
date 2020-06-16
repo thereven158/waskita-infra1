@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b2eb8a6b0e3ad4d9a9291415082d86, type: 3}
   m_Name: Success
   m_EditorClassIdentifier: 
-  _clip: {fileID: 8300000, guid: 2fd8c448b69b1a347b9ca46aa889b2ba, type: 3}
+  _clip: {fileID: 8300000, guid: 94afd13faf6df434cbe656ad31277e2a, type: 3}
   _isLoop: 0
   _canOverlap: 0
   _channel: {fileID: 11400000, guid: 0bb30f2f936d56e448f09d7b269b4878, type: 2}

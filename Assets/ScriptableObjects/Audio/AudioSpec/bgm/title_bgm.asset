@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b2eb8a6b0e3ad4d9a9291415082d86, type: 3}
   m_Name: title_bgm
   m_EditorClassIdentifier: 
-  _clip: {fileID: 8300000, guid: a7025363d65c6844ea7d22eb9bd4aeb5, type: 3}
+  _clip: {fileID: 8300000, guid: 7716a8eff6398854d93c28ea69d780c7, type: 3}
   _isLoop: 1
   _canOverlap: 0
   _channel: {fileID: 11400000, guid: 3b6149e4aac888f4fa5ff2903493099c, type: 2}

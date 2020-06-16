@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.11.2] - 2020-06-16
+- fix bug stuck in evaluation display when all quiz are correct
+- update new audios
+
 ## [0.11.1] - 2020-06-15
 - fix bug has level progress in No Internet Build (APK)
 - fix bug stuck in evaluation display
