@@ -16,7 +16,7 @@ namespace Agate.WaskitaInfra1.UserInterface
             _progressSlider.value = 0;
         }
 
-        public void Update(float progress)
+        public void UpdateDisplay(float progress)
         {
             _progressSlider.value = progress;
         }

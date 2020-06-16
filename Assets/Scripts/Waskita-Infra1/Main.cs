@@ -174,7 +174,7 @@ namespace Agate.WaskitaInfra1
             SceneManager.sceneLoaded += (scene, loadMode) => LoadingDisplay.Close();
             _sceneLoader.OnLoadProgress = (progress) =>
             {
-                LoadingDisplay.Update(progress);
+                LoadingDisplay.UpdateDisplay(progress);
             };
         }
 

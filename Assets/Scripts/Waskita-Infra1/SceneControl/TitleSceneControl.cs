@@ -80,10 +80,10 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
             _logOutButton.onClick.AddListener(OnLogoutButton);
             _startButton.onClick.AddListener(OnStartButtonPress);
 
-            if (!_accountControl.Data.IsEmpty())
-            {
+            if(!_main.IsOnline)
+                loggedIn = true;
+            else if (!_accountControl.Data.IsEmpty())
                 yield return StartCoroutine(_backendControl.AwaitValidateRequest(OnFinishValidate, OnAbortValidate));
-            }
 
             _logOutButton.gameObject.SetActive(loggedIn);
         }
@@ -146,6 +146,7 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
             if (webReq.responseCode != 200)
             {
                 _displaysSystem.GetOrCreateDisplay<PopUpDisplay>(_popUpDisplay).Open(FailedValidationMessage, null);
+                Main.Instance.RemoveAccountData();
                 return;
             }
 

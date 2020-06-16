@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3b59b66f974f8a89b9aa8ee6bc8e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uniqueId: 
+  uniqueId: 653331f2-db87-4071-a948-1bcf38f84f7c
 --- !u!114 &7325921957114502936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36,7 +36,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100022, guid: e8fbb2ed1933e8d4bbd75589df375e8d, type: 3}
       propertyPath: m_Name
-      value: scene_03
+      value: scene_03 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 400022, guid: e8fbb2ed1933e8d4bbd75589df375e8d, type: 3}
       propertyPath: m_LocalPosition.x
