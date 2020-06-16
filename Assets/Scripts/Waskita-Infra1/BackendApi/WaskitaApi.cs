@@ -22,12 +22,16 @@ namespace Agate.WaskitaInfra1.Server.API
 
         private const string _login = "Auth/Login";
         private const string _validate = "Auth/Validate";
-        private const string _fetchGameProgress = "Game/GameProgress";
-        private const string _fetchLevelProgress = "Game/LevelProgress";
         private const string _startLevel = "GameLoop/StartLevel";
         private const string _saveLevel = "GameLoop/SaveLevelProgress";
         private const string _endLevel = "GameLoop/EndLevel";
         private const string _refreshToken = "Token/Refresh";
+
+        /*
+         * Additional API : 
+         * - fetchGameProgress : "Game/GameProgress"
+         * - fetchLevelProgress : "Game/LevelProgress"
+         */
 
         #endregion
 
