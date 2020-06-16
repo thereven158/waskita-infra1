@@ -1,5 +1,5 @@
-﻿using System;
-using A3.UserInterface;
+﻿using A3.UserInterface;
+using System;
 
 namespace Agate.WaskitaInfra1.UserInterface.Display
 {

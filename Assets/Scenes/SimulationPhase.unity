@@ -1029,7 +1029,7 @@ GameObject:
   - component: {fileID: 881726613}
   - component: {fileID: 881726614}
   m_Layer: 0
-  m_Name: EventSystem
+  m_Name: Scene Control
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1081,7 +1081,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &881726612
 MonoBehaviour:
@@ -1124,9 +1124,10 @@ MonoBehaviour:
     type: 3}
   _fadeDisplayPrefab: {fileID: 8560514259464806155, guid: dfa3a55ac3a6cb94383bd44b9f4bbfea,
     type: 3}
-  _finishProjectMessage: 'Proyek akhirnya selesai juga!
+  _finishLevelMessage: 'Proyek akhirnya selesai juga!
 
     Sekarang waktunya evaluasi.'
+  _levelSuccessMessage: Project Success
   _bgm: {fileID: 11400000, guid: 7141c416460e3854dad253ef5c98702f, type: 2}
   _buttonClick: {fileID: 11400000, guid: 103b9b4896a001c4688cc5e717809083, type: 2}
   _ambience: {fileID: 11400000, guid: c6d3746082d255a42b4a337689ac0ba9, type: 2}
@@ -1502,7 +1503,7 @@ RectTransform:
   - {fileID: 1109605177}
   - {fileID: 872175454}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
