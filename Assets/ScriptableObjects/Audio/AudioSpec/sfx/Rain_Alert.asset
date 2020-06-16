@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b2eb8a6b0e3ad4d9a9291415082d86, type: 3}
   m_Name: Rain_Alert
   m_EditorClassIdentifier: 
-  _clip: {fileID: 8300000, guid: a3853f55c396c0e4e8ece2eb2f15653e, type: 3}
+  _clip: {fileID: 8300000, guid: 00860511b4714b746b59096f02b4ecf6, type: 3}
   _isLoop: 0
   _canOverlap: 0
   _channel: {fileID: 11400000, guid: 0bb30f2f936d56e448f09d7b269b4878, type: 2}
