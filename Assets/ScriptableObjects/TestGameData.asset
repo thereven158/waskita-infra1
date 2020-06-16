@@ -28,6 +28,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a3cee245eb46bd90ae9eddbc5b6f75, type: 3}
   m_Name: _gameProgress
   m_EditorClassIdentifier: 
-  _maxCompletedLevelIndex: 0
+  _maxCompletedLevelIndex: 99
   _completionCount: 0
   _playTime: 0
