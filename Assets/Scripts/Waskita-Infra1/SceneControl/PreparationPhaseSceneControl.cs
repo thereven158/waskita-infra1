@@ -206,9 +206,12 @@ namespace Agate.WaskitaInfra1.SceneControl
             _audioSystem.PlayAudio(_buttonClick);
             _displaySystem
                 .GetOrCreateDisplay<ConfirmationPopUpDisplay>(_confirmationPopUp)
-                .Open(_finishConfirmationMessage,
-                    GoToSimulation,
-                    null);
+                .Open(new ConfirmationPopUpViewData()
+                {
+                    MessageText = _finishConfirmationMessage,
+                    ConfirmAction = GoToSimulation,
+                    CloseAction = null,
+                });
         }
 
         private void AbortConfirmation()
