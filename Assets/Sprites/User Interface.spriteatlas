@@ -31,7 +31,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: b55c72e5cff942144a96de5f25da0002, type: 3}
-    totalSpriteSurfaceArea: 8852353
+    totalSpriteSurfaceArea: 8937345
     bindAsDefault: 1
     storedHash:
       serializedVersion: 2
@@ -71,6 +71,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: cd3b8ca7d89a2cf42a0d9722671af292, type: 3}
   - {fileID: 21300000, guid: 831fccc71d9e4c241badaee3651b73e9, type: 3}
   - {fileID: 21300000, guid: b2688f281a2f2154b93170b83ac52381, type: 3}
+  - {fileID: 21300000, guid: 28a0ae885d2a85748afd24d0cf4eba87, type: 3}
   - {fileID: 21300000, guid: c60181a8140006644b779ee87cf07694, type: 3}
   - {fileID: 21300000, guid: f3921ab8abc9dcd439919c81297db445, type: 3}
   - {fileID: 21300000, guid: e4bae4d81e53d0848b68baed37239de9, type: 3}
@@ -84,6 +85,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: eace837b8102e6641af71c6e39bfacb0, type: 3}
   - {fileID: 21300000, guid: e06abd7bdf360cd468a28c5875d8b33e, type: 3}
   - {fileID: 21300000, guid: 0390df8bf1a1f004894e18d9f7539f04, type: 3}
+  - {fileID: 21300000, guid: ce37c7cb4bd83e74db34e9adaf1b22de, type: 3}
   - {fileID: 21300000, guid: 7c7a500cc8c443f488959aeed459a224, type: 3}
   - {fileID: 21300000, guid: 8105d54c8ab07b948a36916bf0fa0191, type: 3}
   - {fileID: 21300000, guid: 828ac06c55389fa4289523db2aa19ea5, type: 3}
@@ -102,6 +104,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: b2a6b9be0fda9bd4e8e6160f1663059b, type: 3}
   - {fileID: 21300000, guid: 591a83ee95b8140479616a754edd0e24, type: 3}
   - {fileID: 21300000, guid: 0f70750fdebc8204281499bd7d920e3d, type: 3}
+  - {fileID: 21300000, guid: d01c694f0d1aef5419e4d3dd95920473, type: 3}
   - {fileID: 21300000, guid: 01b5615f9296ac145932e46b610542bd, type: 3}
   - {fileID: 21300000, guid: 6291ea8f709afb74dadefeb2684c6343, type: 3}
   m_PackedSpriteNamesToIndex:
@@ -138,6 +141,7 @@ SpriteAtlas:
   - Checklist_list_false
   - Checklist_list_shadow
   - Box_setting
+  - loading_circle
   - Checklist_status_cek
   - Icon_Tanah3
   - Checklist_status_true
@@ -151,6 +155,7 @@ SpriteAtlas:
   - Box_form
   - ProjectList_Poni
   - Box_setting2
+  - loading_line
   - Icon_Cerah
   - Button_red
   - Checklist_status_false
@@ -169,6 +174,7 @@ SpriteAtlas:
   - Box_Timer
   - Switch_Enable
   - Footer
+  - popup_Loading
   - Box_answer_disable
   - Checklist_list_true
   m_Tag: User Interface
