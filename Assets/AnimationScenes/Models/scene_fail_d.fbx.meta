@@ -35,6 +35,7 @@ ModelImporter:
     100058: tiang_pancang
     100060: vehicle_crawler_crane_bottom
     100062: vehicle_crawler_crane_top
+    100064: crawler_crane_item
     400000: base
     400002: base_bottom
     400004: base_bottom_end
@@ -67,6 +68,7 @@ ModelImporter:
     400058: tiang_pancang
     400060: vehicle_crawler_crane_bottom
     400062: vehicle_crawler_crane_top
+    400064: crawler_crane_item
     2000000: Camera
     2100000: props_texture
     2100002: crawler_crane_textures
@@ -87,12 +89,15 @@ ModelImporter:
     4300008: stone_wall
     4300010: tiang_pancang
     4300012: slabs_pile
+    4300014: crawler_crane_item
     7400000: crawler_crane_armature|anim_fail_scene_d
     7400002: vehicle_crawler_crane_bottom|anim_fail_scene_d
+    7400004: mound|anim_fail_scene_d
     9500000: //RootNode
     13700000: Cube.020
     13700002: vehicle_crawler_crane_bottom
     13700004: vehicle_crawler_crane_top
+    13700006: crawler_crane_item
   externalObjects:
   - first:
       type: UnityEngine:Material
