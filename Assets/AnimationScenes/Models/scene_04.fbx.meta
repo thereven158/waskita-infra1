@@ -36,6 +36,11 @@ ModelImporter:
     100060: tail_ext
     100062: tail_ext_end
     100064: tiang_pancang
+    100066: crawler_crane_beam
+    100068: crawler_crane_item_toggle
+    100070: mobile_crane_bottom
+    100072: mobile_crane_top
+    100074: vehicle_crawler_crane_armature
     400000: base
     400002: base_bottom
     400004: base_bottom_end
@@ -69,11 +74,17 @@ ModelImporter:
     400060: tail_ext
     400062: tail_ext_end
     400064: tiang_pancang
+    400066: crawler_crane_beam
+    400068: crawler_crane_item_toggle
+    400070: mobile_crane_bottom
+    400072: mobile_crane_top
+    400074: vehicle_crawler_crane_armature
     2000000: Camera
     2100000: props_texture
     2100002: mound_texture
     2100004: stone_wall
     2100006: crawler_crane_texture
+    2100008: mobile_crane_texture
     2300000: mound
     2300002: slabs_pile
     2300004: stone_wall
@@ -89,17 +100,32 @@ ModelImporter:
     4300008: crawler_crane_item
     4300010: crawler_crane_bottom
     4300012: crawler_crane_top
+    4300014: crawler_crane_beam
+    4300016: crawler_crane_item_toggle
+    4300018: mobile_crane_bottom
+    4300020: mobile_crane_top
     7400000: crawler_crane_armature|anim_scene_04
+    7400002: vehicle_crawler_crane_armature|anim_scene_04
     9500000: //RootNode
     13700000: crawler_crane_bottom
     13700002: crawler_crane_item
     13700004: crawler_crane_top
+    13700006: crawler_crane_beam
+    13700008: crawler_crane_item_toggle
+    13700010: mobile_crane_bottom
+    13700012: mobile_crane_top
+    2186277476908879412: ImportLogs
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: crawler_crane_texture
     second: {fileID: 2100000, guid: 46067cb7498889b44aa95bdec0c5be47, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mobile_crane_texture
+    second: {fileID: 2100000, guid: 90a4c97fa71496141938f2c999d4fb60, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

@@ -21,6 +21,9 @@ ModelImporter:
     100030: dieselhammer_top_02
     100032: Plane.002
     100034: //RootNode
+    100036: dieselhammer_pancang_rope
+    100038: rope
+    100040: rope_crawler_crane
     400000: base
     400002: Camera
     400004: camera_01
@@ -39,6 +42,9 @@ ModelImporter:
     400030: dieselhammer_top_02
     400032: Plane.002
     400034: //RootNode
+    400036: dieselhammer_pancang_rope
+    400038: rope
+    400040: rope_crawler_crane
     2000000: Camera
     2100000: No Name
     2100002: props_texture
@@ -49,12 +55,14 @@ ModelImporter:
     4300002: diesel_hammer_item
     4300004: diesel_hammer_top
     4300006: diesel_hammer_bottom
+    4300008: rope_crawler_crane
     7400000: diesel_hammer_armature|anim_scene_02
     7400002: diesel_hammer_top|anim_scene_02
     9500000: //RootNode
     13700000: diesel_hammer_bottom
     13700002: diesel_hammer_item
     13700004: diesel_hammer_top
+    13700006: rope_crawler_crane
   externalObjects:
   - first:
       type: UnityEngine:Material
