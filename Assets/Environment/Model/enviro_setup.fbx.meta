@@ -1302,7 +1302,17 @@ ModelImporter:
     4300002: Plane
     4300004: Plane|tree|Dupli|
     4300006: Plane|furn_001|Dupli|0.1
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 8fd9ede7886bd6d45993c097a71e7e98, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: land
+    second: {fileID: 2100000, guid: 8fd9ede7886bd6d45993c097a71e7e98, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
