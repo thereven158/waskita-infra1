@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -467,11 +467,13 @@ MonoBehaviour:
   _informationPopUp: {fileID: 6066408058732217489, guid: 385285812351fb5418c2ecd7a3530503,
     type: 3}
   _settingButton: {fileID: 1109784635}
-  _abortConfirmationMessage: "Progress pengerjaan checklist anda tidak disimpan jika
-    kembali sekarang. \nKembali ke main menu?"
-  _finishConfirmationMessage: "Peringatan! \nChecklist yang telah disimpan tidak dapat
-    diubah hingga proyek selesai. Apakah anda sudah yakin dengan jawaban anda?"
-  _activeSimulationMessage: Simulasi Sedang aktif. yuk mari
+  _abortConfirmationMessage: Proses pengerjaan checklist anda tidak akan tersimpan
+    jika anda keluar sekarang. Yakin ingin kembali?
+  _finishConfirmationMessage: 'Peringatan!
+
+    Checklist yang telah disimpan tidak dapat diubah hingga proyek selesai. Apakah
+    anda sudah yakin dengan jawaban anda?'
+  _activeSimulationMessage: Simulasi sedang berjalan, ayo lanjut!
   _bgm: {fileID: 11400000, guid: ccf1f9743b1cba749ba2afed6ca4300b, type: 2}
   _buttonClick: {fileID: 11400000, guid: 103b9b4896a001c4688cc5e717809083, type: 2}
 --- !u!4 &848682937
