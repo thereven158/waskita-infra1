@@ -15,7 +15,7 @@ MonoBehaviour:
   _quiz: {fileID: 114135012699987714}
   _displayName: Proses pengaspalan
   _category: Instalasi Fullslab
-  _wrongAnim: {fileID: 1554513523, guid: 7ae1e4b07600fdf4fada141fb303b6b8, type: 3}
+  _wrongAnim: {fileID: 175709393, guid: 89a1b6eca4303f842af1aa4724296494, type: 3}
   _wrongExplanation: Pengaspalan (Black Top) gagal karena urutan tahapan pekerjaan
     salah.
 --- !u!114 &114135012699987714
