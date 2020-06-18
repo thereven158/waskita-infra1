@@ -80,7 +80,11 @@ namespace Agate.WaskitaInfra1.SceneControl
 
         [TextArea]
         [SerializeField]
-        private string _finishProjectMessage = default;
+        private string _finishLevelMessage = default;
+        [TextArea]
+        [SerializeField]
+        private string _levelSuccessMessage = "Project Success";
+
 
         [Header("Audio")]
         [SerializeField]
@@ -320,7 +324,8 @@ namespace Agate.WaskitaInfra1.SceneControl
             }
             if (_evaluationMessages.Count < 1)
                 _gameProgress.UpdateCompletedLevelIndex((short)_levelControl.IndexOf(data.Level));
-            PopUpDisplay.Open(_finishProjectMessage, OnClose);
+            _animManager.PauseAnimation();
+            PopUpDisplay.Open(_finishLevelMessage, OnClose);
         }
 
 
@@ -359,7 +364,7 @@ namespace Agate.WaskitaInfra1.SceneControl
                     () =>
                     {
                         _audioSystem.PlayAudio(_successSfx);
-                        PopUpDisplay.Open("Project Success", LoadPrepScene);
+                        PopUpDisplay.Open(_levelSuccessMessage, LoadPrepScene);
                     });
             }
         }

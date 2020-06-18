@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.12.0] - 2020-06-18
+- update in-game wording
+- fix typo in issues: #233, #234, #235, #236
+- improvement loading display screen
+- update environment and animation
+
 ## [0.11.2] - 2020-06-16
 - fix bug stuck in evaluation display when all quiz are correct
 - update new audios

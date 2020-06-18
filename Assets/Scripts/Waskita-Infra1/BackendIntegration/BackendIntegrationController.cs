@@ -31,7 +31,7 @@ namespace Agate.WaskitaInfra1.Backend.Integration
 
         [SerializeField]
         [TextArea]
-        private string _requestFailedMessage = "Request failed make sure you have stable internet connection";
+        private string _requestFailedMessage = "Tidak ada koneksi internet, Pastikan kondisi koneksi kamu dalam keadaan stabil.";
 
         public void Init(WaskitaApi api, LevelControl levelControl, UiDisplaysSystem<GameObject> uiDisplay)
         {
