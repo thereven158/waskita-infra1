@@ -27,6 +27,12 @@ ModelImporter:
     100042: tail_02_flail
     100044: tail_ext
     100046: trailer_truck
+    100048: base_bottom_end
+    100050: camera_02_end
+    100052: hydraulic.001_end
+    100054: ik_pole_end
+    100056: tail_02_flail_end
+    100058: tail_ext_end
     400000: base
     400002: base_bottom
     400004: base_top
@@ -51,6 +57,12 @@ ModelImporter:
     400042: tail_02_flail
     400044: tail_ext
     400046: trailer_truck
+    400048: base_bottom_end
+    400050: camera_02_end
+    400052: hydraulic.001_end
+    400054: ik_pole_end
+    400056: tail_02_flail_end
+    400058: tail_ext_end
     2000000: Camera
     2100000: props_texture
     2100002: crawler_crane_texture
