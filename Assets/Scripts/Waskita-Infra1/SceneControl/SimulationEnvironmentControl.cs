@@ -10,7 +10,7 @@ namespace Agate.WaskitaInfra1.SceneControl
         private List<ParticleSystem> _rainParticle = default;
         [SerializeField]
         public float _rainIntensity = default;
-        private int _currentIntensity;
+        private float _currentIntensity;
 
         private List<ParticleSystem.EmissionModule> _emissionRain;
 
@@ -33,7 +33,7 @@ namespace Agate.WaskitaInfra1.SceneControl
         {
             _emissionRain = new List<ParticleSystem.EmissionModule>(_rainParticle.Select(particle => particle.emission));
             _zeroFloodNum = _floodTransform.position.y;
-            _currentIntensity = (int)_emissionRain[0].rateOverTime.constant;
+            _currentIntensity = _emissionRain[0].rateOverTime.constant;
             UpdateRainIntensity(_currentIntensity);
             _rainIntensity = _currentIntensity;
         }
@@ -58,6 +58,7 @@ namespace Agate.WaskitaInfra1.SceneControl
         private void UpdateRainIntensity(float value)
         {
             _emissionRain.ForEach(emssion => emssion.rateOverTime = value);
+            _currentIntensity = value;
         }
 
     }
