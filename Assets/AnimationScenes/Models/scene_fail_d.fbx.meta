@@ -74,6 +74,9 @@ ModelImporter:
     2100002: crawler_crane_textures
     2100004: mound_texture
     2100006: stone_wall
+    2100008: props_texture.003
+    2100010: mound_texture.001
+    2100012: stone_wall.001
     2300000: mound
     2300002: slabs_pile
     2300004: stone_wall

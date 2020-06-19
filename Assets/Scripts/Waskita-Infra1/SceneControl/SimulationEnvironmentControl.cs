@@ -1,15 +1,18 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 namespace Agate.WaskitaInfra1.SceneControl
 {
     public class SimulationEnvironmentControl : MonoBehaviour
     {
         [SerializeField]
-        private ParticleSystem _rainParticle = default;
+        private List<ParticleSystem> _rainParticle = default;
         [SerializeField]
-        public int _rainIntensity = default;
+        public float _rainIntensity = default;
+        private float _currentIntensity;
 
-        private ParticleSystem.EmissionModule _emissionRain;
+        private List<ParticleSystem.EmissionModule> _emissionRain;
 
 
 
@@ -28,15 +31,19 @@ namespace Agate.WaskitaInfra1.SceneControl
 
         private void Awake()
         {
-            _emissionRain = _rainParticle.emission;
+            _emissionRain = new List<ParticleSystem.EmissionModule>(_rainParticle.Select(particle => particle.emission));
             _zeroFloodNum = _floodTransform.position.y;
+            _currentIntensity = _emissionRain[0].rateOverTime.constant;
+            UpdateRainIntensity(_currentIntensity);
+            _rainIntensity = _currentIntensity;
         }
 
         // Update is called once per frame
         private void Update()
         {
             UpdateFlood();
-            UpdateRain();
+            if (_rainIntensity != _currentIntensity)
+                UpdateRainIntensity(_rainIntensity);
         }
         private void UpdateFlood()
         {
@@ -48,9 +55,10 @@ namespace Agate.WaskitaInfra1.SceneControl
             _floodTransform.position += Vector3.up * actualToTargetDifference;
         }
 
-        private void UpdateRain()
+        private void UpdateRainIntensity(float value)
         {
-            _emissionRain.rateOverTime = _rainIntensity;
+            _emissionRain.ForEach(emssion => emssion.rateOverTime = value);
+            _currentIntensity = value;
         }
 
     }
