@@ -22,6 +22,12 @@ ModelImporter:
     100032: dieselhammer_top_02
     100034: Plane.002
     100036: //RootNode
+    100038: camera_02_end
+    100040: dieselahammer_foots_end
+    100042: dieselhammer_bottom_end
+    100044: dieselhammer_hammer_01_end
+    100046: dieselhammer_pancang_01_end
+    100048: dieselhammer_top_02_end
     400000: base
     400002: Camera
     400004: camera_01
@@ -41,6 +47,12 @@ ModelImporter:
     400032: dieselhammer_top_02
     400034: Plane.002
     400036: //RootNode
+    400038: camera_02_end
+    400040: dieselahammer_foots_end
+    400042: dieselhammer_bottom_end
+    400044: dieselhammer_hammer_01_end
+    400046: dieselhammer_pancang_01_end
+    400048: dieselhammer_top_02_end
     2000000: Camera
     2100000: No Name
     2100002: diesel_hammer_texture
