@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.13.0] - 2020-06-19
+- update in-game wording
+- optimization 3d for low-end device
+
 ## [0.12.0] - 2020-06-18
 - update in-game wording
 - fix typo in issues: #233, #234, #235, #236
