@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -223,7 +223,8 @@ MonoBehaviour:
     type: 3}
   _yesNoDisplay: {fileID: 116060631222838767, guid: a902c1e47abfdd345a0863da912fb833,
     type: 3}
-  _requestFailedMessage: Request failed make sure you have stable internet connection
+  _requestFailedMessage: Tidak ada koneksi internet, Pastikan kondisi koneksi kamu
+    dalam keadaan stabil.
 --- !u!114 &113000447
 MonoBehaviour:
   m_ObjectHideFlags: 0
