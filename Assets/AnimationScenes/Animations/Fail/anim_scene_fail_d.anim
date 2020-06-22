@@ -2341,7 +2341,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 40
+        value: 35
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2349,8 +2349,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 8.333334
-        value: 40
+        time: 8.333333
+        value: 21.727922
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2361,6 +2361,34 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_FocalLength
+    path: crawler_crane_armature/base/camera/camera_01/camera_02/Camera
+    classID: 20
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 28.841547
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 8.333333
+        value: 45
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: field of view
     path: crawler_crane_armature/base/camera/camera_01/camera_02/Camera
     classID: 20
     script: {fileID: 0}
@@ -2450,6 +2478,20 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
+      path: 1007152650
+      attribute: 2499785852
+      script: {fileID: 0}
+      typeID: 20
+      customType: 37
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 1007152650
+      attribute: 3138646591
+      script: {fileID: 0}
+      typeID: 20
+      customType: 37
+      isPPtrCurve: 0
+    - serializedVersion: 2
       path: 2045248333
       attribute: 1
       script: {fileID: 0}
@@ -2729,13 +2771,6 @@ AnimationClip:
       typeID: 4
       customType: 0
       isPPtrCurve: 0
-    - serializedVersion: 2
-      path: 1007152650
-      attribute: 2499785852
-      script: {fileID: 0}
-      typeID: 20
-      customType: 37
-      isPPtrCurve: 0
     pptrCurveMapping: []
   m_AnimationClipSettings:
     serializedVersion: 2
@@ -2763,7 +2798,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 40
+        value: 35
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -2771,8 +2806,8 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 8.333334
-        value: 40
+        time: 8.333333
+        value: 21.727922
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -11091,6 +11126,34 @@ AnimationClip:
     attribute: m_LocalScale.z
     path: crawler_crane_armature/base/camera/camera_01/camera_02
     classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 28.841547
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 8.333333
+        value: 45
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: field of view
+    path: crawler_crane_armature/base/camera/camera_01/camera_02/Camera
+    classID: 20
     script: {fileID: 0}
   m_EulerEditorCurves:
   - curve:
