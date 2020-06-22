@@ -37,8 +37,8 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 0
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.64040095, g: 0.64676017, b: 0.6351991, a: 1}
+  m_Sun: {fileID: 1577406764}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1193,7 +1193,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 7
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 384539379954163475, guid: 59654c60b58dcd84bad62b0c862d57bc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 59654c60b58dcd84bad62b0c862d57bc, type: 3}
 --- !u!4 &826246274 stripped
 Transform:
@@ -1988,6 +1989,16 @@ PrefabInstance:
       propertyPath: m_Shadows.m_Strength
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8979030998821848658, guid: 6cf4c126b920708438fb531855ff7a7b,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8979030998821848658, guid: 6cf4c126b920708438fb531855ff7a7b,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 0.37
+      objectReference: {fileID: 0}
     - target: {fileID: 2534186176886399681, guid: 6cf4c126b920708438fb531855ff7a7b,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -2118,6 +2129,12 @@ PrefabInstance:
 --- !u!4 &1577406763 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2534186177864143872, guid: 6cf4c126b920708438fb531855ff7a7b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1577406762}
+  m_PrefabAsset: {fileID: 0}
+--- !u!108 &1577406764 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 8979030998821848658, guid: 6cf4c126b920708438fb531855ff7a7b,
     type: 3}
   m_PrefabInstance: {fileID: 1577406762}
   m_PrefabAsset: {fileID: 0}
