@@ -38,10 +38,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: scene_fail_d Variant
       objectReference: {fileID: 0}
-    - target: {fileID: 9500000, guid: 40f5978267977674a876d903a8a5cb27, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: b83953df047ce8444b876b75d590b22e, type: 2}
     - target: {fileID: 400034, guid: 40f5978267977674a876d903a8a5cb27, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -85,6 +81,18 @@ PrefabInstance:
     - target: {fileID: 400034, guid: 40f5978267977674a876d903a8a5cb27, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 40f5978267977674a876d903a8a5cb27, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b83953df047ce8444b876b75d590b22e, type: 2}
+    - target: {fileID: 2000000, guid: 40f5978267977674a876d903a8a5cb27, type: 3}
+      propertyPath: m_FocalLength
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 2000000, guid: 40f5978267977674a876d903a8a5cb27, type: 3}
+      propertyPath: field of view
+      value: 28.841547
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40f5978267977674a876d903a8a5cb27, type: 3}

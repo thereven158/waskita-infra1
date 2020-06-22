@@ -15,7 +15,7 @@ MonoBehaviour:
   username: 
   authToken: 
   _gameProgress: {fileID: 114656688988709706}
-  _levelProgress: {fileID: 114347826677027336}
+  _levelProgress: {fileID: 0}
 --- !u!114 &114347826677027336
 MonoBehaviour:
   m_ObjectHideFlags: 0
