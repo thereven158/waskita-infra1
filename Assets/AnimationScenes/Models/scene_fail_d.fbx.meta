@@ -115,12 +115,27 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: mound_texture.001
+    second: {fileID: 2100000, guid: fa500c0220f9be941b2c6d82210a7e07, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: props_texture
     second: {fileID: 2100000, guid: eec981cd4176586419bffe2eacc6af05, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: props_texture.003
+    second: {fileID: 2100000, guid: eec981cd4176586419bffe2eacc6af05, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: stone_wall
+    second: {fileID: 2100000, guid: b140e4d2f358774489af070b4f9f3559, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stone_wall.001
     second: {fileID: 2100000, guid: b140e4d2f358774489af070b4f9f3559, type: 2}
   materials:
     importMaterials: 1

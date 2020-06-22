@@ -16,6 +16,33 @@ MonoBehaviour:
   authToken: 
   _gameProgress: {fileID: 114656688988709706}
   _levelProgress: {fileID: 0}
+--- !u!114 &114347826677027336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7511d38711c1452d8162fcd509f3eaea, type: 3}
+  m_Name: TestGameData.Level Progress
+  m_EditorClassIdentifier: 
+  _lastCheckpoint: 0
+  _currentDay: 1
+  _tryCount: 0
+  _answers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  _level: {fileID: 11400000, guid: f1a75c14dab170d48bfd90dfb8592ba9, type: 2}
+  _dayCondition:
+    _weather: {fileID: 11400000, guid: b722269cf9594554b8b7e8c1d1f81bfb, type: 2}
+    _windStrength: 5
 --- !u!114 &114656688988709706
 MonoBehaviour:
   m_ObjectHideFlags: 0

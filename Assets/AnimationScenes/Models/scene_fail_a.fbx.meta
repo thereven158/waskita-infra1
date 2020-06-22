@@ -58,6 +58,7 @@ ModelImporter:
     4300006: Cylinder
     4300008: Cube
     7400000: Armature|anim_fail_a
+    7400002: Cube.001|anim_fail_a
     9500000: //RootNode
     13700000: jalan_tol_patah_02
   externalObjects:

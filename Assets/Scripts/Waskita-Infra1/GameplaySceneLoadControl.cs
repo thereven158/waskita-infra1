@@ -31,8 +31,8 @@ namespace Agate.GlSim.Scene.Control.Map.Loader
         #endregion
 
         private string _currentSceneName;
+        
         public Action OnChangeScene;
-
         public Action<float> OnLoadProgress;
         public Action<float> OnUnloadProgress;
 

@@ -45,6 +45,11 @@ namespace Agate.WaskitaInfra1.Backend.Integration
                 Level = levelControl.GetLevel(data.level - 1),
                 Answers = new List<object>(),
             };
+            progress.Condition = new DayCondition()
+            {
+                _weather = progress.Level.WeatherForecast,
+                _windStrength = progress.Level.WindStrength
+            };
             for (int i = 0; i < progress.Level.Questions.Count; i++)
                 progress.Answers.Add(null);
             if (data.storedAnswers == null) return progress;

@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.14.0] - 2020-06-22
+
+### Changes
+
+- scene tweak and lightmap baking
+- implement notch safe area handling
+- fix missing material in scene D
+- update scene 6
+
+### Fix
+
+- fix missing level state to display in simulation phase
+- fix inactive camera of fail scene a
+- fix attached carried animation 1
+- fix hammer animation 2
+- animation bug fixing done by programmer
+
 ## [0.13.0] - 2020-06-19
 - update in-game wording
 - optimization 3d for low-end device
