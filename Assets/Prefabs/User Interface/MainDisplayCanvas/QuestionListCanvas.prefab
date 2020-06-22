@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1907637071502648277}
   - component: {fileID: 3855638992119033414}
   - component: {fileID: 4692833017869627518}
+  - component: {fileID: 1579910487184519639}
   m_Layer: 5
   m_Name: QuestionListCanvas
   m_TagString: Untagged
@@ -95,6 +96,21 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1579910487184519639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4564632557368652750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c97afc556caea1c44969477eb7ddec74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConformX: 1
+  ConformY: 1
+  Logging: 0
 --- !u!1 &7533228461169188163
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,6 +365,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2304155555117226902, guid: 77379ebb0ab74064fb3193bc725e21ef,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000078771074
+      objectReference: {fileID: 0}
     - target: {fileID: 2304155553491709298, guid: 77379ebb0ab74064fb3193bc725e21ef,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -368,6 +389,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2304155555023009960, guid: 77379ebb0ab74064fb3193bc725e21ef,
+        type: 3}
+      propertyPath: m_Size
+      value: 0.9999999
       objectReference: {fileID: 0}
     - target: {fileID: 2304155553316642930, guid: 77379ebb0ab74064fb3193bc725e21ef,
         type: 3}
@@ -473,11 +499,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2304155555023009960, guid: 77379ebb0ab74064fb3193bc725e21ef,
-        type: 3}
-      propertyPath: m_Size
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77379ebb0ab74064fb3193bc725e21ef, type: 3}
