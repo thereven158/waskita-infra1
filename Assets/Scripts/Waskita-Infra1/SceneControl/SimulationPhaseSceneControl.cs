@@ -49,6 +49,9 @@ namespace Agate.WaskitaInfra1.SceneControl
         [SerializeField]
         private SimulationEnvironmentControl _simulationEnvironment = default;
 
+        [SerializeField]
+        private GameObject _environment = default;
+
         [Header("Event/ Action")]
         [SerializeField]
         private DayEventTriggerSystem _eventSystem = default;
@@ -81,6 +84,7 @@ namespace Agate.WaskitaInfra1.SceneControl
         [TextArea]
         [SerializeField]
         private string _finishLevelMessage = default;
+
         [TextArea]
         [SerializeField]
         private string _levelSuccessMessage = "Project Success";
@@ -358,6 +362,7 @@ namespace Agate.WaskitaInfra1.SceneControl
             }
             else
             {
+                _environment.SetActive(false);
                 _animManager.PlayAnimation(
                     _successAnimationScene,
                     null,
