@@ -16,6 +16,12 @@ namespace Agate.WaskitaInfra1.Level
         [SerializeField]
         private List<ScriptableGameAction> _actions;
 
+        public MultiActionEvent(uint day, List<ScriptableGameAction> actions) : this()
+        {
+            _day = day;
+            _actions = actions;
+        }
+
         public bool IsSuitable(EventTriggerData data)
         {
             return data.Day == _day;
