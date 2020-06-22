@@ -9,7 +9,8 @@
         "Agate.WaskitaInfra1.PlayerAccount",
         "Agate.WaskitaInfra1.Level.Unity",
         "Agate.WaskitaInfra1.Level",
-        "Agate.WaskitaInfra1.UserInterface.Display"
+        "Agate.WaskitaInfra1.UserInterface.Display",
+        "Agate.WaskitaInfra1.Object"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],
