@@ -174,6 +174,11 @@ ModelImporter:
     100336: road_model
     100338: Sedan_01
     100340: Sedan_02
+    100342: join _model.000
+    100344: join _model.001
+    100346: join _model.003
+    100348: Minibus_02.001
+    100350: Sedan_02.001
     400000: Armature
     400002: Camera
     400004: Camera_01
@@ -345,6 +350,11 @@ ModelImporter:
     400336: road_model
     400338: Sedan_01
     400340: Sedan_02
+    400342: join _model.000
+    400344: join _model.001
+    400346: join _model.003
+    400348: Minibus_02.001
+    400350: Sedan_02.001
     2000000: Camera
     2000002: Camera 1
     2100000: road_texture
@@ -352,6 +362,7 @@ ModelImporter:
     2100004: enviro_new_textures_06
     2100006: tree_textures_01
     2100008: road_texture.002
+    2100010: Material.000
     2300000: Plane
     2300002: Angkot_01
     2300004: ground_main_scene_06
@@ -510,6 +521,11 @@ ModelImporter:
     2300310: road_model
     2300312: Sedan_01
     2300314: Sedan_02
+    2300316: join _model.000
+    2300318: join _model.001
+    2300320: join _model.003
+    2300322: Minibus_02.001
+    2300324: Sedan_02.001
     3300000: Plane
     3300002: Angkot_01
     3300004: ground_main_scene_06
@@ -668,6 +684,11 @@ ModelImporter:
     3300310: road_model
     3300312: Sedan_01
     3300314: Sedan_02
+    3300316: join _model.000
+    3300318: join _model.001
+    3300320: join _model.003
+    3300322: Minibus_02.001
+    3300324: Sedan_02.001
     4300000: Plane
     4300002: Sedan_02
     4300004: Angkot_01
@@ -677,10 +698,27 @@ ModelImporter:
     4300012: ground_main_scene_06
     4300014: ground_main_scene_06|tree_01|Dupli|0.0.0.0.0.0.0.0.0.0
     4300016: road_model
+    4300018: Minibus_02.001
+    4300020: join _model.001
+    4300022: join _model.000
+    4300024: join _model.003
+    4300026: Sedan_02.001
     7400000: Armature|anim_scene_06
     7400002: Camera|anim_scene_06
+    7400004: Armature|anim_scene_06.001
+    7400006: Armature|anim_scene_06.002
+    7400008: Armature|anim_scene_06.003
+    7400010: join _model.000|anim_scene_06.002
+    7400012: join _model.001|anim_scene_06.003
+    7400014: join _model.003|anim_scene_06
     9500000: //RootNode
+    2186277476908879412: ImportLogs
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.000
+    second: {fileID: 2100000, guid: 69e6684edb0b1b94285f138ddbcf8793, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -752,7 +790,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.02
+    previousCalculatedGlobalScale: 0.04
     hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60

@@ -27,8 +27,6 @@ namespace Agate.WaskitaInfra1.SceneControl
         private float ActualFloodHeight => _floodTransform.position.y;
         private float TargetFloodHeight => _zeroFloodNum + _floodHeight;
 
-        private float actualToTargetDifference => TargetFloodHeight - ActualFloodHeight;
-
         private void Awake()
         {
             _emissionRain = new List<ParticleSystem.EmissionModule>(_rainParticle.Select(particle => particle.emission));
@@ -48,11 +46,7 @@ namespace Agate.WaskitaInfra1.SceneControl
         private void UpdateFlood()
         {
             if (ActualFloodHeight == TargetFloodHeight) return;
-            float floodModifier = actualToTargetDifference / Mathf.Abs(TargetFloodHeight - ActualFloodHeight);
-            _floodTransform.position += Vector3.up * floodModifier * Time.deltaTime;
-            if (Mathf.Abs(actualToTargetDifference) >= 0.1) return;
-
-            _floodTransform.position += Vector3.up * actualToTargetDifference;
+            _floodTransform.position = Vector3.up * TargetFloodHeight;
         }
 
         private void UpdateRainIntensity(float value)

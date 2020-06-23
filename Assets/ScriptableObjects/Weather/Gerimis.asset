@@ -15,5 +15,5 @@ MonoBehaviour:
   _image: {fileID: 21300000, guid: c89cc734c0cb1ca45be26603ab5eff60, type: 3}
   _season: Hujan
   _rainFall: Sedang
-  _floodHeight: 0.7
+  _floodHeight: 1
   _rainIntensity: 90
