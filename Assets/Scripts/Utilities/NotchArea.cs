@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
-
-public class NotchArea : MonoBehaviour
+namespace Agate.Util
 {
-    // Start is called before the first frame update
-    private RectTransform rectTransform;
-    void Start()
+    public class NotchArea : MonoBehaviour
     {
-        rectTransform = GetComponent<RectTransform>();
-        rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, Screen.safeArea.y);
+        // Start is called before the first frame update
+        private RectTransform rectTransform;
+        void Start()
+        {
+            rectTransform = GetComponent<RectTransform>();
+            rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, Screen.safeArea.y);
+        }
     }
 }
