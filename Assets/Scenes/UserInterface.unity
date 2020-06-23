@@ -1523,8 +1523,8 @@ MonoBehaviour:
   _audioMixer: {fileID: 24100000, guid: 30203e7909e1ac84ebdd6c500eb4d09b, type: 2}
   _confirmationPopup: {fileID: 6700165356127211701, guid: 93391fdf2e534204884477c3305363a5,
     type: 3}
-  _exitConfirmationText: apakah anda yakin ingin keluar ?
-  _logoutConfirmationText: apakah anda yakin ingin Log Out ?
+  _exitConfirmationText: Apakah anda yakin ingin keluar ?
+  _logoutConfirmationText: Apakah anda yakin ingin Log Out ?
 --- !u!1 &1598519650
 GameObject:
   m_ObjectHideFlags: 0

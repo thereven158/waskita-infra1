@@ -32,7 +32,7 @@ Material:
     - Vector1_907BBA4E: 1.14
     - Vector1_E2432189: 0.01
     - _Vector1_FresnelPower: 2.56
-    - _Vector1_WaterHeight: -4.89
+    - _Vector1_WaterHeight: 0
     - _Vector1_WaterSpeed: 0.01
     m_Colors:
     - Color_9DA3B53C: {r: 0.3686275, g: 0.2, b: 0, a: 0}

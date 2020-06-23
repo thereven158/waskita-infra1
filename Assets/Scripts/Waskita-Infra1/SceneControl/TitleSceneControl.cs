@@ -35,10 +35,6 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
         [SerializeField]
         private string FailedValidationMessage = "Validasi Gagal, tolong lakukan login ulang";
 
-        [SerializeField]
-        private string SuccessLoginMessage = "Selamat datang ";
-
-
         [Header("Audio")]
         [SerializeField]
         private ScriptableAudioSpecification _bgm = default;
@@ -116,8 +112,6 @@ namespace Agate.WaskitaInfra1.SceneControl.Login
 
         private void OnSuccessLogin(LoginResponse response)
         {
-            _displaysSystem.GetOrCreateDisplay<PopUpDisplay>(_popUpDisplay)
-                .Open(SuccessLoginMessage + response.name + ".", null);
             _accountControl.SetData(response.AccountData());
             _settingDisplay.NikText = response.name;
             _main.SaveAccountData();
