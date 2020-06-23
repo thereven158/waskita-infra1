@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.15.0] - 2020-06-23
+
+### Changes
+- improvement flood water. #278
+- change object vegetation in enviro and scene_06_variant into static.
+- change rain position Y from "33" into "36.5"
+
+### Fix
+- fix typo from "LogOut" into "Log Out". #251
+- fix text in-game wording. #193
+- fix text from "Solid Soil" into "Tanah Padat". #274
+- fix animation. #276
+- fix typo text at A005. #279
+- fix typo text at A007. #198
+
+
 ## [0.14.0] - 2020-06-22
 
 ### Changes

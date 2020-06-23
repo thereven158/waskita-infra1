@@ -28,14 +28,14 @@ Material:
     - Vector1_1EE65FE9: 2.56
     - Vector1_20F4B221: 0.5
     - Vector1_2E200B90: 0.05
-    - Vector1_2FBB2189: 0.7
-    - Vector1_907BBA4E: -0.31
+    - Vector1_2FBB2189: 0.81
+    - Vector1_907BBA4E: 1.14
     - Vector1_E2432189: 0.01
     - _Vector1_FresnelPower: 2.56
-    - _Vector1_WaterHeight: 0.1
+    - _Vector1_WaterHeight: 0
     - _Vector1_WaterSpeed: 0.01
     m_Colors:
     - Color_9DA3B53C: {r: 0.3686275, g: 0.2, b: 0, a: 0}
     - Color_B615F603: {r: 0.4627451, g: 0.3803922, b: 0.2313726, a: 0}
     - _Color_TopWater: {r: 0.3686275, g: 0.2, b: 0, a: 0}
-    - _Color_Water: {r: 0.3584906, g: 0.27791974, b: 0.13020648, a: 0}
+    - _Color_Water: {r: 0.3773585, g: 0.305545, b: 0.16909933, a: 0}

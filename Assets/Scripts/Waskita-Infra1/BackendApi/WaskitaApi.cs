@@ -74,14 +74,14 @@ namespace Agate.WaskitaInfra1.Server.API
                 error = new Error
                 {
                     code = "3003",
-                    message = "Unknown error, please check your internet connection"
+                    message = "Error yang tidak dikenal, Tolong periksa kembali koneksi internet anda"
                 }
             };
             switch (error.responseCode)
             {
                 case 200:
                     response.error.code = "2017";
-                    response.error.message = "Username & Password  not found";
+                    response.error.message = "Username & Password tidak terdaftar";
                     break;
 
                 case 400:
@@ -91,17 +91,17 @@ namespace Agate.WaskitaInfra1.Server.API
 
                 case 401:
                     response.error.code = "2018";
-                    response.error.message = "Unauthorized, please re-login";
+                    response.error.message = "kredensial tidak sah, tolong lakukan login ulang";
                     break;
 
                 case 403:
                     response.error.code = "2019";
-                    response.error.message = "Forbidden Please, re-login";
+                    response.error.message = "Akses terlarang, tolong lakukan login ulang";
                     break;
 
                 case 500:
                     response.error.code = "3002";
-                    response.error.message = "Internal server error / server on maintenance";
+                    response.error.message = "Internal Server Error / Server sedang dalam perbaikan";
                     break;
             }
 
