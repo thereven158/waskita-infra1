@@ -184,6 +184,10 @@ namespace Agate.WaskitaInfra1.SceneControl
                 _settingDisplay.ToggleDisplay(true);
             }
             );
+
+#if ONLINE
+            _nextDayButton.gameObject.SetActive(false);      
+#endif
             _nextDayButton.onClick.AddListener(() => _levelProgress.NextDay(1));
 
             foreach (IEventTriggerData<EventTriggerData> eventData in _levelProgress.Data.Level.Events)
