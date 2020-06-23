@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: A007
   m_EditorClassIdentifier: 
   _quiz: {fileID: 114151556578848160}
-  _displayName: Jumlah maximal tumpukan fullslab
+  _displayName: Jumlah maksimal tumpukan fullslab
   _category: Penyimpanan Material
   _wrongAnim: {fileID: 2151781868707027454, guid: d5d60811e79c0d245b0bef3bc50e2409,
     type: 3}

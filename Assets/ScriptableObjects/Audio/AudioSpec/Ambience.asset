@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88b2eb8a6b0e3ad4d9a9291415082d86, type: 3}
   m_Name: Ambience
   m_EditorClassIdentifier: 
-  _clip: {fileID: 8300000, guid: ae12b5fc742905c44906c661ac0b22b4, type: 3}
+  _clip: {fileID: 8300000, guid: ec95eb98acc59df44bfef23e04c98153, type: 3}
   _isLoop: 1
   _canOverlap: 0
   _channel: {fileID: 11400000, guid: 3b6149e4aac888f4fa5ff2903493099c, type: 2}

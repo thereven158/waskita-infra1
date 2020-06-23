@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: A005
   m_EditorClassIdentifier: 
   _quiz: {fileID: 114720287202426694}
-  _displayName: Jumlah maximal tumpukan tiang pancang
+  _displayName: Jumlah maksimal tumpukan tiang pancang
   _category: Penyimpanan Material
   _wrongAnim: {fileID: 2151781868707027454, guid: d5d60811e79c0d245b0bef3bc50e2409,
     type: 3}
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: A005.Quiz
   m_EditorClassIdentifier: 
   _question:
-    _message: Jumlah maximam tumpukan tiang pancang di lapangan adalah...
+    _message: Jumlah maksimal tumpukan tiang pancang di lapangan adalah...
     _answer: {fileID: 114387983015378266}
     _answerOptions:
     - {fileID: 114387983015378266}

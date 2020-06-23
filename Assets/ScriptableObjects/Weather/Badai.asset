@@ -15,5 +15,5 @@ MonoBehaviour:
   _image: {fileID: 21300000, guid: 988d5f777ae7e874580e3096e74a6fd1, type: 3}
   _season: Badai
   _rainFall: tinggi
-  _floodHeight: 2
+  _floodHeight: 2.2
   _rainIntensity: 1000

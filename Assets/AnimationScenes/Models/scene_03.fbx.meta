@@ -26,6 +26,22 @@ ModelImporter:
     100040: tiang_pancang_cor
     100042: wood_plank
     100044: wooden_cage
+    100046: tiang_pancang_steel_cage
+    100048: tiang_pancang_wood_cage
+    100050: tiang_pancang_wood_plank
+    100052: tiang_pancang_concrete_fill
+    100054: besi_geser_end
+    100056: camera_02_end
+    100058: clamp_depan_end
+    100060: clamp_kanan_end
+    100062: clamp_kiri_end
+    100064: semen_isi_extended_end
+    100066: slide_depan_end
+    100068: slide_kiri_kanan_end
+    100070: steel_cage_end
+    100072: tiang_clamp_kanan_end
+    100074: tiang_clamp_kiri_end
+    100076: wooden_cage_end
     400000: Armature
     400002: besi_geser
     400004: Camera
@@ -49,17 +65,51 @@ ModelImporter:
     400040: tiang_pancang_cor
     400042: wood_plank
     400044: wooden_cage
+    400046: tiang_pancang_steel_cage
+    400048: tiang_pancang_wood_cage
+    400050: tiang_pancang_wood_plank
+    400052: tiang_pancang_concrete_fill
+    400054: besi_geser_end
+    400056: camera_02_end
+    400058: clamp_depan_end
+    400060: clamp_kanan_end
+    400062: clamp_kiri_end
+    400064: semen_isi_extended_end
+    400066: slide_depan_end
+    400068: slide_kiri_kanan_end
+    400070: steel_cage_end
+    400072: tiang_clamp_kanan_end
+    400074: tiang_clamp_kiri_end
+    400076: wooden_cage_end
     2000000: Camera
     2100000: props_texture
     2100002: mixer_truck_texture
     2300000: mixer_truck
+    2300002: tiang_pancang_steel_cage
+    2300004: tiang_pancang_wood_cage
+    2300006: tiang_pancang_wood_plank
     3300000: mixer_truck
+    3300002: tiang_pancang_steel_cage
+    3300004: tiang_pancang_wood_cage
+    3300006: tiang_pancang_wood_plank
     4300000: tiang_pancang_cor
     4300002: mixer_truck
+    4300004: tiang_pancang_wood_plank
+    4300006: tiang_pancang_steel_cage
+    4300008: tiang_pancang_wood_cage
+    4300010: tiang_pancang_concrete_fill
     7400000: Armature|anim_scene_03
     7400002: tiang_pancang_cor|anim_scene_03
+    7400004: tiang_pancang_wood_plank|anim_scene_03
+    7400006: tiang_pancang_steel_cage|anim_scene_03
+    7400008: tiang_pancang_wood_cage|anim_scene_03
+    7400010: tiang_pancang_concrete_fill|anim_scene_03
     9500000: //RootNode
     13700000: tiang_pancang_cor
+    13700002: tiang_pancang_steel_cage
+    13700004: tiang_pancang_wood_cage
+    13700006: tiang_pancang_wood_plank
+    13700008: tiang_pancang_concrete_fill
     2186277476908879412: ImportLogs
   externalObjects:
   - first:
