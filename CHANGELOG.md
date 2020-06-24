@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- reset day condition upon retry from checkpoint #290 #291 #292 #293 #294
+- remove repeated fail animation #296
+- tweak safe area handling for iphone x
+
 ## [0.15.1] - 2020-06-23
 
 - add game icon
