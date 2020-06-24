@@ -242,7 +242,6 @@ GameObject:
   - component: {fileID: 1936216102220830811}
   - component: {fileID: 1936216102220830813}
   - component: {fileID: 867744451377446808}
-  - component: {fileID: 6373380901248725260}
   m_Layer: 5
   m_Name: LevelDataCanvas
   m_TagString: Untagged
@@ -325,21 +324,6 @@ MonoBehaviour:
   _descriptionText: {fileID: 5888572250761952963}
   _yesButton: {fileID: 2349265595087613124}
   _noButton: {fileID: 6493404888865050355}
---- !u!114 &6373380901248725260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1936216102220830814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c97afc556caea1c44969477eb7ddec74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ConformX: 1
-  ConformY: 1
-  Logging: 0
 --- !u!1 &1936216102570502371
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,6 +334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1936216102570502370}
   - component: {fileID: 1936216102570502368}
+  - component: {fileID: 2351250410708337422}
   m_Layer: 5
   m_Name: ContainerProject
   m_TagString: Untagged
@@ -386,6 +371,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1936216102570502371}
   m_CullTransparentMesh: 0
+--- !u!114 &2351250410708337422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1936216102570502371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c97afc556caea1c44969477eb7ddec74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ConformX: 1
+  ConformY: 1
+  Logging: 0
 --- !u!1 &7906966102853957208
 GameObject:
   m_ObjectHideFlags: 0
