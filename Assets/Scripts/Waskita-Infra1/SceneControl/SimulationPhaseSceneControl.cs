@@ -138,6 +138,7 @@ namespace Agate.WaskitaInfra1.SceneControl
         private bool _isPaused;
         private float _timeUntilNextDay;
         private int _simAnimIndex = 0;
+        private AnimationSceneControl _currentFailAnim;
 
         private void CycleSimAnimIndex()
         {
@@ -180,7 +181,7 @@ namespace Agate.WaskitaInfra1.SceneControl
             _levelProgress.OnConditionChange += OnConditionChange;
             _settingButton.onClick.AddListener(() =>
             {
-                Time.timeScale = 0; 
+                Time.timeScale = 0;
                 _settingDisplay.ToggleDisplay(true);
             }
             );
@@ -361,7 +362,6 @@ namespace Agate.WaskitaInfra1.SceneControl
             _animManager.OnStop = null;
             if (_evaluationMessages.Count > 0)
             {
-                _audioSystem.PlayAudio(_failureSfx);
                 CycleDisplayEvaluationMessage();
             }
             else
@@ -388,14 +388,32 @@ namespace Agate.WaskitaInfra1.SceneControl
             void onInteraction()
             {
                 _audioSystem.PlayAudio(_buttonClick);
-                FadeDisplay.Open(CycleDisplayEvaluationMessage);
+                CycleDisplayEvaluationMessage();
             }
-            _animManager.PlayAnimation(
-                _evaluationAnims.Dequeue(),
-                null,
-                () => PopUpDisplay.Open(
-                  _evaluationMessages.Dequeue(),
-                  onInteraction));
+            void openFailureMessagePopup()
+            {
+                PopUpDisplay.Open(
+                      _evaluationMessages.Dequeue(),
+                      onInteraction);
+            }
+            void playFailureAnimation()
+            {
+                _audioSystem.PlayAudio(_failureSfx);
+                _animManager.PlayAnimation(
+                    _currentFailAnim,
+                    null,
+                    openFailureMessagePopup);
+            }
+            AnimationSceneControl _newAnim = _evaluationAnims.Dequeue();
+
+            if (_currentFailAnim != _newAnim)
+            {
+                _currentFailAnim = _newAnim;
+                FadeDisplay.Open(playFailureAnimation);
+            }
+            else
+                openFailureMessagePopup();
+
 
         }
 

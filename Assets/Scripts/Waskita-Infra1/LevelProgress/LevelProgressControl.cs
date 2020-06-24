@@ -64,6 +64,11 @@ namespace Agate.WaskitaInfra1.LevelProgress
         {
             OnRetryToCheckpoint?.Invoke();
             _data.CurrentDay = _data.LastCheckpoint;
+            _data.Condition = new DayCondition()
+            {
+                _weather = Data.Level.WeatherForecast,
+                _windStrength = Data.Level.WindStrength
+            };
             OnDayChange?.Invoke(_data.CurrentDay);
             _data.TryCount++;
         }
