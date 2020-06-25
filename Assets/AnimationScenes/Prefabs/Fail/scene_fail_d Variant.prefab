@@ -86,6 +86,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: b83953df047ce8444b876b75d590b22e, type: 2}
+    - target: {fileID: 2300000, guid: 40f5978267977674a876d903a8a5cb27, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8fd9ede7886bd6d45993c097a71e7e98, type: 2}
     - target: {fileID: 2000000, guid: 40f5978267977674a876d903a8a5cb27, type: 3}
       propertyPath: m_FocalLength
       value: 35
