@@ -45,6 +45,9 @@ namespace Agate.WaskitaInfra1.SceneControl
         private AudioMixer _audioMixer = default;
 
         [SerializeField]
+        private float _bgmDefaultVolume = -20f;
+
+        [SerializeField]
         private ConfirmationPopUpDisplay _confirmationPopup = default;
 
         [SerializeField]
@@ -81,14 +84,14 @@ namespace Agate.WaskitaInfra1.SceneControl
 
         private void ConfigureSettings()
         {
-            _audioMixer.SetFloat(MIXER_BGM_PARAM, PlayerPrefs.GetFloat(MIXER_BGM_PARAM, 0));
-            _settingDisplay.BgmToggleState = PlayerPrefs.GetFloat(MIXER_BGM_PARAM, 0) >= 0;
+            _audioMixer.SetFloat(MIXER_BGM_PARAM, PlayerPrefs.GetFloat(MIXER_BGM_PARAM, _bgmDefaultVolume));
+            _settingDisplay.BgmToggleState = PlayerPrefs.GetFloat(MIXER_BGM_PARAM, _bgmDefaultVolume) >= _bgmDefaultVolume;
             _audioMixer.SetFloat(MIXER_SFX_PARAM, PlayerPrefs.GetFloat(MIXER_SFX_PARAM, 0));
             _settingDisplay.SfxToggleState = PlayerPrefs.GetFloat(MIXER_SFX_PARAM, 0) >= 0;
 
             _settingDisplay.OnInteraction += () => _audioSystem.PlayAudio(_buttonClick);
-            _settingDisplay.OnBgmToggle += toggle => _audioMixer.SetFloat(MIXER_BGM_PARAM, toggle ? 0 : -80);
-            _settingDisplay.OnBgmToggle += toggle => PlayerPrefs.SetFloat(MIXER_BGM_PARAM, toggle ? 0 : -80);
+            _settingDisplay.OnBgmToggle += toggle => _audioMixer.SetFloat(MIXER_BGM_PARAM, toggle ? _bgmDefaultVolume : -80);
+            _settingDisplay.OnBgmToggle += toggle => PlayerPrefs.SetFloat(MIXER_BGM_PARAM, toggle ? _bgmDefaultVolume : -80);
             _settingDisplay.OnSfxToggle += toggle => _audioMixer.SetFloat(MIXER_SFX_PARAM, toggle ? 0 : -80);
             _settingDisplay.OnSfxToggle += toggle => PlayerPrefs.SetFloat(MIXER_SFX_PARAM, toggle ? 0 : -80);
 

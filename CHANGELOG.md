@@ -7,7 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- tweak audio volume for bgm and ambience #302
+- fix anim scene fail e to display more roughed state #300
+- triage assigning ASTC format override
+- tweak animation placement #303
+- smoke exhaust effects #148
+
 ## [0.15.2] - 2020-06-23
+
 - reset day condition upon retry from checkpoint #290 #291 #292 #293 #294
 - remove repeated fail animation #296
 - tweak safe area handling for iphone x

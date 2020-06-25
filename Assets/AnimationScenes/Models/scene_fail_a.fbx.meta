@@ -22,6 +22,7 @@ ModelImporter:
     100032: patah_04_end
     100034: root
     100036: //RootNode
+    100038: Cube.002
     400000: Armature
     400002: Camera
     400004: camera
@@ -41,6 +42,7 @@ ModelImporter:
     400032: patah_04_end
     400034: root
     400036: //RootNode
+    400038: Cube.002
     2000000: Camera
     2100000: road_texture
     2100002: No Name
@@ -48,17 +50,21 @@ ModelImporter:
     2300002: Cube.001
     2300004: Cube.005
     2300006: Cylinder
+    2300008: Cube.002
     3300000: Cube
     3300002: Cube.001
     3300004: Cube.005
     3300006: Cylinder
+    3300008: Cube.002
     4300000: Cube.001
     4300002: jalan_tol_patah_02
     4300004: Cube.005
     4300006: Cylinder
     4300008: Cube
+    4300010: Cube.002
     7400000: Armature|anim_fail_a
     7400002: Cube.001|anim_fail_a
+    7400004: Cube|anim_fail_a
     9500000: //RootNode
     13700000: jalan_tol_patah_02
   externalObjects:

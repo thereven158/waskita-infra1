@@ -25,6 +25,7 @@ AudioMixerController:
     - e20e2fd5b39574747a310224ffff0e04
     - f31c92fa90bea1948914dd42dced8d35
     - 02642155b4ba2c645ac9175b54efb310
+    - f8286497c6803844eb88a411d260453b
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -71,7 +72,9 @@ AudioMixerSnapshotController:
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: e2b9b41984990e94eacbc61fd47c0ce8
-  m_FloatValues: {}
+  m_FloatValues:
+    39e8c3672e300da4dbf9bd1e201e2e71: 10
+    cea05eb8969977446b49663fc8d62df8: -20
   m_TransitionOverrides: {}
 --- !u!243 &243459529253914124
 AudioMixerGroupController:
@@ -82,7 +85,8 @@ AudioMixerGroupController:
   m_Name: BGM
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: f31c92fa90bea1948914dd42dced8d35
-  m_Children: []
+  m_Children:
+  - {fileID: 243904488505355582}
   m_Volume: cea05eb8969977446b49663fc8d62df8
   m_Pitch: 849a3f182938ad04f8d0955a1948feab
   m_Effects:
@@ -109,6 +113,38 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!243 &243904488505355582
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Ambience
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: f8286497c6803844eb88a411d260453b
+  m_Children: []
+  m_Volume: 39e8c3672e300da4dbf9bd1e201e2e71
+  m_Pitch: 76b142fc8891e1d4a8f88072c74b9ce0
+  m_Effects:
+  - {fileID: 244138234419569964}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &244138234419569964
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 32d2956ab944ab84690334473f7b02f6
+  m_EffectName: Attenuation
+  m_MixLevel: 524236b999df21a4ea1228e17e3a942a
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &244222107239593124
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
