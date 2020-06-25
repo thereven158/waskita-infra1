@@ -38,10 +38,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: scene_fail_b Variant
       objectReference: {fileID: 0}
-    - target: {fileID: 9500000, guid: 19f055b137e5cc3479f44b529f2037d4, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 96c32779a946a884ca5e801228faccb0, type: 2}
     - target: {fileID: 400036, guid: 19f055b137e5cc3479f44b529f2037d4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -86,6 +82,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 19f055b137e5cc3479f44b529f2037d4, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 96c32779a946a884ca5e801228faccb0, type: 2}
+    - target: {fileID: 2300000, guid: 19f055b137e5cc3479f44b529f2037d4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8fd9ede7886bd6d45993c097a71e7e98, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19f055b137e5cc3479f44b529f2037d4, type: 3}
 --- !u!1 &6109893427483633055 stripped
