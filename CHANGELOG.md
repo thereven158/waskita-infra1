@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.15.3] - 2020-06-24
+
 - tweak audio volume for bgm and ambience #302
 - fix anim scene fail e to display more roughed state #300
 - triage assigning ASTC format override
