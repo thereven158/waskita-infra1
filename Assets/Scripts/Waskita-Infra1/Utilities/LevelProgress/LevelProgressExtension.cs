@@ -36,7 +36,7 @@ namespace Agate.WaskitaInfra1.Utilities
             return viewDatas;
         }
 
-        public static IQuestionListViewData QuestionListViewData(this ILevelProgressData progressData)
+        public static QuestionListViewData QuestionListViewData(this ILevelProgressData progressData)
         {
             return new QuestionListViewData()
             {
@@ -63,7 +63,7 @@ namespace Agate.WaskitaInfra1.Utilities
             return viewDatas;
         }
 
-        public static IQuestionListViewData QuestionListViewData(this LevelEvaluationData evalData)
+        public static QuestionListViewData QuestionListViewData(this LevelEvaluationData evalData)
         {
             return new QuestionListViewData()
             {

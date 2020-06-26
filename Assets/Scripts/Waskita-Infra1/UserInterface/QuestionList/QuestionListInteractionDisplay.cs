@@ -26,7 +26,7 @@ namespace Agate.WaskitaInfra1.UserInterface.QuestionList
         private Action _onAbortButton;
 
 
-        public void Open(IQuestionListViewData viewData, IQuestionListInteractionData interaction)
+        public void Open(QuestionListViewData viewData, QuestionListInteractionData interaction)
         {
             _questionListDisplay.Reset();
             _onDataInteraction = interaction.OnDataInteraction;
@@ -71,26 +71,13 @@ namespace Agate.WaskitaInfra1.UserInterface.QuestionList
         }
     }
 
-    public interface IQuestionListViewData
-    {
-        IEnumerable<QuestionListItemViewData> ItemDatas { get; }
-        bool FinishButtonInteractable { get; }
-    }
-
-    public interface IQuestionListInteractionData
-    {
-        Action<IQuestion> OnDataInteraction { get; }
-        Action OnFinishButton { get; }
-        Action OnAbortButton { get; }
-    }
-
-    public struct QuestionListViewData : IQuestionListViewData
+    public struct QuestionListViewData 
     {
         public IEnumerable<QuestionListItemViewData> ItemDatas { get; set; }
         public bool FinishButtonInteractable { get; set; }
     }
 
-    public struct QuestionListInteractionData : IQuestionListInteractionData
+    public struct QuestionListInteractionData 
     {
         public Action<IQuestion> OnDataInteraction { get; set; }
         public Action OnFinishButton { get; set; }
