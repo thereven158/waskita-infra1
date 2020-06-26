@@ -20,7 +20,29 @@ SpriteAtlas:
       readable: 0
       crunchedCompression: 0
       sRGB: 1
-    platformSettings: []
+    platformSettings:
+    - serializedVersion: 2
+      m_BuildTarget: iPhone
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 33
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+    - serializedVersion: 2
+      m_BuildTarget: Android
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 47
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
     packingSettings:
       serializedVersion: 2
       padding: 4
@@ -31,11 +53,11 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 2aa8b0f5e52207849bf397847b3d86b9, type: 3}
-    totalSpriteSurfaceArea: 77917365
+    totalSpriteSurfaceArea: 19316656
     bindAsDefault: 1
     storedHash:
       serializedVersion: 2
-      Hash: 0fb75baf65504ade76551648f82e82b4
+      Hash: e8010d8dd3536bc5928d1d5e99a3cde0
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300016, guid: a4ecb260116e26d4fb1b1866076be507, type: 3}
@@ -260,8 +282,6 @@ SpriteAtlas:
   - {fileID: 21300008, guid: d63e01584c685b148970819d721b42aa, type: 3}
   - {fileID: 21300014, guid: d63e01584c685b148970819d721b42aa, type: 3}
   - {fileID: 21300012, guid: d63e01584c685b148970819d721b42aa, type: 3}
-  - {fileID: 21300018, guid: d63e01584c685b148970819d721b42aa, type: 3}
-  - {fileID: 21300016, guid: d63e01584c685b148970819d721b42aa, type: 3}
   - {fileID: 21300004, guid: aa1343d8877938446aaf3cd719791364, type: 3}
   - {fileID: 21300006, guid: aa1343d8877938446aaf3cd719791364, type: 3}
   - {fileID: 21300000, guid: aa1343d8877938446aaf3cd719791364, type: 3}
@@ -699,8 +719,6 @@ SpriteAtlas:
   - C005_B_4
   - C005_B_7
   - C005_B_6
-  - C005_B_9
-  - C005_B_8
   - C013_D_2
   - C013_D_3
   - C013_D_0
