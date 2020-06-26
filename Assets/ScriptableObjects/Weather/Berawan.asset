@@ -15,3 +15,6 @@ MonoBehaviour:
   _image: {fileID: 21300000, guid: 72e4398d1b620904ab29c6435fbb9719, type: 3}
   _season: Hujan
   _rainFall: Tinggi
+  _floodHeight: 0
+  _rainIntensity: 0
+  _skybox: {fileID: 2100000, guid: 86c7b8eba850ba441a92e3e43a0b31a7, type: 2}

@@ -15,3 +15,6 @@ MonoBehaviour:
   _image: {fileID: 21300000, guid: 7c7a500cc8c443f488959aeed459a224, type: 3}
   _season: Kemarau
   _rainFall: Rendah
+  _floodHeight: 0
+  _rainIntensity: 0
+  _skybox: {fileID: 2100000, guid: a1710ec6877e3774898f9b0b0992e7f8, type: 2}

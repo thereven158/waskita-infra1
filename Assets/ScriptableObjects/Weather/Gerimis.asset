@@ -17,3 +17,4 @@ MonoBehaviour:
   _rainFall: Sedang
   _floodHeight: 1
   _rainIntensity: 90
+  _skybox: {fileID: 2100000, guid: c9e2d45ebe9992345a3c3d2ffcf9b665, type: 2}

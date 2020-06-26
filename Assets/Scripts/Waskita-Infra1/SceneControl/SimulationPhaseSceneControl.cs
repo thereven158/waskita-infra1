@@ -310,7 +310,7 @@ namespace Agate.WaskitaInfra1.SceneControl
             _levelStateDisplay.OpenDisplay(_levelProgress.Data.State());
             _simulationEnvironment._floodHeight = data._weather.FloodHeight;
             _simulationEnvironment._rainIntensity = (int)data._weather.RainIntensity;
-
+            RenderSettings.skybox = data._weather.Skybox;
         }
 
         private void OnLevelFinish(LevelEvaluationData data)

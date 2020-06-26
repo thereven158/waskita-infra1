@@ -17,3 +17,4 @@ MonoBehaviour:
   _rainFall: tinggi
   _floodHeight: 2.2
   _rainIntensity: 1000
+  _skybox: {fileID: 2100000, guid: 214a7e92bada4f54e82e1013bbccb8ed, type: 2}
