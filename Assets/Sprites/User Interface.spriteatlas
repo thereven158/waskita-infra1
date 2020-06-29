@@ -31,7 +31,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: b55c72e5cff942144a96de5f25da0002, type: 3}
-    totalSpriteSurfaceArea: 8937345
+    totalSpriteSurfaceArea: 9002881
     bindAsDefault: 1
     storedHash:
       serializedVersion: 2
@@ -77,6 +77,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: e4bae4d81e53d0848b68baed37239de9, type: 3}
   - {fileID: 21300000, guid: dfb0e6f8b194c3841bfa27100f1af2a3, type: 3}
   - {fileID: 21300000, guid: 35939759f2d36004f86179fa2737b13d, type: 3}
+  - {fileID: 21300000, guid: 5bc2caa94f16aa4449a91c54b353b87b, type: 3}
   - {fileID: 21300000, guid: da35dbe9f928de642b6900ec31d59ad9, type: 3}
   - {fileID: 21300000, guid: 530dad2aff07a304c9d45700bbd5b6ff, type: 3}
   - {fileID: 21300000, guid: b3c1b51b51877aa4f99b63d69b7f7925, type: 3}
@@ -147,6 +148,7 @@ SpriteAtlas:
   - Checklist_status_true
   - Form_Login_Poni
   - Box_answer_blank
+  - game_icon
   - Window_Poni3
   - BlackBox50Percent
   - Box_Answer
