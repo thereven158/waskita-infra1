@@ -1,6 +1,7 @@
 stages: 
 - sonar
 - build
+- deploy
 
 # Build Template
 .build-template:
@@ -86,6 +87,21 @@ stages:
       - web
 
 #=================== Define Jobs ===================
+pages:
+  stage: deploy
+  tags:
+    - image
+  image: erothejoker/docker-docfx:latest
+  script:
+    - docfx Documentation/docfx.json
+    - mv _site public
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
+
+
 # Android Build Job
 .build-android:
   extends: .build-template
