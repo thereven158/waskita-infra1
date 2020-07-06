@@ -1,6 +1,7 @@
 stages: 
 - sonar
 - build
+- deploy
 
 # Build Template
 .build-template:
@@ -87,6 +88,7 @@ stages:
 
 #=================== Define Jobs ===================
 pages:
+  stage: deploy
   tags:
     - image
   image: erothejoker/docker-docfx:latest
