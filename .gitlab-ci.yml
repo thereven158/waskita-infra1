@@ -86,6 +86,20 @@ stages:
       - web
 
 #=================== Define Jobs ===================
+pages:
+  tags:
+    - image
+  image: erothejoker/docker-docfx:latest
+  script:
+    - docfx Documentation/docfx.json
+    - mv _site public
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
+
+
 # Android Build Job
 .build-android:
   extends: .build-template

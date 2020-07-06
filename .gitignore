@@ -67,3 +67,10 @@ Assets/Plugins/
 Assets/Plugins.meta
 
 *.ruleset
+
+# Documentation
+Documentation/api/
+Documentation/index.*
+Documentation/obj/.cache/
+_site/
+Assets/**/obj*
