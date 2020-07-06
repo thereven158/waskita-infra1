@@ -90,7 +90,7 @@ stages:
 pages:
   stage: deploy
   tags:
-    - image
+    - services
   image: erothejoker/docker-docfx:latest
   script:
     - docfx Documentation/docfx.json
