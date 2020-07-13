@@ -1,20 +1,20 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using A3.Utilities;
+﻿using A3.AudioControl.Unity;
 using A3.UserInterface;
+using A3.Utilities;
 using Agate.GlSim.Scene.Control.Map.Loader;
-using Agate.WaskitaInfra1.Server.API;
+using Agate.WaskitaInfra1.Backend.Integration;
 using Agate.WaskitaInfra1.GameProgress;
 using Agate.WaskitaInfra1.Level;
 using Agate.WaskitaInfra1.LevelProgress;
 using Agate.WaskitaInfra1.PlayerAccount;
-using Agate.WaskitaInfra1.Backend.Integration;
+using Agate.WaskitaInfra1.Server.API;
+using Agate.WaskitaInfra1.UserInterface;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using A3.AudioControl.Unity;
-using Agate.WaskitaInfra1.UserInterface;
 #if UNITY_EDITOR
 using UnityEditor;
 
@@ -77,7 +77,7 @@ namespace Agate.WaskitaInfra1
         {
             get
             {
-                _loadingDisplay = _loadingDisplay ?? _displaySystem.GetOrCreateDisplay<LoadingDisplay>(_loadingDisplayPrefab);
+                _loadingDisplay = _loadingDisplay ? _loadingDisplay : _displaySystem.GetOrCreateDisplay<LoadingDisplay>(_loadingDisplayPrefab);
                 return _loadingDisplay;
             }
         }

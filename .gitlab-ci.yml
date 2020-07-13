@@ -1,7 +1,8 @@
 stages: 
 - sonar
+- docs
 - build
-- deploy
+
 
 # Build Template
 .build-template:
@@ -88,11 +89,12 @@ stages:
 
 #=================== Define Jobs ===================
 pages:
-  stage: deploy
+  image: erothejoker/docker-docfx
+  stage: docs
   tags:
-    - docker
-  image: erothejoker/docker-docfx:latest
+    - docker-exec
   script:
+    - echo 'test'
     - docfx Documentation/docfx.json
     - mv _site public
   artifacts:
@@ -100,6 +102,8 @@ pages:
       - public
   only:
     - master
+    - merge_request
+
 
 
 # Android Build Job
