@@ -1,11 +1,13 @@
 {
   "dependencies": {
+    "com.a3.animation-scene": "http://gategit.agate.id/billy.firman/a3-upm.git#animation-scene",
     "com.a3.audio-control": "http://gategit.agate.id/billy.firman/a3-upm.git#audio-control",
     "com.a3.audio-control.unity": "http://gategit.agate.id/billy.firman/a3-upm.git#audio-control.unity",
     "com.a3.code-pattern": "http://gategit.agate.id/billy.firman/a3-upm.git#code-pattern",
     "com.a3.data-driven-event": "http://gategit.agate.id/billy.firman/a3-upm.git#data-driven-event",
     "com.a3.interactive-data-display": "http://gategit.agate.id/billy.firman/a3-upm.git#interactive-data-display",
     "com.a3.quiz": "http://gategit.agate.id/billy.firman/a3-upm.git#quiz",
+    "com.a3.scriptable-object-extension": "http://gategit.agate.id/billy.firman/a3-upm.git#scriptable-object-extension",
     "com.a3.ugui-display": "http://gategit.agate.id/billy.firman/a3-upm.git#ugui-display",
     "com.a3.unique-id": "http://gategit.agate.id/billy.firman/a3-upm.git#unique-id",
     "com.a3.utilities": "http://gategit.agate.id/billy.firman/a3-upm.git#utilities",
@@ -81,6 +83,14 @@
     "com.a3.ugui-display": {
       "hash": "d23399d036ae2c5398742f2acd892811098c6d08",
       "revision": "ugui-display"
+    },
+    "com.a3.animation-scene": {
+      "hash": "14e860555e027768a831f1e57884a8adc9904832",
+      "revision": "animation-scene"
+    },
+    "com.a3.scriptable-object-extension": {
+      "hash": "76855cbe6b74bb359835ee1a70339e00eef0acf4",
+      "revision": "scriptable-object-extension"
     }
   }
 }
