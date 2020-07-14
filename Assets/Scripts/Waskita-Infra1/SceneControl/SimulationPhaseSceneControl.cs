@@ -3,7 +3,7 @@ using A3.AudioControl.Unity;
 using A3.DataDrivenEvent;
 using A3.UserInterface;
 using Agate.GlSim.Scene.Control.Map.Loader;
-using Agate.WaskitaInfra1.Animations;
+using A3.AnimationScene;
 using Agate.WaskitaInfra1.Backend.Integration;
 using Agate.WaskitaInfra1.GameAction;
 using Agate.WaskitaInfra1.GameProgress;

@@ -1,6 +1,6 @@
 using A3.Quiz;
 using A3.Quiz.Unity;
-using Agate.WaskitaInfra1.Animations;
+using A3.AnimationScene;
 using UnityEngine;
 
 namespace Agate.WaskitaInfra1.Level

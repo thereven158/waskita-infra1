@@ -1,4 +1,4 @@
-﻿using Agate.WaskitaInfra1.Animations;
+﻿using A3.AnimationScene;
 using GameAction;
 
 namespace Agate.WaskitaInfra1.GameAction

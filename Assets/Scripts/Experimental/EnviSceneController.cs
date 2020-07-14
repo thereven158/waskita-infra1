@@ -1,6 +1,6 @@
 ﻿using A3.UserInterface;
 using Agate.WaskitaInfra1;
-using Agate.WaskitaInfra1.Animations;
+using A3.AnimationScene;
 using Agate.WaskitaInfra1.UserInterface.Display;
 using UnityEngine;
 
@@ -36,7 +36,7 @@ namespace Experimental
             }
             if (Input.GetKeyDown(KeyCode.P))
             {
-                _aScMn.PlayAnimation(animRef, null, () => _dispSystem.GetOrCreateDisplay<PopUpDisplay>(_infoPopup).Open("ngapain keq", null));
+                _aScMn.PlayAnimation(animRef, () => Debug.Log("Animation Start"), () => _dispSystem.GetOrCreateDisplay<PopUpDisplay>(_infoPopup).Open("ngapain keq", null));
                 playing = true;
             }
             if (Input.GetKeyDown(KeyCode.Space))

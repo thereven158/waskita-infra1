@@ -1,5 +1,5 @@
 using A3.Quiz;
-using Agate.WaskitaInfra1.Animations;
+using A3.AnimationScene;
 using Agate.WaskitaInfra1.Level;
 using NUnit.Framework;
 using System.Collections.Generic;
